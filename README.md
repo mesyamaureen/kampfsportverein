@@ -3,18 +3,18 @@ Verwaltung von Kampfsportverein DBS2
 
 ## How to setup git repo in local computer:
 ### Prepare repository folder
-1) Create a folder in local drive (mine is on my desktop) name: `yourname_datenbanksystem02`
-2) Double click the folder
+1) Erstell einen Ordner auf deinem Rechner unter `name_datenbanksystem02`(z.B. meins auf dem Desktop unter 'mesya_datenbanksystem02')
+2) Doppelklick auf dem Ordner
 ### Configure Email and Username for Github
-3) Right click anywhere inside the folder
-4) Choose `Git Bash Here`
-5) The Command Line Interface (CLI) should show up (the one with the MINGW64 on it)
-6) Type directly after $ sign `git config --global user.email "`*your email for Github*`"` and hit Enter on keyboard
-7) A new line should show up
-8) Type directly after $ sign on new line `git config --global user.name "`*your username*`"`and hit Enter
+3) Rechtsklick irgendwo innerhalb des Ordners
+4) Klick `Git Bash Here`
+5) The Command Line Interface (CLI) sollte angezeigt werden (Drauf sollte MINGW64 geschrieben werden) 
+6) Tip direkt nach dem $ Zeichen `git config --global user.email "`*deine E-Mail für Github*`"` und ENTER 
+7) Eine neue Zeile sollte angezeigt werden
+8) Tip direkt nach dem $ Zeichen auf der neuen Zeile `git config --global user.name "`*dein username*`"` und ENTER 
 ### Configuring SSH Key for Github account
-9) Now we are going to add a public SSH Key to your Github account
-10) Type directly after $ sign on new line `ssh-keygen` and hit Enter
+9) Jetzt fügen wir einen öffentlichen SSH Schlüssel zu deinem Github Konto hinzu
+10) Tip direkt nach dem $ Zeichen auf der neuen Zeile `ssh-keygen` und ENTER 
 11) When prompted to enter file to save, don't type anything and hit Enter
 12) When prompted to enter passphrase, don't type anything and hit Enter
 13) The key is being generated. Only continue once a new line (with a new $) is available
