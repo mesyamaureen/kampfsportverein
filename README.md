@@ -13,35 +13,35 @@ Verwaltung von Kampfsportverein DBS2
 7) Eine neue Zeile sollte angezeigt werden
 8) Tip direkt nach dem $ Zeichen auf der neuen Zeile `git config --global user.name "`*dein username*`"` und ENTER 
 ### Configuring SSH Key for Github account
-9) Jetzt fügen wir einen öffentlichen SSH Schlüssel zu deinem Github Konto hinzu
+9) Jetzt fügen wir einen Public SSH Schlüssel zu deinem Github Konto hinzu
 10) Tip direkt nach dem $ Zeichen auf der neuen Zeile `ssh-keygen` und ENTER 
-11) When prompted to enter file to save, don't type anything and hit Enter
-12) When prompted to enter passphrase, don't type anything and hit Enter
-13) The key is being generated. Only continue once a new line (with a new $) is available
-14) To link the SSH Key from your computer with your Github account, you need to first copy the content of the `.pub` file
-15) To do so, type this in a new line exactly `cat ~/.ssh/id_rsa.pub`
-16) The response should start with `ssh-rsa` this is your public SSH Key
-17) Select everything from `ssh-rsa` until the end of the random key (just before the space and your computer's name) and copy
-18) Go back to Github website and go to your Github account Settings (top right icon, then go to Settings)
-19) Choose `SSH and GPG Keys` on the left side of the page
-20) And click `New SSH Key`
-21) Type in whatever name you want the title to be (something like "YourName"'s "YourComputerModel")
-22) Paste the SSH Key inside the Key box and press `Add SSH Key` at the bottom of the page
-23) If everything is as it should be, a new SSH Key should be saved on your Github account
+11) Sollte gefragt werden, die zu speichernde Dateien einzugeben, tip bitte nichts ein und einfach ENTER
+12) Sollte gefragt werden, Passwort einzugeben, tip bitte nichts ein und einfach ENTER
+13) Der Schlüssel wird erzeugt. Mach nur weiter, wenn eine neue Zeile (wo $ Zeichen zu sehen ist) verfügbar ist.
+14) Um den SSH Schlüssel von deinem Laptop mit deinem Github Konto zu verbinden, musst du zuerst den Inhalt der `.pub` Datei kopieren.
+15) To do so, tip GENAUSO `cat ~/.ssh/id_rsa.pub` auf der neuen Zeile
+16) Die Rückmeldung sollte mit `ssh-rsa` anfangen. Das ist deinen public SSH Key.
+17) Kopierst alle von `ssh-rsa` bis Ende des Random Schlüssels (vor dem Leerzeichen und dem Name deines Laptops)
+18) Geh zurück zu der Github Webseite und geh zu der Einstellung (oben rechts) deines Github Kontos
+19) Klick auf `SSH and GPG Keys` (linke Seite)
+20) Klick auf `New SSH Key`
+21) Tip irgendwelchen Namen für den Titel (z.B. "Mesya's WindowsLaptop")
+22) Dann fügst du den SSH Schlüssel innerhalb des Key Box ein und klick auf `Add SSH Key` ganz unten
+23) Sollte alles gut gelaufen ist, wird ein neuer SSH Schlüssel auf deinem Github Konto gespeichert.
 ### Cloning the repository to your local computer
-24) Go back to the repository page on Github website
-25) Click on `Clone or Download` button
-26) Make sure it's `Clone with SSH`, there is a toggle on the top right corner to change from HTTPS to SSH and vice versa
-27) Click on the copy to clipboard icon
-28) Go back to the CLI
-29) Type directly after $ sign on new line `git clone ` and paste the clone link from Github and hit Enter on keyboard
-30) The git Repo should have been succesfully cloned. To check this, open the folder in Windows Explorer, there should be a new folder under the repo's name inside the directory made in step 1
+24) Geh zurück zu der Repository Page auf deiner Github Webseite
+25) Klick auf `Clone or Download` Schaltfläche 
+26) Achtung: Es muss `Clone with SSH`sein. Da gibt's einen Umschalter (oben rechts), von HTTPS zu SSH und vice versa zu tauschen.
+27) Klick auf das Kopie Icon 
+28) Geh zurück zu dem CLI auf deinem Laptop
+29) Tip direkt nach dem $ Zeichen auf der neuen Zeile `git clone` ein und füg den Clone Link vom Github ein und ENTER
+30) Das Git Repository sollte erfolgreich geklont werden. Zu überprüfen: Öffne mal den Ordner (Schritt 1) auf dem Windows Explorer. Da sollte es einen neuen Ordner unter dem Namen deines Repository innerhalb des Verzeichnis (Schritt 1) geben.
 ### Check whether or not the repository on your computer is up-to-date
-31) We need to move to the `master` branch of the repository. There are two ways (Step 32 & 33) to do so
-32) The cooler CLI way: type in a new line on Gitbash `cd kampfsportverein/` You should directly able to see the word `(master)` right next to the directory line
+31) Danach müssen wir zu dem `master` des Repository umziehen. Es gibt zwei Wege (Schritt 32 & 33).
+32) The cooler CLI way: Tip auf der neuen Zeile (nach dem $ Zeichen) im Gitbash `cd kampfsportverein/` ein und ENTER. Danach solltest du der Wort `(master)`oder `(main)` direkt nach deinem directory line (MINGW64).
 33) The simpler GUI way: double click the folder of the cloned repo in Windows Explorer and redo step 3 and 4
-34) Type in Gitbash `git status` to check your files.
-35) Whatever response you get from step 34, it is always a good practice to update your local folder with the one on Github, even though nothing might have changed (Do this before you do anything else) in which you type `git pull`
+34) Tip im Gitbash `git status` ein, um deine Dateien zu überprüfen.
+35) Whatever response you get from step 34, it is always a good practice to update your local folder with the one on Github, even though nothing might have changed (Do this before you do anything else) in which you type `git pull` 
 
 ## How to work with git
 Any Visual Studio file related to this project should be saved inside the repository folder (datenbanksystem01)
