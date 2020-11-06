@@ -88,6 +88,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Organisation\Form\dlgAnmeldung.Designer.vb">
+      <DependentUpon>dlgAnmeldung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgAnmeldung.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -95,6 +99,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgAnmeldung.resx">
+      <DependentUpon>dlgAnmeldung.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -111,11 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Organisation\Form\" />
     <Folder Include="Organisation\Model\" />
     <Folder Include="Organisation\Presenter\" />
     <Folder Include="Organisation\View\" />
     <Folder Include="Produkt\Form\" />
+    <Folder Include="Produkt\Model\" />
+    <Folder Include="Produkt\Presenter\" />
     <Folder Include="Produkt\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
