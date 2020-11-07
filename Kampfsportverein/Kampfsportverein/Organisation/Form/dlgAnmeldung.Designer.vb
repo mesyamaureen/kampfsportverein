@@ -32,65 +32,76 @@ Partial Class dlgAnmeldung
         '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(173, 47)
+        Me.txtBenutzername.Location = New System.Drawing.Point(106, 26)
+        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
-        Me.txtBenutzername.Size = New System.Drawing.Size(597, 31)
+        Me.txtBenutzername.Size = New System.Drawing.Size(347, 25)
         Me.txtBenutzername.TabIndex = 0
         '
         'txtPasswort
         '
-        Me.txtPasswort.Location = New System.Drawing.Point(182, 134)
+        Me.txtPasswort.Location = New System.Drawing.Point(106, 75)
+        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtPasswort.Multiline = True
         Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.Size = New System.Drawing.Size(588, 31)
+        Me.txtPasswort.Size = New System.Drawing.Size(347, 25)
         Me.txtPasswort.TabIndex = 1
         '
         'lblBenutzername
         '
         Me.lblBenutzername.AutoSize = True
-        Me.lblBenutzername.Location = New System.Drawing.Point(24, 53)
+        Me.lblBenutzername.Location = New System.Drawing.Point(11, 32)
+        Me.lblBenutzername.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBenutzername.Name = "lblBenutzername"
-        Me.lblBenutzername.Size = New System.Drawing.Size(302, 50)
+        Me.lblBenutzername.Size = New System.Drawing.Size(75, 13)
         Me.lblBenutzername.TabIndex = 2
         Me.lblBenutzername.Text = "Benutzername"
         '
         'lblPasswort
         '
         Me.lblPasswort.AutoSize = True
-        Me.lblPasswort.Location = New System.Drawing.Point(24, 137)
+        Me.lblPasswort.Location = New System.Drawing.Point(11, 80)
+        Me.lblPasswort.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPasswort.Name = "lblPasswort"
-        Me.lblPasswort.Size = New System.Drawing.Size(200, 50)
+        Me.lblPasswort.Size = New System.Drawing.Size(50, 13)
         Me.lblPasswort.TabIndex = 3
         Me.lblPasswort.Text = "Passwort"
         '
         'btnAbbrechen
         '
-        Me.btnAbbrechen.Location = New System.Drawing.Point(638, 389)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(376, 242)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(132, 36)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(77, 28)
         Me.btnAbbrechen.TabIndex = 4
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnAnmelden
         '
-        Me.btnAnmelden.Location = New System.Drawing.Point(479, 389)
+        Me.btnAnmelden.Location = New System.Drawing.Point(284, 242)
+        Me.btnAnmelden.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAnmelden.Name = "btnAnmelden"
-        Me.btnAnmelden.Size = New System.Drawing.Size(132, 36)
+        Me.btnAnmelden.Size = New System.Drawing.Size(77, 28)
         Me.btnAnmelden.TabIndex = 6
         Me.btnAnmelden.Text = "Anmelden"
         Me.btnAnmelden.UseVisualStyleBackColor = True
         '
         'dlgAnmeldung
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AcceptButton = Me.btnAnmelden
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.CancelButton = Me.btnAbbrechen
+        Me.ClientSize = New System.Drawing.Size(464, 281)
         Me.Controls.Add(Me.btnAnmelden)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Controls.Add(Me.lblPasswort)
         Me.Controls.Add(Me.lblBenutzername)
         Me.Controls.Add(Me.txtPasswort)
         Me.Controls.Add(Me.txtBenutzername)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "dlgAnmeldung"
         Me.Text = "Anmeldung"
         Me.ResumeLayout(False)
@@ -106,6 +117,10 @@ Partial Class dlgAnmeldung
     Friend WithEvents btnAnmelden As Button
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblPasswort.Click
+
+    End Sub
+
+    Private Sub dlgAnmeldung_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
