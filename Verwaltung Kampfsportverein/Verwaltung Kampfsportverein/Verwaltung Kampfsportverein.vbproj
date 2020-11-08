@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E924E59D-297C-41DF-B255-8B3EEF38AB22}</ProjectGuid>
+    <ProjectGuid>{02016361-3251-43EC-AB8E-00F312259583}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Kampfsportverein.My.MyApplication</StartupObject>
-    <RootNamespace>Kampfsportverein</RootNamespace>
-    <AssemblyName>Kampfsportverein</AssemblyName>
+    <StartupObject>Verwaltung_Kampfsportverein.My.MyApplication</StartupObject>
+    <RootNamespace>Verwaltung_Kampfsportverein</RootNamespace>
+    <AssemblyName>Verwaltung Kampfsportverein</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Kampfsportverein.xml</DocumentationFile>
+    <DocumentationFile>Verwaltung Kampfsportverein.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Kampfsportverein.xml</DocumentationFile>
+    <DocumentationFile>Verwaltung Kampfsportverein.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -73,11 +73,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -89,38 +95,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Organisation\Form\dlgAnmeldung.Designer.vb">
-      <DependentUpon>dlgAnmeldung.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Organisation\Form\dlgAnmeldung.vb" />
-    <Compile Include="Organisation\Form\frmHauptfensterMit.Designer.vb">
-      <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Organisation\Form\frmHauptfensterMit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Organisation\Form\frmHauptfensterTrainer.Designer.vb">
-      <DependentUpon>frmHauptfensterTrainer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Organisation\Form\frmHauptfensterTrainer.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Organisation\Form\dlgAnmeldung.resx">
-      <DependentUpon>dlgAnmeldung.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Organisation\Form\frmHauptfensterMit.resx">
-      <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Organisation\Form\frmHauptfensterTrainer.resx">
-      <DependentUpon>frmHauptfensterTrainer.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -134,17 +118,11 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="TestKlassendiagramm01.cd" />
+    <None Include="test01Klassendiagramm.cd" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="Organisation\Model\" />
-    <Folder Include="Organisation\Presenter\" />
-    <Folder Include="Organisation\View\" />
-    <Folder Include="Produkt\Form\" />
-    <Folder Include="Produkt\Model\" />
-    <Folder Include="Produkt\Presenter\" />
-    <Folder Include="Produkt\View\" />
+    <Folder Include="Organisation\" />
+    <Folder Include="Produkte\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
