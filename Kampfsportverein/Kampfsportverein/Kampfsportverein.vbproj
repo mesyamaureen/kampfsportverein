@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E924E59D-297C-41DF-B255-8B3EEF38AB22}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Kampfsportverein.My.MyApplication</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>Kampfsportverein</RootNamespace>
     <AssemblyName>Kampfsportverein</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -89,10 +89,46 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Organisation\Form\dlgAlleMitarbeiter.Designer.vb">
+      <DependentUpon>dlgAlleMitarbeiter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgAlleMitarbeiter.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgAlleTrainer.Designer.vb">
+      <DependentUpon>dlgAlleTrainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgAlleTrainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Organisation\Form\dlgAnmeldung.Designer.vb">
       <DependentUpon>dlgAnmeldung.vb</DependentUpon>
     </Compile>
     <Compile Include="Organisation\Form\dlgAnmeldung.vb" />
+    <Compile Include="Organisation\Form\dlgMeinKontoMit.Designer.vb">
+      <DependentUpon>dlgMeinKontoMit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgMeinKontoMit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgMeinKontoTrainer.Designer.vb">
+      <DependentUpon>dlgMeinKontoTrainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgMeinKontoTrainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgNeuerTrainer.Designer.vb">
+      <DependentUpon>dlgNeuerTrainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgNeuerTrainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgTrainerKonto.Designer.vb">
+      <DependentUpon>dlgTrainerKonto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Organisation\Form\dlgTrainerKonto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Organisation\Form\frmHauptfensterMit.Designer.vb">
       <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
     </Compile>
@@ -113,8 +149,26 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgAlleMitarbeiter.resx">
+      <DependentUpon>dlgAlleMitarbeiter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgAlleTrainer.resx">
+      <DependentUpon>dlgAlleTrainer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Organisation\Form\dlgAnmeldung.resx">
       <DependentUpon>dlgAnmeldung.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgMeinKontoMit.resx">
+      <DependentUpon>dlgMeinKontoMit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgMeinKontoTrainer.resx">
+      <DependentUpon>dlgMeinKontoTrainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgNeuerTrainer.resx">
+      <DependentUpon>dlgNeuerTrainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Organisation\Form\dlgTrainerKonto.resx">
+      <DependentUpon>dlgTrainerKonto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Organisation\Form\frmHauptfensterMit.resx">
       <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
