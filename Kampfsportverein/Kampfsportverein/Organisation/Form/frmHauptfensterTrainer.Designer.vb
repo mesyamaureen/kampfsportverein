@@ -24,24 +24,24 @@ Partial Class frmHauptfensterTrainer
     Private Sub InitializeComponent()
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.grpboxMenu = New System.Windows.Forms.GroupBox()
-        Me.grpboxKurs = New System.Windows.Forms.GroupBox()
-        Me.picboxMeinKonto = New System.Windows.Forms.PictureBox()
-        Me.picboxAlleSchueler = New System.Windows.Forms.PictureBox()
-        Me.picboxNeueSchueler = New System.Windows.Forms.PictureBox()
-        Me.btnMeinKonto = New System.Windows.Forms.Button()
-        Me.btnAlleSchueler = New System.Windows.Forms.Button()
         Me.btnNeueSchueler = New System.Windows.Forms.Button()
+        Me.btnAlleSchueler = New System.Windows.Forms.Button()
+        Me.btnMeinKonto = New System.Windows.Forms.Button()
+        Me.picboxNeueSchueler = New System.Windows.Forms.PictureBox()
+        Me.picboxAlleSchueler = New System.Windows.Forms.PictureBox()
+        Me.picboxMeinKonto = New System.Windows.Forms.PictureBox()
+        Me.grpboxKurs = New System.Windows.Forms.GroupBox()
+        Me.btnBearbeiten = New System.Windows.Forms.Button()
         Me.lstKurse = New System.Windows.Forms.ListView()
         Me.colKursID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnBearbeiten = New System.Windows.Forms.Button()
         Me.grpboxMenu.SuspendLayout()
-        Me.grpboxKurs.SuspendLayout()
-        CType(Me.picboxMeinKonto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picboxNeueSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picboxMeinKonto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpboxKurs.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnBeenden
@@ -68,48 +68,14 @@ Partial Class frmHauptfensterTrainer
         Me.grpboxMenu.TabIndex = 1
         Me.grpboxMenu.TabStop = False
         '
-        'grpboxKurs
+        'btnNeueSchueler
         '
-        Me.grpboxKurs.Controls.Add(Me.btnBearbeiten)
-        Me.grpboxKurs.Controls.Add(Me.lstKurse)
-        Me.grpboxKurs.Location = New System.Drawing.Point(378, 12)
-        Me.grpboxKurs.Name = "grpboxKurs"
-        Me.grpboxKurs.Size = New System.Drawing.Size(864, 856)
-        Me.grpboxKurs.TabIndex = 2
-        Me.grpboxKurs.TabStop = False
-        '
-        'picboxMeinKonto
-        '
-        Me.picboxMeinKonto.Location = New System.Drawing.Point(88, 32)
-        Me.picboxMeinKonto.Name = "picboxMeinKonto"
-        Me.picboxMeinKonto.Size = New System.Drawing.Size(146, 135)
-        Me.picboxMeinKonto.TabIndex = 0
-        Me.picboxMeinKonto.TabStop = False
-        '
-        'picboxAlleSchueler
-        '
-        Me.picboxAlleSchueler.Location = New System.Drawing.Point(88, 329)
-        Me.picboxAlleSchueler.Name = "picboxAlleSchueler"
-        Me.picboxAlleSchueler.Size = New System.Drawing.Size(146, 131)
-        Me.picboxAlleSchueler.TabIndex = 1
-        Me.picboxAlleSchueler.TabStop = False
-        '
-        'picboxNeueSchueler
-        '
-        Me.picboxNeueSchueler.Location = New System.Drawing.Point(88, 619)
-        Me.picboxNeueSchueler.Name = "picboxNeueSchueler"
-        Me.picboxNeueSchueler.Size = New System.Drawing.Size(146, 133)
-        Me.picboxNeueSchueler.TabIndex = 2
-        Me.picboxNeueSchueler.TabStop = False
-        '
-        'btnMeinKonto
-        '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(79, 182)
-        Me.btnMeinKonto.Name = "btnMeinKonto"
-        Me.btnMeinKonto.Size = New System.Drawing.Size(162, 50)
-        Me.btnMeinKonto.TabIndex = 3
-        Me.btnMeinKonto.Text = "Mein Konto"
-        Me.btnMeinKonto.UseVisualStyleBackColor = True
+        Me.btnNeueSchueler.Location = New System.Drawing.Point(79, 768)
+        Me.btnNeueSchueler.Name = "btnNeueSchueler"
+        Me.btnNeueSchueler.Size = New System.Drawing.Size(162, 50)
+        Me.btnNeueSchueler.TabIndex = 5
+        Me.btnNeueSchueler.Text = "Neue Schüler"
+        Me.btnNeueSchueler.UseVisualStyleBackColor = True
         '
         'btnAlleSchueler
         '
@@ -120,14 +86,57 @@ Partial Class frmHauptfensterTrainer
         Me.btnAlleSchueler.Text = "Alle Schüler"
         Me.btnAlleSchueler.UseVisualStyleBackColor = True
         '
-        'btnNeueSchueler
+        'btnMeinKonto
         '
-        Me.btnNeueSchueler.Location = New System.Drawing.Point(79, 768)
-        Me.btnNeueSchueler.Name = "btnNeueSchueler"
-        Me.btnNeueSchueler.Size = New System.Drawing.Size(162, 50)
-        Me.btnNeueSchueler.TabIndex = 5
-        Me.btnNeueSchueler.Text = "Neue Schüler"
-        Me.btnNeueSchueler.UseVisualStyleBackColor = True
+        Me.btnMeinKonto.Location = New System.Drawing.Point(79, 182)
+        Me.btnMeinKonto.Name = "btnMeinKonto"
+        Me.btnMeinKonto.Size = New System.Drawing.Size(162, 50)
+        Me.btnMeinKonto.TabIndex = 3
+        Me.btnMeinKonto.Text = "Mein Konto"
+        Me.btnMeinKonto.UseVisualStyleBackColor = True
+        '
+        'picboxNeueSchueler
+        '
+        Me.picboxNeueSchueler.Location = New System.Drawing.Point(88, 619)
+        Me.picboxNeueSchueler.Name = "picboxNeueSchueler"
+        Me.picboxNeueSchueler.Size = New System.Drawing.Size(146, 133)
+        Me.picboxNeueSchueler.TabIndex = 2
+        Me.picboxNeueSchueler.TabStop = False
+        '
+        'picboxAlleSchueler
+        '
+        Me.picboxAlleSchueler.Location = New System.Drawing.Point(88, 329)
+        Me.picboxAlleSchueler.Name = "picboxAlleSchueler"
+        Me.picboxAlleSchueler.Size = New System.Drawing.Size(146, 131)
+        Me.picboxAlleSchueler.TabIndex = 1
+        Me.picboxAlleSchueler.TabStop = False
+        '
+        'picboxMeinKonto
+        '
+        Me.picboxMeinKonto.Location = New System.Drawing.Point(88, 32)
+        Me.picboxMeinKonto.Name = "picboxMeinKonto"
+        Me.picboxMeinKonto.Size = New System.Drawing.Size(146, 135)
+        Me.picboxMeinKonto.TabIndex = 0
+        Me.picboxMeinKonto.TabStop = False
+        '
+        'grpboxKurs
+        '
+        Me.grpboxKurs.Controls.Add(Me.btnBearbeiten)
+        Me.grpboxKurs.Controls.Add(Me.lstKurse)
+        Me.grpboxKurs.Location = New System.Drawing.Point(378, 12)
+        Me.grpboxKurs.Name = "grpboxKurs"
+        Me.grpboxKurs.Size = New System.Drawing.Size(864, 856)
+        Me.grpboxKurs.TabIndex = 2
+        Me.grpboxKurs.TabStop = False
+        '
+        'btnBearbeiten
+        '
+        Me.btnBearbeiten.Location = New System.Drawing.Point(723, 802)
+        Me.btnBearbeiten.Name = "btnBearbeiten"
+        Me.btnBearbeiten.Size = New System.Drawing.Size(135, 40)
+        Me.btnBearbeiten.TabIndex = 3
+        Me.btnBearbeiten.Text = "Bearbeiten"
+        Me.btnBearbeiten.UseVisualStyleBackColor = True
         '
         'lstKurse
         '
@@ -166,15 +175,6 @@ Partial Class frmHauptfensterTrainer
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVerfuegbarkeit.Width = 147
         '
-        'btnBearbeiten
-        '
-        Me.btnBearbeiten.Location = New System.Drawing.Point(723, 802)
-        Me.btnBearbeiten.Name = "btnBearbeiten"
-        Me.btnBearbeiten.Size = New System.Drawing.Size(135, 40)
-        Me.btnBearbeiten.TabIndex = 3
-        Me.btnBearbeiten.Text = "Bearbeiten"
-        Me.btnBearbeiten.UseVisualStyleBackColor = True
-        '
         'frmHauptfensterTrainer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -187,10 +187,10 @@ Partial Class frmHauptfensterTrainer
         Me.Name = "frmHauptfensterTrainer"
         Me.Text = "Kampfsportverein"
         Me.grpboxMenu.ResumeLayout(False)
-        Me.grpboxKurs.ResumeLayout(False)
-        CType(Me.picboxMeinKonto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picboxNeueSchueler, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picboxMeinKonto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpboxKurs.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
