@@ -141,10 +141,52 @@
     <Compile Include="Organisation\Form\frmHauptfensterTrainer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Produkt\Form\dlgAlleSchueler.Designer.vb">
+      <DependentUpon>dlgAlleSchueler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgAlleSchueler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgAlleSchuelerMit.Designer.vb">
+      <DependentUpon>dlgAlleSchuelerMit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgAlleSchuelerMit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgKursBearbeiten.Designer.vb">
+      <DependentUpon>dlgKursBearbeiten.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgKursBearbeiten.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Produkt\Form\dlgKursEinzelTrainer.Designer.vb">
       <DependentUpon>dlgKursEinzelTrainer.vb</DependentUpon>
     </Compile>
     <Compile Include="Produkt\Form\dlgKursEinzelTrainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgNeuerKurs.Designer.vb">
+      <DependentUpon>dlgNeuerKurs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgNeuerKurs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgNeueSchueler.Designer.vb">
+      <DependentUpon>dlgNeueSchueler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgNeueSchueler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgNeueSportart.Designer.vb">
+      <DependentUpon>dlgNeueSportart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgNeueSportart.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgSportEinzel.Designer.vb">
+      <DependentUpon>dlgSportEinzel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgSportEinzel.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -182,8 +224,29 @@
     <EmbeddedResource Include="Organisation\Form\frmHauptfensterTrainer.resx">
       <DependentUpon>frmHauptfensterTrainer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgAlleSchueler.resx">
+      <DependentUpon>dlgAlleSchueler.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgAlleSchuelerMit.resx">
+      <DependentUpon>dlgAlleSchuelerMit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgKursBearbeiten.resx">
+      <DependentUpon>dlgKursBearbeiten.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Produkt\Form\dlgKursEinzelTrainer.resx">
       <DependentUpon>dlgKursEinzelTrainer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgNeuerKurs.resx">
+      <DependentUpon>dlgNeuerKurs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgNeueSchueler.resx">
+      <DependentUpon>dlgNeueSchueler.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgNeueSportart.resx">
+      <DependentUpon>dlgNeueSportart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgSportEinzel.resx">
+      <DependentUpon>dlgSportEinzel.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
