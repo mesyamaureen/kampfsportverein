@@ -141,6 +141,12 @@
     <Compile Include="Organisation\Form\frmHauptfensterTrainer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Produkt\Form\dlgKursEinzelTrainer.Designer.vb">
+      <DependentUpon>dlgKursEinzelTrainer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Produkt\Form\dlgKursEinzelTrainer.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -176,6 +182,9 @@
     <EmbeddedResource Include="Organisation\Form\frmHauptfensterTrainer.resx">
       <DependentUpon>frmHauptfensterTrainer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\Form\dlgKursEinzelTrainer.resx">
+      <DependentUpon>dlgKursEinzelTrainer.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -194,12 +203,9 @@
     <Folder Include="Common\" />
     <Folder Include="Organisation\Model\" />
     <Folder Include="Organisation\Presenter\" />
-    <Folder Include="Organisation\Test01\" />
     <Folder Include="Organisation\View\" />
-    <Folder Include="Produkt\Form\" />
     <Folder Include="Produkt\Model\" />
     <Folder Include="Produkt\Presenter\" />
-    <Folder Include="Produkt\Test02\" />
     <Folder Include="Produkt\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
