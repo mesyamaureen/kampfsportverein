@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class dlgAlleTrainer
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class dlgAlleTrainer
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnBearbeiten = New System.Windows.Forms.Button()
@@ -30,7 +30,6 @@ Partial Class dlgAlleTrainer
         Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colBenutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colGebDat = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -63,7 +62,7 @@ Partial Class dlgAlleTrainer
         '
         'lstAlleTrainer
         '
-        Me.lstAlleTrainer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colVorname, Me.colName, Me.colBenutzername, Me.colGebDat})
+        Me.lstAlleTrainer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colVorname, Me.colName, Me.colBenutzername})
         Me.lstAlleTrainer.FullRowSelect = True
         Me.lstAlleTrainer.GridLines = True
         Me.lstAlleTrainer.HideSelection = False
@@ -78,31 +77,25 @@ Partial Class dlgAlleTrainer
         'colID
         '
         Me.colID.Text = "ID"
-        Me.colID.Width = 93
+        Me.colID.Width = 137
         '
         'colVorname
         '
         Me.colVorname.Text = "Vorname"
         Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVorname.Width = 329
+        Me.colVorname.Width = 401
         '
         'colName
         '
         Me.colName.Text = "Name"
         Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colName.Width = 286
+        Me.colName.Width = 347
         '
         'colBenutzername
         '
         Me.colBenutzername.Text = "Benutzername"
         Me.colBenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colBenutzername.Width = 285
-        '
-        'colGebDat
-        '
-        Me.colGebDat.Text = "Geburtsdatum"
-        Me.colGebDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colGebDat.Width = 229
+        Me.colBenutzername.Width = 339
         '
         'dlgAlleTrainer
         '
@@ -128,5 +121,4 @@ Partial Class dlgAlleTrainer
     Friend WithEvents colVorname As ColumnHeader
     Friend WithEvents colName As ColumnHeader
     Friend WithEvents colBenutzername As ColumnHeader
-    Friend WithEvents colGebDat As ColumnHeader
 End Class

@@ -27,14 +27,12 @@ Partial Class dlgMeinKontoMit
         Me.lblMitarbeiterID = New System.Windows.Forms.Label()
         Me.lblVorname = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.lblGebDat = New System.Windows.Forms.Label()
         Me.lblBenutzername = New System.Windows.Forms.Label()
         Me.lblNeuesPass = New System.Windows.Forms.Label()
         Me.lblPassWiederh = New System.Windows.Forms.Label()
         Me.txtMitarbeiterID = New System.Windows.Forms.TextBox()
         Me.txtVorname = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtGebDat = New System.Windows.Forms.TextBox()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.txtNeuesPass = New System.Windows.Forms.TextBox()
         Me.txtPassWiederh = New System.Windows.Forms.TextBox()
@@ -86,19 +84,10 @@ Partial Class dlgMeinKontoMit
         Me.lblName.TabIndex = 4
         Me.lblName.Text = "Name"
         '
-        'lblGebDat
-        '
-        Me.lblGebDat.AutoSize = True
-        Me.lblGebDat.Location = New System.Drawing.Point(35, 262)
-        Me.lblGebDat.Name = "lblGebDat"
-        Me.lblGebDat.Size = New System.Drawing.Size(147, 25)
-        Me.lblGebDat.TabIndex = 5
-        Me.lblGebDat.Text = "Geburtsdatum"
-        '
         'lblBenutzername
         '
         Me.lblBenutzername.AutoSize = True
-        Me.lblBenutzername.Location = New System.Drawing.Point(35, 335)
+        Me.lblBenutzername.Location = New System.Drawing.Point(35, 271)
         Me.lblBenutzername.Name = "lblBenutzername"
         Me.lblBenutzername.Size = New System.Drawing.Size(151, 25)
         Me.lblBenutzername.TabIndex = 6
@@ -107,7 +96,7 @@ Partial Class dlgMeinKontoMit
         'lblNeuesPass
         '
         Me.lblNeuesPass.AutoSize = True
-        Me.lblNeuesPass.Location = New System.Drawing.Point(35, 409)
+        Me.lblNeuesPass.Location = New System.Drawing.Point(35, 345)
         Me.lblNeuesPass.Name = "lblNeuesPass"
         Me.lblNeuesPass.Size = New System.Drawing.Size(168, 25)
         Me.lblNeuesPass.TabIndex = 7
@@ -116,7 +105,7 @@ Partial Class dlgMeinKontoMit
         'lblPassWiederh
         '
         Me.lblPassWiederh.AutoSize = True
-        Me.lblPassWiederh.Location = New System.Drawing.Point(35, 479)
+        Me.lblPassWiederh.Location = New System.Drawing.Point(35, 415)
         Me.lblPassWiederh.Name = "lblPassWiederh"
         Me.lblPassWiederh.Size = New System.Drawing.Size(222, 25)
         Me.lblPassWiederh.TabIndex = 8
@@ -147,17 +136,9 @@ Partial Class dlgMeinKontoMit
         Me.txtName.Size = New System.Drawing.Size(919, 34)
         Me.txtName.TabIndex = 11
         '
-        'txtGebDat
-        '
-        Me.txtGebDat.Location = New System.Drawing.Point(304, 253)
-        Me.txtGebDat.Multiline = True
-        Me.txtGebDat.Name = "txtGebDat"
-        Me.txtGebDat.Size = New System.Drawing.Size(919, 34)
-        Me.txtGebDat.TabIndex = 12
-        '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(304, 326)
+        Me.txtBenutzername.Location = New System.Drawing.Point(304, 262)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
         Me.txtBenutzername.Size = New System.Drawing.Size(919, 34)
@@ -165,7 +146,7 @@ Partial Class dlgMeinKontoMit
         '
         'txtNeuesPass
         '
-        Me.txtNeuesPass.Location = New System.Drawing.Point(304, 400)
+        Me.txtNeuesPass.Location = New System.Drawing.Point(304, 336)
         Me.txtNeuesPass.Multiline = True
         Me.txtNeuesPass.Name = "txtNeuesPass"
         Me.txtNeuesPass.Size = New System.Drawing.Size(919, 34)
@@ -173,7 +154,7 @@ Partial Class dlgMeinKontoMit
         '
         'txtPassWiederh
         '
-        Me.txtPassWiederh.Location = New System.Drawing.Point(304, 476)
+        Me.txtPassWiederh.Location = New System.Drawing.Point(304, 412)
         Me.txtPassWiederh.Multiline = True
         Me.txtPassWiederh.Name = "txtPassWiederh"
         Me.txtPassWiederh.Size = New System.Drawing.Size(919, 34)
@@ -189,14 +170,12 @@ Partial Class dlgMeinKontoMit
         Me.Controls.Add(Me.txtPassWiederh)
         Me.Controls.Add(Me.txtNeuesPass)
         Me.Controls.Add(Me.txtBenutzername)
-        Me.Controls.Add(Me.txtGebDat)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtVorname)
         Me.Controls.Add(Me.txtMitarbeiterID)
         Me.Controls.Add(Me.lblPassWiederh)
         Me.Controls.Add(Me.lblNeuesPass)
         Me.Controls.Add(Me.lblBenutzername)
-        Me.Controls.Add(Me.lblGebDat)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.lblMitarbeiterID)
@@ -214,14 +193,12 @@ Partial Class dlgMeinKontoMit
     Friend WithEvents lblMitarbeiterID As Label
     Friend WithEvents lblVorname As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents lblGebDat As Label
     Friend WithEvents lblBenutzername As Label
     Friend WithEvents lblNeuesPass As Label
     Friend WithEvents lblPassWiederh As Label
     Friend WithEvents txtMitarbeiterID As TextBox
     Friend WithEvents txtVorname As TextBox
     Friend WithEvents txtName As TextBox
-    Friend WithEvents txtGebDat As TextBox
     Friend WithEvents txtBenutzername As TextBox
     Friend WithEvents txtNeuesPass As TextBox
     Friend WithEvents txtPassWiederh As TextBox

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class dlgAlleMitarbeiter
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class dlgAlleMitarbeiter
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnLoeschen = New System.Windows.Forms.Button()
@@ -29,7 +29,6 @@ Partial Class dlgAlleMitarbeiter
         Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colBenutzername = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colGebDat = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -53,7 +52,7 @@ Partial Class dlgAlleMitarbeiter
         '
         'lstAlleMitarbeiter
         '
-        Me.lstAlleMitarbeiter.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colVorname, Me.colName, Me.colBenutzername, Me.colGebDat})
+        Me.lstAlleMitarbeiter.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colVorname, Me.colName, Me.colBenutzername})
         Me.lstAlleMitarbeiter.FullRowSelect = True
         Me.lstAlleMitarbeiter.GridLines = True
         Me.lstAlleMitarbeiter.HideSelection = False
@@ -68,31 +67,25 @@ Partial Class dlgAlleMitarbeiter
         'colID
         '
         Me.colID.Text = "ID"
-        Me.colID.Width = 90
+        Me.colID.Width = 163
         '
         'colVorname
         '
         Me.colVorname.Text = "Vorname"
         Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVorname.Width = 301
+        Me.colVorname.Width = 377
         '
         'colName
         '
         Me.colName.Text = "Name"
         Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colName.Width = 287
+        Me.colName.Width = 319
         '
         'colBenutzername
         '
         Me.colBenutzername.Text = "Benutzername"
         Me.colBenutzername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colBenutzername.Width = 346
-        '
-        'colGebDat
-        '
-        Me.colGebDat.Text = "Geburtsdatum"
-        Me.colGebDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colGebDat.Width = 197
+        Me.colBenutzername.Width = 367
         '
         'dlgAlleMitarbeiter
         '
@@ -116,5 +109,4 @@ Partial Class dlgAlleMitarbeiter
     Friend WithEvents colVorname As ColumnHeader
     Friend WithEvents colName As ColumnHeader
     Friend WithEvents colBenutzername As ColumnHeader
-    Friend WithEvents colGebDat As ColumnHeader
 End Class

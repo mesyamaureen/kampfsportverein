@@ -26,12 +26,10 @@ Partial Class dlgMeinKontoTrainer
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTrainerID = New System.Windows.Forms.TextBox()
         Me.txtVorname = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtGebDat = New System.Windows.Forms.TextBox()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
@@ -72,19 +70,10 @@ Partial Class dlgMeinKontoTrainer
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Name"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(36, 335)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(147, 25)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Geburtsdatum"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(36, 431)
+        Me.Label5.Location = New System.Drawing.Point(36, 324)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(151, 25)
         Me.Label5.TabIndex = 5
@@ -115,17 +104,9 @@ Partial Class dlgMeinKontoTrainer
         Me.txtName.Size = New System.Drawing.Size(998, 43)
         Me.txtName.TabIndex = 8
         '
-        'txtGebDat
-        '
-        Me.txtGebDat.Location = New System.Drawing.Point(244, 325)
-        Me.txtGebDat.Multiline = True
-        Me.txtGebDat.Name = "txtGebDat"
-        Me.txtGebDat.Size = New System.Drawing.Size(998, 43)
-        Me.txtGebDat.TabIndex = 9
-        '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(244, 422)
+        Me.txtBenutzername.Location = New System.Drawing.Point(244, 315)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
         Me.txtBenutzername.Size = New System.Drawing.Size(998, 43)
@@ -138,12 +119,10 @@ Partial Class dlgMeinKontoTrainer
         Me.CancelButton = Me.btnSchliessen
         Me.ClientSize = New System.Drawing.Size(1254, 629)
         Me.Controls.Add(Me.txtBenutzername)
-        Me.Controls.Add(Me.txtGebDat)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtVorname)
         Me.Controls.Add(Me.txtTrainerID)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -159,11 +138,9 @@ Partial Class dlgMeinKontoTrainer
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents txtTrainerID As TextBox
     Friend WithEvents txtVorname As TextBox
     Friend WithEvents txtName As TextBox
-    Friend WithEvents txtGebDat As TextBox
     Friend WithEvents txtBenutzername As TextBox
 End Class

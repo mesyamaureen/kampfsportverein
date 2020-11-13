@@ -26,13 +26,11 @@ Partial Class dlgNeuerTrainer
         Me.btnErstellen = New System.Windows.Forms.Button()
         Me.lblVorname = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.lblGebDat = New System.Windows.Forms.Label()
         Me.lblBenutzername = New System.Windows.Forms.Label()
         Me.lblPasswort = New System.Windows.Forms.Label()
         Me.lblPassWiederh = New System.Windows.Forms.Label()
         Me.txtVorname = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtGebDat = New System.Windows.Forms.TextBox()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.txtPassWiederh = New System.Windows.Forms.TextBox()
@@ -75,19 +73,10 @@ Partial Class dlgNeuerTrainer
         Me.lblName.TabIndex = 3
         Me.lblName.Text = "Name"
         '
-        'lblGebDat
-        '
-        Me.lblGebDat.AutoSize = True
-        Me.lblGebDat.Location = New System.Drawing.Point(23, 179)
-        Me.lblGebDat.Name = "lblGebDat"
-        Me.lblGebDat.Size = New System.Drawing.Size(147, 25)
-        Me.lblGebDat.TabIndex = 4
-        Me.lblGebDat.Text = "Geburtsdatum"
-        '
         'lblBenutzername
         '
         Me.lblBenutzername.AutoSize = True
-        Me.lblBenutzername.Location = New System.Drawing.Point(23, 254)
+        Me.lblBenutzername.Location = New System.Drawing.Point(23, 186)
         Me.lblBenutzername.Name = "lblBenutzername"
         Me.lblBenutzername.Size = New System.Drawing.Size(151, 25)
         Me.lblBenutzername.TabIndex = 5
@@ -96,7 +85,7 @@ Partial Class dlgNeuerTrainer
         'lblPasswort
         '
         Me.lblPasswort.AutoSize = True
-        Me.lblPasswort.Location = New System.Drawing.Point(23, 332)
+        Me.lblPasswort.Location = New System.Drawing.Point(23, 264)
         Me.lblPasswort.Name = "lblPasswort"
         Me.lblPasswort.Size = New System.Drawing.Size(100, 25)
         Me.lblPasswort.TabIndex = 6
@@ -105,7 +94,7 @@ Partial Class dlgNeuerTrainer
         'lblPassWiederh
         '
         Me.lblPassWiederh.AutoSize = True
-        Me.lblPassWiederh.Location = New System.Drawing.Point(23, 410)
+        Me.lblPassWiederh.Location = New System.Drawing.Point(23, 342)
         Me.lblPassWiederh.Name = "lblPassWiederh"
         Me.lblPassWiederh.Size = New System.Drawing.Size(222, 25)
         Me.lblPassWiederh.TabIndex = 7
@@ -127,17 +116,9 @@ Partial Class dlgNeuerTrainer
         Me.txtName.Size = New System.Drawing.Size(509, 43)
         Me.txtName.TabIndex = 9
         '
-        'txtGebDat
-        '
-        Me.txtGebDat.Location = New System.Drawing.Point(253, 170)
-        Me.txtGebDat.Multiline = True
-        Me.txtGebDat.Name = "txtGebDat"
-        Me.txtGebDat.Size = New System.Drawing.Size(509, 43)
-        Me.txtGebDat.TabIndex = 10
-        '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(253, 247)
+        Me.txtBenutzername.Location = New System.Drawing.Point(253, 179)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
         Me.txtBenutzername.Size = New System.Drawing.Size(509, 43)
@@ -145,7 +126,7 @@ Partial Class dlgNeuerTrainer
         '
         'txtPass
         '
-        Me.txtPass.Location = New System.Drawing.Point(253, 324)
+        Me.txtPass.Location = New System.Drawing.Point(253, 256)
         Me.txtPass.Multiline = True
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(509, 43)
@@ -153,7 +134,7 @@ Partial Class dlgNeuerTrainer
         '
         'txtPassWiederh
         '
-        Me.txtPassWiederh.Location = New System.Drawing.Point(253, 402)
+        Me.txtPassWiederh.Location = New System.Drawing.Point(253, 334)
         Me.txtPassWiederh.Multiline = True
         Me.txtPassWiederh.Name = "txtPassWiederh"
         Me.txtPassWiederh.Size = New System.Drawing.Size(509, 43)
@@ -169,13 +150,11 @@ Partial Class dlgNeuerTrainer
         Me.Controls.Add(Me.txtPassWiederh)
         Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.txtBenutzername)
-        Me.Controls.Add(Me.txtGebDat)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtVorname)
         Me.Controls.Add(Me.lblPassWiederh)
         Me.Controls.Add(Me.lblPasswort)
         Me.Controls.Add(Me.lblBenutzername)
-        Me.Controls.Add(Me.lblGebDat)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.btnErstellen)
@@ -191,13 +170,11 @@ Partial Class dlgNeuerTrainer
     Friend WithEvents btnErstellen As Button
     Friend WithEvents lblVorname As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents lblGebDat As Label
     Friend WithEvents lblBenutzername As Label
     Friend WithEvents lblPasswort As Label
     Friend WithEvents lblPassWiederh As Label
     Friend WithEvents txtVorname As TextBox
     Friend WithEvents txtName As TextBox
-    Friend WithEvents txtGebDat As TextBox
     Friend WithEvents txtBenutzername As TextBox
     Friend WithEvents txtPass As TextBox
     Friend WithEvents txtPassWiederh As TextBox
