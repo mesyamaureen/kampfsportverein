@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kampfsportverein.dlgAlleSchueler" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAICACAAAEAACCAAACIAAAIAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Produkt\Form\dlgAlleSchueler.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Presenter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.dlgNeueSportart" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAABgACAAAgAAAECgAAACAAAwCAAAIBAAAAAAAAA=</HashCode>
+      <FileName>Produkt\Form\dlgNeueSportart.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Presenter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.dlgKursEinzelTrainer" Collapsed="true">
+    <Position X="0.5" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAgACQgAAAAAECgAAACAAAwgAAQIAAIAAAAAAA=</HashCode>
+      <FileName>Produkt\Form\dlgKursEinzelTrainer.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Presenter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.AlleSchuelerPresenter">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAQAAgAAAAACAAACAAAAABhAAECAAAAAAAAAA=</HashCode>
+      <FileName>AlleSchuelerPresenter.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="View" />
+      <Property Name="SchuelerAlle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.AlleSportartenPresenter">
+    <Position X="4" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AACAgAgAAAAAIAAAAAAAABAAAAABpAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AlleSportartenPresenter.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="View" />
+      <Property Name="SportartenAlle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.AlleKursePresenter">
+    <Position X="3.75" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAAAAgAAAAAAAEAAAAAAABBAQAAAAAIAABAAA=</HashCode>
+      <FileName>AlleKursePresenter.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="View" />
+      <Property Name="KurseAlle" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.Schueler">
+    <Position X="7.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAAAAAAAAAAAAAgAQAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <FileName>Schueler.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Sportarten">
+    <Position X="7.5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAhAACAAAAQAAAAAAEAAAAAAAQABAAA=</HashCode>
+      <FileName>Sportarten.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Kurse">
+    <Position X="7.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIMAAAIAAAAAAAAAAAAAiAAAAhAAAAAQAAAAI=</HashCode>
+      <FileName>Kurse.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.AlleSchuelerView">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAEAQAAAAAAAQAAAAAAAAAAAAAAAEAAAAACAAA=</HashCode>
+      <FileName>AlleSchuelerView.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.AlleSportartenView">
+    <Position X="0.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAIAAAAAAAAAAEAAAAAgAAAAAAAAgAA=</HashCode>
+      <FileName>AlleSportartenView.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.AlleKurseView">
+    <Position X="0.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAUAAAAAAAAAAAEAAABAAAAAAwAAAAAAAEAAAg=</HashCode>
+      <FileName>AlleKurseView.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

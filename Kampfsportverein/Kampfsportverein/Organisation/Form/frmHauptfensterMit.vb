@@ -1,4 +1,12 @@
 ﻿Public Class frmHauptfensterMit
+    Public Property Presenter As MitarbeiterAllePresenter
+        Get
+            Return Nothing
+        End Get
+        Set(value As MitarbeiterAllePresenter)
+        End Set
+    End Property
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
     End Sub

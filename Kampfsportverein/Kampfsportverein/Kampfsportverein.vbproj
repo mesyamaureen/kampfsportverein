@@ -73,6 +73,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlleKursePresenter.vb" />
+    <Compile Include="AlleKurseView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlleSchuelerPresenter.vb" />
+    <Compile Include="AlleSchuelerView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlleSportartenPresenter.vb" />
+    <Compile Include="AlleSportartenView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kurse.vb" />
+    <Compile Include="Mitarbeiter.vb" />
+    <Compile Include="MitarbeiterAllePresenter.vb" />
+    <Compile Include="MitarbeiterAlleView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -189,6 +207,13 @@
     <Compile Include="Produkt\Form\dlgSportEinzel.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Schueler.vb" />
+    <Compile Include="Sportarten.vb" />
+    <Compile Include="Trainer.vb" />
+    <Compile Include="TrainerAllePresenter.vb" />
+    <Compile Include="TrainerAlleView.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -260,6 +285,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Organisation\Klassendiagramm.cd" />
+    <None Include="Produkt\KlassendiagrammProdukte.cd" />
     <None Include="TestKlassendiagramm01.cd" />
   </ItemGroup>
   <ItemGroup>
