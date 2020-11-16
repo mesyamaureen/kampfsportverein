@@ -7,7 +7,7 @@
         Get
             Return Nothing
         End Get
-        Set(value As Integer)
+        Set(value As TrainerAlleView)
         End Set
     End Property
 
