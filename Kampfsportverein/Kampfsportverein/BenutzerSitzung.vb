@@ -31,6 +31,18 @@
             beenden()
         ElseIf presenter.Ergebnis = EPresenterErgebnis.ANMELDEN Then
             mAktuellerBenutzer = presenter.AngemeldeterBenutzer
+
+            If Not (istAnmeldungErfolgreich()) Then
+                beenden()
+            End If
+
+            If istBenutzerMitarbeiter() Then
+                anzeigenUebersichtSportart()
+            ElseIf istBenutzerTrainer() Then
+                anzeigenKursUebersicht()
+            Else
+                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
+            End If
         End If
     End Sub
 
@@ -58,5 +70,9 @@
     End Function
 
     Public Function istBenutzerMitarbeiter() As Boolean
+    End Function
+
+    Public Function istBenutzerTrainer() As Boolean
+
     End Function
 End Class
