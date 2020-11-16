@@ -1,25 +1,27 @@
 ﻿Public Class BenutzerSitzung
-    Private mInstanz As BenutzerSitzung
-    Private mAktuellerBenutzer As Integer
+    'Attribut vom eigenen Typ des Singletons
+    Private Shared mInstanz As BenutzerSitzung
+    Private mAktuellerBenutzer As Benutzer
 
+    'Privater Konstruktor des Singletons
     Private Sub New()
-
+        mAktuellerBenutzer = Nothing
     End Sub
 
-    Public Shared Property Instanz As BenutzerSitzung
+    'Implementierung eines Singletons
+    Public Shared ReadOnly Property Instanz As BenutzerSitzung
         Get
-            Return Nothing
+            If IsNothing(mInstanz) Then
+                mInstanz = New BenutzerSitzung
+            End If
+            Return mInstanz
         End Get
-        Set(value As BenutzerSitzung)
-        End Set
     End Property
 
-    Public Property AktuellerBenutzer As Benutzer
+    Public ReadOnly Property AktuellerBenutzer As Benutzer
         Get
-            Return Nothing
+            Return mAktuellerBenutzer
         End Get
-        Set(value As Benutzer)
-        End Set
     End Property
 
     Public Sub anzeigenAnmeldung()
@@ -35,14 +37,18 @@
     End Sub
 
     Public Sub start()
-
+        anzeigenAnmeldung()
     End Sub
 
     Public Sub beenden()
-
+        Application.Exit()
     End Sub
 
     Public Function istAnmeldungErfolgreich() As Boolean
+        Dim bolErfolgreich As Boolean
+
+        bolErfolgreich = Not (IsNothing(mAktuellerBenutzer))
+        Return bolErfolgreich
     End Function
 
     Public Function istBenutzerMitarbeiter() As Boolean
