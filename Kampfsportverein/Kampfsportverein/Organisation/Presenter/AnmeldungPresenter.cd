@@ -33,9 +33,9 @@
       <FileName>Organisation\Presenter\AnmeldungPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="AngemeldeterBenutzer" />
-      <Property Name="Ergebnis" />
       <Property Name="View" />
+      <Property Name="Ergebnis" />
+      <Property Name="AngemeldeterBenutzer" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.AnmeldungView" Collapsed="true">
@@ -48,7 +48,7 @@
   <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
     <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAABAAAAAAAAAAAAQAAAAAAAgACAACQQACgAA=</HashCode>
       <FileName>Organisation\Model\Benutzer.vb</FileName>
     </TypeIdentifier>
   </Class>

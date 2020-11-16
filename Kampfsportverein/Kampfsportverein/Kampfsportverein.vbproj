@@ -89,8 +89,8 @@
     <Compile Include="BenutzerSitzung.vb" />
     <Compile Include="EPresenterErgebnis.vb" />
     <Compile Include="Kampfsportverein.vb" />
-    <Compile Include="Kurse.vb" />
-    <Compile Include="Mitarbeiter.vb" />
+    <Compile Include="Produkt\Model\Kurse.vb" />
+    <Compile Include="Organisation\Model\Mitarbeiter.vb" />
     <Compile Include="Organisation\Presenter\MitarbeiterAllePresenter.vb" />
     <Compile Include="Organisation\View\MitarbeiterAlleView.vb">
       <SubType>Form</SubType>
@@ -217,9 +217,9 @@
     <Compile Include="Produkt\Form\dlgSportEinzel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Schueler.vb" />
-    <Compile Include="Sportarten.vb" />
-    <Compile Include="Trainer.vb" />
+    <Compile Include="Produkt\Model\Schueler.vb" />
+    <Compile Include="Produkt\Model\Sportarten.vb" />
+    <Compile Include="Organisation\Model\Trainer.vb" />
     <Compile Include="Organisation\Presenter\TrainerAllePresenter.vb" />
     <Compile Include="Organisation\View\TrainerAlleView.vb">
       <SubType>Form</SubType>
@@ -302,7 +302,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Produkt\Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
