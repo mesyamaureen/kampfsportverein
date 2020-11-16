@@ -1,11 +1,11 @@
 ﻿Public Class AlleSchuelerView
     Inherits dlgAlleSchueler
 
-    Public Property IstSchueler As Integer
+    Public Property IstSchueler As AlleSchuelerView
         Get
             Return Nothing
         End Get
-        Set(value As Integer)
+        Set(value As AlleSchuelerView)
         End Set
     End Property
 
