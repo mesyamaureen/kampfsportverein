@@ -287,7 +287,6 @@
     <None Include="App.config" />
     <None Include="Organisation\Klassendiagramm.cd" />
     <None Include="Produkt\KlassendiagrammProdukte.cd" />
-    <None Include="TestKlassendiagramm01.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
