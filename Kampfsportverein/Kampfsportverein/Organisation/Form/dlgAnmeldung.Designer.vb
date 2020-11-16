@@ -22,86 +22,77 @@ Partial Class dlgAnmeldung
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtBenutzername = New System.Windows.Forms.TextBox()
-        Me.txtPasswort = New System.Windows.Forms.TextBox()
-        Me.lblBenutzername = New System.Windows.Forms.Label()
-        Me.lblPasswort = New System.Windows.Forms.Label()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnAnmelden = New System.Windows.Forms.Button()
+        Me.lblBenutzername = New System.Windows.Forms.Label()
+        Me.lblPasswort = New System.Windows.Forms.Label()
+        Me.txtBenutzername = New System.Windows.Forms.TextBox()
+        Me.txtPasswort = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'txtBenutzername
+        'btnAbbrechen
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(106, 26)
-        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtBenutzername.Multiline = True
-        Me.txtBenutzername.Name = "txtBenutzername"
-        Me.txtBenutzername.Size = New System.Drawing.Size(347, 25)
-        Me.txtBenutzername.TabIndex = 0
+        Me.btnAbbrechen.Location = New System.Drawing.Point(317, 200)
+        Me.btnAbbrechen.Name = "btnAbbrechen"
+        Me.btnAbbrechen.Size = New System.Drawing.Size(125, 37)
+        Me.btnAbbrechen.TabIndex = 0
+        Me.btnAbbrechen.Text = "Abbrechen"
+        Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
-        'txtPasswort
+        'btnAnmelden
         '
-        Me.txtPasswort.Location = New System.Drawing.Point(106, 75)
-        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtPasswort.Multiline = True
-        Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.Size = New System.Drawing.Size(347, 25)
-        Me.txtPasswort.TabIndex = 1
+        Me.btnAnmelden.Location = New System.Drawing.Point(184, 200)
+        Me.btnAnmelden.Name = "btnAnmelden"
+        Me.btnAnmelden.Size = New System.Drawing.Size(125, 37)
+        Me.btnAnmelden.TabIndex = 1
+        Me.btnAnmelden.Text = "Anmelden"
+        Me.btnAnmelden.UseVisualStyleBackColor = True
         '
         'lblBenutzername
         '
         Me.lblBenutzername.AutoSize = True
-        Me.lblBenutzername.Location = New System.Drawing.Point(11, 32)
-        Me.lblBenutzername.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblBenutzername.Location = New System.Drawing.Point(9, 23)
         Me.lblBenutzername.Name = "lblBenutzername"
-        Me.lblBenutzername.Size = New System.Drawing.Size(75, 13)
+        Me.lblBenutzername.Size = New System.Drawing.Size(151, 25)
         Me.lblBenutzername.TabIndex = 2
         Me.lblBenutzername.Text = "Benutzername"
         '
         'lblPasswort
         '
         Me.lblPasswort.AutoSize = True
-        Me.lblPasswort.Location = New System.Drawing.Point(11, 80)
-        Me.lblPasswort.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPasswort.Location = New System.Drawing.Point(12, 85)
         Me.lblPasswort.Name = "lblPasswort"
-        Me.lblPasswort.Size = New System.Drawing.Size(50, 13)
+        Me.lblPasswort.Size = New System.Drawing.Size(100, 25)
         Me.lblPasswort.TabIndex = 3
         Me.lblPasswort.Text = "Passwort"
         '
-        'btnAbbrechen
+        'txtBenutzername
         '
-        Me.btnAbbrechen.Location = New System.Drawing.Point(376, 242)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(77, 28)
-        Me.btnAbbrechen.TabIndex = 4
-        Me.btnAbbrechen.Text = "Abbrechen"
-        Me.btnAbbrechen.UseVisualStyleBackColor = True
+        Me.txtBenutzername.Location = New System.Drawing.Point(184, 21)
+        Me.txtBenutzername.Multiline = True
+        Me.txtBenutzername.Name = "txtBenutzername"
+        Me.txtBenutzername.Size = New System.Drawing.Size(258, 32)
+        Me.txtBenutzername.TabIndex = 4
         '
-        'btnAnmelden
+        'txtPasswort
         '
-        Me.btnAnmelden.Location = New System.Drawing.Point(284, 242)
-        Me.btnAnmelden.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnAnmelden.Name = "btnAnmelden"
-        Me.btnAnmelden.Size = New System.Drawing.Size(77, 28)
-        Me.btnAnmelden.TabIndex = 6
-        Me.btnAnmelden.Text = "Anmelden"
-        Me.btnAnmelden.UseVisualStyleBackColor = True
+        Me.txtPasswort.Location = New System.Drawing.Point(184, 78)
+        Me.txtPasswort.Multiline = True
+        Me.txtPasswort.Name = "txtPasswort"
+        Me.txtPasswort.Size = New System.Drawing.Size(258, 32)
+        Me.txtPasswort.TabIndex = 5
         '
         'dlgAnmeldung
         '
-        Me.AcceptButton = Me.btnAnmelden
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(464, 281)
-        Me.Controls.Add(Me.btnAnmelden)
-        Me.Controls.Add(Me.btnAbbrechen)
-        Me.Controls.Add(Me.lblPasswort)
-        Me.Controls.Add(Me.lblBenutzername)
+        Me.ClientSize = New System.Drawing.Size(454, 249)
         Me.Controls.Add(Me.txtPasswort)
         Me.Controls.Add(Me.txtBenutzername)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Controls.Add(Me.lblPasswort)
+        Me.Controls.Add(Me.lblBenutzername)
+        Me.Controls.Add(Me.btnAnmelden)
+        Me.Controls.Add(Me.btnAbbrechen)
         Me.Name = "dlgAnmeldung"
         Me.Text = "Anmeldung"
         Me.ResumeLayout(False)
@@ -109,18 +100,10 @@ Partial Class dlgAnmeldung
 
     End Sub
 
-    Friend WithEvents txtBenutzername As TextBox
-    Friend WithEvents txtPasswort As TextBox
-    Friend WithEvents lblBenutzername As Label
-    Friend WithEvents lblPasswort As Label
     Friend WithEvents btnAbbrechen As Button
     Friend WithEvents btnAnmelden As Button
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles lblPasswort.Click
-
-    End Sub
-
-    Private Sub dlgAnmeldung_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
+    Friend WithEvents lblBenutzername As Label
+    Friend WithEvents lblPasswort As Label
+    Friend WithEvents txtBenutzername As TextBox
+    Friend WithEvents txtPasswort As TextBox
 End Class

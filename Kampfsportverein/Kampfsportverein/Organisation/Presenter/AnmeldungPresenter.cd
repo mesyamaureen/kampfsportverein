@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kampfsportverein.dlgAnmeldung">
+    <Position X="1" Y="1" Width="1.5" />
+    <Members>
+      <Field Name="btnAbbrechen" Hidden="true" />
+      <Field Name="btnAnmelden" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="lblBenutzername" Hidden="true" />
+      <Field Name="lblPasswort" Hidden="true" />
+      <Field Name="txtBenutzername" Hidden="true" />
+      <Field Name="txtPasswort" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Presenter" Type="Kampfsportverein.AnmeldungPresenter" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="1.375" />
+        <Point X="4.667" Y="1.375" />
+        <Point X="4.667" Y="1.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAgAIAACCAgACAAAgAAAAIAgAAAAAAAA=</HashCode>
+      <FileName>Organisation\Form\dlgAnmeldung.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Presenter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.AnmeldungPresenter">
+    <Position X="4" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAgAAAAAAACAAAAAAAAAAAABBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Organisation\Presenter\AnmeldungPresenter.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AngemeldeterBenutzer" />
+      <Property Name="Ergebnis" />
+      <Property Name="View" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.AnmeldungView" Collapsed="true">
+    <Position X="1" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Organisation\View\AnmeldungView.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Organisation\Model\Benutzer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Kampfsportverein.EPresenterErgebnis" Collapsed="true">
+    <Position X="4.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>EPresenterErgebnis.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
