@@ -5,12 +5,22 @@
     Private mbyteMindestalter As Byte
 
     Sub New()
+        mstrName = String.Empty
+        mstrHerkunftsland = String.Empty
+        mstrZielgruppe = String.Empty
+        mbyteMindestalter = String.Empty
+    End Sub
 
+    Sub New(pstrName As String, pstrHerkunftsland As String, pstrZielgruppe As String, pbyteMindestalter As Byte)
+        mstrName = pstrName
+        mstrHerkunftsland = pstrHerkunftsland
+        mstrZielgruppe = pstrZielgruppe
+        mbyteMindestalter = pbyteMindestalter
     End Sub
 
     Public Property Mindestalter As Integer
         Get
-            Return Nothing
+            Return mbyteMindestalter
         End Get
         Set(value As Integer)
         End Set
@@ -18,7 +28,7 @@
 
     Public Property Herkunftsland As Integer
         Get
-            Return Nothing
+            Return mstrHerkunftsland
         End Get
         Set(value As Integer)
         End Set
@@ -26,7 +36,7 @@
 
     Public Property Name As Integer
         Get
-            Return Nothing
+            Return mstrName
         End Get
         Set(value As Integer)
         End Set
@@ -34,7 +44,7 @@
 
     Public Property Zielgruppe As Integer
         Get
-            Return Nothing
+            Return mstrZielgruppe
         End Get
         Set(value As Integer)
         End Set

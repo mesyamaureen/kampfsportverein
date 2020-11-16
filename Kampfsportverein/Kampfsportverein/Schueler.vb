@@ -1,32 +1,31 @@
 ﻿Public Class Schueler
     Private mstrVorname As String
-    Private mdatGeburtsdatum As Date
     Private mstrName As String
     Private mstrEMailAdresse As String
 
     Sub New()
-
+        mstrVorname = String.Empty
+        mstrName = String.Empty
+        mstrEMailAdresse = String.Empty
     End Sub
 
-    Public Property EMailAdresse As Integer
-        Get
-            Return Nothing
-        End Get
-        Set(value As Integer)
-        End Set
-    End Property
+    Sub New(pstrVorname As String, pstrName As String, pstrEMailAdresse As String)
+        mstrVorname = pstrEMailAdresse
+        mstrName = pstrEMailAdresse
+        mstrEMailAdresse = pstrEMailAdresse
+    End Sub
 
-    Public Property Geburtsdatum As Integer
+    Public Property EMailAdresse As String
         Get
-            Return Nothing
+            Return mstrEMailAdresse
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
     Public Property Name As Integer
         Get
-            Return Nothing
+            Return mstrName
         End Get
         Set(value As Integer)
         End Set
@@ -34,7 +33,7 @@
 
     Public Property Vorname As Integer
         Get
-            Return Nothing
+            Return mstrVorname
         End Get
         Set(value As Integer)
         End Set
