@@ -25,7 +25,13 @@
     End Property
 
     Public Sub anzeigenAnmeldung()
+        Dim presenter As AnmeldungPresenter = New AnmeldungPresenter()
 
+        If presenter.Ergebnis = EPresenterErgebnis.ABBRECHEN Then
+            beenden()
+        ElseIf presenter.Ergebnis = EPresenterErgebnis.ANMELDEN Then
+            mAktuellerBenutzer = presenter.AngemeldeterBenutzer
+        End If
     End Sub
 
     Public Sub anzeigenKursUebersicht()
