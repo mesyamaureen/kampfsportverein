@@ -1,4 +1,4 @@
 ﻿Public Enum EPresenterErgebnis
-    ABBRECHEN
-    ANMELDEN
+    ABBRECHEN = 0
+    ANMELDEN = 1
 End Enum
