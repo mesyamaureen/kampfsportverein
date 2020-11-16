@@ -85,6 +85,9 @@
     <Compile Include="AlleSportartenView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BenutzerSitzung.vb" />
+    <Compile Include="EPresenterErgebnis.vb" />
+    <Compile Include="Kampfsportverein.vb" />
     <Compile Include="Kurse.vb" />
     <Compile Include="Mitarbeiter.vb" />
     <Compile Include="MitarbeiterAllePresenter.vb" />
@@ -159,6 +162,7 @@
     <Compile Include="Organisation\Form\frmHauptfensterTrainer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Organisation\Model\Benutzer.vb" />
     <Compile Include="Produkt\Form\dlgAlleSchueler.Designer.vb">
       <DependentUpon>dlgAlleSchueler.vb</DependentUpon>
     </Compile>
@@ -275,6 +279,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Anwendung.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -290,7 +295,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Organisation\Model\" />
     <Folder Include="Organisation\Presenter\" />
     <Folder Include="Organisation\Test\" />
     <Folder Include="Organisation\View\" />

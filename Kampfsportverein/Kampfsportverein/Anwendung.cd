@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kampfsportverein.BenutzerSitzung">
+    <Position X="3.75" Y="1.5" Width="2.25" />
+    <AssociationLine Name="Instanz" Type="Kampfsportverein.BenutzerSitzung" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.634" Y="1.5" />
+        <Point X="4.634" Y="1.125" />
+        <Point X="6.375" Y="1.125" />
+        <Point X="6.375" Y="2.379" />
+        <Point X="6" Y="2.379" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIADAgAAAAgEBAAAAAABQAAAAAAAIAAAAIAAAA=</HashCode>
+      <FileName>BenutzerSitzung.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Instanz" />
+      <Property Name="AktuellerBenutzer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Organisation\Model\Benutzer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Kampfsportverein.EPresenterErgebnis">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>EPresenterErgebnis.vb</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Module Name="Kampfsportverein.Kampfsportverein">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Kampfsportverein.vb</FileName>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
