@@ -73,16 +73,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlleKursePresenter.vb" />
-    <Compile Include="AlleKurseView.vb">
+    <Compile Include="Produkt\Presenter\AlleKursePresenter.vb" />
+    <Compile Include="Produkt\View\AlleKurseView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlleSchuelerPresenter.vb" />
-    <Compile Include="AlleSchuelerView.vb">
+    <Compile Include="Produkt\Presenter\AlleSchuelerPresenter.vb" />
+    <Compile Include="Produkt\View\AlleSchuelerView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlleSportartenPresenter.vb" />
-    <Compile Include="AlleSportartenView.vb">
+    <Compile Include="Produkt\Presenter\AlleSportartenPresenter.vb" />
+    <Compile Include="Produkt\View\AlleSportartenView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Organisation\Presenter\AnmeldungPresenter.vb" />
@@ -91,8 +91,8 @@
     <Compile Include="Kampfsportverein.vb" />
     <Compile Include="Kurse.vb" />
     <Compile Include="Mitarbeiter.vb" />
-    <Compile Include="MitarbeiterAllePresenter.vb" />
-    <Compile Include="MitarbeiterAlleView.vb">
+    <Compile Include="Organisation\Presenter\MitarbeiterAllePresenter.vb" />
+    <Compile Include="Organisation\View\MitarbeiterAlleView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -220,8 +220,8 @@
     <Compile Include="Schueler.vb" />
     <Compile Include="Sportarten.vb" />
     <Compile Include="Trainer.vb" />
-    <Compile Include="TrainerAllePresenter.vb" />
-    <Compile Include="TrainerAlleView.vb">
+    <Compile Include="Organisation\Presenter\TrainerAllePresenter.vb" />
+    <Compile Include="Organisation\View\TrainerAlleView.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -302,10 +302,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
-    <Folder Include="Organisation\Test\" />
     <Folder Include="Produkt\Model\" />
-    <Folder Include="Produkt\Presenter\" />
-    <Folder Include="Produkt\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
