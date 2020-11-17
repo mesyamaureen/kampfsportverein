@@ -3,6 +3,8 @@
 
     Private mbolTrainer As Boolean
 
+
+
     Public Property IstTrainer As TrainerAlleView
         Get
             Return Nothing
