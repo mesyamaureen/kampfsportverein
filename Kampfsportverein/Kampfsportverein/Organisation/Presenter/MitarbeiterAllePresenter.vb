@@ -1,8 +1,8 @@
 ﻿Public Class MitarbeiterAllePresenter
-    Private mErgebnis As Kampfsportverein.MitarbeiterAllePresenter
-    Private mView As Kampfsportverein.MitarbeiterAllePresenter
+    Private mErgebnis As MitarbeiterAllePresenter
+    Private mView As MitarbeiterAllePresenter
 
-    Private mistMitarbeiterAlle As Kampfsportverein.MitarbeiterAllePresenter
+    Private mistMitarbeiterAlle As MitarbeiterAllePresenter
 
     Sub New()
 

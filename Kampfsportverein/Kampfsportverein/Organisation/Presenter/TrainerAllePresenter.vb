@@ -1,22 +1,22 @@
 ﻿Public Class TrainerAllePresenter
-    Private mErgebnis As Kampfsportverein.TrainerAllePresenter
-    Private mistTrainerAlle As Kampfsportverein.TrainerAllePresenter
-    Private mView As Kampfsportverein.TrainerAllePresenter
+    Private mErgebnis As TrainerAllePresenter
+    Private mistTrainerAlle As TrainerAllePresenter
+    Private mView As TrainerAllePresenter
 
 
-    Public Property Ergebnis As Integer
+    Public Property Ergebnis As TrainerAllePresenter
         Get
             Return Nothing
         End Get
-        Set(value As Integer)
+        Set(value As TrainerAllePresenter)
         End Set
     End Property
 
-    Public Property TrainerAlle As Trainer
+    Public Property TrainerAlle As TrainerAllePresenter
         Get
             Return Nothing
         End Get
-        Set(value As Trainer)
+        Set(value As TrainerAllePresenter)
         End Set
     End Property
 

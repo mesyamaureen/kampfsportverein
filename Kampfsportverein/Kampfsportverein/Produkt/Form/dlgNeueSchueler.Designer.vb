@@ -23,7 +23,7 @@ Partial Class dlgNeueSchueler
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
-        Me.btnHinzufuegen = New System.Windows.Forms.Button()
+        Me.btnErstellen = New System.Windows.Forms.Button()
         Me.lblVorname = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblGebDat = New System.Windows.Forms.Label()
@@ -44,15 +44,15 @@ Partial Class dlgNeueSchueler
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
-        'btnHinzufuegen
+        'btnErstellen
         '
-        Me.btnHinzufuegen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnHinzufuegen.Location = New System.Drawing.Point(478, 475)
-        Me.btnHinzufuegen.Name = "btnHinzufuegen"
-        Me.btnHinzufuegen.Size = New System.Drawing.Size(139, 42)
-        Me.btnHinzufuegen.TabIndex = 1
-        Me.btnHinzufuegen.Text = "Hinzufügen"
-        Me.btnHinzufuegen.UseVisualStyleBackColor = True
+        Me.btnErstellen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnErstellen.Location = New System.Drawing.Point(478, 475)
+        Me.btnErstellen.Name = "btnErstellen"
+        Me.btnErstellen.Size = New System.Drawing.Size(139, 42)
+        Me.btnErstellen.TabIndex = 1
+        Me.btnErstellen.Text = "Erstellen"
+        Me.btnErstellen.UseVisualStyleBackColor = True
         '
         'lblVorname
         '
@@ -124,7 +124,7 @@ Partial Class dlgNeueSchueler
         '
         'dlgNeueSchueler
         '
-        Me.AcceptButton = Me.btnHinzufuegen
+        Me.AcceptButton = Me.btnErstellen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
@@ -137,7 +137,7 @@ Partial Class dlgNeueSchueler
         Me.Controls.Add(Me.lblGebDat)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblVorname)
-        Me.Controls.Add(Me.btnHinzufuegen)
+        Me.Controls.Add(Me.btnErstellen)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Name = "dlgNeueSchueler"
         Me.Text = "Neue Schüler"
@@ -147,7 +147,7 @@ Partial Class dlgNeueSchueler
     End Sub
 
     Friend WithEvents btnAbbrechen As Button
-    Friend WithEvents btnHinzufuegen As Button
+    Friend WithEvents btnErstellen As Button
     Friend WithEvents lblVorname As Label
     Friend WithEvents lblName As Label
     Friend WithEvents lblGebDat As Label

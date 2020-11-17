@@ -87,7 +87,7 @@
     </Compile>
     <Compile Include="Organisation\Presenter\AnmeldungPresenter.vb" />
     <Compile Include="BenutzerSitzung.vb" />
-    <Compile Include="EPresenterErgebnis.vb" />
+    <Compile Include="Common\Presenter\EPresenterErgebnis.vb" />
     <Compile Include="Kampfsportverein.vb" />
     <Compile Include="Produkt\Model\Kurse.vb" />
     <Compile Include="Organisation\Model\Mitarbeiter.vb" />
@@ -300,8 +300,6 @@
     <None Include="Organisation\Presenter\AnmeldungPresenter.cd" />
     <None Include="Produkt\KlassendiagrammProdukte.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

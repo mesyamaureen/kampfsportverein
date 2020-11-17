@@ -39,11 +39,14 @@ Partial Class frmHauptfensterMit
         Me.menuAlleSchueler = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuAlleMitarbeiter = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuHilfe = New System.Windows.Forms.ToolStripMenuItem()
+        Me.picboxNeuerKurs = New System.Windows.Forms.PictureBox()
+        Me.btnNeuerKurs = New System.Windows.Forms.Button()
         Me.grpboxMenu.SuspendLayout()
         CType(Me.picboxNeuerTrainer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picboxNeueSportart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpboxSportartliste.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.picboxNeuerKurs, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnBeenden
@@ -57,6 +60,8 @@ Partial Class frmHauptfensterMit
         '
         'grpboxMenu
         '
+        Me.grpboxMenu.Controls.Add(Me.btnNeuerKurs)
+        Me.grpboxMenu.Controls.Add(Me.picboxNeuerKurs)
         Me.grpboxMenu.Controls.Add(Me.btnNeuerTrainer)
         Me.grpboxMenu.Controls.Add(Me.btnNeueSportart)
         Me.grpboxMenu.Controls.Add(Me.picboxNeuerTrainer)
@@ -69,7 +74,7 @@ Partial Class frmHauptfensterMit
         '
         'btnNeuerTrainer
         '
-        Me.btnNeuerTrainer.Location = New System.Drawing.Point(83, 621)
+        Me.btnNeuerTrainer.Location = New System.Drawing.Point(83, 443)
         Me.btnNeuerTrainer.Name = "btnNeuerTrainer"
         Me.btnNeuerTrainer.Size = New System.Drawing.Size(182, 43)
         Me.btnNeuerTrainer.TabIndex = 3
@@ -78,7 +83,7 @@ Partial Class frmHauptfensterMit
         '
         'btnNeueSportart
         '
-        Me.btnNeueSportart.Location = New System.Drawing.Point(83, 261)
+        Me.btnNeueSportart.Location = New System.Drawing.Point(83, 179)
         Me.btnNeueSportart.Name = "btnNeueSportart"
         Me.btnNeueSportart.Size = New System.Drawing.Size(182, 43)
         Me.btnNeueSportart.TabIndex = 2
@@ -87,17 +92,17 @@ Partial Class frmHauptfensterMit
         '
         'picboxNeuerTrainer
         '
-        Me.picboxNeuerTrainer.Location = New System.Drawing.Point(83, 427)
+        Me.picboxNeuerTrainer.Location = New System.Drawing.Point(95, 299)
         Me.picboxNeuerTrainer.Name = "picboxNeuerTrainer"
-        Me.picboxNeuerTrainer.Size = New System.Drawing.Size(182, 161)
+        Me.picboxNeuerTrainer.Size = New System.Drawing.Size(156, 122)
         Me.picboxNeuerTrainer.TabIndex = 1
         Me.picboxNeuerTrainer.TabStop = False
         '
         'picboxNeueSportart
         '
-        Me.picboxNeueSportart.Location = New System.Drawing.Point(83, 67)
+        Me.picboxNeueSportart.Location = New System.Drawing.Point(95, 30)
         Me.picboxNeueSportart.Name = "picboxNeueSportart"
-        Me.picboxNeueSportart.Size = New System.Drawing.Size(182, 161)
+        Me.picboxNeueSportart.Size = New System.Drawing.Size(156, 122)
         Me.picboxNeueSportart.TabIndex = 0
         Me.picboxNeueSportart.TabStop = False
         '
@@ -147,7 +152,6 @@ Partial Class frmHauptfensterMit
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuMeinKonto, Me.menuAlleTrainer, Me.menuAlleSchueler, Me.menuAlleMitarbeiter, Me.menuHilfe})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
@@ -159,32 +163,49 @@ Partial Class frmHauptfensterMit
         'menuMeinKonto
         '
         Me.menuMeinKonto.Name = "menuMeinKonto"
-        Me.menuMeinKonto.Size = New System.Drawing.Size(160, 36)
+        Me.menuMeinKonto.Size = New System.Drawing.Size(152, 36)
         Me.menuMeinKonto.Text = "Mein Konto"
         '
         'menuAlleTrainer
         '
         Me.menuAlleTrainer.Name = "menuAlleTrainer"
-        Me.menuAlleTrainer.Size = New System.Drawing.Size(154, 36)
+        Me.menuAlleTrainer.Size = New System.Drawing.Size(146, 36)
         Me.menuAlleTrainer.Text = "Alle Trainer"
         '
         'menuAlleSchueler
         '
         Me.menuAlleSchueler.Name = "menuAlleSchueler"
-        Me.menuAlleSchueler.Size = New System.Drawing.Size(161, 36)
+        Me.menuAlleSchueler.Size = New System.Drawing.Size(153, 36)
         Me.menuAlleSchueler.Text = "Alle Schüler"
         '
         'menuAlleMitarbeiter
         '
         Me.menuAlleMitarbeiter.Name = "menuAlleMitarbeiter"
-        Me.menuAlleMitarbeiter.Size = New System.Drawing.Size(200, 36)
+        Me.menuAlleMitarbeiter.Size = New System.Drawing.Size(192, 36)
         Me.menuAlleMitarbeiter.Text = "Alle Mitarbeiter"
         '
         'menuHilfe
         '
         Me.menuHilfe.Name = "menuHilfe"
-        Me.menuHilfe.Size = New System.Drawing.Size(85, 36)
+        Me.menuHilfe.Size = New System.Drawing.Size(77, 36)
         Me.menuHilfe.Text = "Hilfe"
+        '
+        'picboxNeuerKurs
+        '
+        Me.picboxNeuerKurs.Location = New System.Drawing.Point(95, 573)
+        Me.picboxNeuerKurs.Name = "picboxNeuerKurs"
+        Me.picboxNeuerKurs.Size = New System.Drawing.Size(156, 122)
+        Me.picboxNeuerKurs.TabIndex = 4
+        Me.picboxNeuerKurs.TabStop = False
+        '
+        'btnNeuerKurs
+        '
+        Me.btnNeuerKurs.Location = New System.Drawing.Point(83, 720)
+        Me.btnNeuerKurs.Name = "btnNeuerKurs"
+        Me.btnNeuerKurs.Size = New System.Drawing.Size(182, 43)
+        Me.btnNeuerKurs.TabIndex = 5
+        Me.btnNeuerKurs.Text = "Neuer Kurs"
+        Me.btnNeuerKurs.UseVisualStyleBackColor = True
         '
         'frmHauptfensterMit
         '
@@ -204,6 +225,7 @@ Partial Class frmHauptfensterMit
         Me.grpboxSportartliste.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.picboxNeuerKurs, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -226,4 +248,6 @@ Partial Class frmHauptfensterMit
     Friend WithEvents menuAlleMitarbeiter As ToolStripMenuItem
     Friend WithEvents menuHilfe As ToolStripMenuItem
     Friend WithEvents Button3 As Button
+    Friend WithEvents btnNeuerKurs As Button
+    Friend WithEvents picboxNeuerKurs As PictureBox
 End Class

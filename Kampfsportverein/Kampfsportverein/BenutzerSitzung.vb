@@ -51,7 +51,15 @@
     End Sub
 
     Public Sub anzeigenUebersichtSportart()
+        Dim presenter As MitarbeiterAllePresenter
+        presenter = New MitarbeiterAllePresenter()
 
+        Select Case presenter.Ergebnis
+            Case EPresenterErgebnis.BEENDEN
+                beenden()
+            Case EPresenterErgebnis.BEARBEITEN
+                beenden()
+        End Select
     End Sub
 
     Public Sub start()
@@ -86,4 +94,8 @@
         t = mAktuellerBenutzer.GetType()
         Return (t.Equals(GetType(Trainer)))
     End Function
+
+    Public Sub anzeigenEinzel_()
+
+    End Sub
 End Class

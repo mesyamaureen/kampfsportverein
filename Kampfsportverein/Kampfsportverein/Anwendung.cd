@@ -7,12 +7,12 @@
         <Point X="4.634" Y="1.5" />
         <Point X="4.634" Y="1.125" />
         <Point X="6.375" Y="1.125" />
-        <Point X="6.375" Y="2.379" />
-        <Point X="6" Y="2.379" />
+        <Point X="6.375" Y="2.43" />
+        <Point X="6" Y="2.43" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAIADAgAAAAgEBAAAAAABQAAAAAAAIAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAIADAgAAAAgEBAAAAAABQAAAAAAAICEAAIAAAA=</HashCode>
       <FileName>BenutzerSitzung.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -23,15 +23,15 @@
   <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAABAAAAAAAAAAAAQAAAAAAAgACAACQQACgAA=</HashCode>
       <FileName>Organisation\Model\Benutzer.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Kampfsportverein.EPresenterErgebnis">
     <Position X="6.75" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
-      <FileName>EPresenterErgebnis.vb</FileName>
+      <HashCode>AgAAEAAAAAAgAggAAAAAIIEAAEgIAAIAAQAAAABAIIA=</HashCode>
+      <FileName>Common\Presenter\EPresenterErgebnis.vb</FileName>
     </TypeIdentifier>
   </Enum>
   <Module Name="Kampfsportverein.Kampfsportverein">

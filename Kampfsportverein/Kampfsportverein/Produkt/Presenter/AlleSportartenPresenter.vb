@@ -1,5 +1,5 @@
 ﻿Public Class AlleSportartenPresenter
-    Private mErgebnis As Integer
+    Private mErgebnis As AlleSportartenPresenter
     Private mistSportart As Integer
     Private mView As Integer
 
@@ -11,11 +11,11 @@
         End Set
     End Property
 
-    Public Property Ergebnis As Kampfsportverein.AlleSportartenPresenter
+    Public Property Ergebnis As AlleSportartenPresenter
         Get
             Return Nothing
         End Get
-        Set(value As Kampfsportverein.AlleSportartenPresenter)
+        Set(value As AlleSportartenPresenter)
         End Set
     End Property
 
