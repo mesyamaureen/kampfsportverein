@@ -60,4 +60,8 @@
         Set(value As Integer)
         End Set
     End Property
+
+    Public Shared Widening Operator CType(v As (String, String, String, String, Integer)) As Trainer
+        Throw New NotImplementedException()
+    End Operator
 End Class
