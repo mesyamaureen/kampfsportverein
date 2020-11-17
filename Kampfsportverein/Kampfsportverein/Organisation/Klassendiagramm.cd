@@ -38,21 +38,21 @@
       <FileName>Organisation\Presenter\TrainerAllePresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
       <Property Name="TrainerAlle" />
+      <Property Name="View" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Mitarbeiter">
     <Position X="9" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\Model\Mitarbeiter.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Trainer">
     <Position X="8.25" Y="5.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAABAAAAAAAAAAAAQAAAAAAAgACAACQQACgAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\Model\Trainer.vb</FileName>
     </TypeIdentifier>
   </Class>
@@ -69,6 +69,41 @@
       <HashCode>AAgEAAAAAEAAAAABAAAAAAICAAAAAAAAAAAAAYAAAAA=</HashCode>
       <FileName>Organisation\View\TrainerAlleView.vb</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.dlgMeinKontoTrainer" Collapsed="true">
+    <Position X="0.5" Y="11" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAECAAAAAIQACiAAACAAAAIAAAIAgAAAAAAAQ=</HashCode>
+      <FileName>Organisation\Form\dlgMeinKontoTrainer.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Presenter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.TrainerkontoView">
+    <Position X="0.5" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MeinTrainerkontoView.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.TrainerkontoPresenter">
+    <Position X="3.5" Y="11.25" Width="2.75" />
+    <AssociationLine Name="TrainerEinzel" Type="Kampfsportverein.Trainer" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.25" Y="12.043" />
+        <Point X="9.625" Y="12.043" />
+        <Point X="9.625" Y="7.627" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAABBAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TrainerkontoPresenter.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TrainerEinzel" />
+      <Property Name="View" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

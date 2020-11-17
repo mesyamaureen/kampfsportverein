@@ -73,6 +73,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MeinTrainerkontoView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Produkt\Presenter\AlleKursePresenter.vb" />
     <Compile Include="Produkt\View\AlleKurseView.vb">
       <SubType>Form</SubType>
@@ -224,6 +227,7 @@
     <Compile Include="Organisation\View\TrainerAlleView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TrainerkontoPresenter.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
