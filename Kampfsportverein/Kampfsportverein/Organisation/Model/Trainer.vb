@@ -1,63 +1,19 @@
 ﻿Public Class Trainer
-    Public mstrBenutzername As String
-    Private mstrPasswort As String
-    Private mstrVorname As String
-    Private mstrName As String
-    Private mintBenutzerID As Integer
+    Inherits Benutzer
 
-    Sub New()
-        mstrBenutzername = String.Empty
-        mstrPasswort = String.Empty
-        mstrVorname = String.Empty
-        mstrName = String.Empty
-        mintBenutzerID = Nothing
-    End Sub
-
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
-        mstrBenutzername = pstrBenutzername
-        mstrPasswort = pstrPasswort
-        mstrVorname = pstrVorname
-        mstrName = pstrName
-        mintBenutzerID = pintBenutzerID
-    End Sub
-
-    Public Property BenutzerID As Integer
+    Public Property Schueler As Schueler
         Get
-            Return mintBenutzerID
+            Return Nothing
         End Get
-        Set(value As Integer)
+        Set(value As Schueler)
         End Set
     End Property
 
-    Public Property Benutzername As Integer
+    Public Property Kurse As Kurse
         Get
-            Return mstrBenutzername
+            Return Nothing
         End Get
-        Set(value As Integer)
-        End Set
-    End Property
-
-    Public Property Name As Integer
-        Get
-            Return mstrName
-        End Get
-        Set(value As Integer)
-        End Set
-    End Property
-
-    Public Property Vorname As Integer
-        Get
-            Return mstrVorname
-        End Get
-        Set(value As Integer)
-        End Set
-    End Property
-
-    Public Property Passwort As Integer
-        Get
-            Return mstrPasswort
-        End Get
-        Set(value As Integer)
+        Set(value As Kurse)
         End Set
     End Property
 End Class

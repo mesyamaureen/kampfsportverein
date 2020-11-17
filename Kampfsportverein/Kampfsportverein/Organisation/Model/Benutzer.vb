@@ -5,6 +5,24 @@
     Private mstrPasswort As String
     Private mintBenutzerID As Integer
 
+    Sub New()
+        mstrBenutzername = String.Empty
+        mstrPasswort = String.Empty
+        mstrVorname = String.Empty
+        mstrName = String.Empty
+        mintBenutzerID = Nothing
+    End Sub
+
+
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
+        mstrBenutzername = pstrBenutzername
+        mstrPasswort = pstrPasswort
+        mstrVorname = pstrVorname
+        mstrName = pstrName
+        mintBenutzerID = pintBenutzerID
+
+    End Sub
+
     Public Property BenutzerID As Integer
         Get
             Return Nothing
