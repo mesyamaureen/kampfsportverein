@@ -1,13 +1,30 @@
 ﻿Public Class Benutzer
-    Private mstrVorname As String
-    Private mstrName As String
     Private mstrBenutzername As String
     Private mstrPasswort As String
+    Private mstrVorname As String
+    Private mstrName As String
     Private mintBenutzerID As Integer
+
+    Sub New()
+        mstrVorname = String.Empty
+        mstrName = String.Empty
+        mstrBenutzername = String.Empty
+        mstrPasswort = String.Empty
+        mintBenutzerID = Nothing
+    End Sub
+
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
+        mstrBenutzername = pstrBenutzername
+        mstrPasswort = pstrPasswort
+        mstrVorname = pstrVorname
+        mstrName = pstrName
+        mintBenutzerID = pintBenutzerID
+
+    End Sub
 
     Public Property BenutzerID As Integer
         Get
-            Return Nothing
+            Return mintBenutzerID
         End Get
         Set(value As Integer)
         End Set
@@ -15,7 +32,7 @@
 
     Public Property Benutzername As String
         Get
-            Return Nothing
+            Return mstrBenutzername
         End Get
         Set(value As String)
         End Set
@@ -23,7 +40,7 @@
 
     Public Property Name As String
         Get
-            Return Nothing
+            Return mstrName
         End Get
         Set(value As String)
         End Set
@@ -31,7 +48,7 @@
 
     Public Property Passwort As String
         Get
-            Return Nothing
+            Return mstrPasswort
         End Get
         Set(value As String)
         End Set
@@ -39,7 +56,7 @@
 
     Public Property Vorname As String
         Get
-            Return Nothing
+            Return mstrVorname
         End Get
         Set(value As String)
         End Set
