@@ -37,26 +37,40 @@
             End If
 
             If istBenutzerMitarbeiter() Then
-                anzeigenHauptfensterMitarbeiter()
+                anzeigenKursuebersicht()
             ElseIf istBenutzerTrainer() Then
-                anzeigenHauptfensterTrainer()
+                anzeigenSportarten()
             Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
             End If
         End If
     End Sub
 
-    Public Sub anzeigenHauptfensterTrainer()
+    Public Sub anzeigenSportarten()
+        Dim presenter As TrainerAllePresenter
+        presenter = New TrainerAllePresenter()
 
+        Select Case presenter.Ergebnis
+            Case EPresenterErgebnis.BEENDEN
+                beenden()
+            Case EPresenterErgebnis.BEARBEITEN
+                presenter.verarbeiteKursuebersichtAnzeigen()
+            Case Else
+                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
+        End Select
     End Sub
 
-    Public Sub anzeigenHauptfensterMitarbeiter()
+    Public Sub anzeigenKursuebersicht()
         Dim presenter As MitarbeiterAllePresenter
         presenter = New MitarbeiterAllePresenter()
 
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
+            Case EPresenterErgebnis.BEARBEITEN
+                presenter.verarbeiteBearbeiten()
+            Case Else
+                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
     End Sub
 

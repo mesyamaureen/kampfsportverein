@@ -1,5 +1,5 @@
 ﻿Public Class MitarbeiterAllePresenter
-    Private mErgebnis As MitarbeiterAllePresenter
+    Private mErgebnis As Integer
     Private mView As MitarbeiterAllePresenter
 
     Private mistMitarbeiterAlle As MitarbeiterAllePresenter

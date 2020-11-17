@@ -3,11 +3,18 @@
     Private mView As AnmeldungView
     Private mAngemeldeterBenutzer As Benutzer
 
+    Public Sub New()
+        mView = New AnmeldungView()
+        'anzeigen()
+        Application.Run(mView)
+    End Sub
+
     Public Property View As AnmeldungView
         Get
             Return Nothing
         End Get
         Set(value As AnmeldungView)
+            mView = value
         End Set
     End Property
 

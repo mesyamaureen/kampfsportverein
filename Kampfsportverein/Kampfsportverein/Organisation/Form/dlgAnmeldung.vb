@@ -1,5 +1,5 @@
 ﻿Public Class dlgAnmeldung
-    Private mPresenter As AnmeldungPresenter
+    Protected mPresenter As AnmeldungPresenter
 
     Public Property Presenter As AnmeldungPresenter
         Get
