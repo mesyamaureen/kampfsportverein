@@ -1,6 +1,6 @@
 ﻿Public Class TrainerAllePresenter
     Private mErgebnis As Integer
-    Private mistTrainerAlle As TrainerAllePresenter
+    Private mistTrainerAlle As Trainer
     Private mView As TrainerAllePresenter
 
 
@@ -12,11 +12,11 @@
         End Set
     End Property
 
-    Public Property TrainerAlle As TrainerAllePresenter
+    Public Property TrainerAlle As Trainer
         Get
             Return Nothing
         End Get
-        Set(value As TrainerAllePresenter)
+        Set(value As Trainer)
         End Set
     End Property
 

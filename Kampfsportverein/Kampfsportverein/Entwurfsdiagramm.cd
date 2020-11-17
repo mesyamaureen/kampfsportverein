@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAABAAAAAAAAAAAAQAAAAAAAgACAACQQACgAA=</HashCode>
+      <FileName>Organisation\Model\Benutzer.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Mitarbeiter" Collapsed="true">
+    <Position X="1" Y="1" Width="1.5" />
+    <AssociationLine Name="Sportarten" Type="Kampfsportverein.Sportarten" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="1.438" />
+        <Point X="6.75" Y="1.438" />
+        <Point X="6.75" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Schueler" Type="Kampfsportverein.Schueler" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="1.562" />
+        <Point X="4.625" Y="1.562" />
+        <Point X="4.625" Y="5.283" />
+        <Point X="5" Y="5.283" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Organisation\Model\Mitarbeiter.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kurse" />
+      <Property Name="Sportarten" />
+      <Property Name="Schueler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.Trainer" Collapsed="true">
+    <Position X="1.25" Y="4.5" Width="1.5" />
+    <AssociationLine Name="Schueler" Type="Kampfsportverein.Schueler">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.808" Y="0.044" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAIAAAAAQAAAAAAAgEAAACAAAAgAA=</HashCode>
+      <FileName>Organisation\Model\Trainer.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Schueler" />
+      <Property Name="Kurse" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Kampfsportverein.Sportarten" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAhAACAAAAQAAAAAAEAAAAAAAQABAAA=</HashCode>
+      <FileName>Produkt\Model\Sportarten.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Schueler" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACAAAAABAAAAAAAAAAAAQAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <FileName>Produkt\Model\Schueler.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Kurse" Collapsed="true">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIIMAAAIAAAAAAAAAQAACCAAAAhAAAAAQAAAAI=</HashCode>
+      <FileName>Produkt\Model\Kurse.vb</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Sportarten" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

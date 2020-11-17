@@ -6,10 +6,11 @@
     Private mintBenutzerID As Integer
 
     Sub New()
-        mstrVorname = String.Empty
-        mstrName = String.Empty
+
         mstrBenutzername = String.Empty
         mstrPasswort = String.Empty
+        mstrVorname = String.Empty
+        mstrName = String.Empty
         mintBenutzerID = Nothing
     End Sub
 
