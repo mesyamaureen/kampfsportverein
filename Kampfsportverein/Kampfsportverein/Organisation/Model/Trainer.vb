@@ -29,35 +29,35 @@
         End Set
     End Property
 
-    Public Property Benutzername As Integer
+    Public Property Benutzername As String
         Get
             Return mstrBenutzername
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
-    Public Property Name As Integer
+    Public Property Name As String
         Get
             Return mstrName
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
-    Public Property Vorname As Integer
+    Public Property Vorname As String
         Get
             Return mstrVorname
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
-    Public Property Passwort As Integer
+    Public Property Passwort As String
         Get
             Return mstrPasswort
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
