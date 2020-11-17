@@ -7,12 +7,12 @@
         <Point X="4.634" Y="1.5" />
         <Point X="4.634" Y="1.125" />
         <Point X="6.375" Y="1.125" />
-        <Point X="6.375" Y="2.43" />
-        <Point X="6" Y="2.43" />
+        <Point X="6.375" Y="2.379" />
+        <Point X="6" Y="2.379" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAIADAgAAAAgEBAAAAAABQAAAAAAAICEAAIAAAA=</HashCode>
+      <HashCode>AAAAAAIACAgAAAAkABAAAAAABQAAAAABAICAAAIAAAA=</HashCode>
       <FileName>BenutzerSitzung.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -37,27 +37,25 @@
             End If
 
             If istBenutzerMitarbeiter() Then
-                anzeigenUebersichtSportart()
+                anzeigenHauptfensterMitarbeiter()
             ElseIf istBenutzerTrainer() Then
-                anzeigenKursUebersicht()
+                anzeigenHauptfensterTrainer()
             Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
             End If
         End If
     End Sub
 
-    Public Sub anzeigenKursUebersicht()
+    Public Sub anzeigenHauptfensterTrainer()
 
     End Sub
 
-    Public Sub anzeigenUebersichtSportart()
+    Public Sub anzeigenHauptfensterMitarbeiter()
         Dim presenter As MitarbeiterAllePresenter
         presenter = New MitarbeiterAllePresenter()
 
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
-                beenden()
-            Case EPresenterErgebnis.BEARBEITEN
                 beenden()
         End Select
     End Sub
@@ -94,8 +92,4 @@
         t = mAktuellerBenutzer.GetType()
         Return (t.Equals(GetType(Trainer)))
     End Function
-
-    Public Sub anzeigenEinzel_()
-
-    End Sub
 End Class
