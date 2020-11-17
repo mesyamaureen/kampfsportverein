@@ -36,4 +36,11 @@
     Public Sub anzeigenBeenden()
 
     End Sub
+
+    Public Sub anzeigen(plngIndex As Long, pintBenutzerID As Integer, pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
+
+        Dim zeile As ListViewItem
+
+    End Sub
+
 End Class

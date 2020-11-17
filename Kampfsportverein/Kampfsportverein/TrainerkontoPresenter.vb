@@ -1,5 +1,8 @@
 ﻿Public Class TrainerkontoPresenter
-    Sub New()
+    Sub New(pPresenter As TrainerkontoPresenter)
+
+        MyBase.New
+
 
     End Sub
 
@@ -13,7 +16,7 @@
 
     Public Property TrainerEinzel As Trainer
         Get
-            Return Nothing
+            Return TrainerEinzel
         End Get
         Set(value As Trainer)
         End Set
@@ -21,9 +24,15 @@
 
     Public Property View As TrainerkontoView
         Get
-            Return Nothing
+            Return TrainerkontoView
         End Get
         Set(value As TrainerkontoView)
         End Set
     End Property
+
+
+
+
+
+
 End Class

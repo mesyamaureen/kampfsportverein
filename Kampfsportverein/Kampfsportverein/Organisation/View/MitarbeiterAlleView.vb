@@ -46,4 +46,15 @@
     Public Sub anzeigenBeenden()
 
     End Sub
+
+    Public Sub leeren()
+
+        anzeigenSchaltflächen()
+
+    End Sub
+
+    Public Sub anzeigenSchaltflächen()
+
+    End Sub
+
 End Class
