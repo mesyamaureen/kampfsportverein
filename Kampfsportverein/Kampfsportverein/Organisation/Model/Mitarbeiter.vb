@@ -2,9 +2,21 @@
     Inherits Benutzer
 
 
-    Public Shared Widening Operator CType(v As (String, String, String, String, Integer)) As Mitarbeiter
-        Throw New NotImplementedException()
-    End Operator
+    ' Public Shared Widening Operator CType(v As (String, String, String, String, Integer)) As Mitarbeiter
+    'Throw New NotImplementedException()
+    'End Operator
+
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
+
+        MyBase.New(pstrBenutzername, pstrPasswort, pstrVorname, pstrName, pintBenutzerID)
+
+    End Sub
+
+    Sub New()
+
+        MyBase.New()
+
+    End Sub
 
     Public Property Kurse As Kurse
         Get

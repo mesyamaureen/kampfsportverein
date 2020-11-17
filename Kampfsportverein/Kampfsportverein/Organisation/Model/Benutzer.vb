@@ -12,6 +12,7 @@
         mstrVorname = String.Empty
         mstrName = String.Empty
         mintBenutzerID = Nothing
+
     End Sub
 
     Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
@@ -23,19 +24,13 @@
 
     End Sub
 
-    Public Property BenutzerID As Integer
-        Get
-            Return mintBenutzerID
-        End Get
-        Set(value As Integer)
-        End Set
-    End Property
+
 
     Public Property Benutzername As String
         Get
             Return mstrBenutzername
         End Get
-        Set(value As String)
+        Set(ByVal value As String)
         End Set
     End Property
 
@@ -43,7 +38,7 @@
         Get
             Return mstrName
         End Get
-        Set(value As String)
+        Set(ByVal value As String)
         End Set
     End Property
 
@@ -51,7 +46,7 @@
         Get
             Return mstrPasswort
         End Get
-        Set(value As String)
+        Set(ByVal value As String)
         End Set
     End Property
 
@@ -59,7 +54,16 @@
         Get
             Return mstrVorname
         End Get
-        Set(value As String)
+        Set(ByVal value As String)
         End Set
     End Property
+
+    Public Property BenutzerID As Integer
+        Get
+            Return mintBenutzerID
+        End Get
+        Set(ByVal value As Integer)
+        End Set
+    End Property
+
 End Class
