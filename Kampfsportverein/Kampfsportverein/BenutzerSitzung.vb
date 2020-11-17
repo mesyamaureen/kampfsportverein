@@ -70,9 +70,20 @@
     End Function
 
     Public Function istBenutzerMitarbeiter() As Boolean
+        Dim t As Type
+        If mAktuellerBenutzer Is Nothing Then
+            Return False
+        End If
+        t = mAktuellerBenutzer.GetType()
+        Return (t.Equals(GetType(Mitarbeiter)))
     End Function
 
     Public Function istBenutzerTrainer() As Boolean
-
+        Dim t As Type
+        If mAktuellerBenutzer Is Nothing Then
+            Return False
+        End If
+        t = mAktuellerBenutzer.GetType()
+        Return (t.Equals(GetType(Trainer)))
     End Function
 End Class
