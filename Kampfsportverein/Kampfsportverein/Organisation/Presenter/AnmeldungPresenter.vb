@@ -4,7 +4,7 @@
     Private mAngemeldeterBenutzer As Benutzer
 
     Public Sub New()
-        mView = New AnmeldungView()
+        mView = New AnmeldungView(Me)
         'anzeigen()
         Application.Run(mView)
     End Sub
