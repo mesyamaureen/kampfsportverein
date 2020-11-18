@@ -6,17 +6,17 @@
 
     'Parameterloser Konstruktor
     Public Sub New()
-        'mView = New TrainerAlleView(Me) '- warte auf New Konstruktor bei TrainerAlleView
-        ''mErgebnis = EPresenterErgebnis.OHNE
+        mView = New TrainerAlleView '(Me) '- warte auf New Konstruktor bei TrainerAlleView
+        'mErgebnis = EPresenterErgebnis.OHNE
         'mlstKursAlle = Kampfsportverein.erzeugeBeispieldaten
-        ''mTrainerAlle = New Trainer
+        mTrainerAlle = New Trainer
 
-        ''ermitteln der anzuzeigenden Daten
+        'ermitteln der anzuzeigenden Daten
         'ermittelnKursAlle()
-        ''Daten an die Oberfläche übergeben
-        'anzeigen()
-        ''Anzeige der View als Oberfläche (Formular)
-        'Application.Run(mView)
+        'Daten an die Oberfläche übergeben
+        anzeigen()
+        'Anzeige der View als Oberfläche (Formular)
+        Application.Run(mView)
     End Sub
 
     Public Property Ergebnis As EPresenterErgebnis
@@ -60,8 +60,13 @@
     End Sub
 
     Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto
-        mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
-        mView.Close()
+        Dim presenter As TrainerkontoPresenter
+        If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
+            presenter.anzeigen()
+        Else 'nichts tun
+        End If
+        'mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
+
     End Sub
 
     Public Sub verarbeiteKursuebersichtAnzeigen(lngIndex As Long) 'button Bearbeiten

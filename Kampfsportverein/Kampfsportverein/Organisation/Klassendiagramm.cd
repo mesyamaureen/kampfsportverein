@@ -73,7 +73,7 @@
   <Class Name="Kampfsportverein.dlgMeinKontoTrainer" Collapsed="true">
     <Position X="0.5" Y="11" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAECAAAAAIQACiAAACAAAAIAAAIAgAAAAAAAQ=</HashCode>
+      <HashCode>AAEAgAAAECAAAAAIQACiAAACAAAAIAAAIAgAAAAAAAQ=</HashCode>
       <FileName>Organisation\Form\dlgMeinKontoTrainer.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -91,13 +91,13 @@
     <Position X="3.5" Y="11.25" Width="2.75" />
     <AssociationLine Name="TrainerEinzel" Type="Kampfsportverein.Trainer" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.25" Y="12.666" />
-        <Point X="9.375" Y="12.666" />
+        <Point X="6.25" Y="12.758" />
+        <Point X="9.375" Y="12.758" />
         <Point X="9.375" Y="8.127" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAgAAAABAAAAQAAAAAAAAAEBBIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAgAAAABAAAAQAAAAAAAACEhBIAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainerkontoPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

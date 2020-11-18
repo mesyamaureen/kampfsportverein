@@ -22,7 +22,7 @@ Partial Class dlgMeinKontoTrainer
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnSchliessen = New System.Windows.Forms.Button()
+        Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -36,16 +36,16 @@ Partial Class dlgMeinKontoTrainer
         Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btnSchliessen
+        'btnAbbrechen
         '
-        Me.btnSchliessen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSchliessen.Location = New System.Drawing.Point(1077, 561)
-        Me.btnSchliessen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSchliessen.Name = "btnSchliessen"
-        Me.btnSchliessen.Size = New System.Drawing.Size(165, 56)
-        Me.btnSchliessen.TabIndex = 0
-        Me.btnSchliessen.Text = "Schließen"
-        Me.btnSchliessen.UseVisualStyleBackColor = True
+        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1077, 561)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAbbrechen.Name = "btnAbbrechen"
+        Me.btnAbbrechen.Size = New System.Drawing.Size(165, 56)
+        Me.btnAbbrechen.TabIndex = 0
+        Me.btnAbbrechen.Text = "Abbrechen"
+        Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -133,9 +133,10 @@ Partial Class dlgMeinKontoTrainer
         'txtPasswort
         '
         Me.txtPasswort.Location = New System.Drawing.Point(244, 409)
-        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPasswort.Multiline = True
         Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.Size = New System.Drawing.Size(999, 31)
+        Me.txtPasswort.Size = New System.Drawing.Size(999, 44)
         Me.txtPasswort.TabIndex = 12
         '
         'btnSpeichern
@@ -152,7 +153,7 @@ Partial Class dlgMeinKontoTrainer
         Me.AcceptButton = Me.btnSpeichern
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnSchliessen
+        Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1253, 629)
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.txtPasswort)
@@ -165,7 +166,7 @@ Partial Class dlgMeinKontoTrainer
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btnSchliessen)
+        Me.Controls.Add(Me.btnAbbrechen)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "dlgMeinKontoTrainer"
         Me.Text = "Mein Trainerkonto"
@@ -174,7 +175,7 @@ Partial Class dlgMeinKontoTrainer
 
     End Sub
 
-    Friend WithEvents btnSchliessen As Button
+    Friend WithEvents btnAbbrechen As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
