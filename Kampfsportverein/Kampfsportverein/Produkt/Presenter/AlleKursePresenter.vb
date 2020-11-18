@@ -3,6 +3,10 @@
     Private mErgebnis As Kurse
     Private mistKurs As Kurse
 
+    Sub New()
+
+    End Sub
+
     Public Property View As AlleKurseView
         Get
             Return Nothing
