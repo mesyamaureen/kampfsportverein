@@ -1,6 +1,6 @@
 ﻿Public Class frmHauptfensterMit
 
-    Dim mPresenter As MitarbeiterAllePresenter
+    Public mPresenter As MitarbeiterAllePresenter
 
     Public Property Presenter As MitarbeiterAllePresenter
         Get
