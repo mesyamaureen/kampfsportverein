@@ -6,8 +6,7 @@
 
     'Parameterloser Konstruktor
     Public Sub New()
-        mView = New TrainerAlleView(Me) '- warte auf New Konstruktor bei TrainerAlleView
-        'mErgebnis = EPresenterErgebnis.OHNE
+        mView = New TrainerAlleView(Me)
         'mlstKursAlle = Kampfsportverein.erzeugeBeispieldaten
         mTrainerAlle = New Trainer
 
@@ -52,9 +51,10 @@
     End Sub
 
     Private Sub anzeigen() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
-        'mView.leeren() 'warten auf leeren Funktion von View
+        'mView.leeren()
         'For Each kurs As Kurse In mlstKursAlle
-        'mView.hinzufuegenZeile(mlstKursAlle.IndexOf(kurs), kurs.Datum, kurs.Sportart, kurs.Verfuegbarkeit) 'warte auf hinzufuegen Methode von View
+        'mView.hinzufuegenZeile(mlstKursAlle.IndexOf(kurs), 
+        'kurs.Datum, kurs.Sportart, kurs.Verfuegbarkeit) 
         'Next
 
     End Sub
@@ -65,8 +65,6 @@
             presenter.anzeigen()
         Else 'nichts tun
         End If
-        'mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
-
     End Sub
 
     Public Sub verarbeiteKursuebersichtAnzeigen(lngIndex As Long) 'button Bearbeiten

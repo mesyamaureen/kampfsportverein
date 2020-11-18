@@ -57,7 +57,8 @@
             ElseIf istBenutzerTrainer() Then
                 anzeigenKursuebersicht()
             Else
-                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
+                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
+                       MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
             End If
         End If
     End Sub
@@ -76,7 +77,8 @@
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
                 presenter.verarbeiteSchueleruebersichtAnzeigen()
             Case Else
-                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
+                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
+                       MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
     End Sub
 
@@ -96,7 +98,8 @@
             Case EPresenterErgebnis.TRAINER_ERSTELLEN
                 presenter.verarbeiteTrainerHinzufuegen()
             Case Else
-                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
+                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
+                       MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
     End Sub
 

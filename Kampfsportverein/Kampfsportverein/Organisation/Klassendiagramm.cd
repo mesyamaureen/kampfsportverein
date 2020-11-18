@@ -71,7 +71,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.dlgMeinKontoTrainer" Collapsed="true">
-    <Position X="0.5" Y="11" Width="2" />
+    <Position X="0.5" Y="11.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAEAgAAAECAAAAAIQACiAAACAAAgAABAIAoAAAAAAAQ=</HashCode>
       <FileName>Organisation\Form\dlgMeinKontoTrainer.vb</FileName>
@@ -84,7 +84,7 @@
     <Position X="0.5" Y="12.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
-      <FileName>MeinTrainerkontoView.vb</FileName>
+      <FileName>Organisation\View\MeinTrainerkontoView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.TrainerkontoPresenter">

@@ -60,6 +60,7 @@
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="View" />
+      <Property Name="KurseAlle" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Schueler">
@@ -95,8 +96,6 @@
     <TypeIdentifier>
       <HashCode>CAAAAAAUAAAAAAAAAAAEAAABAAAAAAwAAAAAAAEAAAg=</HashCode>
       <FileName>Produkt\View\AlleKurseView.vb</FileName>
-<<<<<<< HEAD
-=======
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Kurse">
@@ -104,8 +103,10 @@
     <TypeIdentifier>
       <HashCode>AAAAACIIMAAAIAAAAAAAAAQAACCAAAAhAAAAAQAAAAI=</HashCode>
       <FileName>Produkt\Model\Kurse.vb</FileName>
->>>>>>> a70e9545dfef6cf715800354ebf157924ff6ae21
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Sportarten" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
