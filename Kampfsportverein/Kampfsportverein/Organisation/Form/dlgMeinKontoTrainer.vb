@@ -1,5 +1,5 @@
 ﻿Public Class dlgMeinKontoTrainer
-    Private mPresenter As TrainerkontoPresenter
+    Public mPresenter As TrainerkontoPresenter
 
     Sub New()
 

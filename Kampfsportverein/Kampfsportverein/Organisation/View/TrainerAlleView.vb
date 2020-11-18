@@ -3,11 +3,17 @@
 
     Private mbolTrainer As Boolean
 
+    Sub New(pPresenter As TrainerAllePresenter)
+
+        MyBase.New
+        mPresenter = pPresenter
+
+    End Sub
 
 
     Public Property IstTrainer As TrainerAlleView
         Get
-            Return Nothing
+            Return IstTrainer
         End Get
         Set(value As TrainerAlleView)
         End Set
@@ -40,6 +46,8 @@
     Public Sub anzeigen(plngIndex As Long, pintBenutzerID As Integer, pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
 
         Dim zeile As ListViewItem
+
+
 
     End Sub
 

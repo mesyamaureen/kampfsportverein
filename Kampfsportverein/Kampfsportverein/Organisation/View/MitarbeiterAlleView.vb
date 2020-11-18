@@ -3,6 +3,13 @@
 
     Private mbolMitarbeiter As Boolean
 
+    Sub New(pPresenter As MitarbeiterAllePresenter)
+
+        MyBase.New
+        mPresenter = pPresenter
+
+    End Sub
+
     Public Property IstMitarbeiter As MitarbeiterAlleView
         Get
             Return Nothing

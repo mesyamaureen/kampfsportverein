@@ -33,8 +33,8 @@
   <Class Name="Kampfsportverein.AlleSchuelerPresenter">
     <Position X="3.75" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAgAgAQAAgAAAAACAAACAAAAABhAAECAAAAAAAAAA=</HashCode>
-      <FileName>AlleSchuelerPresenter.vb</FileName>
+      <HashCode>AgAAgAgAQAAgAAAAACAAACAAAAABhAAACAAAAAAAAAA=</HashCode>
+      <FileName>Produkt\Presenter\AlleSchuelerPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="View" />
@@ -45,7 +45,7 @@
     <Position X="4" Y="4" Width="2" />
     <TypeIdentifier>
       <HashCode>AACAgAgAAAAAIAAAAAAAABAAAAABpAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AlleSportartenPresenter.vb</FileName>
+      <FileName>Produkt\Presenter\AlleSportartenPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="View" />
@@ -56,53 +56,45 @@
     <Position X="3.75" Y="7.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAgAgAAAAgAAAAAAAEAAAAAAABBAQAAAAAIAABAAA=</HashCode>
-      <FileName>AlleKursePresenter.vb</FileName>
+      <FileName>Produkt\Presenter\AlleKursePresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="View" />
-      <Property Name="KurseAlle" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Schueler">
     <Position X="7.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAAAAAAAAAAAAgAQAAAAAAgAAAAAAAQAAAAA=</HashCode>
-      <FileName>Schueler.vb</FileName>
+      <HashCode>IAACAAAAABAAAAAAAAAAAAQAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <FileName>Produkt\Model\Schueler.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Sportarten">
     <Position X="7.5" Y="3.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAAAAhAACAAAAQAAAAAAEAAAAAAAQABAAA=</HashCode>
-      <FileName>Sportarten.vb</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Kampfsportverein.Kurse">
-    <Position X="7.75" Y="7.5" Width="1.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAACAIMAAAIAAAAAAAAAAAAAiAAAAhAAAAAQAAAAI=</HashCode>
-      <FileName>Kurse.vb</FileName>
+      <FileName>Produkt\Model\Sportarten.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.AlleSchuelerView">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAEAQAAAAAAAQAAAAAAAAAAAAAAAEAAAAACAAA=</HashCode>
-      <FileName>AlleSchuelerView.vb</FileName>
+      <FileName>Produkt\View\AlleSchuelerView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.AlleSportartenView">
     <Position X="0.5" Y="5.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAIAAAAAAAAAAEAAAAAgAAAAAAAAgAA=</HashCode>
-      <FileName>AlleSportartenView.vb</FileName>
+      <FileName>Produkt\View\AlleSportartenView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.AlleKurseView">
     <Position X="0.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAUAAAAAAAAAAAEAAABAAAAAAwAAAAAAAEAAAg=</HashCode>
-      <FileName>AlleKurseView.vb</FileName>
+      <FileName>Produkt\View\AlleKurseView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

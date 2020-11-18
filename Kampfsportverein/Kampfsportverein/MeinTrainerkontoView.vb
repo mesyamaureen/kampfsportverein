@@ -1,7 +1,10 @@
 ﻿Public Class TrainerkontoView
     Inherits dlgMeinKontoTrainer
 
-    Sub New()
+    Sub New(pPresenter As TrainerkontoPresenter)
+
+        MyBase.New
+        mPresenter = pPresenter
 
     End Sub
 
@@ -21,6 +24,9 @@
         Me.txtName.Enabled = True
         Me.txtBenutzername.Enabled = False
         Me.txtPasswort.Enabled = True
+
+        Me.txtTrainerID.Text = pintBenutzerID
+
 
     End Sub
 
