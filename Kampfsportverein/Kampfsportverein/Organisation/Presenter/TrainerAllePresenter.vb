@@ -60,7 +60,7 @@
     End Sub
 
     Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto
-        Dim presenter As TrainerkontoPresenter
+        Dim presenter As TrainerkontoPresenter = New TrainerkontoPresenter()
         If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
             presenter.anzeigen()
         Else 'nichts tun

@@ -64,7 +64,6 @@
 
     Public Sub anzeigenKursuebersicht()
         Dim presenter As TrainerAllePresenter
-        Dim i As Long
         presenter = New TrainerAllePresenter()
 
         Select Case presenter.Ergebnis
