@@ -6,7 +6,7 @@
 
     'Parameterloser Konstruktor
     Public Sub New()
-        mView = New TrainerAlleView '(Me) '- warte auf New Konstruktor bei TrainerAlleView
+        mView = New TrainerAlleView(Me) '- warte auf New Konstruktor bei TrainerAlleView
         'mErgebnis = EPresenterErgebnis.OHNE
         'mlstKursAlle = Kampfsportverein.erzeugeBeispieldaten
         mTrainerAlle = New Trainer
@@ -60,7 +60,7 @@
     End Sub
 
     Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto
-        Dim presenter As TrainerkontoPresenter
+        Dim presenter As TrainerkontoPresenter = New TrainerkontoPresenter()
         If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
             presenter.anzeigen()
         Else 'nichts tun

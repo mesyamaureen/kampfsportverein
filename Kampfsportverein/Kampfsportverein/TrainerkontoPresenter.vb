@@ -1,14 +1,16 @@
 ﻿Public Class TrainerkontoPresenter
     Private mTrainerEinzel As Trainer
     Private mErgebnis As EPresenterErgebnis
-    Private mSitzung As Integer
+    Private mSitzung As BenutzerSitzung
     Private mView As TrainerkontoView
 
-    Sub New(pPresenter As TrainerkontoPresenter)
+    Sub New()
+        'MyBase.New
+        mView = New TrainerkontoView(Me)
+        mTrainerEinzel = New Trainer
 
-        MyBase.New
-
-
+        anzeigen()
+        Application.Run(mView)
     End Sub
 
     Public Property Ergebnis As EPresenterErgebnis
@@ -29,14 +31,24 @@
 
     Public Property View As TrainerkontoView
         Get
-            Return TrainerkontoView
+            Return mView
         End Get
         Set(value As TrainerkontoView)
         End Set
     End Property
 
     Public Sub anzeigen()
-
+        mView.leeren()
+        mView.txtTrainerID.Text = mSitzung.AktuellerBenutzer.BenutzerID
+        mView.txtBenutzername.Text = mSitzung.AktuellerBenutzer.Benutzername
+        mView.txtVorname.Text = mSitzung.AktuellerBenutzer.Vorname
+        mView.txtName.Text = mSitzung.AktuellerBenutzer.Name
+        mView.txtPasswort.Text = mSitzung.AktuellerBenutzer.Passwort
+        'mView.txtTrainerID.Text = mlstTrainer(1).BenutzerID
+        'mView.txtBenutzername.Text = mlstTrainer(1).Benutzername
+        'mView.txtVorname.Text = mlstTrainer(1).Vorname
+        'mView.txtName.Text = mlstTrainer(1).Name
+        'mView.txtPasswort.Text = mlstTrainer(1).Passwort
     End Sub
 
     Public Sub verarbeiteAbbrechen()
