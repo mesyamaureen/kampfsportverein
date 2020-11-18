@@ -13,7 +13,7 @@
   <Class Name="Kampfsportverein.frmHauptfensterTrainer" Collapsed="true">
     <Position X="0.5" Y="6" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAEiIAAigggACCACACAAAAAICAICoACEMAIAA=</HashCode>
+      <HashCode>AAAIAAAAEiIAAigggACCACACAAAAAICAICoACEEAIAA=</HashCode>
       <FileName>Organisation\Form\frmHauptfensterTrainer.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -34,7 +34,7 @@
   <Class Name="Kampfsportverein.TrainerAllePresenter">
     <Position X="3.5" Y="6" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABAAgAgAAAQBAAAAAAAAAAAEAAABBgEAhAAAAAIAAAA=</HashCode>
+      <HashCode>ABAAgAgAAAQBAAAAAAAAAAAEAAABBgMAhAAAAAIAAAA=</HashCode>
       <FileName>Organisation\Presenter\TrainerAllePresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

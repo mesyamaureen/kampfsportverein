@@ -91,6 +91,11 @@
     End Sub
 
     Public Sub verarbeiteSchuelerHinzufuegen() 'button Neue Schüler
+        mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN
+        mView.Close()
+    End Sub
 
+    Public Sub verarbeiteBeenden()
+        mView.Close()
     End Sub
 End Class

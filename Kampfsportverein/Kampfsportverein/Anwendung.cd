@@ -28,10 +28,10 @@
       <FileName>Organisation\Model\Benutzer.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Kampfsportverein.EPresenterErgebnis" Collapsed="true">
+  <Enum Name="Kampfsportverein.EPresenterErgebnis">
     <Position X="4.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAACAAAAQAAAAAARACAAAAAgIAAIAAAAAAABIACA=</HashCode>
+      <HashCode>AgAAAACAAAAQAAAQAARACAAAAAgIAAIAAAAAAABIACA=</HashCode>
       <FileName>Common\Presenter\EPresenterErgebnis.vb</FileName>
     </TypeIdentifier>
   </Enum>
