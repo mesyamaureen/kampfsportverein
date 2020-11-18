@@ -33,15 +33,16 @@ Partial Class dlgMeinKontoTrainer
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.lblPasswort = New System.Windows.Forms.Label()
         Me.txtPasswort = New System.Windows.Forms.TextBox()
+        Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnSchliessen
         '
         Me.btnSchliessen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSchliessen.Location = New System.Drawing.Point(808, 449)
-        Me.btnSchliessen.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSchliessen.Location = New System.Drawing.Point(1077, 561)
+        Me.btnSchliessen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSchliessen.Name = "btnSchliessen"
-        Me.btnSchliessen.Size = New System.Drawing.Size(124, 45)
+        Me.btnSchliessen.Size = New System.Drawing.Size(165, 56)
         Me.btnSchliessen.TabIndex = 0
         Me.btnSchliessen.Text = "Schließen"
         Me.btnSchliessen.UseVisualStyleBackColor = True
@@ -49,102 +50,111 @@ Partial Class dlgMeinKontoTrainer
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 39)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(36, 49)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(79, 20)
+        Me.Label1.Size = New System.Drawing.Size(106, 25)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Trainer ID"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 111)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(36, 139)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(74, 20)
+        Me.Label2.Size = New System.Drawing.Size(98, 25)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Vorname"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 191)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(36, 239)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 20)
+        Me.Label3.Size = New System.Drawing.Size(68, 25)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Name"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(27, 259)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(36, 324)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(114, 20)
+        Me.Label5.Size = New System.Drawing.Size(151, 25)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Benutzername"
         '
         'txtTrainerID
         '
-        Me.txtTrainerID.Location = New System.Drawing.Point(183, 34)
-        Me.txtTrainerID.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtTrainerID.Location = New System.Drawing.Point(244, 42)
+        Me.txtTrainerID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTrainerID.Multiline = True
         Me.txtTrainerID.Name = "txtTrainerID"
         Me.txtTrainerID.ReadOnly = True
-        Me.txtTrainerID.Size = New System.Drawing.Size(209, 35)
+        Me.txtTrainerID.Size = New System.Drawing.Size(277, 43)
         Me.txtTrainerID.TabIndex = 6
         '
         'txtVorname
         '
-        Me.txtVorname.Location = New System.Drawing.Point(183, 107)
-        Me.txtVorname.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtVorname.Location = New System.Drawing.Point(244, 134)
+        Me.txtVorname.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVorname.Multiline = True
         Me.txtVorname.Name = "txtVorname"
-        Me.txtVorname.Size = New System.Drawing.Size(750, 35)
+        Me.txtVorname.Size = New System.Drawing.Size(999, 43)
         Me.txtVorname.TabIndex = 7
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(183, 181)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtName.Location = New System.Drawing.Point(244, 226)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtName.Multiline = True
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(750, 35)
+        Me.txtName.Size = New System.Drawing.Size(999, 43)
         Me.txtName.TabIndex = 8
         '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(183, 252)
-        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBenutzername.Location = New System.Drawing.Point(244, 315)
+        Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
-        Me.txtBenutzername.Size = New System.Drawing.Size(750, 35)
+        Me.txtBenutzername.Size = New System.Drawing.Size(999, 43)
         Me.txtBenutzername.TabIndex = 10
         '
         'lblPasswort
         '
         Me.lblPasswort.AutoSize = True
-        Me.lblPasswort.Location = New System.Drawing.Point(27, 333)
+        Me.lblPasswort.Location = New System.Drawing.Point(36, 416)
+        Me.lblPasswort.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPasswort.Name = "lblPasswort"
-        Me.lblPasswort.Size = New System.Drawing.Size(74, 20)
+        Me.lblPasswort.Size = New System.Drawing.Size(100, 25)
         Me.lblPasswort.TabIndex = 11
         Me.lblPasswort.Text = "Passwort"
         '
         'txtPasswort
         '
-        Me.txtPasswort.Location = New System.Drawing.Point(183, 327)
+        Me.txtPasswort.Location = New System.Drawing.Point(244, 409)
+        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.Size = New System.Drawing.Size(750, 26)
+        Me.txtPasswort.Size = New System.Drawing.Size(999, 31)
         Me.txtPasswort.TabIndex = 12
+        '
+        'btnSpeichern
+        '
+        Me.btnSpeichern.Location = New System.Drawing.Point(905, 561)
+        Me.btnSpeichern.Name = "btnSpeichern"
+        Me.btnSpeichern.Size = New System.Drawing.Size(166, 56)
+        Me.btnSpeichern.TabIndex = 13
+        Me.btnSpeichern.Text = "Speichern"
+        Me.btnSpeichern.UseVisualStyleBackColor = True
         '
         'dlgMeinKontoTrainer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AcceptButton = Me.btnSpeichern
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnSchliessen
-        Me.ClientSize = New System.Drawing.Size(940, 503)
+        Me.ClientSize = New System.Drawing.Size(1253, 629)
+        Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.txtPasswort)
         Me.Controls.Add(Me.lblPasswort)
         Me.Controls.Add(Me.txtBenutzername)
@@ -156,7 +166,7 @@ Partial Class dlgMeinKontoTrainer
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSchliessen)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "dlgMeinKontoTrainer"
         Me.Text = "Mein Trainerkonto"
         Me.ResumeLayout(False)
@@ -175,4 +185,5 @@ Partial Class dlgMeinKontoTrainer
     Friend WithEvents txtBenutzername As TextBox
     Friend WithEvents lblPasswort As Label
     Friend WithEvents txtPasswort As TextBox
+    Friend WithEvents btnSpeichern As Button
 End Class

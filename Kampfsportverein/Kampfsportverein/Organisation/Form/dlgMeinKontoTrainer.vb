@@ -1,6 +1,5 @@
 ﻿Public Class dlgMeinKontoTrainer
     Private mPresenter As TrainerkontoPresenter
-
     Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
