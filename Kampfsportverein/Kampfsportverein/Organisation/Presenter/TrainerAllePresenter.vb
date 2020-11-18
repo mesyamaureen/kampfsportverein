@@ -6,9 +6,9 @@
 
     'Parameterloser Konstruktor
     Public Sub New()
-        'mView = New TrainerAlleView '(Me) - warte auf New Konstruktor bei TrainerAlleView
+        'mView = New TrainerAlleView(Me) '- warte auf New Konstruktor bei TrainerAlleView
         ''mErgebnis = EPresenterErgebnis.OHNE
-        'mlstKursAlle = New List(Of Kurse)
+        'mlstKursAlle = Kampfsportverein.erzeugeBeispieldaten
         ''mTrainerAlle = New Trainer
 
         ''ermitteln der anzuzeigenden Daten
@@ -19,22 +19,28 @@
         'Application.Run(mView)
     End Sub
 
-    Public ReadOnly Property Ergebnis As EPresenterErgebnis
+    Public Property Ergebnis As EPresenterErgebnis
         Get
             Return mErgebnis
         End Get
+        Set(value As EPresenterErgebnis)
+            mErgebnis = value
+        End Set
     End Property
 
-    Private ReadOnly Property TrainerAlle As Trainer
+    Private ReadOnly Property TrainerAlle As Trainer 'brauchen wir hier Property:TrainerAlle oder Liste Kurse?
         Get
             Return mTrainerAlle
         End Get
     End Property
 
-    Private ReadOnly Property View As TrainerAlleView
+    Public Property View As TrainerAlleView
         Get
             Return mView
         End Get
+        Set(value As TrainerAlleView)
+            mView = value
+        End Set
     End Property
 
     'Private Sub ermittelnKursAlle()
@@ -45,9 +51,11 @@
 
     End Sub
 
-    Private Sub anzeigen() 'anzeigen was??
-        'Dim t As Type
-        'mView.leeren()
+    Private Sub anzeigen() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
+        'mView.leeren() 'warten auf leeren Funktion von View
+        'For Each kurs As Kurse In mlstKursAlle
+        'mView.hinzufuegenZeile(mlstKursAlle.IndexOf(kurs), kurs.Datum, kurs.Sportart, kurs.Verfuegbarkeit) 'warte auf hinzufuegen Methode von View
+        'Next
 
     End Sub
 

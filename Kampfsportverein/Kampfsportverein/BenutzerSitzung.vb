@@ -32,6 +32,14 @@
         End Set
     End Property
 
+    Public Sub start()
+        anzeigenAnmeldung()
+    End Sub
+
+    Public Sub beenden()
+        Application.Exit()
+    End Sub
+
     Public Sub anzeigenAnmeldung()
         Dim presenter As AnmeldungPresenter = New AnmeldungPresenter()
 
@@ -45,9 +53,9 @@
             End If
 
             If istBenutzerMitarbeiter() Then
-                anzeigenKursuebersicht()
-            ElseIf istBenutzerTrainer() Then
                 anzeigenSportarten()
+            ElseIf istBenutzerTrainer() Then
+                anzeigenKursuebersicht()
             Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
             End If
@@ -91,14 +99,6 @@
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
-    End Sub
-
-    Public Sub start()
-        anzeigenAnmeldung()
-    End Sub
-
-    Public Sub beenden()
-        Application.Exit()
     End Sub
 
     Public Function istAnmeldungErfolgreich() As Boolean

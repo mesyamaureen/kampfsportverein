@@ -11,27 +11,33 @@
         Application.Run(mView)
     End Sub
 
-    Private ReadOnly Property View As AnmeldungView
+    Public Property View As AnmeldungView
         Get
             Return mView
         End Get
+        Set(value As AnmeldungView)
+            mView = value
+        End Set
     End Property
 
-    Public ReadOnly Property Ergebnis As EPresenterErgebnis
+    Public Property Ergebnis As EPresenterErgebnis
         Get
             Return mErgebnis
         End Get
+        Set(value As EPresenterErgebnis)
+            mErgebnis = value
+        End Set
     End Property
 
-    Public ReadOnly Property AngemeldeterBenutzer As Benutzer
+    Public Property AngemeldeterBenutzer As Benutzer
         Get
             Return mAngemeldeterBenutzer
         End Get
+        Set(value As Benutzer)
+            mAngemeldeterBenutzer = value
+        End Set
     End Property
 
-    Private Function anmelden(pstrBenutzername As String, pstrPasswort As String) As Benutzer
-        Return Kampfsportverein.mlstTrainer.Item(1)
-    End Function
 
     Public Sub verarbeitenAbbrechen()
         mErgebnis = EPresenterErgebnis.ABBRECHEN
@@ -45,7 +51,13 @@
             mView.leeren()
         Else
             mErgebnis = EPresenterErgebnis.ANMELDEN
+
             mView.Close()
         End If
     End Sub
+
+    Private Function anmelden(pstrBenutzername As String, pstrPasswort As String) As Benutzer
+        Return Kampfsportverein.mlstTrainer.Item(1)
+    End Function
+
 End Class

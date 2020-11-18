@@ -13,13 +13,13 @@
     </Members>
     <AssociationLine Name="Presenter" Type="Kampfsportverein.AnmeldungPresenter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.5" Y="1.375" />
-        <Point X="4.667" Y="1.375" />
+        <Point X="2.5" Y="1.452" />
+        <Point X="4.667" Y="1.452" />
         <Point X="4.667" Y="1.75" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAAAACAAAgAIAACCAgACAAAgAAAAIAgAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAACAAAwAIAACCAgACAAAgAAAAIAoAAAAAAAA=</HashCode>
       <FileName>Organisation\Form\dlgAnmeldung.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
