@@ -33,5 +33,4 @@
         Set(value As Kurse)
         End Set
     End Property
-
 End Class

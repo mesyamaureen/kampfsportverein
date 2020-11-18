@@ -62,7 +62,7 @@
         End If
     End Sub
 
-    Public Sub anzeigenSportarten()
+    Public Sub anzeigenKursuebersicht()
         Dim presenter As TrainerAllePresenter
         Dim i As Long
         presenter = New TrainerAllePresenter()
@@ -70,8 +70,8 @@
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
-            Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
-                presenter.verarbeiteKursuebersichtAnzeigen(i) 'ist Initialisierung von i hier nötig?
+                'Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
+                'presenter.verarbeiteKursuebersichtAnzeigen(i)
             Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
                 presenter.verarbeiteEigenesProfilAnzeigen()
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
@@ -81,7 +81,7 @@
         End Select
     End Sub
 
-    Public Sub anzeigenKursuebersicht()
+    Public Sub anzeigenSportarten()
         Dim presenter As MitarbeiterAllePresenter
         presenter = New MitarbeiterAllePresenter()
 

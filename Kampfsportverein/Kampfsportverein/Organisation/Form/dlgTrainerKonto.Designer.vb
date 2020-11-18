@@ -22,8 +22,7 @@ Partial Class dlgTrainerKonto
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnAbbrechen = New System.Windows.Forms.Button()
-        Me.btnSpeichern = New System.Windows.Forms.Button()
+        Me.btnSchliessen = New System.Windows.Forms.Button()
         Me.lblTrainerID = New System.Windows.Forms.Label()
         Me.lblVorname = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
@@ -38,25 +37,15 @@ Partial Class dlgTrainerKonto
         Me.txtPassWiederh = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'btnAbbrechen
+        'btnSchliessen
         '
-        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1116, 580)
-        Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(126, 37)
-        Me.btnAbbrechen.TabIndex = 0
-        Me.btnAbbrechen.Text = "Abbrechen"
-        Me.btnAbbrechen.UseVisualStyleBackColor = True
-        '
-        'btnSpeichern
-        '
-        Me.btnSpeichern.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSpeichern.Location = New System.Drawing.Point(973, 580)
-        Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(124, 37)
-        Me.btnSpeichern.TabIndex = 1
-        Me.btnSpeichern.Text = "Speichern"
-        Me.btnSpeichern.UseVisualStyleBackColor = True
+        Me.btnSchliessen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnSchliessen.Location = New System.Drawing.Point(1116, 580)
+        Me.btnSchliessen.Name = "btnSchliessen"
+        Me.btnSchliessen.Size = New System.Drawing.Size(126, 37)
+        Me.btnSchliessen.TabIndex = 0
+        Me.btnSchliessen.Text = "Schließen"
+        Me.btnSchliessen.UseVisualStyleBackColor = True
         '
         'lblTrainerID
         '
@@ -164,10 +153,9 @@ Partial Class dlgTrainerKonto
         '
         'dlgTrainerKonto
         '
-        Me.AcceptButton = Me.btnSpeichern
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnAbbrechen
+        Me.CancelButton = Me.btnSchliessen
         Me.ClientSize = New System.Drawing.Size(1254, 629)
         Me.Controls.Add(Me.txtPassWiederh)
         Me.Controls.Add(Me.txtNeuesPass)
@@ -181,17 +169,15 @@ Partial Class dlgTrainerKonto
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.lblTrainerID)
-        Me.Controls.Add(Me.btnSpeichern)
-        Me.Controls.Add(Me.btnAbbrechen)
+        Me.Controls.Add(Me.btnSchliessen)
         Me.Name = "dlgTrainerKonto"
-        Me.Text = "Trainerkonto bearbeiten"
+        Me.Text = "Trainerkonto"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents btnAbbrechen As Button
-    Friend WithEvents btnSpeichern As Button
+    Friend WithEvents btnSchliessen As Button
     Friend WithEvents lblTrainerID As Label
     Friend WithEvents lblVorname As Label
     Friend WithEvents lblName As Label

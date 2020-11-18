@@ -39,7 +39,11 @@
 
     End Sub
 
-    Public Sub verarbeiteSchliessen()
+    Public Sub verarbeiteAbbrechen()
         mView.Close()
+    End Sub
+
+    Public Sub verarbeiteSpeichern()
+
     End Sub
 End Class

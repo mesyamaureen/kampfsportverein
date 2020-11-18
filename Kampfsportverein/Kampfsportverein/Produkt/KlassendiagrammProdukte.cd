@@ -95,6 +95,16 @@
     <TypeIdentifier>
       <HashCode>CAAAAAAUAAAAAAAAAAAEAAABAAAAAAwAAAAAAAEAAAg=</HashCode>
       <FileName>Produkt\View\AlleKurseView.vb</FileName>
+<<<<<<< HEAD
+=======
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Kampfsportverein.Kurse">
+    <Position X="7.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACIIMAAAIAAAAAAAAAQAACCAAAAhAAAAAQAAAAI=</HashCode>
+      <FileName>Produkt\Model\Kurse.vb</FileName>
+>>>>>>> a70e9545dfef6cf715800354ebf157924ff6ae21
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
