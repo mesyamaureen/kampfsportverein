@@ -6,7 +6,7 @@
 
     Sub New()
         'MyBase.New
-        mView = New TrainerkontoView '(Me) - warte auf New Konstruktor Function von View
+        mView = New TrainerkontoView(Me)
         mTrainerEinzel = New Trainer
 
         anzeigen()
@@ -31,7 +31,7 @@
 
     Public Property View As TrainerkontoView
         Get
-            Return TrainerkontoView
+            Return mView
         End Get
         Set(value As TrainerkontoView)
         End Set

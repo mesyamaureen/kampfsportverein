@@ -6,7 +6,7 @@
 
     'Parameterloser Konstruktor
     Public Sub New()
-        mView = New TrainerAlleView '(Me) '- warte auf New Konstruktor bei TrainerAlleView
+        mView = New TrainerAlleView(Me) '- warte auf New Konstruktor bei TrainerAlleView
         'mErgebnis = EPresenterErgebnis.OHNE
         'mlstKursAlle = Kampfsportverein.erzeugeBeispieldaten
         mTrainerAlle = New Trainer

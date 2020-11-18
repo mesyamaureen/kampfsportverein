@@ -1,7 +1,7 @@
 ﻿Public Module Kampfsportverein
     Public mlstTrainer As List(Of Trainer) = New List(Of Trainer)
     Public mlstMitarbeiter As List(Of Mitarbeiter) = New List(Of Mitarbeiter)
-    Public mlstKurse As List(Of Kampfsportverein
+    'Public mlstKurse As List(Of Kampfsportverein)
     'Public mlstKurs As List(Of Kurse)
 
     Public Sub Main()
@@ -22,8 +22,8 @@
         Ma1 = New Mitarbeiter("c.pennig", "pw", "Charlene", "Pennig", 3)
         Ma2 = New Mitarbeiter("c.lammel", "pw", "Carina", "Lammel", 4)
         Ma3 = New Mitarbeiter("m.jeynie", "pw", "Mesya Maureen", "Jeynie", 5)
-        kurs1 = New Kurse(#12/11/2020#, "101", Tra1, 10, "Fortgeschritten", "Judo (F)")
-        kurs2 = New Kurse(#12/18/2020#, "101", Tra1, 10, "Fortgeschritten", "Judo (F)")
+        'kurs1 = New Kurse(#12/11/2020#, "101", Tra1, 10, "Fortgeschritten", "Judo (F)")
+        'kurs2 = New Kurse(#12/18/2020#, "101", Tra1, 10, "Fortgeschritten", "Judo (F)")
 
         'mlstTrainer = New List(Of Trainer)
         mlstTrainer.Add(Tra1)

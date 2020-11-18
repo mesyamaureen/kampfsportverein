@@ -1,10 +1,6 @@
 ﻿Public Class dlgMeinKontoTrainer
-<<<<<<< HEAD
-    Public mPresenter As TrainerkontoPresenter
 
-=======
     Private mPresenter As TrainerkontoPresenter
->>>>>>> a70e9545dfef6cf715800354ebf157924ff6ae21
     Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
