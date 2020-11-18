@@ -34,12 +34,12 @@
   <Class Name="Kampfsportverein.TrainerAllePresenter">
     <Position X="3.5" Y="6" Width="2" />
     <TypeIdentifier>
-      <HashCode>ABAAgAgAAAQBAAAAACAAAAAEAEABBgEAhAAAAAIAAAA=</HashCode>
+      <HashCode>ABAAgAgAAAQBAAAAAAAAAAAEAAABBgEAhAAAAAIAAAA=</HashCode>
       <FileName>Organisation\Presenter\TrainerAllePresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
       <Property Name="TrainerAlle" />
+      <Property Name="View" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Mitarbeiter">
@@ -102,13 +102,13 @@
     <Position X="3.5" Y="11.25" Width="2.75" />
     <AssociationLine Name="TrainerEinzel" Type="Kampfsportverein.Trainer" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.25" Y="12.043" />
-        <Point X="9.375" Y="12.043" />
+        <Point X="6.25" Y="12.764" />
+        <Point X="9.375" Y="12.764" />
         <Point X="9.375" Y="7.935" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAABBAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAgAAAABAAAAQAAAAAAAAAABhIAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainerkontoPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

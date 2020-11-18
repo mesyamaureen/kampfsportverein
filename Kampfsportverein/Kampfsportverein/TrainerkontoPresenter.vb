@@ -1,4 +1,9 @@
 ﻿Public Class TrainerkontoPresenter
+    Private mBenutzer As Integer
+    Private mErgebnis As Integer
+    Private mSitzung As Integer
+    Private mView As Integer
+
     Sub New(pPresenter As TrainerkontoPresenter)
 
         MyBase.New
@@ -30,9 +35,11 @@
         End Set
     End Property
 
+    Public Sub anzeigen()
 
+    End Sub
 
+    Public Sub verarbeiteSchliessen()
 
-
-
+    End Sub
 End Class

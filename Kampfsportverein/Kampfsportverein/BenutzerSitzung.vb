@@ -53,8 +53,8 @@
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
-            Case EPresenterErgebnis.BEARBEITEN
-                presenter.verarbeiteKursuebersichtAnzeigen()
+                'Case EPresenterErgebnis.BEARBEITEN
+                '    presenter.verarbeiteKursuebersichtAnzeigen()
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
@@ -67,8 +67,8 @@
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
-            Case EPresenterErgebnis.BEARBEITEN
-                presenter.verarbeiteBearbeiten()
+                'Case EPresenterErgebnis.BEARBEITEN
+                '    presenter.verarbeiteBearbeiten()
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
