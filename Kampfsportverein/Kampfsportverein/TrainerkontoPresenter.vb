@@ -39,12 +39,8 @@
 
     Public Sub anzeigen()
         mView.leeren()
-
-        mView.txtTrainerID.Text = mlstTrainer(1).BenutzerID
-        mView.txtBenutzername.Text = mlstTrainer(1).Benutzername
-        mView.txtVorname.Text = mlstTrainer(1).Vorname
-        mView.txtName.Text = mlstTrainer(1).Name
-        mView.txtPasswort.Text = mlstTrainer(1).Passwort
+        mView.anzeigen(mlstTrainer(1).BenutzerID, mlstTrainer(1).Vorname, mlstTrainer(1).Name,
+                       mlstTrainer(1).Benutzername, mlstTrainer(1).Passwort)
     End Sub
 
     Public Sub verarbeiteAbbrechen()
