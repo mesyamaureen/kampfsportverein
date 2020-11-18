@@ -57,16 +57,16 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.MitarbeiterAlleView">
-    <Position X="0.5" Y="2" Width="2" />
+    <Position X="0.5" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAQAEEIAAAEAAAAAAIAAAAAAAAAAAAAgYAAAAA=</HashCode>
+      <HashCode>AAAEAAAQAEEIAAAEAAAAAAIAABAAABAAAAAAgYAAAAA=</HashCode>
       <FileName>Organisation\View\MitarbeiterAlleView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.TrainerAlleView">
     <Position X="0.5" Y="7.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAgEAAAAAEAAAAABAAAAAAICAAAAAAAAAAAAAYAAAAA=</HashCode>
+      <HashCode>AAgEAAAAAEABAAABAAAAAAICAAAAAAAAAAAAAYAAAAA=</HashCode>
       <FileName>Organisation\View\TrainerAlleView.vb</FileName>
     </TypeIdentifier>
   </Class>
@@ -83,7 +83,7 @@
   <Class Name="Kampfsportverein.TrainerkontoView">
     <Position X="0.5" Y="12.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>MeinTrainerkontoView.vb</FileName>
     </TypeIdentifier>
   </Class>

@@ -29,7 +29,7 @@
   <Class Name="Kampfsportverein.AnmeldungPresenter">
     <Position X="4" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAgAgAAAAAAACAAAAAAAAAAAABBAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AIAAgAgAQAAAAACAAAAAAAAAAAABRAAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\Presenter\AnmeldungPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -41,7 +41,7 @@
   <Class Name="Kampfsportverein.AnmeldungView">
     <Position X="1" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\View\AnmeldungView.vb</FileName>
     </TypeIdentifier>
   </Class>
