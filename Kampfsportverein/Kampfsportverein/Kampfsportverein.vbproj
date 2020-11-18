@@ -73,7 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MeinTrainerkontoView.vb">
+    <Compile Include="Organisation\View\MeinTrainerkontoView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\Presenter\AlleKursePresenter.vb" />

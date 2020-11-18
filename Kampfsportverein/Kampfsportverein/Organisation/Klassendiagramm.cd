@@ -11,7 +11,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.frmHauptfensterTrainer" Collapsed="true">
-    <Position X="0.5" Y="6" Width="2" />
+    <Position X="0.5" Y="6.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAEiIAAigggACCACACAAAAAICAICoACEEAIAA=</HashCode>
       <FileName>Organisation\Form\frmHauptfensterTrainer.vb</FileName>
@@ -73,7 +73,7 @@
   <Class Name="Kampfsportverein.dlgMeinKontoTrainer" Collapsed="true">
     <Position X="0.5" Y="11" Width="2" />
     <TypeIdentifier>
-      <HashCode>CEEAgggAECAAAAAIQACiAAACAAAgAABAIAoABAAAAAQ=</HashCode>
+      <HashCode>AAEAgAAAECAAAAAIQACiAAACAAAgAABAIAoAAAAAAAQ=</HashCode>
       <FileName>Organisation\Form\dlgMeinKontoTrainer.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -10,7 +10,7 @@
         mTrainerEinzel = New Trainer
 
         anzeigen()
-        Application.Run(mView)
+        mView.ShowDialog()
     End Sub
 
     Public Property Ergebnis As EPresenterErgebnis
@@ -39,16 +39,12 @@
 
     Public Sub anzeigen()
         mView.leeren()
-        mView.txtTrainerID.Text = mSitzung.AktuellerBenutzer.BenutzerID
-        mView.txtBenutzername.Text = mSitzung.AktuellerBenutzer.Benutzername
-        mView.txtVorname.Text = mSitzung.AktuellerBenutzer.Vorname
-        mView.txtName.Text = mSitzung.AktuellerBenutzer.Name
-        mView.txtPasswort.Text = mSitzung.AktuellerBenutzer.Passwort
-        'mView.txtTrainerID.Text = mlstTrainer(1).BenutzerID
-        'mView.txtBenutzername.Text = mlstTrainer(1).Benutzername
-        'mView.txtVorname.Text = mlstTrainer(1).Vorname
-        'mView.txtName.Text = mlstTrainer(1).Name
-        'mView.txtPasswort.Text = mlstTrainer(1).Passwort
+
+        mView.txtTrainerID.Text = mlstTrainer(1).BenutzerID
+        mView.txtBenutzername.Text = mlstTrainer(1).Benutzername
+        mView.txtVorname.Text = mlstTrainer(1).Vorname
+        mView.txtName.Text = mlstTrainer(1).Name
+        mView.txtPasswort.Text = mlstTrainer(1).Passwort
     End Sub
 
     Public Sub verarbeiteAbbrechen()
