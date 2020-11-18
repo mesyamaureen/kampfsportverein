@@ -24,6 +24,14 @@
         End Get
     End Property
 
+    Public Property Ergebnis As EPresenterErgebnis
+        Get
+            Return Nothing
+        End Get
+        Set(value As EPresenterErgebnis)
+        End Set
+    End Property
+
     Public Sub anzeigenAnmeldung()
         Dim presenter As AnmeldungPresenter = New AnmeldungPresenter()
 
@@ -48,13 +56,18 @@
 
     Public Sub anzeigenSportarten()
         Dim presenter As TrainerAllePresenter
+        Dim i As Long
         presenter = New TrainerAllePresenter()
 
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
-                'Case EPresenterErgebnis.BEARBEITEN
-                '    presenter.verarbeiteKursuebersichtAnzeigen()
+            Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
+                presenter.verarbeiteKursuebersichtAnzeigen(i) 'ist Initialisierung von i hier nötig?
+            Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
+                presenter.verarbeiteEigenesProfilAnzeigen()
+            Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
+                presenter.verarbeiteSchueleruebersichtAnzeigen()
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
@@ -67,8 +80,14 @@
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
-                'Case EPresenterErgebnis.BEARBEITEN
-                '    presenter.verarbeiteBearbeiten()
+            Case EPresenterErgebnis.SPORTART_ANZEIGEN
+                presenter.verarbeiteSportartuebersichtAnzeigen()
+            Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
+                presenter.verarbeiteSchueleruebersichtAnzeigen()
+            Case EPresenterErgebnis.TRAINER_ANZEIGEN
+                presenter.verarbeiteTrainerUebersichtAnzeigen()
+            Case EPresenterErgebnis.TRAINER_ERSTELLEN
+                presenter.verarbeiteTrainerHinzufuegen()
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select

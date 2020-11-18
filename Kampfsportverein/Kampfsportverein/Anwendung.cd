@@ -12,12 +12,13 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAEAAIACAgAAAAgABAAAAAABQAAAIAAAICAAAIAAAA=</HashCode>
+      <HashCode>AAAEAAIACAgAAAAgABAAAAAABQAABIAAAICAAAIAAAA=</HashCode>
       <FileName>BenutzerSitzung.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Instanz" />
       <Property Name="AktuellerBenutzer" />
+      <Property Name="Ergebnis" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
@@ -27,17 +28,17 @@
       <FileName>Organisation\Model\Benutzer.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Kampfsportverein.EPresenterErgebnis">
-    <Position X="6.75" Y="4" Width="1.5" />
+  <Enum Name="Kampfsportverein.EPresenterErgebnis" Collapsed="true">
+    <Position X="4.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAEAAAAAAgAggAAAAAIIEAAEgIAAIAAQAAAABAIIA=</HashCode>
+      <HashCode>AgAAAACAAAAQAAAAAARACAAAAAgIAAIAAAAAAABIACA=</HashCode>
       <FileName>Common\Presenter\EPresenterErgebnis.vb</FileName>
     </TypeIdentifier>
   </Enum>
   <Module Name="Kampfsportverein.Kampfsportverein">
     <Position X="1.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAABAAAAAAAAAACAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Kampfsportverein.vb</FileName>
     </TypeIdentifier>
   </Module>

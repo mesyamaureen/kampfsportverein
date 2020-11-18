@@ -102,13 +102,13 @@
     <Position X="3.5" Y="11.25" Width="2.75" />
     <AssociationLine Name="TrainerEinzel" Type="Kampfsportverein.Trainer" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="6.25" Y="12.764" />
-        <Point X="9.375" Y="12.764" />
+        <Point X="6.25" Y="12.666" />
+        <Point X="9.375" Y="12.666" />
         <Point X="9.375" Y="7.935" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAgAAAABAAAAQAAAAAAAAAABhIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAgAAAABAAAAQAAAAAAAAAABBIAAAAAAAAAAAAA=</HashCode>
       <FileName>TrainerkontoPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -53,9 +53,9 @@
     </TypeIdentifier>
   </Class>
   <Enum Name="Kampfsportverein.EPresenterErgebnis">
-    <Position X="4.5" Y="4.5" Width="2" />
+    <Position X="7.5" Y="3" Width="2" />
     <TypeIdentifier>
-      <HashCode>AgAAAACAAAAAAAAAAABAAAAAAAgIAAIAAAAAAABAAAA=</HashCode>
+      <HashCode>AgAAAACAAAAQAAAAAARACAAAAAgIAAIAAAAAAABIACA=</HashCode>
       <FileName>Common\Presenter\EPresenterErgebnis.vb</FileName>
     </TypeIdentifier>
   </Enum>

@@ -36,47 +36,47 @@
 
     End Sub
 
-    Public Sub verarbeiteBearbeiten()
+    Public Sub verarbeiteBearbeiten() 'für SportartuebersichtAnzeigen()
 
     End Sub
 
-    Public Sub verarbeiteBeenden()
+    Public Sub verarbeiteBeenden() 'button Beenden
 
     End Sub
 
-    Public Sub verarbeiteTrainerHinzufuegen()
+    Public Sub verarbeiteTrainerHinzufuegen() 'button Neuer Trainer
 
     End Sub
 
-    Public Sub verarbeiteLoeschen()
+    Public Sub verarbeiteLoeschen() 'kein Button Löschen
 
     End Sub
 
-    Public Sub verarbeiteSchliessen()
+    Public Sub verarbeiteSchliessen() 'kein button Schliessen
 
     End Sub
 
-    Public Sub verarbeiteTrainerUebersichtAnzeigen()
+    Public Sub verarbeiteTrainerUebersichtAnzeigen() 'menü Alle Trainer
 
     End Sub
 
-    Public Sub verarbeiteSchueleruebersichtAnzeigen()
+    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'menü Alle Schüler
 
     End Sub
 
-    Public Sub verarbeiteKursuebersichtAnzeigen()
+    Public Sub verarbeiteKursuebersichtAnzeigen() 'keine direkte Übersicht von Kursen vll. statt Kursübersicht: Kurs hinzufügen
 
     End Sub
 
-    Public Sub verarbeiteSportartuebersichtAnzeigen()
+    Public Sub verarbeiteSportartuebersichtAnzeigen() 'button Bearbeiten
 
     End Sub
 
-    Public Sub verarbeiteMitarbeiterHinzufuegen()
+    Public Sub verarbeiteMitarbeiterHinzufuegen() 'kein Neuer Mitarbeiter Button
 
     End Sub
 
-    Public Sub verarbeiteSchuelerHinzufuegen()
+    Public Sub verarbeiteSchuelerHinzufuegen() 'wieso hier? auf frmHauptfensterMit gibt's keine Neue Schüler Schaltfläche
 
     End Sub
 End Class

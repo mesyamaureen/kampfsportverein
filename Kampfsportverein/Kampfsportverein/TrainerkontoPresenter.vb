@@ -1,8 +1,8 @@
 ﻿Public Class TrainerkontoPresenter
-    Private mBenutzer As Integer
-    Private mErgebnis As Integer
+    Private mTrainerEinzel As Trainer
+    Private mErgebnis As EPresenterErgebnis
     Private mSitzung As Integer
-    Private mView As Integer
+    Private mView As TrainerkontoView
 
     Sub New(pPresenter As TrainerkontoPresenter)
 
@@ -21,7 +21,7 @@
 
     Public Property TrainerEinzel As Trainer
         Get
-            Return TrainerEinzel
+            Return mTrainerEinzel
         End Get
         Set(value As Trainer)
         End Set
@@ -40,6 +40,6 @@
     End Sub
 
     Public Sub verarbeiteSchliessen()
-
+        mView.Close()
     End Sub
 End Class
