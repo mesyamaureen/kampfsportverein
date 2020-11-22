@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kampfsportverein", "Kampfsportverein\Kampfsportverein.vbproj", "{E924E59D-297C-41DF-B255-8B3EEF38AB22}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kampsportverein_DataAcess", "Kampsportverein_DataAcess\Kampsportverein_DataAcess.vbproj", "{01788E88-A796-4462-BA25-8E4C9D56A0CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E924E59D-297C-41DF-B255-8B3EEF38AB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E924E59D-297C-41DF-B255-8B3EEF38AB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E924E59D-297C-41DF-B255-8B3EEF38AB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

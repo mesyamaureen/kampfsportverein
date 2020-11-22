@@ -311,6 +311,8 @@
     <None Include="Organisation\Presenter\AnmeldungPresenter.cd" />
     <None Include="Produkt\KlassendiagrammProdukte.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
