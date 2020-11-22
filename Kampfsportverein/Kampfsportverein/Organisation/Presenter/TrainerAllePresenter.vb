@@ -42,6 +42,14 @@
         End Set
     End Property
 
+    Public Property Trainer As Trainer
+        Get
+            Return Nothing
+        End Get
+        Set(value As Trainer)
+        End Set
+    End Property
+
     'Private Sub ermittelnKursAlle()
     '    mlstKurs = Kampfsportverein.mlstKurs
     'End Sub

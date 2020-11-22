@@ -1,29 +1,33 @@
-﻿Public Class AlleSportartenPresenter
-    Private mErgebnis As AlleSportartenPresenter
+﻿Public Class SportartenPresenter
+    Private mErgebnis As SportartenPresenter
     Private mistSportart As Integer
     Private mView As Integer
 
-    Public Property View As AlleSportartenView
+    Sub New()
+
+    End Sub
+
+    Public Property View As SportartenView
         Get
             Return Nothing
         End Get
-        Set(value As AlleSportartenView)
+        Set(value As SportartenView)
         End Set
     End Property
 
-    Public Property Ergebnis As AlleSportartenPresenter
+    Public Property Ergebnis As SportartenPresenter
         Get
             Return Nothing
         End Get
-        Set(value As AlleSportartenPresenter)
+        Set(value As SportartenPresenter)
         End Set
     End Property
 
-    Public Property SportartenAlle As Sportarten
+    Public Property SportartenAlle As Sportart
         Get
             Return Nothing
         End Get
-        Set(value As Sportarten)
+        Set(value As Sportart)
         End Set
     End Property
 
@@ -36,6 +40,14 @@
     End Sub
 
     Public Sub verarbeiteNeueSportart()
+
+    End Sub
+
+    Public Sub verarbeiteNeu()
+
+    End Sub
+
+    Public Sub verarbeiteOeffnen()
 
     End Sub
 End Class

@@ -1,4 +1,4 @@
-﻿Public Class Kurse
+﻿Public Class Kurs
     Private mdatZeitpunkt As Date
     Private mstrOrt As String
     Private mtraTrainer As Trainer
@@ -73,11 +73,11 @@
         End Set
     End Property
 
-    Public Property Sportarten As Sportarten
+    Public Property Sportarten As Sportart
         Get
             Return Nothing
         End Get
-        Set(value As Sportarten)
+        Set(value As Sportart)
         End Set
     End Property
 End Class

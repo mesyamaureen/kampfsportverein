@@ -1,11 +1,11 @@
-﻿Public Class AlleSportartenView
+﻿Public Class SportartenView
     Inherits dlgNeueSportart
 
-    Public Property IstSportart As AlleSportartenView
+    Public Property IstSportart As SportartenView
         Get
             Return Nothing
         End Get
-        Set(value As AlleSportartenView)
+        Set(value As SportartenView)
         End Set
     End Property
 

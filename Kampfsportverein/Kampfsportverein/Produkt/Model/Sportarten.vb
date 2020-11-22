@@ -1,4 +1,4 @@
-﻿Public Class Sportarten
+﻿Public Class Sportart
     Private mstrName As String
     Private mstrHerkunftsland As String
     Private mstrZielgruppe As String

@@ -32,6 +32,14 @@
         End Set
     End Property
 
+    Public Property Mitarbeiter As Mitarbeiter
+        Get
+            Return Nothing
+        End Get
+        Set(value As Mitarbeiter)
+        End Set
+    End Property
+
     Private Sub anzeigen()
 
     End Sub

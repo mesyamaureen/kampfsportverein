@@ -11,9 +11,10 @@
     <AssemblyName>Kampfsportverein</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,6 +74,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO.vb" />
+    <Compile Include="DAOFactory.vb" />
+    <Compile Include="MitarbeiterDAO.vb" />
     <Compile Include="Organisation\View\MeinTrainerkontoView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +231,7 @@
     <Compile Include="Organisation\View\TrainerAlleView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TrainerDAO.vb" />
     <Compile Include="TrainerkontoPresenter.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +296,7 @@
   <ItemGroup>
     <None Include="Anwendung.cd" />
     <None Include="Entwurfsdiagramm.cd" />
+    <None Include="MitarbeiterDAODataAccess.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -1,7 +1,11 @@
-﻿Public Class AlleSchuelerPresenter
+﻿Public Class SchuelerAllePresenter
     Private mErgebnis As Integer
     Private mView As Integer
-    Private mistSchueler As Integer
+    Private mistSchuelerAlle As Integer
+
+    Sub New()
+
+    End Sub
 
     Public Property View As AlleSchuelerView
         Get
@@ -27,23 +31,15 @@
         End Set
     End Property
 
-    Public Sub verabeiteLoeschen()
+    Public Sub verarbeiteOeffnen()
 
     End Sub
 
-    Public Sub verarbeiteRegistrieren()
+    Public Sub verarbeiteNeu()
 
     End Sub
 
-    Public Sub verarbeiteBearbeiten()
-
-    End Sub
-
-    Public Sub verarbeiteErstellen()
-
-    End Sub
-
-    Public Sub verarbeitenEntfernen()
+    Public Sub verarbeiteLoeschen()
 
     End Sub
 End Class
