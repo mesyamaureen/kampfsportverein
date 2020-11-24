@@ -93,7 +93,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Organisation\Presenter\AnmeldungPresenter.vb" />
-    <Compile Include="BenutzerSitzung.vb" />
+    <Compile Include="Anwendung\BenutzerSitzung.vb" />
     <Compile Include="Common\Presenter\EPresenterErgebnis.vb" />
     <Compile Include="Kampfsportverein.vb" />
     <Compile Include="Produkt\Model\Kurse.vb" />
@@ -294,8 +294,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Anwendung.cd" />
-    <None Include="Entwurfsdiagramm.cd" />
+    <None Include="Anwendung\Anwendung.cd" />
+    <None Include="Anwendung\Entwurfsdiagramm.cd" />
     <None Include="MitarbeiterDAODataAccess.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
