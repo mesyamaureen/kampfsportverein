@@ -10,11 +10,11 @@
         End Set
     End Property
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
 
     End Sub
 
-    Private Sub AlleSchülerToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuAlleSchueler.Click
+    Private Sub AlleSchülerToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

@@ -24,19 +24,21 @@ Partial Class frmHauptfensterTrainer
     Private Sub InitializeComponent()
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.grpboxMenu = New System.Windows.Forms.GroupBox()
-        Me.btnNeueSchueler = New System.Windows.Forms.Button()
-        Me.btnAlleSchueler = New System.Windows.Forms.Button()
+        Me.btnSchueler = New System.Windows.Forms.Button()
+        Me.btnKurse = New System.Windows.Forms.Button()
         Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.picboxNeueSchueler = New System.Windows.Forms.PictureBox()
         Me.picboxAlleSchueler = New System.Windows.Forms.PictureBox()
         Me.picboxMeinKonto = New System.Windows.Forms.PictureBox()
         Me.grpboxKurs = New System.Windows.Forms.GroupBox()
-        Me.btnBearbeiten = New System.Windows.Forms.Button()
+        Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstKurse = New System.Windows.Forms.ListView()
         Me.colKursID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnNeu = New System.Windows.Forms.Button()
+        Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.grpboxMenu.SuspendLayout()
         CType(Me.picboxNeueSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,8 +58,8 @@ Partial Class frmHauptfensterTrainer
         '
         'grpboxMenu
         '
-        Me.grpboxMenu.Controls.Add(Me.btnNeueSchueler)
-        Me.grpboxMenu.Controls.Add(Me.btnAlleSchueler)
+        Me.grpboxMenu.Controls.Add(Me.btnSchueler)
+        Me.grpboxMenu.Controls.Add(Me.btnKurse)
         Me.grpboxMenu.Controls.Add(Me.btnMeinKonto)
         Me.grpboxMenu.Controls.Add(Me.picboxNeueSchueler)
         Me.grpboxMenu.Controls.Add(Me.picboxAlleSchueler)
@@ -68,27 +70,27 @@ Partial Class frmHauptfensterTrainer
         Me.grpboxMenu.TabIndex = 1
         Me.grpboxMenu.TabStop = False
         '
-        'btnNeueSchueler
+        'btnSchueler
         '
-        Me.btnNeueSchueler.Location = New System.Drawing.Point(79, 768)
-        Me.btnNeueSchueler.Name = "btnNeueSchueler"
-        Me.btnNeueSchueler.Size = New System.Drawing.Size(162, 50)
-        Me.btnNeueSchueler.TabIndex = 5
-        Me.btnNeueSchueler.Text = "Neue Schüler"
-        Me.btnNeueSchueler.UseVisualStyleBackColor = True
+        Me.btnSchueler.Location = New System.Drawing.Point(164, 692)
+        Me.btnSchueler.Name = "btnSchueler"
+        Me.btnSchueler.Size = New System.Drawing.Size(162, 50)
+        Me.btnSchueler.TabIndex = 5
+        Me.btnSchueler.Text = "Schüler"
+        Me.btnSchueler.UseVisualStyleBackColor = True
         '
-        'btnAlleSchueler
+        'btnKurse
         '
-        Me.btnAlleSchueler.Location = New System.Drawing.Point(79, 488)
-        Me.btnAlleSchueler.Name = "btnAlleSchueler"
-        Me.btnAlleSchueler.Size = New System.Drawing.Size(162, 50)
-        Me.btnAlleSchueler.TabIndex = 4
-        Me.btnAlleSchueler.Text = "Alle Schüler"
-        Me.btnAlleSchueler.UseVisualStyleBackColor = True
+        Me.btnKurse.Location = New System.Drawing.Point(164, 395)
+        Me.btnKurse.Name = "btnKurse"
+        Me.btnKurse.Size = New System.Drawing.Size(162, 50)
+        Me.btnKurse.TabIndex = 4
+        Me.btnKurse.Text = "Kurse"
+        Me.btnKurse.UseVisualStyleBackColor = True
         '
         'btnMeinKonto
         '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(79, 182)
+        Me.btnMeinKonto.Location = New System.Drawing.Point(164, 123)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(162, 50)
         Me.btnMeinKonto.TabIndex = 3
@@ -97,31 +99,33 @@ Partial Class frmHauptfensterTrainer
         '
         'picboxNeueSchueler
         '
-        Me.picboxNeueSchueler.Location = New System.Drawing.Point(88, 619)
+        Me.picboxNeueSchueler.Location = New System.Drawing.Point(27, 660)
         Me.picboxNeueSchueler.Name = "picboxNeueSchueler"
-        Me.picboxNeueSchueler.Size = New System.Drawing.Size(146, 133)
+        Me.picboxNeueSchueler.Size = New System.Drawing.Size(112, 113)
         Me.picboxNeueSchueler.TabIndex = 2
         Me.picboxNeueSchueler.TabStop = False
         '
         'picboxAlleSchueler
         '
-        Me.picboxAlleSchueler.Location = New System.Drawing.Point(88, 329)
+        Me.picboxAlleSchueler.Location = New System.Drawing.Point(27, 366)
         Me.picboxAlleSchueler.Name = "picboxAlleSchueler"
-        Me.picboxAlleSchueler.Size = New System.Drawing.Size(146, 131)
+        Me.picboxAlleSchueler.Size = New System.Drawing.Size(112, 113)
         Me.picboxAlleSchueler.TabIndex = 1
         Me.picboxAlleSchueler.TabStop = False
         '
         'picboxMeinKonto
         '
-        Me.picboxMeinKonto.Location = New System.Drawing.Point(88, 32)
+        Me.picboxMeinKonto.Location = New System.Drawing.Point(27, 92)
         Me.picboxMeinKonto.Name = "picboxMeinKonto"
-        Me.picboxMeinKonto.Size = New System.Drawing.Size(146, 135)
+        Me.picboxMeinKonto.Size = New System.Drawing.Size(112, 113)
         Me.picboxMeinKonto.TabIndex = 0
         Me.picboxMeinKonto.TabStop = False
         '
         'grpboxKurs
         '
-        Me.grpboxKurs.Controls.Add(Me.btnBearbeiten)
+        Me.grpboxKurs.Controls.Add(Me.btnLoeschen)
+        Me.grpboxKurs.Controls.Add(Me.btnNeu)
+        Me.grpboxKurs.Controls.Add(Me.btnOeffnen)
         Me.grpboxKurs.Controls.Add(Me.lstKurse)
         Me.grpboxKurs.Location = New System.Drawing.Point(378, 12)
         Me.grpboxKurs.Name = "grpboxKurs"
@@ -129,14 +133,14 @@ Partial Class frmHauptfensterTrainer
         Me.grpboxKurs.TabIndex = 2
         Me.grpboxKurs.TabStop = False
         '
-        'btnBearbeiten
+        'btnOeffnen
         '
-        Me.btnBearbeiten.Location = New System.Drawing.Point(723, 802)
-        Me.btnBearbeiten.Name = "btnBearbeiten"
-        Me.btnBearbeiten.Size = New System.Drawing.Size(135, 40)
-        Me.btnBearbeiten.TabIndex = 3
-        Me.btnBearbeiten.Text = "Bearbeiten"
-        Me.btnBearbeiten.UseVisualStyleBackColor = True
+        Me.btnOeffnen.Location = New System.Drawing.Point(723, 802)
+        Me.btnOeffnen.Name = "btnOeffnen"
+        Me.btnOeffnen.Size = New System.Drawing.Size(135, 40)
+        Me.btnOeffnen.TabIndex = 3
+        Me.btnOeffnen.Text = "Öffnen"
+        Me.btnOeffnen.UseVisualStyleBackColor = True
         '
         'lstKurse
         '
@@ -175,6 +179,24 @@ Partial Class frmHauptfensterTrainer
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVerfuegbarkeit.Width = 147
         '
+        'btnNeu
+        '
+        Me.btnNeu.Location = New System.Drawing.Point(419, 802)
+        Me.btnNeu.Name = "btnNeu"
+        Me.btnNeu.Size = New System.Drawing.Size(135, 40)
+        Me.btnNeu.TabIndex = 4
+        Me.btnNeu.Text = "Neu"
+        Me.btnNeu.UseVisualStyleBackColor = True
+        '
+        'btnLoeschen
+        '
+        Me.btnLoeschen.Location = New System.Drawing.Point(571, 802)
+        Me.btnLoeschen.Name = "btnLoeschen"
+        Me.btnLoeschen.Size = New System.Drawing.Size(135, 40)
+        Me.btnLoeschen.TabIndex = 5
+        Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.UseVisualStyleBackColor = True
+        '
         'frmHauptfensterTrainer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -197,17 +219,19 @@ Partial Class frmHauptfensterTrainer
 
     Friend WithEvents btnBeenden As Button
     Friend WithEvents grpboxMenu As GroupBox
-    Friend WithEvents btnNeueSchueler As Button
-    Friend WithEvents btnAlleSchueler As Button
+    Friend WithEvents btnSchueler As Button
+    Friend WithEvents btnKurse As Button
     Friend WithEvents btnMeinKonto As Button
     Friend WithEvents picboxNeueSchueler As PictureBox
     Friend WithEvents picboxAlleSchueler As PictureBox
     Friend WithEvents picboxMeinKonto As PictureBox
     Friend WithEvents grpboxKurs As GroupBox
-    Friend WithEvents btnBearbeiten As Button
+    Friend WithEvents btnOeffnen As Button
     Friend WithEvents lstKurse As ListView
     Friend WithEvents colKursID As ColumnHeader
     Friend WithEvents colDatum As ColumnHeader
     Friend WithEvents colSportart As ColumnHeader
     Friend WithEvents colVerfuegbarkeit As ColumnHeader
+    Friend WithEvents btnLoeschen As Button
+    Friend WithEvents btnNeu As Button
 End Class

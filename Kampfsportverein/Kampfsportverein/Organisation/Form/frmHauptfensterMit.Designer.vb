@@ -24,29 +24,30 @@ Partial Class frmHauptfensterMit
     Private Sub InitializeComponent()
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.grpboxMenu = New System.Windows.Forms.GroupBox()
-        Me.btnNeuerTrainer = New System.Windows.Forms.Button()
+        Me.btnKurs = New System.Windows.Forms.Button()
+        Me.picboxNeuerKurs = New System.Windows.Forms.PictureBox()
+        Me.btnSportarten = New System.Windows.Forms.Button()
         Me.btnNeueSportart = New System.Windows.Forms.Button()
         Me.picboxNeuerTrainer = New System.Windows.Forms.PictureBox()
         Me.picboxNeueSportart = New System.Windows.Forms.PictureBox()
         Me.grpboxSportartliste = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstSportart = New System.Windows.Forms.ListView()
         Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.menuMeinKonto = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuAlleTrainer = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuAlleSchueler = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuAlleMitarbeiter = New System.Windows.Forms.ToolStripMenuItem()
-        Me.menuHilfe = New System.Windows.Forms.ToolStripMenuItem()
-        Me.picboxNeuerKurs = New System.Windows.Forms.PictureBox()
-        Me.btnNeuerKurs = New System.Windows.Forms.Button()
+        Me.btnLoeschen = New System.Windows.Forms.Button()
+        Me.btnNeu = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnSchueler = New System.Windows.Forms.Button()
+        Me.btnTrainer = New System.Windows.Forms.Button()
         Me.grpboxMenu.SuspendLayout()
+        CType(Me.picboxNeuerKurs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picboxNeuerTrainer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picboxNeueSportart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpboxSportartliste.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
-        CType(Me.picboxNeuerKurs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnBeenden
@@ -60,70 +61,93 @@ Partial Class frmHauptfensterMit
         '
         'grpboxMenu
         '
-        Me.grpboxMenu.Controls.Add(Me.btnNeuerKurs)
+        Me.grpboxMenu.Controls.Add(Me.btnTrainer)
+        Me.grpboxMenu.Controls.Add(Me.btnSchueler)
+        Me.grpboxMenu.Controls.Add(Me.PictureBox2)
+        Me.grpboxMenu.Controls.Add(Me.PictureBox1)
+        Me.grpboxMenu.Controls.Add(Me.btnKurs)
         Me.grpboxMenu.Controls.Add(Me.picboxNeuerKurs)
-        Me.grpboxMenu.Controls.Add(Me.btnNeuerTrainer)
+        Me.grpboxMenu.Controls.Add(Me.btnSportarten)
         Me.grpboxMenu.Controls.Add(Me.btnNeueSportart)
         Me.grpboxMenu.Controls.Add(Me.picboxNeuerTrainer)
         Me.grpboxMenu.Controls.Add(Me.picboxNeueSportart)
-        Me.grpboxMenu.Location = New System.Drawing.Point(12, 64)
+        Me.grpboxMenu.Location = New System.Drawing.Point(12, 12)
         Me.grpboxMenu.Name = "grpboxMenu"
-        Me.grpboxMenu.Size = New System.Drawing.Size(347, 796)
+        Me.grpboxMenu.Size = New System.Drawing.Size(347, 848)
         Me.grpboxMenu.TabIndex = 1
         Me.grpboxMenu.TabStop = False
         '
-        'btnNeuerTrainer
+        'btnKurs
         '
-        Me.btnNeuerTrainer.Location = New System.Drawing.Point(83, 443)
-        Me.btnNeuerTrainer.Name = "btnNeuerTrainer"
-        Me.btnNeuerTrainer.Size = New System.Drawing.Size(182, 43)
-        Me.btnNeuerTrainer.TabIndex = 3
-        Me.btnNeuerTrainer.Text = "Neuer Trainer"
-        Me.btnNeuerTrainer.UseVisualStyleBackColor = True
+        Me.btnKurs.Location = New System.Drawing.Point(164, 382)
+        Me.btnKurs.Name = "btnKurs"
+        Me.btnKurs.Size = New System.Drawing.Size(145, 65)
+        Me.btnKurs.TabIndex = 5
+        Me.btnKurs.Text = "Kurse"
+        Me.btnKurs.UseVisualStyleBackColor = True
+        '
+        'picboxNeuerKurs
+        '
+        Me.picboxNeuerKurs.Location = New System.Drawing.Point(19, 361)
+        Me.picboxNeuerKurs.Name = "picboxNeuerKurs"
+        Me.picboxNeuerKurs.Size = New System.Drawing.Size(121, 110)
+        Me.picboxNeuerKurs.TabIndex = 4
+        Me.picboxNeuerKurs.TabStop = False
+        '
+        'btnSportarten
+        '
+        Me.btnSportarten.Location = New System.Drawing.Point(164, 215)
+        Me.btnSportarten.Name = "btnSportarten"
+        Me.btnSportarten.Size = New System.Drawing.Size(145, 65)
+        Me.btnSportarten.TabIndex = 3
+        Me.btnSportarten.Text = "Sportarten"
+        Me.btnSportarten.UseVisualStyleBackColor = True
         '
         'btnNeueSportart
         '
-        Me.btnNeueSportart.Location = New System.Drawing.Point(83, 179)
+        Me.btnNeueSportart.Location = New System.Drawing.Point(164, 57)
         Me.btnNeueSportart.Name = "btnNeueSportart"
-        Me.btnNeueSportart.Size = New System.Drawing.Size(182, 43)
+        Me.btnNeueSportart.Size = New System.Drawing.Size(145, 65)
         Me.btnNeueSportart.TabIndex = 2
-        Me.btnNeueSportart.Text = "Neue Sportart"
+        Me.btnNeueSportart.Text = "Mein Konto"
         Me.btnNeueSportart.UseVisualStyleBackColor = True
         '
         'picboxNeuerTrainer
         '
-        Me.picboxNeuerTrainer.Location = New System.Drawing.Point(95, 299)
+        Me.picboxNeuerTrainer.Location = New System.Drawing.Point(19, 193)
         Me.picboxNeuerTrainer.Name = "picboxNeuerTrainer"
-        Me.picboxNeuerTrainer.Size = New System.Drawing.Size(156, 122)
+        Me.picboxNeuerTrainer.Size = New System.Drawing.Size(121, 110)
         Me.picboxNeuerTrainer.TabIndex = 1
         Me.picboxNeuerTrainer.TabStop = False
         '
         'picboxNeueSportart
         '
-        Me.picboxNeueSportart.Location = New System.Drawing.Point(95, 30)
+        Me.picboxNeueSportart.Location = New System.Drawing.Point(19, 30)
         Me.picboxNeueSportart.Name = "picboxNeueSportart"
-        Me.picboxNeueSportart.Size = New System.Drawing.Size(156, 122)
+        Me.picboxNeueSportart.Size = New System.Drawing.Size(121, 110)
         Me.picboxNeueSportart.TabIndex = 0
         Me.picboxNeueSportart.TabStop = False
         '
         'grpboxSportartliste
         '
-        Me.grpboxSportartliste.Controls.Add(Me.Button3)
+        Me.grpboxSportartliste.Controls.Add(Me.btnNeu)
+        Me.grpboxSportartliste.Controls.Add(Me.btnLoeschen)
+        Me.grpboxSportartliste.Controls.Add(Me.btnOeffnen)
         Me.grpboxSportartliste.Controls.Add(Me.lstSportart)
-        Me.grpboxSportartliste.Location = New System.Drawing.Point(376, 64)
+        Me.grpboxSportartliste.Location = New System.Drawing.Point(376, 12)
         Me.grpboxSportartliste.Name = "grpboxSportartliste"
-        Me.grpboxSportartliste.Size = New System.Drawing.Size(857, 796)
+        Me.grpboxSportartliste.Size = New System.Drawing.Size(857, 848)
         Me.grpboxSportartliste.TabIndex = 2
         Me.grpboxSportartliste.TabStop = False
         '
-        'Button3
+        'btnOeffnen
         '
-        Me.Button3.Location = New System.Drawing.Point(724, 739)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(127, 44)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Bearbeiten"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnOeffnen.Location = New System.Drawing.Point(724, 784)
+        Me.btnOeffnen.Name = "btnOeffnen"
+        Me.btnOeffnen.Size = New System.Drawing.Size(127, 44)
+        Me.btnOeffnen.TabIndex = 4
+        Me.btnOeffnen.Text = "Öffnen"
+        Me.btnOeffnen.UseVisualStyleBackColor = True
         '
         'lstSportart
         '
@@ -134,7 +158,7 @@ Partial Class frmHauptfensterMit
         Me.lstSportart.Location = New System.Drawing.Point(0, 9)
         Me.lstSportart.MultiSelect = False
         Me.lstSportart.Name = "lstSportart"
-        Me.lstSportart.Size = New System.Drawing.Size(857, 717)
+        Me.lstSportart.Size = New System.Drawing.Size(857, 754)
         Me.lstSportart.TabIndex = 0
         Me.lstSportart.UseCompatibleStateImageBehavior = False
         Me.lstSportart.View = System.Windows.Forms.View.Details
@@ -150,62 +174,57 @@ Partial Class frmHauptfensterMit
         Me.colSportart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colSportart.Width = 721
         '
-        'MenuStrip1
+        'btnLoeschen
         '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuMeinKonto, Me.menuAlleTrainer, Me.menuAlleSchueler, Me.menuAlleMitarbeiter, Me.menuHilfe})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1254, 40)
-        Me.MenuStrip1.TabIndex = 3
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.btnLoeschen.Location = New System.Drawing.Point(580, 784)
+        Me.btnLoeschen.Name = "btnLoeschen"
+        Me.btnLoeschen.Size = New System.Drawing.Size(127, 44)
+        Me.btnLoeschen.TabIndex = 5
+        Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.UseVisualStyleBackColor = True
         '
-        'menuMeinKonto
+        'btnNeu
         '
-        Me.menuMeinKonto.Name = "menuMeinKonto"
-        Me.menuMeinKonto.Size = New System.Drawing.Size(152, 36)
-        Me.menuMeinKonto.Text = "Mein Konto"
+        Me.btnNeu.Location = New System.Drawing.Point(436, 784)
+        Me.btnNeu.Name = "btnNeu"
+        Me.btnNeu.Size = New System.Drawing.Size(127, 44)
+        Me.btnNeu.TabIndex = 6
+        Me.btnNeu.Text = "Neu"
+        Me.btnNeu.UseVisualStyleBackColor = True
         '
-        'menuAlleTrainer
+        'PictureBox1
         '
-        Me.menuAlleTrainer.Name = "menuAlleTrainer"
-        Me.menuAlleTrainer.Size = New System.Drawing.Size(146, 36)
-        Me.menuAlleTrainer.Text = "Alle Trainer"
+        Me.PictureBox1.Location = New System.Drawing.Point(19, 531)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(121, 110)
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
         '
-        'menuAlleSchueler
+        'PictureBox2
         '
-        Me.menuAlleSchueler.Name = "menuAlleSchueler"
-        Me.menuAlleSchueler.Size = New System.Drawing.Size(153, 36)
-        Me.menuAlleSchueler.Text = "Alle Schüler"
+        Me.PictureBox2.Location = New System.Drawing.Point(19, 706)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(121, 110)
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
         '
-        'menuAlleMitarbeiter
+        'btnSchueler
         '
-        Me.menuAlleMitarbeiter.Name = "menuAlleMitarbeiter"
-        Me.menuAlleMitarbeiter.Size = New System.Drawing.Size(192, 36)
-        Me.menuAlleMitarbeiter.Text = "Alle Mitarbeiter"
+        Me.btnSchueler.Location = New System.Drawing.Point(164, 554)
+        Me.btnSchueler.Name = "btnSchueler"
+        Me.btnSchueler.Size = New System.Drawing.Size(145, 65)
+        Me.btnSchueler.TabIndex = 8
+        Me.btnSchueler.Text = "Schüler"
+        Me.btnSchueler.UseVisualStyleBackColor = True
         '
-        'menuHilfe
+        'btnTrainer
         '
-        Me.menuHilfe.Name = "menuHilfe"
-        Me.menuHilfe.Size = New System.Drawing.Size(77, 36)
-        Me.menuHilfe.Text = "Hilfe"
-        '
-        'picboxNeuerKurs
-        '
-        Me.picboxNeuerKurs.Location = New System.Drawing.Point(95, 573)
-        Me.picboxNeuerKurs.Name = "picboxNeuerKurs"
-        Me.picboxNeuerKurs.Size = New System.Drawing.Size(156, 122)
-        Me.picboxNeuerKurs.TabIndex = 4
-        Me.picboxNeuerKurs.TabStop = False
-        '
-        'btnNeuerKurs
-        '
-        Me.btnNeuerKurs.Location = New System.Drawing.Point(83, 720)
-        Me.btnNeuerKurs.Name = "btnNeuerKurs"
-        Me.btnNeuerKurs.Size = New System.Drawing.Size(182, 43)
-        Me.btnNeuerKurs.TabIndex = 5
-        Me.btnNeuerKurs.Text = "Neuer Kurs"
-        Me.btnNeuerKurs.UseVisualStyleBackColor = True
+        Me.btnTrainer.Location = New System.Drawing.Point(164, 730)
+        Me.btnTrainer.Name = "btnTrainer"
+        Me.btnTrainer.Size = New System.Drawing.Size(145, 65)
+        Me.btnTrainer.TabIndex = 9
+        Me.btnTrainer.Text = "Trainer"
+        Me.btnTrainer.UseVisualStyleBackColor = True
         '
         'frmHauptfensterMit
         '
@@ -215,25 +234,22 @@ Partial Class frmHauptfensterMit
         Me.Controls.Add(Me.grpboxSportartliste)
         Me.Controls.Add(Me.grpboxMenu)
         Me.Controls.Add(Me.btnBeenden)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmHauptfensterMit"
         Me.Text = "Kampfsportverein"
         Me.grpboxMenu.ResumeLayout(False)
+        CType(Me.picboxNeuerKurs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picboxNeuerTrainer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picboxNeueSportart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpboxSportartliste.ResumeLayout(False)
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
-        CType(Me.picboxNeuerKurs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnBeenden As Button
     Friend WithEvents grpboxMenu As GroupBox
-    Friend WithEvents btnNeuerTrainer As Button
+    Friend WithEvents btnSportarten As Button
     Friend WithEvents btnNeueSportart As Button
     Friend WithEvents picboxNeuerTrainer As PictureBox
     Friend WithEvents picboxNeueSportart As PictureBox
@@ -241,13 +257,13 @@ Partial Class frmHauptfensterMit
     Friend WithEvents lstSportart As ListView
     Friend WithEvents colID As ColumnHeader
     Friend WithEvents colSportart As ColumnHeader
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents menuMeinKonto As ToolStripMenuItem
-    Friend WithEvents menuAlleTrainer As ToolStripMenuItem
-    Friend WithEvents menuAlleSchueler As ToolStripMenuItem
-    Friend WithEvents menuAlleMitarbeiter As ToolStripMenuItem
-    Friend WithEvents menuHilfe As ToolStripMenuItem
-    Friend WithEvents Button3 As Button
-    Friend WithEvents btnNeuerKurs As Button
+    Friend WithEvents btnOeffnen As Button
+    Friend WithEvents btnKurs As Button
     Friend WithEvents picboxNeuerKurs As PictureBox
+    Friend WithEvents btnNeu As Button
+    Friend WithEvents btnLoeschen As Button
+    Friend WithEvents btnTrainer As Button
+    Friend WithEvents btnSchueler As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
