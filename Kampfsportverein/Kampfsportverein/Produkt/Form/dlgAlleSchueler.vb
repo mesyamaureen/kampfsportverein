@@ -1,4 +1,4 @@
-﻿Public Class dlgAlleSchueler
+﻿Public Class dlgSchueler
     Public Property Presenter As SchuelerAllePresenter
         Get
             Return Nothing

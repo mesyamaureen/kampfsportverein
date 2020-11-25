@@ -75,7 +75,7 @@
         End If
     End Sub
 
-    Public Sub verarbeiteKursuebersichtAnzeigen(lngIndex As Long) 'button Bearbeiten
+    Public Sub verarbeiteKursuebersichtAnzeigen(lngIndex As Long) 'button Kurse
         'Dim kurs As Kurse
         'Dim kursPresenter As AlleKursePresenter
         'kurs = mlstKursAlle.Item(lngIndex)
@@ -92,16 +92,20 @@
         ''End Select
     End Sub
 
-    Public Sub verarbeiteSportartenuebersichtAnzeigen() 'sollte nicht hier sein, weil dieses Diagramm für Trainer ist
-
-    End Sub
-
-    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Alle Schüler
+    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
         mView.Close()
     End Sub
 
-    Public Sub verarbeiteSchuelerHinzufuegen() 'button Neue Schüler
+    Public Sub verarbeiteOeffnen() 'button Öffnen
+
+    End Sub
+
+    Public Sub verarbeiteLoeschen() 'button Löschen
+
+    End Sub
+
+    Public Sub verarbeiteNeu() 'button Neu
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN
         mView.Close()
     End Sub

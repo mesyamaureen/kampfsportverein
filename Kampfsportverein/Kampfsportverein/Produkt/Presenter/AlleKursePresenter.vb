@@ -1,4 +1,4 @@
-﻿Public Class KursePresenter
+﻿Public Class KursPresenter
     Private mView As Kurs
     Private mErgebnis As Kurs
     Private mistKurseAlle As Kurs
@@ -7,11 +7,11 @@
 
     End Sub
 
-    Public Property View As KurseView
+    Public Property View As KursView
         Get
             Return Nothing
         End Get
-        Set(value As KurseView)
+        Set(value As KursView)
         End Set
     End Property
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class dlgKursEinzelTrainer
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class dlgKursEinzeln
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class dlgKursEinzelTrainer
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnSpeichern = New System.Windows.Forms.Button()
@@ -29,10 +29,14 @@ Partial Class dlgKursEinzelTrainer
         Me.lblOrt = New System.Windows.Forms.Label()
         Me.lblTeilnZahl = New System.Windows.Forms.Label()
         Me.lblSchwierigkeit = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtZeitpunkt = New System.Windows.Forms.TextBox()
+        Me.txtOrt = New System.Windows.Forms.TextBox()
+        Me.txtTeilnZahl = New System.Windows.Forms.TextBox()
+        Me.rbtnAnfaenger = New System.Windows.Forms.RadioButton()
+        Me.rbtnFortgeschritten = New System.Windows.Forms.RadioButton()
+        Me.rbtnExperte = New System.Windows.Forms.RadioButton()
+        Me.lblTrainer = New System.Windows.Forms.Label()
+        Me.cboxTrainer = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -93,43 +97,85 @@ Partial Class dlgKursEinzelTrainer
         'lblSchwierigkeit
         '
         Me.lblSchwierigkeit.AutoSize = True
-        Me.lblSchwierigkeit.Location = New System.Drawing.Point(12, 308)
+        Me.lblSchwierigkeit.Location = New System.Drawing.Point(12, 297)
         Me.lblSchwierigkeit.Name = "lblSchwierigkeit"
         Me.lblSchwierigkeit.Size = New System.Drawing.Size(193, 25)
         Me.lblSchwierigkeit.TabIndex = 6
         Me.lblSchwierigkeit.Text = "Schwierigkeitsgrad"
         '
-        'TextBox1
+        'txtZeitpunkt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(232, 32)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(530, 41)
-        Me.TextBox1.TabIndex = 7
+        Me.txtZeitpunkt.Location = New System.Drawing.Point(232, 32)
+        Me.txtZeitpunkt.Multiline = True
+        Me.txtZeitpunkt.Name = "txtZeitpunkt"
+        Me.txtZeitpunkt.Size = New System.Drawing.Size(530, 41)
+        Me.txtZeitpunkt.TabIndex = 7
         '
-        'TextBox2
+        'txtOrt
         '
-        Me.TextBox2.Location = New System.Drawing.Point(232, 118)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(530, 41)
-        Me.TextBox2.TabIndex = 8
+        Me.txtOrt.Location = New System.Drawing.Point(232, 118)
+        Me.txtOrt.Multiline = True
+        Me.txtOrt.Name = "txtOrt"
+        Me.txtOrt.Size = New System.Drawing.Size(530, 41)
+        Me.txtOrt.TabIndex = 8
         '
-        'TextBox3
+        'txtTeilnZahl
         '
-        Me.TextBox3.Location = New System.Drawing.Point(232, 207)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(530, 41)
-        Me.TextBox3.TabIndex = 9
+        Me.txtTeilnZahl.Location = New System.Drawing.Point(232, 207)
+        Me.txtTeilnZahl.Multiline = True
+        Me.txtTeilnZahl.Name = "txtTeilnZahl"
+        Me.txtTeilnZahl.Size = New System.Drawing.Size(530, 41)
+        Me.txtTeilnZahl.TabIndex = 9
         '
-        'TextBox4
+        'rbtnAnfaenger
         '
-        Me.TextBox4.Location = New System.Drawing.Point(232, 302)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(530, 41)
-        Me.TextBox4.TabIndex = 10
+        Me.rbtnAnfaenger.AutoSize = True
+        Me.rbtnAnfaenger.Location = New System.Drawing.Point(232, 295)
+        Me.rbtnAnfaenger.Name = "rbtnAnfaenger"
+        Me.rbtnAnfaenger.Size = New System.Drawing.Size(130, 29)
+        Me.rbtnAnfaenger.TabIndex = 12
+        Me.rbtnAnfaenger.TabStop = True
+        Me.rbtnAnfaenger.Text = "Anfänger"
+        Me.rbtnAnfaenger.UseVisualStyleBackColor = True
+        '
+        'rbtnFortgeschritten
+        '
+        Me.rbtnFortgeschritten.AutoSize = True
+        Me.rbtnFortgeschritten.Location = New System.Drawing.Point(421, 293)
+        Me.rbtnFortgeschritten.Name = "rbtnFortgeschritten"
+        Me.rbtnFortgeschritten.Size = New System.Drawing.Size(187, 29)
+        Me.rbtnFortgeschritten.TabIndex = 13
+        Me.rbtnFortgeschritten.TabStop = True
+        Me.rbtnFortgeschritten.Text = "Fortgeschritten"
+        Me.rbtnFortgeschritten.UseVisualStyleBackColor = True
+        '
+        'rbtnExperte
+        '
+        Me.rbtnExperte.AutoSize = True
+        Me.rbtnExperte.Location = New System.Drawing.Point(645, 293)
+        Me.rbtnExperte.Name = "rbtnExperte"
+        Me.rbtnExperte.Size = New System.Drawing.Size(117, 29)
+        Me.rbtnExperte.TabIndex = 14
+        Me.rbtnExperte.TabStop = True
+        Me.rbtnExperte.Text = "Experte"
+        Me.rbtnExperte.UseVisualStyleBackColor = True
+        '
+        'lblTrainer
+        '
+        Me.lblTrainer.AutoSize = True
+        Me.lblTrainer.Location = New System.Drawing.Point(12, 372)
+        Me.lblTrainer.Name = "lblTrainer"
+        Me.lblTrainer.Size = New System.Drawing.Size(80, 25)
+        Me.lblTrainer.TabIndex = 15
+        Me.lblTrainer.Text = "Trainer"
+        '
+        'cboxTrainer
+        '
+        Me.cboxTrainer.FormattingEnabled = True
+        Me.cboxTrainer.Location = New System.Drawing.Point(232, 369)
+        Me.cboxTrainer.Name = "cboxTrainer"
+        Me.cboxTrainer.Size = New System.Drawing.Size(533, 33)
+        Me.cboxTrainer.TabIndex = 16
         '
         'dlgKursEinzelTrainer
         '
@@ -138,10 +184,14 @@ Partial Class dlgKursEinzelTrainer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.cboxTrainer)
+        Me.Controls.Add(Me.lblTrainer)
+        Me.Controls.Add(Me.rbtnExperte)
+        Me.Controls.Add(Me.rbtnFortgeschritten)
+        Me.Controls.Add(Me.rbtnAnfaenger)
+        Me.Controls.Add(Me.txtTeilnZahl)
+        Me.Controls.Add(Me.txtOrt)
+        Me.Controls.Add(Me.txtZeitpunkt)
         Me.Controls.Add(Me.lblSchwierigkeit)
         Me.Controls.Add(Me.lblTeilnZahl)
         Me.Controls.Add(Me.lblOrt)
@@ -163,8 +213,12 @@ Partial Class dlgKursEinzelTrainer
     Friend WithEvents lblOrt As Label
     Friend WithEvents lblTeilnZahl As Label
     Friend WithEvents lblSchwierigkeit As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtZeitpunkt As TextBox
+    Friend WithEvents txtOrt As TextBox
+    Friend WithEvents txtTeilnZahl As TextBox
+    Friend WithEvents rbtnAnfaenger As RadioButton
+    Friend WithEvents rbtnFortgeschritten As RadioButton
+    Friend WithEvents rbtnExperte As RadioButton
+    Friend WithEvents lblTrainer As Label
+    Friend WithEvents cboxTrainer As ComboBox
 End Class

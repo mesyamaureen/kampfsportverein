@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class dlgAlleSchueler
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class dlgSchueler
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,88 +20,162 @@ Partial Class dlgAlleSchueler
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.btnSchliessen = New System.Windows.Forms.Button()
-        Me.lstAlleSchueler = New System.Windows.Forms.ListView()
-        Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colGebDat = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colEmail = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnAbbrechen = New System.Windows.Forms.Button()
+        Me.btnSpeichern = New System.Windows.Forms.Button()
+        Me.lblSchuelerID = New System.Windows.Forms.Label()
+        Me.lblVorname = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.lblGebdat = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.txtSchuelerID = New System.Windows.Forms.TextBox()
+        Me.txtVorname = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.datGebdatSchueler = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
-        'btnSchliessen
+        'btnAbbrechen
         '
-        Me.btnSchliessen.Location = New System.Drawing.Point(1118, 577)
-        Me.btnSchliessen.Name = "btnSchliessen"
-        Me.btnSchliessen.Size = New System.Drawing.Size(124, 40)
-        Me.btnSchliessen.TabIndex = 0
-        Me.btnSchliessen.Text = "Schließen"
-        Me.btnSchliessen.UseVisualStyleBackColor = True
+        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnAbbrechen.Location = New System.Drawing.Point(638, 477)
+        Me.btnAbbrechen.Name = "btnAbbrechen"
+        Me.btnAbbrechen.Size = New System.Drawing.Size(124, 40)
+        Me.btnAbbrechen.TabIndex = 0
+        Me.btnAbbrechen.Text = "Abbrechen"
+        Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
-        'lstAlleSchueler
+        'btnSpeichern
         '
-        Me.lstAlleSchueler.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colVorname, Me.colName, Me.colGebDat, Me.colEmail})
-        Me.lstAlleSchueler.FullRowSelect = True
-        Me.lstAlleSchueler.GridLines = True
-        Me.lstAlleSchueler.HideSelection = False
-        Me.lstAlleSchueler.Location = New System.Drawing.Point(12, 23)
-        Me.lstAlleSchueler.MultiSelect = False
-        Me.lstAlleSchueler.Name = "lstAlleSchueler"
-        Me.lstAlleSchueler.Size = New System.Drawing.Size(1230, 538)
-        Me.lstAlleSchueler.TabIndex = 1
-        Me.lstAlleSchueler.UseCompatibleStateImageBehavior = False
-        Me.lstAlleSchueler.View = System.Windows.Forms.View.Details
+        Me.btnSpeichern.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnSpeichern.Location = New System.Drawing.Point(505, 477)
+        Me.btnSpeichern.Name = "btnSpeichern"
+        Me.btnSpeichern.Size = New System.Drawing.Size(124, 40)
+        Me.btnSpeichern.TabIndex = 1
+        Me.btnSpeichern.Text = "Speichern"
+        Me.btnSpeichern.UseVisualStyleBackColor = True
         '
-        'colID
+        'lblSchuelerID
         '
-        Me.colID.Text = "ID"
-        Me.colID.Width = 89
+        Me.lblSchuelerID.AutoSize = True
+        Me.lblSchuelerID.Location = New System.Drawing.Point(26, 36)
+        Me.lblSchuelerID.Name = "lblSchuelerID"
+        Me.lblSchuelerID.Size = New System.Drawing.Size(111, 25)
+        Me.lblSchuelerID.TabIndex = 2
+        Me.lblSchuelerID.Text = "Schüler ID"
         '
-        'colVorname
+        'lblVorname
         '
-        Me.colVorname.Text = "Vorname"
-        Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVorname.Width = 294
+        Me.lblVorname.AutoSize = True
+        Me.lblVorname.Location = New System.Drawing.Point(26, 112)
+        Me.lblVorname.Name = "lblVorname"
+        Me.lblVorname.Size = New System.Drawing.Size(98, 25)
+        Me.lblVorname.TabIndex = 3
+        Me.lblVorname.Text = "Vorname"
         '
-        'colName
+        'lblName
         '
-        Me.colName.Text = "Name"
-        Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colName.Width = 345
+        Me.lblName.AutoSize = True
+        Me.lblName.Location = New System.Drawing.Point(26, 198)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(68, 25)
+        Me.lblName.TabIndex = 4
+        Me.lblName.Text = "Name"
         '
-        'colGebDat
+        'lblGebdat
         '
-        Me.colGebDat.Text = "Geburtsdatum"
-        Me.colGebDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colGebDat.Width = 209
+        Me.lblGebdat.AutoSize = True
+        Me.lblGebdat.Location = New System.Drawing.Point(26, 274)
+        Me.lblGebdat.Name = "lblGebdat"
+        Me.lblGebdat.Size = New System.Drawing.Size(147, 25)
+        Me.lblGebdat.TabIndex = 5
+        Me.lblGebdat.Text = "Geburtsdatum"
         '
-        'colEmail
+        'lblEmail
         '
-        Me.colEmail.Text = "E-Mail"
-        Me.colEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colEmail.Width = 289
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Location = New System.Drawing.Point(26, 355)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(73, 25)
+        Me.lblEmail.TabIndex = 6
+        Me.lblEmail.Text = "E-Mail"
         '
-        'dlgAlleSchueler
+        'txtSchuelerID
         '
+        Me.txtSchuelerID.Location = New System.Drawing.Point(191, 24)
+        Me.txtSchuelerID.Multiline = True
+        Me.txtSchuelerID.Name = "txtSchuelerID"
+        Me.txtSchuelerID.Size = New System.Drawing.Size(161, 48)
+        Me.txtSchuelerID.TabIndex = 7
+        '
+        'txtVorname
+        '
+        Me.txtVorname.Location = New System.Drawing.Point(191, 101)
+        Me.txtVorname.Multiline = True
+        Me.txtVorname.Name = "txtVorname"
+        Me.txtVorname.Size = New System.Drawing.Size(571, 48)
+        Me.txtVorname.TabIndex = 8
+        '
+        'txtName
+        '
+        Me.txtName.Location = New System.Drawing.Point(191, 186)
+        Me.txtName.Multiline = True
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(571, 48)
+        Me.txtName.TabIndex = 9
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(191, 341)
+        Me.txtEmail.Multiline = True
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(571, 48)
+        Me.txtEmail.TabIndex = 11
+        '
+        'datGebdatSchueler
+        '
+        Me.datGebdatSchueler.Location = New System.Drawing.Point(191, 273)
+        Me.datGebdatSchueler.Name = "datGebdatSchueler"
+        Me.datGebdatSchueler.Size = New System.Drawing.Size(571, 31)
+        Me.datGebdatSchueler.TabIndex = 12
+        '
+        'dlgSchueler
+        '
+        Me.AcceptButton = Me.btnSpeichern
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnSchliessen
-        Me.ClientSize = New System.Drawing.Size(1254, 629)
-        Me.Controls.Add(Me.lstAlleSchueler)
-        Me.Controls.Add(Me.btnSchliessen)
-        Me.Name = "dlgAlleSchueler"
-        Me.Text = "Alle Schüler"
+        Me.CancelButton = Me.btnAbbrechen
+        Me.ClientSize = New System.Drawing.Size(774, 529)
+        Me.Controls.Add(Me.datGebdatSchueler)
+        Me.Controls.Add(Me.txtEmail)
+        Me.Controls.Add(Me.txtName)
+        Me.Controls.Add(Me.txtVorname)
+        Me.Controls.Add(Me.txtSchuelerID)
+        Me.Controls.Add(Me.lblEmail)
+        Me.Controls.Add(Me.lblGebdat)
+        Me.Controls.Add(Me.lblName)
+        Me.Controls.Add(Me.lblVorname)
+        Me.Controls.Add(Me.lblSchuelerID)
+        Me.Controls.Add(Me.btnSpeichern)
+        Me.Controls.Add(Me.btnAbbrechen)
+        Me.Name = "dlgSchueler"
+        Me.Text = "Schüler"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents btnSchliessen As Button
-    Friend WithEvents lstAlleSchueler As ListView
-    Friend WithEvents colID As ColumnHeader
-    Friend WithEvents colVorname As ColumnHeader
-    Friend WithEvents colName As ColumnHeader
-    Friend WithEvents colGebDat As ColumnHeader
-    Friend WithEvents colEmail As ColumnHeader
+    Friend WithEvents btnAbbrechen As Button
+    Friend WithEvents btnSpeichern As Button
+    Friend WithEvents lblSchuelerID As Label
+    Friend WithEvents lblVorname As Label
+    Friend WithEvents lblName As Label
+    Friend WithEvents lblGebdat As Label
+    Friend WithEvents lblEmail As Label
+    Friend WithEvents txtSchuelerID As TextBox
+    Friend WithEvents txtVorname As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents datGebdatSchueler As DateTimePicker
 End Class

@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub btnNeueSchueler_Click(sender As Object, e As EventArgs) Handles btnSchueler.Click
-        mPresenter.verarbeiteSchuelerHinzufuegen()
+        mPresenter.verarbeiteNeu()
     End Sub
 
     Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click

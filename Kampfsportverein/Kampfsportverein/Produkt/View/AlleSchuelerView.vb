@@ -1,5 +1,5 @@
 ﻿Public Class AlleSchuelerView
-    Inherits dlgAlleSchueler
+    Inherits dlgSchueler
 
     Public Property IstSchueler As AlleSchuelerView
         Get

@@ -1,13 +1,13 @@
-﻿Public Class KurseView
-    Inherits dlgKursEinzelTrainer
+﻿Public Class KursView
+    Inherits dlgKursEinzeln
 
     Private mbolAktiv As Boolean
 
-    Public Property IstKurs As KurseView
+    Public Property IstKurs As KursView
         Get
             Return Nothing
         End Get
-        Set(value As KurseView)
+        Set(value As KursView)
         End Set
     End Property
 

@@ -182,22 +182,10 @@
     <Compile Include="Produkt\Form\dlgAlleSchueler.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produkt\Form\dlgAlleSchuelerMit.Designer.vb">
-      <DependentUpon>dlgAlleSchuelerMit.vb</DependentUpon>
+    <Compile Include="Produkt\Form\dlgKursEinzeln.Designer.vb">
+      <DependentUpon>dlgKursEinzeln.vb</DependentUpon>
     </Compile>
-    <Compile Include="Produkt\Form\dlgAlleSchuelerMit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Produkt\Form\dlgKursBearbeiten.Designer.vb">
-      <DependentUpon>dlgKursBearbeiten.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Produkt\Form\dlgKursBearbeiten.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Produkt\Form\dlgKursEinzelTrainer.Designer.vb">
-      <DependentUpon>dlgKursEinzelTrainer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Produkt\Form\dlgKursEinzelTrainer.vb">
+    <Compile Include="Produkt\Form\dlgKursEinzeln.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\Form\dlgNeuerKurs.Designer.vb">
@@ -271,14 +259,8 @@
     <EmbeddedResource Include="Produkt\Form\dlgAlleSchueler.resx">
       <DependentUpon>dlgAlleSchueler.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produkt\Form\dlgAlleSchuelerMit.resx">
-      <DependentUpon>dlgAlleSchuelerMit.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Produkt\Form\dlgKursBearbeiten.resx">
-      <DependentUpon>dlgKursBearbeiten.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Produkt\Form\dlgKursEinzelTrainer.resx">
-      <DependentUpon>dlgKursEinzelTrainer.vb</DependentUpon>
+    <EmbeddedResource Include="Produkt\Form\dlgKursEinzeln.resx">
+      <DependentUpon>dlgKursEinzeln.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produkt\Form\dlgNeuerKurs.resx">
       <DependentUpon>dlgNeuerKurs.vb</DependentUpon>

@@ -90,13 +90,13 @@
             Case EPresenterErgebnis.BEENDEN
                 beenden()
             Case EPresenterErgebnis.SPORTART_ANZEIGEN
-                presenter.verarbeiteSportartuebersichtAnzeigen()
+                presenter.verarbeiteSportartUebersichtAnzeigen()
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
                 presenter.verarbeiteSchueleruebersichtAnzeigen()
             Case EPresenterErgebnis.TRAINER_ANZEIGEN
                 presenter.verarbeiteTrainerUebersichtAnzeigen()
             Case EPresenterErgebnis.TRAINER_ERSTELLEN
-                presenter.verarbeiteTrainerHinzufuegen()
+                presenter.verarbeiteNeu()
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
                        MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
