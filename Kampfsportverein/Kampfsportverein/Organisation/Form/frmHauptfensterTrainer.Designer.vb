@@ -28,13 +28,13 @@ Partial Class frmHauptfensterTrainer
         Me.btnKurse = New System.Windows.Forms.Button()
         Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.grpboxKurs = New System.Windows.Forms.GroupBox()
+        Me.btnLoeschen = New System.Windows.Forms.Button()
+        Me.btnNeu = New System.Windows.Forms.Button()
+        Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstSchueler = New System.Windows.Forms.ListView()
         Me.colSchuelerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnLoeschen = New System.Windows.Forms.Button()
-        Me.btnNeu = New System.Windows.Forms.Button()
-        Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstKurse = New System.Windows.Forms.ListView()
         Me.colKursID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -108,6 +108,33 @@ Partial Class frmHauptfensterTrainer
         Me.grpboxKurs.TabIndex = 2
         Me.grpboxKurs.TabStop = False
         '
+        'btnLoeschen
+        '
+        Me.btnLoeschen.Location = New System.Drawing.Point(571, 802)
+        Me.btnLoeschen.Name = "btnLoeschen"
+        Me.btnLoeschen.Size = New System.Drawing.Size(135, 40)
+        Me.btnLoeschen.TabIndex = 5
+        Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.UseVisualStyleBackColor = True
+        '
+        'btnNeu
+        '
+        Me.btnNeu.Location = New System.Drawing.Point(419, 802)
+        Me.btnNeu.Name = "btnNeu"
+        Me.btnNeu.Size = New System.Drawing.Size(135, 40)
+        Me.btnNeu.TabIndex = 4
+        Me.btnNeu.Text = "Neu"
+        Me.btnNeu.UseVisualStyleBackColor = True
+        '
+        'btnOeffnen
+        '
+        Me.btnOeffnen.Location = New System.Drawing.Point(723, 802)
+        Me.btnOeffnen.Name = "btnOeffnen"
+        Me.btnOeffnen.Size = New System.Drawing.Size(135, 40)
+        Me.btnOeffnen.TabIndex = 3
+        Me.btnOeffnen.Text = "Öffnen"
+        Me.btnOeffnen.UseVisualStyleBackColor = True
+        '
         'lstSchueler
         '
         Me.lstSchueler.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colSchuelerID, Me.colName, Me.colVorname})
@@ -138,33 +165,6 @@ Partial Class frmHauptfensterTrainer
         Me.colVorname.Text = "Vorname"
         Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVorname.Width = 323
-        '
-        'btnLoeschen
-        '
-        Me.btnLoeschen.Location = New System.Drawing.Point(571, 802)
-        Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(135, 40)
-        Me.btnLoeschen.TabIndex = 5
-        Me.btnLoeschen.Text = "Löschen"
-        Me.btnLoeschen.UseVisualStyleBackColor = True
-        '
-        'btnNeu
-        '
-        Me.btnNeu.Location = New System.Drawing.Point(419, 802)
-        Me.btnNeu.Name = "btnNeu"
-        Me.btnNeu.Size = New System.Drawing.Size(135, 40)
-        Me.btnNeu.TabIndex = 4
-        Me.btnNeu.Text = "Neu"
-        Me.btnNeu.UseVisualStyleBackColor = True
-        '
-        'btnOeffnen
-        '
-        Me.btnOeffnen.Location = New System.Drawing.Point(723, 802)
-        Me.btnOeffnen.Name = "btnOeffnen"
-        Me.btnOeffnen.Size = New System.Drawing.Size(135, 40)
-        Me.btnOeffnen.TabIndex = 3
-        Me.btnOeffnen.Text = "Öffnen"
-        Me.btnOeffnen.UseVisualStyleBackColor = True
         '
         'lstKurse
         '

@@ -52,7 +52,7 @@
 
     Private Sub anzeigenTrainerAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
         mView.leeren()
-        mView.anzeigen()
+        mView.anzeigenKurse()
         'anzeigen lstKurse
         For Each kurs As Kurs In mlstKursAlle
             mView.hinzufuegenZeileKurs(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
@@ -68,26 +68,19 @@
         End If
     End Sub
 
-    Public Sub verarbeiteKursuebersichtAnzeigen(lngIndex As Long) 'button Kurse
-        'Dim kurs As Kurs
-        'Dim kursPresenter As KursPresenter
-        'kurs = mlstKursAlle.Item(lngIndex)
-        'kursPresenter = New KursPresenter '(kurs)
-
-        'Select Case kursPresenter.Ergebnis
-        '    Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
-        '        anzeigen()
-        '    Case EPresenterErgebnis.ABSAGEN
-        '        anzeigen()
-        '    Case EPresenterErgebnis.ABBRECHEN
-        '        'Nichts zu tun, denn Inhalte der Felder in der View wurde verworfen
-        '    Case Else
-        'End Select
+    Public Sub verarbeiteKursuebersichtAnzeigen() 'button Kurse
+        mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
+        anzeigenTrainerAlle()
     End Sub
 
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
-        mView.Close()
+        mView.leeren()
+        mView.anzeigenSchueler()
+        For Each schueler As Schueler In mlstSchuelerAlle
+            mView.hinzufuegenZeileSchueler(mlstSchuelerAlle.IndexOf(schueler), schueler.Name,
+                                           schueler.Vorname)
+        Next
     End Sub
 
     Public Sub verarbeiteOeffnen() 'button Öffnen

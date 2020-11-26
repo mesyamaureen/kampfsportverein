@@ -18,11 +18,14 @@
         End Set
     End Property
 
-    Public Sub anzeigen()
+    Public Sub anzeigenKurse()
         Me.lstSchueler.Visible = False
         Me.lstKurse.Visible = True
-        'Dim zeile As ListViewItem
+    End Sub
 
+    Public Sub anzeigenSchueler()
+        Me.lstKurse.Visible = False
+        Me.lstSchueler.Visible = True
     End Sub
 
     Public Sub anzeigenMeinKonto()

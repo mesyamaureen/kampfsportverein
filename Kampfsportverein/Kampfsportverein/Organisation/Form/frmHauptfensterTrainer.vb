@@ -14,25 +14,21 @@
         mPresenter.verarbeiteEigenesProfilAnzeigen()
     End Sub
 
-    Private Sub btnAlleSchueler_Click(sender As Object, e As EventArgs) Handles btnKurse.Click
+    'Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
+    '    Dim lngAktuelleID As Long
+    '    lngAktuelleID = Me.lstKurse.SelectedItems(0).Text
+    '    mPresenter.verarbeiteKursuebersichtAnzeigen(lngAktuelleID)
+    'End Sub
+
+    Private Sub btnKurse_Click(sender As Object, e As EventArgs) Handles btnKurse.Click
+        mPresenter.verarbeiteKursuebersichtAnzeigen()
+    End Sub
+
+    Private Sub btnSchueler_Click(sender As Object, e As EventArgs) Handles btnSchueler.Click
         mPresenter.verarbeiteSchueleruebersichtAnzeigen()
-    End Sub
-
-    Private Sub btnNeueSchueler_Click(sender As Object, e As EventArgs) Handles btnSchueler.Click
-        mPresenter.verarbeiteNeu()
-    End Sub
-
-    Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
-        Dim lngAktuelleID As Long
-        lngAktuelleID = Me.lstKurse.SelectedItems(0).Text
-        mPresenter.verarbeiteKursuebersichtAnzeigen(lngAktuelleID)
     End Sub
 
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
         mPresenter.verarbeiteBeenden()
-    End Sub
-
-    Private Sub aktiviereSchaltflächen()
-
     End Sub
 End Class
