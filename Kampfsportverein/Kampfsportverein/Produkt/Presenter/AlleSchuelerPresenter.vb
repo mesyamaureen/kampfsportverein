@@ -5,7 +5,7 @@
 
     Sub New(schueler As Schueler)
         mView = New AlleSchuelerView(Me)
-        Application.Run(mView)
+        mView.ShowDialog()
     End Sub
 
     Public Property View As AlleSchuelerView

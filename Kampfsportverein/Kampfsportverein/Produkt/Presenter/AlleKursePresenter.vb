@@ -5,7 +5,7 @@
 
     Sub New(kurs As Kurs)
         mView = New KursView(Me)
-        Application.Run(mView)
+        mView.ShowDialog()
     End Sub
 
     Public Property View As KursView
@@ -32,6 +32,9 @@
         End Set
     End Property
 
+    Public Sub anzeigenKurs()
+
+    End Sub
     Public Sub verarbeiteOeffnen()
 
     End Sub
@@ -42,5 +45,12 @@
 
     Public Sub verarbeiteLoeschen()
 
+    End Sub
+
+    Public Sub verarbeiteKursAbsagen()
+
+    End Sub
+    Public Sub beenden()
+        mView.Close()
     End Sub
 End Class

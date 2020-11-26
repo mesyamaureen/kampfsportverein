@@ -28,7 +28,21 @@
         mPresenter.verarbeiteSchueleruebersichtAnzeigen()
     End Sub
 
+    Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
+        Dim lngAktuelleID As Long
+        mPresenter.verarbeiteOeffnen(lngAktuelleID)
+    End Sub
+
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
         mPresenter.verarbeiteBeenden()
+    End Sub
+
+    Private Sub btnNeu_Click(sender As Object, e As EventArgs) Handles btnNeu.Click
+        mPresenter.verarbeiteNeu()
+    End Sub
+
+    Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
+        Dim lngAktuelleID As Long
+        mPresenter.verarbeiteLoeschen(lngAktuelleID)
     End Sub
 End Class

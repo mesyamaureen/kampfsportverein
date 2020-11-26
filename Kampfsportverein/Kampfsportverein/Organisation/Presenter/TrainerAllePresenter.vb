@@ -42,18 +42,18 @@
         End Set
     End Property
 
-    Public Property Trainer As Trainer
-        Get
-            Return Nothing
-        End Get
-        Set(value As Trainer)
-        End Set
-    End Property
+    'Public Property Trainer As Trainer
+    '    Get
+    '        Return mTrainerAlle
+    '    End Get
+    '    Set(value As Trainer)
+    '    End Set
+    'End Property
 
     Private Sub anzeigenTrainerAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
         mView.leeren()
         mView.anzeigenKurse()
-        'anzeigen lstKurse
+        'anzeigen Kusliste
         For Each kurs As Kurs In mlstKursAlle
             mView.anzeigenKursUebersicht(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
                                        kurs.Sportarten, kurs.Verfuegbarkeit)
@@ -84,30 +84,55 @@
     End Sub
 
     Public Sub verarbeiteOeffnen(plngIndex As Long) 'button Öffnen
-        'Dim kurs As Kurs
-        'Dim kursPresenter As KursPresenter
-        'Dim schueler As Schueler
-        'Dim schuelerPresenter As SchuelerAllePresenter
+        Dim kurs As Kurs
+        Dim kursPresenter As KursPresenter
+        Dim schueler As Schueler
+        Dim schuelerPresenter As SchuelerAllePresenter
 
-        'kurs = mlstKursAlle.Item(plngIndex)
-        'schueler = mlstSchuelerAlle.Item(plngIndex)
+        kurs = mlstKursAlle.Item(plngIndex)
+        schueler = mlstSchuelerAlle.Item(plngIndex)
 
-        'kursPresenter = New KursPresenter(kurs)
-        'schuelerPresenter = New SchuelerAllePresenter(schueler)
+        kursPresenter = New KursPresenter(kurs)
+        schuelerPresenter = New SchuelerAllePresenter(schueler)
 
-        'Select Case kursPresenter.Ergebnis
-        '    Case EPresenterErgebnis.SPEICHERN
-
-        'End Select
+        If mErgebnis = EPresenterErgebnis.SPEICHERN Then
+            kursPresenter.anzeigenKurs()
+        ElseIf mErgebnis = EPresenterErgebnis.ABBRECHEN Then
+            kursPresenter.beenden()
+        ElseIf mErgebnis = EPresenterErgebnis.ABSAGEN Then
+            kursPresenter.verarbeiteKursAbsagen()
+        Else
+            'tun nichts
+        End If
     End Sub
 
-    Public Sub verarbeiteLoeschen() 'button Löschen
-
+    Public Sub verarbeiteLoeschen(plngIndex As Long) 'button Löschen
+        mlstKursAlle.RemoveAt(plngIndex)
+        mlstSchuelerAlle.RemoveAt(plngIndex)
+        anzeigenTrainerAlle()
     End Sub
 
     Public Sub verarbeiteNeu() 'button Neu
-        mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN
-        mView.Close()
+        Dim kurs As Kurs
+        Dim kursPresenter As KursPresenter
+        Dim schueler As Schueler
+        Dim schuelerPresenter As SchuelerAllePresenter
+
+        kurs = New Kurs
+        kursPresenter = New KursPresenter(kurs)
+        schueler = New Schueler
+        schuelerPresenter = New SchuelerAllePresenter(schueler)
+
+        If mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
+            mlstKursAlle.Add(kurs)
+            mlstSchuelerAlle.Add(schueler)
+        ElseIf mErgebnis = EPresenterErgebnis.ABBRECHEN Then
+            kurs = Nothing
+            schueler = Nothing
+        Else
+            'tun nichts
+        End If
+
     End Sub
 
     Public Sub verarbeiteBeenden()
