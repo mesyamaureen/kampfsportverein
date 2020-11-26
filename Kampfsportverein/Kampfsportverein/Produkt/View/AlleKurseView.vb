@@ -2,7 +2,13 @@
     Inherits dlgKursEinzeln
 
     Private mbolAktiv As Boolean
-
+    Protected Shared mPresenter As KursPresenter
+    'Konstruktor
+    Sub New(pPresenter As KursPresenter)
+        MyBase.New
+        mPresenter = pPresenter
+    End Sub
+    'Eigenschaften
     Public Property IstKurs As KursView
         Get
             Return Nothing
@@ -10,7 +16,7 @@
         Set(value As KursView)
         End Set
     End Property
-
+    'Methoden
     Public Sub anzeigenOrt()
 
     End Sub

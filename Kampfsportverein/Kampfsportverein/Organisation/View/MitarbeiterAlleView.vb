@@ -12,7 +12,7 @@
 
     Public Property IstMitarbeiter As MitarbeiterAlleView
         Get
-            Return IstMitarbeiter
+            Return Nothing
         End Get
         Set(value As MitarbeiterAlleView)
         End Set
@@ -68,7 +68,7 @@
         kursZeile = Me.lstKurseAlle.Items.Add(plngKursID)
         With kursZeile.SubItems
             .Add(pdatKurs)
-            .Add(pSportartKurs.ToString)
+            .Add(pSportartKurs.Name)
             .Add(pbolVerfuegbarkeit)
         End With
     End Sub

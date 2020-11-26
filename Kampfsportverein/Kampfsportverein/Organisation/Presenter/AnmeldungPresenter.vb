@@ -5,7 +5,6 @@
 
     Public Sub New()
         mView = New AnmeldungView(Me)
-        'mErgebnis = EPresenterErgebnis.OHNE
         mAngemeldeterBenutzer = Nothing
 
         Application.Run(mView)

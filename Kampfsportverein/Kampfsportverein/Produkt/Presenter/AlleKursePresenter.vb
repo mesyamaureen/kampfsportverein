@@ -1,15 +1,16 @@
 ﻿Public Class KursPresenter
-    Private mView As Kurs
+    Private mView As KursView
     Private mErgebnis As Kurs
     Private mistKurseAlle As Kurs
 
-    Sub New()
-
+    Sub New(kurs As Kurs)
+        mView = New KursView(Me)
+        Application.Run(mView)
     End Sub
 
     Public Property View As KursView
         Get
-            Return Nothing
+            Return mView
         End Get
         Set(value As KursView)
         End Set

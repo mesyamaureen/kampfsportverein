@@ -10,8 +10,8 @@
     End Sub
 
     Sub New(pstrVorname As String, pstrName As String, pstrEMailAdresse As String)
-        mstrVorname = pstrEMailAdresse
-        mstrName = pstrEMailAdresse
+        mstrVorname = pstrVorname
+        mstrName = pstrName
         mstrEMailAdresse = pstrEMailAdresse
     End Sub
 

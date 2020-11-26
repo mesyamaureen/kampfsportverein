@@ -1,15 +1,16 @@
 ﻿Public Class SchuelerAllePresenter
-    Private mErgebnis As Integer
-    Private mView As Integer
-    Private mistSchuelerAlle As Integer
+    Private mErgebnis As EPresenterErgebnis
+    Private mView As AlleSchuelerView
+    Private mistSchuelerAlle As List(Of Schueler)
 
-    Sub New()
-
+    Sub New(schueler As Schueler)
+        mView = New AlleSchuelerView(Me)
+        Application.Run(mView)
     End Sub
 
     Public Property View As AlleSchuelerView
         Get
-            Return Nothing
+            Return mView
         End Get
         Set(value As AlleSchuelerView)
         End Set
@@ -23,11 +24,11 @@
         End Set
     End Property
 
-    Public Property Ergebnis As Integer
+    Public Property Ergebnis As EPresenterErgebnis
         Get
-            Return Nothing
+            Return mErgebnis
         End Get
-        Set(value As Integer)
+        Set(value As EPresenterErgebnis)
         End Set
     End Property
 

@@ -55,7 +55,7 @@
         mView.anzeigenKurse()
         'anzeigen lstKurse
         For Each kurs As Kurs In mlstKursAlle
-            mView.hinzufuegenZeileKurs(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
+            mView.anzeigenKursUebersicht(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
                                        kurs.Sportarten, kurs.Verfuegbarkeit)
         Next
     End Sub
@@ -78,7 +78,7 @@
         mView.leeren()
         mView.anzeigenSchueler()
         For Each schueler As Schueler In mlstSchuelerAlle
-            mView.hinzufuegenZeileSchueler(mlstSchuelerAlle.IndexOf(schueler), schueler.Name,
+            mView.anzeigenSchuelerUebersicht(mlstSchuelerAlle.IndexOf(schueler), schueler.Name,
                                            schueler.Vorname)
         Next
     End Sub
@@ -95,6 +95,10 @@
         'kursPresenter = New KursPresenter(kurs)
         'schuelerPresenter = New SchuelerAllePresenter(schueler)
 
+        'Select Case kursPresenter.Ergebnis
+        '    Case EPresenterErgebnis.SPEICHERN
+
+        'End Select
     End Sub
 
     Public Sub verarbeiteLoeschen() 'button Löschen

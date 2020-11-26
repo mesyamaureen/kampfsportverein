@@ -2,7 +2,6 @@
     Inherits frmHauptfensterTrainer
 
     Private mbolTrainer As Boolean
-
     Sub New(pPresenter As TrainerAllePresenter)
 
         MyBase.New
@@ -12,7 +11,7 @@
 
     Public Property lstTrainer As TrainerAlleView
         Get
-            Return lstTrainer
+            Return Nothing
         End Get
         Set(value As TrainerAlleView)
         End Set
@@ -32,18 +31,18 @@
         Me.Close()
     End Sub
 
-    Public Sub hinzufuegenZeileKurs(plngKursID As Long, pdatKurs As Date, pSportart As Sportart,
+    Public Sub anzeigenKursUebersicht(plngKursID As Long, pdatKurs As Date, pSportart As Sportart,
                                 pbolVerfuegbarkeit As Boolean)
         Dim kurszeile As ListViewItem
         kurszeile = Me.lstKurse.Items.Add(plngKursID)
         With kurszeile.SubItems
             .Add(pdatKurs)
-            .Add(pSportart.ToString)
+            .Add(pSportart.Name)
             .Add(pbolVerfuegbarkeit)
         End With
     End Sub
 
-    Public Sub hinzufuegenZeileSchueler(plngSchuelerID As Long, pstrName As String,
+    Public Sub anzeigenSchuelerUebersicht(plngSchuelerID As Long, pstrName As String,
                                         pstrVorname As String)
         Dim schuelerzeile As ListViewItem
         schuelerzeile = Me.lstSchueler.Items.Add(plngSchuelerID)
@@ -60,11 +59,11 @@
         Me.lstSchueler.Items.Clear()
     End Sub
 
-    Public Sub anzeigenKursuebersicht() 'brauche ich noch? wegen hinzufuegenZeileKurs()
-    End Sub
+    'Public Sub anzeigenKursuebersicht()
+    'End Sub
 
-    Public Sub anzeigenSchueleruebersicht()
-    End Sub
+    'Public Sub anzeigenSchueleruebersicht()
+    'End Sub
 
     Public Sub anzeigenNeueAnmeldung()
 
