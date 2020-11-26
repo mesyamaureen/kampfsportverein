@@ -27,10 +27,11 @@ Partial Class frmHauptfensterTrainer
         Me.btnSchueler = New System.Windows.Forms.Button()
         Me.btnKurse = New System.Windows.Forms.Button()
         Me.btnMeinKonto = New System.Windows.Forms.Button()
-        Me.picboxNeueSchueler = New System.Windows.Forms.PictureBox()
-        Me.picboxAlleSchueler = New System.Windows.Forms.PictureBox()
-        Me.picboxMeinKonto = New System.Windows.Forms.PictureBox()
         Me.grpboxKurs = New System.Windows.Forms.GroupBox()
+        Me.lstSchueler = New System.Windows.Forms.ListView()
+        Me.colSchuelerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.btnNeu = New System.Windows.Forms.Button()
         Me.btnOeffnen = New System.Windows.Forms.Button()
@@ -39,14 +40,7 @@ Partial Class frmHauptfensterTrainer
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.lstSchueler = New System.Windows.Forms.ListView()
-        Me.colSchuelerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grpboxMenu.SuspendLayout()
-        CType(Me.picboxNeueSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picboxMeinKonto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpboxKurs.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,9 +59,6 @@ Partial Class frmHauptfensterTrainer
         Me.grpboxMenu.Controls.Add(Me.btnSchueler)
         Me.grpboxMenu.Controls.Add(Me.btnKurse)
         Me.grpboxMenu.Controls.Add(Me.btnMeinKonto)
-        Me.grpboxMenu.Controls.Add(Me.picboxNeueSchueler)
-        Me.grpboxMenu.Controls.Add(Me.picboxAlleSchueler)
-        Me.grpboxMenu.Controls.Add(Me.picboxMeinKonto)
         Me.grpboxMenu.Location = New System.Drawing.Point(12, 12)
         Me.grpboxMenu.Name = "grpboxMenu"
         Me.grpboxMenu.Size = New System.Drawing.Size(343, 856)
@@ -76,67 +67,77 @@ Partial Class frmHauptfensterTrainer
         '
         'btnSchueler
         '
-        Me.btnSchueler.Location = New System.Drawing.Point(164, 692)
+        Me.btnSchueler.Location = New System.Drawing.Point(17, 572)
         Me.btnSchueler.Name = "btnSchueler"
-        Me.btnSchueler.Size = New System.Drawing.Size(162, 50)
+        Me.btnSchueler.Size = New System.Drawing.Size(309, 222)
         Me.btnSchueler.TabIndex = 5
         Me.btnSchueler.Text = "Schüler"
+        Me.btnSchueler.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSchueler.UseVisualStyleBackColor = True
         '
         'btnKurse
         '
-        Me.btnKurse.Location = New System.Drawing.Point(164, 395)
+        Me.btnKurse.Location = New System.Drawing.Point(17, 299)
         Me.btnKurse.Name = "btnKurse"
-        Me.btnKurse.Size = New System.Drawing.Size(162, 50)
+        Me.btnKurse.Size = New System.Drawing.Size(309, 222)
         Me.btnKurse.TabIndex = 4
         Me.btnKurse.Text = "Kurse"
+        Me.btnKurse.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnKurse.UseVisualStyleBackColor = True
         '
         'btnMeinKonto
         '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(164, 123)
+        Me.btnMeinKonto.Location = New System.Drawing.Point(17, 30)
         Me.btnMeinKonto.Name = "btnMeinKonto"
-        Me.btnMeinKonto.Size = New System.Drawing.Size(162, 50)
+        Me.btnMeinKonto.Size = New System.Drawing.Size(309, 222)
         Me.btnMeinKonto.TabIndex = 3
         Me.btnMeinKonto.Text = "Mein Konto"
+        Me.btnMeinKonto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnMeinKonto.UseVisualStyleBackColor = True
-        '
-        'picboxNeueSchueler
-        '
-        Me.picboxNeueSchueler.Location = New System.Drawing.Point(27, 660)
-        Me.picboxNeueSchueler.Name = "picboxNeueSchueler"
-        Me.picboxNeueSchueler.Size = New System.Drawing.Size(112, 113)
-        Me.picboxNeueSchueler.TabIndex = 2
-        Me.picboxNeueSchueler.TabStop = False
-        '
-        'picboxAlleSchueler
-        '
-        Me.picboxAlleSchueler.Location = New System.Drawing.Point(27, 366)
-        Me.picboxAlleSchueler.Name = "picboxAlleSchueler"
-        Me.picboxAlleSchueler.Size = New System.Drawing.Size(112, 113)
-        Me.picboxAlleSchueler.TabIndex = 1
-        Me.picboxAlleSchueler.TabStop = False
-        '
-        'picboxMeinKonto
-        '
-        Me.picboxMeinKonto.Location = New System.Drawing.Point(27, 92)
-        Me.picboxMeinKonto.Name = "picboxMeinKonto"
-        Me.picboxMeinKonto.Size = New System.Drawing.Size(112, 113)
-        Me.picboxMeinKonto.TabIndex = 0
-        Me.picboxMeinKonto.TabStop = False
         '
         'grpboxKurs
         '
-        Me.grpboxKurs.Controls.Add(Me.lstSchueler)
         Me.grpboxKurs.Controls.Add(Me.btnLoeschen)
         Me.grpboxKurs.Controls.Add(Me.btnNeu)
         Me.grpboxKurs.Controls.Add(Me.btnOeffnen)
+        Me.grpboxKurs.Controls.Add(Me.lstSchueler)
         Me.grpboxKurs.Controls.Add(Me.lstKurse)
         Me.grpboxKurs.Location = New System.Drawing.Point(378, 12)
         Me.grpboxKurs.Name = "grpboxKurs"
         Me.grpboxKurs.Size = New System.Drawing.Size(864, 856)
         Me.grpboxKurs.TabIndex = 2
         Me.grpboxKurs.TabStop = False
+        '
+        'lstSchueler
+        '
+        Me.lstSchueler.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colSchuelerID, Me.colName, Me.colVorname})
+        Me.lstSchueler.FullRowSelect = True
+        Me.lstSchueler.GridLines = True
+        Me.lstSchueler.HideSelection = False
+        Me.lstSchueler.Location = New System.Drawing.Point(0, 15)
+        Me.lstSchueler.MultiSelect = False
+        Me.lstSchueler.Name = "lstSchueler"
+        Me.lstSchueler.Size = New System.Drawing.Size(864, 779)
+        Me.lstSchueler.TabIndex = 6
+        Me.lstSchueler.UseCompatibleStateImageBehavior = False
+        Me.lstSchueler.View = System.Windows.Forms.View.Details
+        '
+        'colSchuelerID
+        '
+        Me.colSchuelerID.Text = "Schüler ID"
+        Me.colSchuelerID.Width = 135
+        '
+        'colName
+        '
+        Me.colName.Text = "Name"
+        Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colName.Width = 399
+        '
+        'colVorname
+        '
+        Me.colVorname.Text = "Vorname"
+        Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colVorname.Width = 323
         '
         'btnLoeschen
         '
@@ -202,37 +203,6 @@ Partial Class frmHauptfensterTrainer
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVerfuegbarkeit.Width = 147
         '
-        'lstSchueler
-        '
-        Me.lstSchueler.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colSchuelerID, Me.colName, Me.colVorname})
-        Me.lstSchueler.FullRowSelect = True
-        Me.lstSchueler.GridLines = True
-        Me.lstSchueler.HideSelection = False
-        Me.lstSchueler.Location = New System.Drawing.Point(0, 15)
-        Me.lstSchueler.MultiSelect = False
-        Me.lstSchueler.Name = "lstSchueler"
-        Me.lstSchueler.Size = New System.Drawing.Size(864, 779)
-        Me.lstSchueler.TabIndex = 6
-        Me.lstSchueler.UseCompatibleStateImageBehavior = False
-        Me.lstSchueler.View = System.Windows.Forms.View.Details
-        '
-        'colSchuelerID
-        '
-        Me.colSchuelerID.Text = "Schüler ID"
-        Me.colSchuelerID.Width = 135
-        '
-        'colName
-        '
-        Me.colName.Text = "Name"
-        Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colName.Width = 399
-        '
-        'colVorname
-        '
-        Me.colVorname.Text = "Vorname"
-        Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVorname.Width = 323
-        '
         'frmHauptfensterTrainer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -245,9 +215,6 @@ Partial Class frmHauptfensterTrainer
         Me.Name = "frmHauptfensterTrainer"
         Me.Text = "Kampfsportverein"
         Me.grpboxMenu.ResumeLayout(False)
-        CType(Me.picboxNeueSchueler, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picboxAlleSchueler, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picboxMeinKonto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpboxKurs.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -258,9 +225,6 @@ Partial Class frmHauptfensterTrainer
     Friend WithEvents btnSchueler As Button
     Friend WithEvents btnKurse As Button
     Friend WithEvents btnMeinKonto As Button
-    Friend WithEvents picboxNeueSchueler As PictureBox
-    Friend WithEvents picboxAlleSchueler As PictureBox
-    Friend WithEvents picboxMeinKonto As PictureBox
     Friend WithEvents grpboxKurs As GroupBox
     Friend WithEvents btnOeffnen As Button
     Friend WithEvents lstKurse As ListView

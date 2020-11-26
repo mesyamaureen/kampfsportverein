@@ -3,7 +3,7 @@
     Private mstrPasswort As String
     Private mstrVorname As String
     Private mstrName As String
-    Private mintBenutzerID As Integer
+    Private mlngBenutzerID As Long
 
     Sub New()
 
@@ -11,7 +11,7 @@
         mstrPasswort = String.Empty
         mstrVorname = String.Empty
         mstrName = String.Empty
-        mintBenutzerID = Nothing
+        mlngBenutzerID = Nothing
 
     End Sub
 
@@ -20,7 +20,7 @@
         mstrPasswort = pstrPasswort
         mstrVorname = pstrVorname
         mstrName = pstrName
-        mintBenutzerID = pintBenutzerID
+        mlngBenutzerID = pintBenutzerID
 
     End Sub
 
@@ -58,11 +58,11 @@
         End Set
     End Property
 
-    Public Property BenutzerID As Integer
+    Public Property BenutzerID As Long
         Get
-            Return mintBenutzerID
+            Return mlngBenutzerID
         End Get
-        Set(ByVal value As Integer)
+        Set(ByVal value As Long)
         End Set
     End Property
 

@@ -4,7 +4,9 @@
     Private mtraTrainer As Trainer
     Private mbytTeilnehmerzahl As Byte
     Private mstrSchwierigkeitsgrad As String
-    Private mstrName As Integer
+    Private mstrName As String
+    Private mbolVerfuegbarkeit As Boolean
+    Private mSportart As Sportart
 
     Sub New()
         mdatZeitpunkt = Date.MinValue
@@ -13,15 +15,21 @@
         mbytTeilnehmerzahl = Nothing
         mstrSchwierigkeitsgrad = String.Empty
         mstrName = String.Empty
+        mbolVerfuegbarkeit = Boolean.TrueString
+        mSportart = Nothing
     End Sub
 
-    Sub New(pdatZeitpunkt As Date, pstrOrt As String, ptraTrainer As Trainer, pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String, pstrName As Integer)
+    Sub New(pdatZeitpunkt As Date, pstrOrt As String, ptraTrainer As Trainer,
+            pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
+            pstrName As String, pbolVerfuegbarkeit As Boolean, pSportart As Sportart)
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
         mtraTrainer = ptraTrainer
         mbytTeilnehmerzahl = pbytTeilnehmerzahl
         mstrSchwierigkeitsgrad = pstrSchwierigkeitsgrad
         mstrName = pstrName
+        mbolVerfuegbarkeit = pbolVerfuegbarkeit
+        mSportart = pSportart
     End Sub
 
     Public Property Teilnehmerzahl As Byte
@@ -75,9 +83,17 @@
 
     Public Property Sportarten As Sportart
         Get
-            Return Nothing
+            Return mSportart
         End Get
         Set(value As Sportart)
+        End Set
+    End Property
+
+    Public Property Verfuegbarkeit As Boolean
+        Get
+            Return mbolVerfuegbarkeit
+        End Get
+        Set(value As Boolean)
         End Set
     End Property
 End Class

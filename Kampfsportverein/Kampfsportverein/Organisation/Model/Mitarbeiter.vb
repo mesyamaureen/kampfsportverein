@@ -26,67 +26,67 @@
 
     End Sub
 
-    Public Property Name As String
-        Get
-            Return Nothing
-        End Get
-        Set(value As String)
-        End Set
-    End Property
+    'Public Property Name As String
+    '    Get
+    '        Return mName
+    '    End Get
+    '    Set(value As String)
+    '    End Set
+    'End Property
 
-    Public Property Vorname As String
-        Get
-            Return Nothing
-        End Get
-        Set(value As String)
-        End Set
-    End Property
+    'Public Property Vorname As String
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As String)
+    '    End Set
+    'End Property
 
-    Public Property Geburtsdatum As Date
-        Get
-            Return Nothing
-        End Get
-        Set(value As Date)
-        End Set
-    End Property
+    'Public Property Geburtsdatum As Date
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As Date)
+    '    End Set
+    'End Property
 
-    Public Property BenutzerId As String
-        Get
-            Return Nothing
-        End Get
-        Set(value As String)
-        End Set
-    End Property
+    'Public Property BenutzerId As String
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As String)
+    '    End Set
+    'End Property
 
-    Public Property Benutzername As String
-        Get
-            Return Nothing
-        End Get
-        Set(value As String)
-        End Set
-    End Property
+    'Public Property Benutzername As String
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As String)
+    '    End Set
+    'End Property
 
-    Public Property Passwort As String
-        Get
-            Return Nothing
-        End Get
-        Set(value As String)
-        End Set
-    End Property
+    'Public Property Passwort As String
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As String)
+    '    End Set
+    'End Property
 
-    Public Property TrainerAllePresenter As TrainerAllePresenter
-        Get
-            Return Nothing
-        End Get
-        Set(value As TrainerAllePresenter)
-        End Set
-    End Property
+    'Public Property TrainerAllePresenter As TrainerAllePresenter
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As TrainerAllePresenter)
+    '    End Set
+    'End Property
 
-    Public Property Trainer As Trainer
-        Get
-            Return Nothing
-        End Get
-        Set(value As Trainer)
-        End Set
-    End Property
+    'Public Property Trainer As Trainer
+    '    Get
+    '        Return Nothing
+    '    End Get
+    '    Set(value As Trainer)
+    '    End Set
+    'End Property
 End Class

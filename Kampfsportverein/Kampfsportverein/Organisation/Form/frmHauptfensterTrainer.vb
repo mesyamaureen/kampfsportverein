@@ -31,4 +31,8 @@
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
         mPresenter.verarbeiteBeenden()
     End Sub
+
+    Private Sub aktiviereSchaltflächen()
+
+    End Sub
 End Class

@@ -1,19 +1,19 @@
 ﻿Public Class TrainerAllePresenter
     Private mErgebnis As EPresenterErgebnis
-    'Private mlstKursAlle As List(Of Kurse)
+    Private mlstKursAlle As List(Of Kurs)
+    Private mlstSchuelerAlle As List(Of Schueler)
     Private mView As TrainerAlleView
     Private mTrainerAlle As Trainer
 
     'Parameterloser Konstruktor
     Public Sub New()
         mView = New TrainerAlleView(Me)
-        'mlstKursAlle = Kampfsportverein.erzeugeBeispieldaten
+        mlstKursAlle = Kampfsportverein.mlstKurs
+        mlstSchuelerAlle = Kampfsportverein.mlstSchueler
         mTrainerAlle = New Trainer
 
-        'ermitteln der anzuzeigenden Daten
-        'ermittelnKursAlle()
         'Daten an die Oberfläche übergeben
-        anzeigen()
+        anzeigenTrainerAlle()
         'Anzeige der View als Oberfläche (Formular)
         Application.Run(mView)
     End Sub
@@ -50,21 +50,14 @@
         End Set
     End Property
 
-    'Private Sub ermittelnKursAlle()
-    '    mlstKurs = Kampfsportverein.mlstKurs
-    'End Sub
-
-    Public Sub verarbeiteEigenesProfilBearbeiten() 'wieso hier??
-
-    End Sub
-
-    Private Sub anzeigen() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
-        'mView.leeren()
-        'For Each kurs As Kurse In mlstKursAlle
-        'mView.hinzufuegenZeile(mlstKursAlle.IndexOf(kurs), 
-        'kurs.Datum, kurs.Sportart, kurs.Verfuegbarkeit) 
-        'Next
-
+    Private Sub anzeigenTrainerAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
+        mView.leeren()
+        mView.anzeigen()
+        'anzeigen lstKurse
+        For Each kurs As Kurs In mlstKursAlle
+            mView.hinzufuegenZeileKurs(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
+                                       kurs.Sportarten, kurs.Verfuegbarkeit)
+        Next
     End Sub
 
     Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto
@@ -76,20 +69,20 @@
     End Sub
 
     Public Sub verarbeiteKursuebersichtAnzeigen(lngIndex As Long) 'button Kurse
-        'Dim kurs As Kurse
-        'Dim kursPresenter As AlleKursePresenter
+        'Dim kurs As Kurs
+        'Dim kursPresenter As KursPresenter
         'kurs = mlstKursAlle.Item(lngIndex)
-        'kursPresenter = New AlleKursePresenter '(kurs)
+        'kursPresenter = New KursPresenter '(kurs)
 
-        ''Select Case kursPresenter.Ergebnis
-        ''Case EPresenterErgebnis.SPEICHERN
-        ''anzeigen()
-        ''Case EPresenterErgebnis.ABSAGEN
-        ''anzeigen()
-        ''Case EPresenterErgebnis.ABBRECHEN
-        ''Nichts zu tun, denn Inhalte der Felder in der View wurde verworfen
-        ''Case Else
-        ''End Select
+        'Select Case kursPresenter.Ergebnis
+        '    Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
+        '        anzeigen()
+        '    Case EPresenterErgebnis.ABSAGEN
+        '        anzeigen()
+        '    Case EPresenterErgebnis.ABBRECHEN
+        '        'Nichts zu tun, denn Inhalte der Felder in der View wurde verworfen
+        '    Case Else
+        'End Select
     End Sub
 
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler

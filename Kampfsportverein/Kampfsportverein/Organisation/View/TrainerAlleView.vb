@@ -10,25 +10,57 @@
 
     End Sub
 
-
-    Public Property IstTrainer As TrainerAlleView
+    Public Property lstTrainer As TrainerAlleView
         Get
-            Return IstTrainer
+            Return lstTrainer
         End Get
         Set(value As TrainerAlleView)
         End Set
     End Property
 
-    Public Sub anzeigenMeinKonto()
+    Public Sub anzeigen()
+        Me.lstSchueler.Visible = False
+        Me.lstKurse.Visible = True
+        'Dim zeile As ListViewItem
 
     End Sub
 
-    Public Sub anzeigenKursuebersicht()
+    Public Sub anzeigenMeinKonto()
+        Me.Close()
+    End Sub
 
+    Public Sub hinzufuegenZeileKurs(plngKursID As Long, pdatKurs As Date, pSportart As Sportart,
+                                pbolVerfuegbarkeit As Boolean)
+        Dim kurszeile As ListViewItem
+        kurszeile = Me.lstKurse.Items.Add(plngKursID)
+        With kurszeile.SubItems
+            .Add(pdatKurs)
+            .Add(pSportart.ToString)
+            .Add(pbolVerfuegbarkeit)
+        End With
+    End Sub
+
+    Public Sub hinzufuegenZeileSchueler(plngSchuelerID As Long, pstrName As String,
+                                        pstrVorname As String)
+        Dim schuelerzeile As ListViewItem
+        schuelerzeile = Me.lstSchueler.Items.Add(plngSchuelerID)
+        With schuelerzeile.SubItems
+            .Add(pstrName)
+            .Add(pstrVorname)
+        End With
+    End Sub
+
+    Public Sub leeren() 'do I need Verzweigung für welche geklickte Schaltfläche?
+        'Kurse leeren
+        Me.lstKurse.Items.Clear()
+        'Schüler leeren
+        Me.lstSchueler.Items.Clear()
+    End Sub
+
+    Public Sub anzeigenKursuebersicht() 'brauche ich noch? wegen hinzufuegenZeileKurs()
     End Sub
 
     Public Sub anzeigenSchueleruebersicht()
-
     End Sub
 
     Public Sub anzeigenNeueAnmeldung()
@@ -43,12 +75,5 @@
 
     End Sub
 
-    Public Sub anzeigen(plngIndex As Long, pintBenutzerID As Integer, pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
-
-        Dim zeile As ListViewItem
-
-
-
-    End Sub
 
 End Class
