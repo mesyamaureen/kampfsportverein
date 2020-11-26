@@ -57,7 +57,7 @@
     End Sub
 
     Private Function anmelden(pstrBenutzername As String, pstrPasswort As String) As Benutzer
-        Return Kampfsportverein.mlstTrainer.Item(1)
+        Return Kampfsportverein.mlstMitarbeiter.Item(0)
     End Function
 
 End Class

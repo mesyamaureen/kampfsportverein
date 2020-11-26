@@ -53,7 +53,7 @@
         End With
     End Sub
 
-    Public Sub leeren() 'do I need Verzweigung für welche geklickte Schaltfläche?
+    Public Sub leeren()
         'Kurse leeren
         Me.lstKurse.Items.Clear()
         'Schüler leeren

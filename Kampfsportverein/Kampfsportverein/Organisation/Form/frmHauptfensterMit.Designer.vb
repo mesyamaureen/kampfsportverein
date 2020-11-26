@@ -31,7 +31,7 @@ Partial Class frmHauptfensterMit
         Me.btnKurs = New System.Windows.Forms.Button()
         Me.picboxNeuerKurs = New System.Windows.Forms.PictureBox()
         Me.btnSportarten = New System.Windows.Forms.Button()
-        Me.btnNeueSportart = New System.Windows.Forms.Button()
+        Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.picboxNeuerTrainer = New System.Windows.Forms.PictureBox()
         Me.picboxNeueSportart = New System.Windows.Forms.PictureBox()
         Me.grpboxSportartliste = New System.Windows.Forms.GroupBox()
@@ -41,15 +41,19 @@ Partial Class frmHauptfensterMit
         Me.lstSportart = New System.Windows.Forms.ListView()
         Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstTrainer = New System.Windows.Forms.ListView()
+        Me.colTrainerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colNameTrainer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colVornameTrainer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstSchuelerAlle = New System.Windows.Forms.ListView()
+        Me.colSchuelerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lstKurseAlle = New System.Windows.Forms.ListView()
         Me.colKursId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportartKurs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.lstSchuelerAlle = New System.Windows.Forms.ListView()
-        Me.colSchuelerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grpboxMenu.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +81,7 @@ Partial Class frmHauptfensterMit
         Me.grpboxMenu.Controls.Add(Me.btnKurs)
         Me.grpboxMenu.Controls.Add(Me.picboxNeuerKurs)
         Me.grpboxMenu.Controls.Add(Me.btnSportarten)
-        Me.grpboxMenu.Controls.Add(Me.btnNeueSportart)
+        Me.grpboxMenu.Controls.Add(Me.btnMeinKonto)
         Me.grpboxMenu.Controls.Add(Me.picboxNeuerTrainer)
         Me.grpboxMenu.Controls.Add(Me.picboxNeueSportart)
         Me.grpboxMenu.Location = New System.Drawing.Point(12, 12)
@@ -146,14 +150,14 @@ Partial Class frmHauptfensterMit
         Me.btnSportarten.Text = "Sportarten"
         Me.btnSportarten.UseVisualStyleBackColor = True
         '
-        'btnNeueSportart
+        'btnMeinKonto
         '
-        Me.btnNeueSportart.Location = New System.Drawing.Point(164, 57)
-        Me.btnNeueSportart.Name = "btnNeueSportart"
-        Me.btnNeueSportart.Size = New System.Drawing.Size(145, 65)
-        Me.btnNeueSportart.TabIndex = 2
-        Me.btnNeueSportart.Text = "Mein Konto"
-        Me.btnNeueSportart.UseVisualStyleBackColor = True
+        Me.btnMeinKonto.Location = New System.Drawing.Point(164, 57)
+        Me.btnMeinKonto.Name = "btnMeinKonto"
+        Me.btnMeinKonto.Size = New System.Drawing.Size(145, 65)
+        Me.btnMeinKonto.TabIndex = 2
+        Me.btnMeinKonto.Text = "Mein Konto"
+        Me.btnMeinKonto.UseVisualStyleBackColor = True
         '
         'picboxNeuerTrainer
         '
@@ -173,12 +177,13 @@ Partial Class frmHauptfensterMit
         '
         'grpboxSportartliste
         '
-        Me.grpboxSportartliste.Controls.Add(Me.lstSchuelerAlle)
-        Me.grpboxSportartliste.Controls.Add(Me.lstKurseAlle)
         Me.grpboxSportartliste.Controls.Add(Me.btnNeu)
         Me.grpboxSportartliste.Controls.Add(Me.btnLoeschen)
         Me.grpboxSportartliste.Controls.Add(Me.btnOeffnen)
         Me.grpboxSportartliste.Controls.Add(Me.lstSportart)
+        Me.grpboxSportartliste.Controls.Add(Me.lstTrainer)
+        Me.grpboxSportartliste.Controls.Add(Me.lstSchuelerAlle)
+        Me.grpboxSportartliste.Controls.Add(Me.lstKurseAlle)
         Me.grpboxSportartliste.Location = New System.Drawing.Point(376, 12)
         Me.grpboxSportartliste.Name = "grpboxSportartliste"
         Me.grpboxSportartliste.Size = New System.Drawing.Size(857, 848)
@@ -218,7 +223,7 @@ Partial Class frmHauptfensterMit
         Me.lstSportart.FullRowSelect = True
         Me.lstSportart.GridLines = True
         Me.lstSportart.HideSelection = False
-        Me.lstSportart.Location = New System.Drawing.Point(0, 9)
+        Me.lstSportart.Location = New System.Drawing.Point(6, 9)
         Me.lstSportart.MultiSelect = False
         Me.lstSportart.Name = "lstSportart"
         Me.lstSportart.Size = New System.Drawing.Size(857, 754)
@@ -237,13 +242,75 @@ Partial Class frmHauptfensterMit
         Me.colSportart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colSportart.Width = 721
         '
+        'lstTrainer
+        '
+        Me.lstTrainer.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colTrainerID, Me.colNameTrainer, Me.colVornameTrainer})
+        Me.lstTrainer.FullRowSelect = True
+        Me.lstTrainer.GridLines = True
+        Me.lstTrainer.HideSelection = False
+        Me.lstTrainer.Location = New System.Drawing.Point(6, 9)
+        Me.lstTrainer.MultiSelect = False
+        Me.lstTrainer.Name = "lstTrainer"
+        Me.lstTrainer.Size = New System.Drawing.Size(857, 754)
+        Me.lstTrainer.TabIndex = 9
+        Me.lstTrainer.UseCompatibleStateImageBehavior = False
+        Me.lstTrainer.View = System.Windows.Forms.View.Details
+        '
+        'colTrainerID
+        '
+        Me.colTrainerID.Text = "Trainer ID"
+        Me.colTrainerID.Width = 126
+        '
+        'colNameTrainer
+        '
+        Me.colNameTrainer.Text = "Name"
+        Me.colNameTrainer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colNameTrainer.Width = 356
+        '
+        'colVornameTrainer
+        '
+        Me.colVornameTrainer.Text = "Vorname"
+        Me.colVornameTrainer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colVornameTrainer.Width = 369
+        '
+        'lstSchuelerAlle
+        '
+        Me.lstSchuelerAlle.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colSchuelerID, Me.colName, Me.colVorname})
+        Me.lstSchuelerAlle.FullRowSelect = True
+        Me.lstSchuelerAlle.GridLines = True
+        Me.lstSchuelerAlle.HideSelection = False
+        Me.lstSchuelerAlle.Location = New System.Drawing.Point(6, 9)
+        Me.lstSchuelerAlle.MultiSelect = False
+        Me.lstSchuelerAlle.Name = "lstSchuelerAlle"
+        Me.lstSchuelerAlle.Size = New System.Drawing.Size(857, 754)
+        Me.lstSchuelerAlle.TabIndex = 8
+        Me.lstSchuelerAlle.UseCompatibleStateImageBehavior = False
+        Me.lstSchuelerAlle.View = System.Windows.Forms.View.Details
+        '
+        'colSchuelerID
+        '
+        Me.colSchuelerID.Text = "Schüler ID"
+        Me.colSchuelerID.Width = 126
+        '
+        'colName
+        '
+        Me.colName.Text = "Name"
+        Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colName.Width = 356
+        '
+        'colVorname
+        '
+        Me.colVorname.Text = "Vorname"
+        Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colVorname.Width = 369
+        '
         'lstKurseAlle
         '
         Me.lstKurseAlle.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursId, Me.colDatum, Me.colSportartKurs, Me.colVerfuegbarkeit})
         Me.lstKurseAlle.FullRowSelect = True
         Me.lstKurseAlle.GridLines = True
         Me.lstKurseAlle.HideSelection = False
-        Me.lstKurseAlle.Location = New System.Drawing.Point(0, 9)
+        Me.lstKurseAlle.Location = New System.Drawing.Point(6, 9)
         Me.lstKurseAlle.MultiSelect = False
         Me.lstKurseAlle.Name = "lstKurseAlle"
         Me.lstKurseAlle.Size = New System.Drawing.Size(857, 754)
@@ -274,37 +341,6 @@ Partial Class frmHauptfensterMit
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVerfuegbarkeit.Width = 161
         '
-        'lstSchuelerAlle
-        '
-        Me.lstSchuelerAlle.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colSchuelerID, Me.colName, Me.colVorname})
-        Me.lstSchuelerAlle.FullRowSelect = True
-        Me.lstSchuelerAlle.GridLines = True
-        Me.lstSchuelerAlle.HideSelection = False
-        Me.lstSchuelerAlle.Location = New System.Drawing.Point(0, 9)
-        Me.lstSchuelerAlle.MultiSelect = False
-        Me.lstSchuelerAlle.Name = "lstSchuelerAlle"
-        Me.lstSchuelerAlle.Size = New System.Drawing.Size(857, 754)
-        Me.lstSchuelerAlle.TabIndex = 8
-        Me.lstSchuelerAlle.UseCompatibleStateImageBehavior = False
-        Me.lstSchuelerAlle.View = System.Windows.Forms.View.Details
-        '
-        'colSchuelerID
-        '
-        Me.colSchuelerID.Text = "Schüler ID"
-        Me.colSchuelerID.Width = 126
-        '
-        'colName
-        '
-        Me.colName.Text = "Name"
-        Me.colName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colName.Width = 356
-        '
-        'colVorname
-        '
-        Me.colVorname.Text = "Vorname"
-        Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVorname.Width = 369
-        '
         'frmHauptfensterMit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -329,7 +365,7 @@ Partial Class frmHauptfensterMit
     Friend WithEvents btnBeenden As Button
     Friend WithEvents grpboxMenu As GroupBox
     Friend WithEvents btnSportarten As Button
-    Friend WithEvents btnNeueSportart As Button
+    Friend WithEvents btnMeinKonto As Button
     Friend WithEvents picboxNeuerTrainer As PictureBox
     Friend WithEvents picboxNeueSportart As PictureBox
     Friend WithEvents grpboxSportartliste As GroupBox
@@ -354,4 +390,8 @@ Partial Class frmHauptfensterMit
     Friend WithEvents colSchuelerID As ColumnHeader
     Friend WithEvents colName As ColumnHeader
     Friend WithEvents colVorname As ColumnHeader
+    Friend WithEvents lstTrainer As ListView
+    Friend WithEvents colTrainerID As ColumnHeader
+    Friend WithEvents colNameTrainer As ColumnHeader
+    Friend WithEvents colVornameTrainer As ColumnHeader
 End Class

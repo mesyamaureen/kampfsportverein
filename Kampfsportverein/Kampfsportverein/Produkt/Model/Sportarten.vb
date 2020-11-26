@@ -26,27 +26,27 @@
         End Set
     End Property
 
-    Public Property Herkunftsland As Integer
+    Public Property Herkunftsland As String
         Get
             Return mstrHerkunftsland
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
-    Public Property Name As Integer
+    Public Property Name As String
         Get
             Return mstrName
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 
-    Public Property Zielgruppe As Integer
+    Public Property Zielgruppe As String
         Get
             Return mstrZielgruppe
         End Get
-        Set(value As Integer)
+        Set(value As String)
         End Set
     End Property
 End Class

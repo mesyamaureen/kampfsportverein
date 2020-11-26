@@ -83,7 +83,17 @@
         Next
     End Sub
 
-    Public Sub verarbeiteOeffnen() 'button Öffnen
+    Public Sub verarbeiteOeffnen(plngIndex As Long) 'button Öffnen
+        'Dim kurs As Kurs
+        'Dim kursPresenter As KursPresenter
+        'Dim schueler As Schueler
+        'Dim schuelerPresenter As SchuelerAllePresenter
+
+        'kurs = mlstKursAlle.Item(plngIndex)
+        'schueler = mlstSchuelerAlle.Item(plngIndex)
+
+        'kursPresenter = New KursPresenter(kurs)
+        'schuelerPresenter = New SchuelerAllePresenter(schueler)
 
     End Sub
 
