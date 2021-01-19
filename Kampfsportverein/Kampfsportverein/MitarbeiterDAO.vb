@@ -1,10 +1,24 @@
 ﻿Public Class MitarbeiterDAO
     Inherits DAO
+
+
+
+
+
+
+
+
+
+
     Public Sub findenAlle()
 
     End Sub
 
     Public Sub findenAlleMitBenutzerId()
+        'Deklaratiom
+        'Eigenschaften der Sportart
+
+
 
     End Sub
 
