@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EEEB10E6-4980-43A1-99B0-BD15557D885A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Kampfsportvereinverwaltung.Module1</StartupObject>
+    <StartupObject>Sub Main</StartupObject>
     <RootNamespace>Kampfsportvereinverwaltung</RootNamespace>
     <AssemblyName>Kampfsportvereinverwaltung</AssemblyName>
     <FileAlignment>512</FileAlignment>
