@@ -1,4 +1,5 @@
 ﻿Public Class Sportart
+    Private mlngIdPk As Long
     Private mstrName As String
     Private mstrHerkunftsland As String
     Private mstrZielgruppe As String
@@ -6,6 +7,7 @@
     Private mlngVersion As Long
 
     Sub New()
+        mlngIdPk = 0
         mstrName = String.Empty
         mstrHerkunftsland = String.Empty
         mstrZielgruppe = String.Empty
@@ -13,7 +15,8 @@
         mlngVersion = 0
     End Sub
 
-    Sub New(pstrName As String, pstrHerkunftsland As String, pstrZielgruppe As String, pbyteMindestalter As Byte, plngVersion As Long)
+    Sub New(plngIdPk As Long, pstrName As String, pstrHerkunftsland As String, pstrZielgruppe As String, pbyteMindestalter As Byte, plngVersion As Long)
+        mlngIdPk = plngIdPk
         mstrName = pstrName
         mstrHerkunftsland = pstrHerkunftsland
         mstrZielgruppe = pstrZielgruppe
@@ -25,7 +28,7 @@
         Get
             Return mbyteMindestalter
         End Get
-        Set(value As Integer)
+        Set(value As Byte)
         End Set
     End Property
 

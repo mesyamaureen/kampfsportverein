@@ -76,7 +76,6 @@
         dr.Close()
         schliessenDatenbank()
         Return lstSport
-        End Function
 
     End Sub
 
