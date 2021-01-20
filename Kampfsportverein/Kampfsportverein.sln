@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30621.155
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kampfsportverein", "Kampfsportverein\Kampfsportverein.vbproj", "{E924E59D-297C-41DF-B255-8B3EEF38AB22}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kampsportverein_DataAcess", "Kampsportverein_DataAcess\Kampsportverein_DataAcess.vbproj", "{01788E88-A796-4462-BA25-8E4C9D56A0CC}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Kampfsportvereinverwaltung_DataAcess", "Kampfsportvereinverwaltung\Kampfsportvereinverwaltung_DataAcess.vbproj", "{EEEB10E6-4980-43A1-99B0-BD15557D885A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E924E59D-297C-41DF-B255-8B3EEF38AB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E924E59D-297C-41DF-B255-8B3EEF38AB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E924E59D-297C-41DF-B255-8B3EEF38AB22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01788E88-A796-4462-BA25-8E4C9D56A0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEB10E6-4980-43A1-99B0-BD15557D885A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEB10E6-4980-43A1-99B0-BD15557D885A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEB10E6-4980-43A1-99B0-BD15557D885A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEB10E6-4980-43A1-99B0-BD15557D885A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
