@@ -6,7 +6,7 @@ Imports System.Data.OleDb
 'End Sub
 'End Module
 
-Module Datenbank
+Module Datenbank '''Mal Public Module ueberlegen
     'auf die Datenbank zugreifen
     Dim conn As OleDbConnection
 

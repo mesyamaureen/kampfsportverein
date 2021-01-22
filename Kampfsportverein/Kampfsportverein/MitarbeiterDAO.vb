@@ -1,6 +1,7 @@
-﻿Public Class MitarbeiterDAO
+﻿Imports System.Data.OleDb
+Public Class MitarbeiterDAO
     Inherits DAO
-  
+
 
     'SQL-Anweisung, um alle Sportarten zu ermitteln
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM tblSportarten"
@@ -50,8 +51,9 @@
 
 
         'Öffnen DBVerbindung durch Methode
-
+        Main()
         oeffnenDatenbank()
+
 
         cmd = New OleDbCommand(SQL_SELECT_BY_BENUTZERID, mConnection)
 
