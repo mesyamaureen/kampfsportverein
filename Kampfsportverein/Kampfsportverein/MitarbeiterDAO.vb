@@ -23,7 +23,7 @@
 
 
 
-    Public Sub findenAlleMitBenutzerId(plngIdFk As Long) As List Of (Sportarten) 
+    Public Function findenAlleMitBenutzerId(plngIdPk As Long) As List(Of Sportart)
 
         'Deklaratiom
         'Eigenschaften der Sportart
@@ -77,7 +77,7 @@
         schliessenDatenbank()
         Return lstSport
 
-    End Sub
+    End Function
 
     Public Sub findenMitBenutzerId()
 
@@ -89,7 +89,7 @@
 
     End Sub
 
-    Public Sub loeschenMitSportartId(plngIdPk As Long, plngVersion As Long) As Boolean
+    Public Function loeschenMitSportartId(plngIdPk As Long, plngVersion As Long) As Boolean
 
         'Deklaration
         Dim lngAnzahlDatensätze As Long
@@ -110,13 +110,15 @@
         Else Return False
         End If
 
-    End Sub
+    End Function
 
-    Public Sub speichern()
+    Public Function Speichern() As Integer
 
-    End Sub
+        Return 0
+    End Function
 
-    Public Sub hinzufuegen(pSportart As Sportart) As Long 
+
+    Public Function hinzufuegen(pSportart As Sportart) As Long
 
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long
@@ -138,7 +140,7 @@
         Return lngIdPk
 
 
-    End Sub
+    End Function
 
 
 
