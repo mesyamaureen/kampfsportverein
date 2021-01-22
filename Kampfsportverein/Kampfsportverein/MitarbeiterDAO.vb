@@ -1,5 +1,6 @@
 ﻿Public Class MitarbeiterDAO
     Inherits DAO
+  
 
     'SQL-Anweisung, um alle Sportarten zu ermitteln
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM tblSportarten"
