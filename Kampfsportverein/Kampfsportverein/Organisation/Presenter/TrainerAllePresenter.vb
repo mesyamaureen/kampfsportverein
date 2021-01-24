@@ -42,6 +42,14 @@
         End Set
     End Property
 
+    Public Property Trainer As Trainer
+        Get
+            Return Nothing
+        End Get
+        Set(value As Trainer)
+        End Set
+    End Property
+
     'Public Property Trainer As Trainer
     '    Get
     '        Return mTrainerAlle
@@ -139,3 +147,4 @@
         mView.Close()
     End Sub
 End Class
+

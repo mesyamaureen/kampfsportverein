@@ -2,7 +2,6 @@
 Public Class MitarbeiterDAO
     Inherits DAO
 
-
     'SQL-Anweisung, um alle Sportarten zu ermitteln
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM tblSportarten"
 
@@ -16,13 +15,8 @@ Public Class MitarbeiterDAO
     Private Const SQL_INSERT As String = "INSERT INTO tblSportarten(SaName, SaHerkunft, SaZielgruppe, SaMindestalter, SaVersion)" &
         "VALUES @name, @herkunft, @zielgruppe, @mindestalter, @version"
 
-
     ' SQL-Anweisung, um eine Sportart zu löschen
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportart WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
-
-
-
-
 
 
     Public Function findenAlleMitBenutzerId(plngIdPk As Long) As List(Of Sportart)
