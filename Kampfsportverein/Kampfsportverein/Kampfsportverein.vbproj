@@ -74,9 +74,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO.vb" />
-    <Compile Include="DAOFactory.vb" />
-    <Compile Include="MitarbeiterDAO.vb" />
+    <Compile Include="DataAccess\DAO.vb" />
+    <Compile Include="DataAccess\DAOFactory.vb" />
+    <Compile Include="DataAccess\MitarbeiterDAO.vb" />
     <Compile Include="Organisation\View\MeinTrainerkontoView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -219,7 +219,7 @@
     <Compile Include="Organisation\View\TrainerAlleView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrainerDAO.vb" />
+    <Compile Include="DataAccess\TrainerDAO.vb" />
     <Compile Include="TrainerkontoPresenter.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -293,8 +293,12 @@
     <None Include="Organisation\Presenter\AnmeldungPresenter.cd" />
     <None Include="Produkt\KlassendiagrammProdukte.cd" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DataAccess\" />
+    <ProjectReference Include="..\Kampfsportvereinverwaltung\Kampfsportvereinverwaltung_DataAcess.vbproj">
+      <Project>{eeeb10e6-4980-43a1-99b0-bd15557d885a}</Project>
+      <Name>Kampfsportvereinverwaltung_DataAcess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
