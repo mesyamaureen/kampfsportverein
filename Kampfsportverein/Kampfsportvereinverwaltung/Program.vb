@@ -6,13 +6,13 @@ Imports System.Data.OleDb
 'End Sub
 'End Module
 
-Module Datenbank '''Mal Public Module ueberlegen
+Public Module Datenbank
     'auf die Datenbank zugreifen
     Dim conn As OleDbConnection
 
     Public Sub Main()
         oeffnenDbVerbindung()
-        schließenDbVerbindung()
+        schlieï¿½enDbVerbindung()
     End Sub
 
     'Oeffnen der Datenbankverbindung
@@ -24,29 +24,29 @@ Module Datenbank '''Mal Public Module ueberlegen
         conn.Open()
     End Sub
 
-    'Schließen der Datenbankverbindung
-    Private Sub schließenDbVerbindung()
+    'Schlieï¿½en der Datenbankverbindung
+    Private Sub schlieï¿½enDbVerbindung()
         If Not (conn Is Nothing) Then
             conn.Close()
         End If
     End Sub
 
     ''' <summary>
-    ''' Abstrakte Oberklasse (MustInherit) für den Datenbankzugriff nach DAO-Muster
+    ''' Abstrakte Oberklasse (MustInherit) fï¿½r den Datenbankzugriff nach DAO-Muster
     ''' </summary>
     ''' <remarks></remarks>
 
 
-    ' SQL-Anweisung zur Ermittlung des zuletzt eingefügten Autowertes
+    ' SQL-Anweisung zur Ermittlung des zuletzt eingefï¿½gten Autowertes
     Public Const SQL_SELECT_IDENTITY As String = "SELECT @@IDENTITY;"
     ' Verbindung zur Datenbank
     Public mConnection As OleDbConnection
 
     ''' <summary>
-    ''' Öffnet die Datenbankverbindung entsprechend des in den Eigenschaften eingestellten
+    ''' ï¿½ffnet die Datenbankverbindung entsprechend des in den Eigenschaften eingestellten
     ''' ConnectionStrings.
     ''' </summary>
-    ''' <remarks>Änderungen über Projekteigenschaften > Einstellungen > ConnectionString.</remarks>
+    ''' <remarks>ï¿½nderungen ï¿½ber Projekteigenschaften > Einstellungen > ConnectionString.</remarks>
     Public Sub oeffnenDatenbank()
         Dim strConn As String
         strConn = My.Settings.ConnectionString
@@ -62,7 +62,7 @@ Module Datenbank '''Mal Public Module ueberlegen
     End Sub
 
     ''' <summary>
-    ''' Schließt die aktuell geöffnete Datenbankverbindung.
+    ''' Schlieï¿½t die aktuell geï¿½ffnete Datenbankverbindung.
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub schliessenDatenbank()
@@ -75,11 +75,11 @@ Module Datenbank '''Mal Public Module ueberlegen
     End Sub
 
     ''' <summary>
-    ''' Ermittelt den zuletzt als Autowert vergebenen Wert und liefert ihn zurück. 
+    ''' Ermittelt den zuletzt als Autowert vergebenen Wert und liefert ihn zurï¿½ck.
     ''' </summary>
     ''' <returns>Zuletzt als Autowert vergebener Wert</returns>
-    ''' <remarks>Diese Funktion muss mit der selben Daenbankverbindung und ggf. innerhalb 
-    ''' der selben Transaktion aufgerufen werden, wie die vorangegangene Einfüge-Operation.</remarks>
+    ''' <remarks>Diese Funktion muss mit der selben Daenbankverbindung und ggf. innerhalb
+    ''' der selben Transaktion aufgerufen werden, wie die vorangegangene Einfï¿½ge-Operation.</remarks>
     Public Function ermittleId()
         Dim lngIdPk As Long
         Dim cmd As OleDbCommand

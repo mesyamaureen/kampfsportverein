@@ -24,6 +24,13 @@
         mlngVersion = plngVersion
     End Sub
 
+    Public Property ID As Long
+        Get
+            Return mlngIdPk
+        End Get
+        Set(value As Long)
+        End Set
+    End Property
     Public Property Mindestalter As Byte
         Get
             Return mbyteMindestalter
