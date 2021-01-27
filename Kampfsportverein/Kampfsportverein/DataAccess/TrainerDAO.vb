@@ -1,19 +1,28 @@
-﻿Public Class TrainerDAO
+﻿Imports Kampfsportvereinverwaltung
+Imports System.Data.OleDb
+
+
+'Public Property SQL_DELETE_BY_VERSION As String
+'Public Property SQL_INSERT As String
+
+Public Class TrainerDAO
     Inherits DAO
 
     'SQL-Anweisung, um alle Schüler zu ermitteln
-    Private Const SQL_SELECT_Schueler As String = SELECT * FROM tblSchueler
+    Private Const SQL_SELECT_Schueler As String = "SELECT * FROM tblSchueler"
 
     ' 'SQL-Anweisung, um Schueler nach ID zu filtern
     'Private Const SQL_SELECT_SCHUELER_BY_SAID As String = SELECT * FROM tblSchueler WHERE SaIdPk = @IdPk"
 
     ' SQL-Anweisung, um einen Schueler neu hinzuzufügen
-    Private Const SQL_INSERT As String = INSERT INTO tblSchueler(SchuIdPk, SchuVorname, SchuName, SchuEMail, SchuVersion)" &
-        "VALUES @vorname, @name, @email, @version
+    Private Const SQL_INSERT As String = "INSERT INTO tblSchueler(SchuIdPk, SchuVorname, SchuName, SchuEMail, SchuVersion)" &
+        "VALUES @vorname, @name, @email, @version"
 
     ' SQL-Anweisung, um eine Schueler zu löschen
-    Private Const SQL_DELETE_BY_VERSION As String = DELETE FROM tblSchueler WHERE SchuIdPk = @IdPk And SchuVersion = @Version
-    Public Sub findenAlleMitSchuelerId(plngIdPk As Long) As List(Of Schueler)
+    Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSchueler WHERE SchuIdPk = @IdPk And SchuVersion = @Version"
+    Public Property SQL_SELECT_BY_BENUTZERID As String
+
+    Public Function findenAlleMitSchuelerId(plngIdPk As Long) As List(Of Schueler)
 
         'Deklaratiom
         'Eigenschaften der Schueler
@@ -43,17 +52,17 @@
         cmd = New OleDbCommand(SQL_SELECT_BY_BENUTZERID, mConnection)
 
         'Platzhalter ersetzen
-        cmd.Parameter.AddWithValue(plngIdPk)
+        cmd.Parameters.AddWithValue("@SchuIdPk", plngIdPk)
 
         dr = cmd.ExecuteReader
 
         Do While dr.Read
 
-            lngIdPk = Long.Parse(dr(SchuIdPk))
-            strName = dr(SchuName))
-            strVorname = (dr(SchuVorname))
-            strEmail = (dr(SchuEMail))
-            lngVersion = Long.Parse(dr(SchuVersion))
+            lngIdPk = Long.Parse(dr("SchuIdPk"))
+            strName = dr("SchuName")
+            strVorname = dr("SchuVorname")
+            strEmail = dr("SchuEMail")
+            lngVersion = Long.Parse(dr("SchuVersion"))
 
             schu = New Schueler(lngIdPk, strName, strVorname, strEmail, lngVersion)
 
@@ -62,14 +71,13 @@
         dr.Close()
         schliessenDatenbank()
         Return lstSchueler
+    End Function
+
+    Public Sub findenTraBenutzernamePasswort()
+
     End Sub
 
-    Public Sub findenMitBenutzernamePasswort()
-
-    End Sub
-
-End Class
-Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
+    Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
 
     'Deklaration
     Dim lngAnzahlDatensätze As Long
@@ -78,8 +86,8 @@ Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As 
     oeffnenDatenbank()
 
     cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
-    cmd.Parameters.AddWithValue(plngIdPk)
-    cmd.Parameters.AddWithValue(@version, plngVersion)
+    cmd.Parameters.AddWithValue("@SchuIdPk", plngIdPk)
+    cmd.Parameters.AddWithValue("@version", plngVersion)
 
     lngAnzahlDatensätze = cmd.ExecuteNonQuery()
 
@@ -91,30 +99,32 @@ Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As 
     End If
 
 End Function
-Public Function Speichern() As Integer
+    'Public Function Speichern() As Integer
 
-    Return 0
-End Function
+    'Return 0
+    'End Function
 
-Public Function hinzufuegen(pSchu As Schueler) As Long
+    Public Function hinzufuegen(pSchu As Schueler) As Long
 
-    Dim lngAnzahlDatensätze As Long
-    Dim lngIdPk As Long
-    Dim cmd As OleDbCommand
+        Dim lngAnzahlDatensätze As Long
+        Dim lngIdPk As Long
+        Dim cmd As OleDbCommand
 
-    lngIdPk = -1
-    cmd = New OleDbCommand(SQL_INSERT, mConnection)
-    cmd.Parameters.AddWithValue(@name, pSchu.Name)
-    cmd.Parameters.AddWithValue(@vorname, pSchu.Vorname)
-    cmd.Parameters.AddWithValue(@email, pSchu.email)
-    cmd.Parameters.AddWithValue(@version, pSchu.Version)
+        lngIdPk = -1
+        cmd = New OleDbCommand(SQL_INSERT, mConnection)
+        cmd.Parameters.AddWithValue("@SchuName", pSchu.Name)
+        cmd.Parameters.AddWithValue("@SchuVorname", pSchu.Vorname)
+        cmd.Parameters.AddWithValue("@SchuEmail", pSchu.EMailAdresse)
+        cmd.Parameters.AddWithValue("@SchuVersion", pSchu.Version)
 
-    lngAnzahlDatensätze = cmd.ExecuteNonQuery
-    If lngAnzahlDatensätze = 1 Then
-        lngAnzahlDatensätze = ermittleId()
-    End If
-    schliessenDatenbank()
-    Return lngIdPk
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensätze = 1 Then
+            lngAnzahlDatensätze = ermittleId()
+        End If
+        schliessenDatenbank()
+        Return lngIdPk
 
 
-End Function
+    End Function
+
+End Class

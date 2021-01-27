@@ -12,7 +12,7 @@ Public Module Datenbank
 
     Public Sub Main()
         oeffnenDbVerbindung()
-        schlie�enDbVerbindung()
+        schliessenDbVerbindung()
     End Sub
 
     'Oeffnen der Datenbankverbindung
@@ -25,7 +25,7 @@ Public Module Datenbank
     End Sub
 
     'Schlie�en der Datenbankverbindung
-    Private Sub schlie�enDbVerbindung()
+    Private Sub schliessenDbVerbindung()
         If Not (conn Is Nothing) Then
             conn.Close()
         End If

@@ -8,7 +8,7 @@
     Private mbolVerfuegbarkeit As Boolean
     Private mSportart As Sportart
 
-    Sub New()
+    Sub New() 'parameterloser Konstruktor
         mdatZeitpunkt = Date.MinValue
         mstrOrt = String.Empty
         mtraTrainer = Nothing
@@ -21,7 +21,7 @@
 
     Sub New(pdatZeitpunkt As Date, pstrOrt As String, ptraTrainer As Trainer,
             pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
-            pstrName As String, pbolVerfuegbarkeit As Boolean, pSportart As Sportart)
+            pstrName As String, pbolVerfuegbarkeit As Boolean, pSportart As Sportart) 'Konstruktor mit Parameter
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
         mtraTrainer = ptraTrainer

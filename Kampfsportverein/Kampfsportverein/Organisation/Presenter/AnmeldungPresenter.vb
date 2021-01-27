@@ -56,7 +56,22 @@
     End Sub
 
     Private Function anmelden(pstrBenutzername As String, pstrPasswort As String) As Benutzer
-        Return Kampfsportverein.mlstTrainer.Item(1)
+        'Deklaration
+        Dim ben As Benutzer 'Benutzer
+        Dim mitDAO As MitarbeiterDAO 'MitarbeiterDAO
+        Dim traDAO As TrainerDAO 'TrainerDAO
+
+        'Initialisieren des BenutzerDAO über die DAOFactory
+        mitDAO = DAOFactory.Instanz.MitarbeiterDAO
+        traDAO = DAOFactory.Instanz.TrainerDAO
+
+        'Nutzen des DAOs, um den angemeldeten Benutzer zu finden anhand 
+        'Benutzername und Passwort 'If ben=mitarbeiter then ben = mitDAO.findenMitBenutzernamePasswort(..)
+        ben = mitDAO.findenMitBenutzernamePasswort(pstrBenutzername, pstrPasswort) 'Formulierung einer Verzweigung, 
+        'falls sinnlos dann neues Diagramm
+
+        'Rückgabe des angemeldeten Benutzers
+        Return ben
     End Function
 
 End Class

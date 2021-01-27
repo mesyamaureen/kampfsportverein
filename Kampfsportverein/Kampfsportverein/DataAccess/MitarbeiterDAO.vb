@@ -4,7 +4,14 @@ Imports System.Data.OleDb
 Public Class MitarbeiterDAO
     Inherits DAO
 
+    'SQL-Anweisung, um einen Mitarbeiter anhand des Benutzernamens und des Passwortes zu ermitteln
+    Private Const SQL_SELECT_BY_BENUTZERNAME_PASSWORT As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenBenutzerName = @benutzername AND BenPw = @passwort;"
 
+    'SQL-Anweisung, um einen Mitarbeiter anhand der ID zu ermitteln
+    Private Const SQL_SELECT_BY_ID As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenIdPk = @idPk;"
+
+    'SQL-Anweisung, um alle Mitarbeiter zu ermitteln
+    Private Const SQL_SELECT_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer;"
 
     'SQL-Anweisung, um alle Sportarten zu ermitteln
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM tblSportarten"
@@ -24,6 +31,54 @@ Public Class MitarbeiterDAO
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportart WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
 
     Private Const SQL_SELECT_SPORTART_BY_ID As String = "SELECT FROM tblSportarten WHERE SaIdPk = @SaIdPk"
+
+    Public Function findenMitBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String)
+        'Deklaration
+        'Alle Eigenschaften eines Benutzers
+        Dim lngBenutzerIdPk As Long
+        Dim strBenutzername As String
+        Dim strPasswort As String
+        Dim strVorname As String
+        Dim strName As String
+        Dim lngVersion As Long
+        Dim intTyp As Integer
+
+        'Gesuchter Benutzer
+        Dim ben As Benutzer
+
+        'Alles für den Datenbankzugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Initialisierung
+        ben = Nothing
+
+        'Datenbank oeffnen
+        oeffnenDatenbank()
+        'Kommando für Datenbankzugriff
+        cmd = New OleDbCommand(SQL_SELECT_BY_BENUTZERNAME_PASSWORT, mConnection)
+        'Platzhalter ersetzen
+        cmd.Parameters.AddWithValue("@benutzername", pstrBenutzername)
+        cmd.Parameters.AddWithValue("@passwort", pstrPasswort)
+        'Ausführen der Anweisung
+        dr = cmd.ExecuteReader()
+        'Wenn etwas gefunden wurde - vergleich mit diesen Angaben
+        If dr.Read Then
+            lngBenutzerIdPk = Long.Parse(dr("BenIdPk"))
+            strBenutzername = dr("BenBenutzerName")
+            strPasswort = dr("BenPw")
+            strVorname = dr("BenVorname")
+            strName = dr("BenName")
+            lngVersion = Long.Parse(dr("BenVersion")) 'soll hier eine neue Eigenschaft bei Benutzer.vb hinzugefügt werden?
+            intTyp = Integer.Parse(dr("BenTyp")) 'soll hier eine neue Eigenschaft bei Benutzer.vb hinzugefügt werden?
+
+            ben = New Benutzer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk) 'lngVersion, intTyp? -mesya
+        End If
+        dr.Close()
+        schliessenDatenbank()
+        'Rückgabe des Benutzers
+        Return ben
+    End Function
 
     Public Function findenAlleSportarten() As List(Of Sportart)
 

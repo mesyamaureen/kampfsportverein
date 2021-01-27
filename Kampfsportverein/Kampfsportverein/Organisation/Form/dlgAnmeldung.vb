@@ -13,7 +13,7 @@
     Private Sub btnAnmelden_Click(sender As Object, e As EventArgs) Handles btnAnmelden.Click
         Dim strBenutzername As String
         Dim strPasswort As String
-        strBenutzername = Me.txtBenutzername.Text
+        strBenutzername = Trim(Me.txtBenutzername.Text)
         strPasswort = Me.txtPasswort.Text
         mPresenter.verarbeitenAnmelden(strBenutzername, strPasswort)
     End Sub

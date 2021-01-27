@@ -17,20 +17,17 @@
         End Set
     End Property
     'Methoden
+    'Initialisierungen 
     Public Sub anzeigenOrt()
-
+        Me.txtOrt.Enabled = True
     End Sub
 
     Public Sub anzeigenSchwierigkeitsgrad()
 
     End Sub
 
-    Public Sub anzeigenName()
-
-    End Sub
-
     Public Sub anzeigenTeilnehmerzahl()
-
+        Me.txtTeilnZahl.Enabled = True
     End Sub
 
     Public Sub anzeigenTrainer()
@@ -38,10 +35,7 @@
     End Sub
 
     Public Sub anzeigenZeitpunkt()
-
+        Me.txtZeitpunkt.Enabled = True
     End Sub
 
-    Public Sub anzeigenAktivInaktiv()
-
-    End Sub
 End Class

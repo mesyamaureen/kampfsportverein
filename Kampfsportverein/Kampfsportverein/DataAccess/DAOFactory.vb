@@ -2,10 +2,14 @@
     'Attribut vom eigenen Typ des Singletons
     Private Shared mInstanz As DAOFactory
     Private mAktuelleFactory As MitarbeiterDAO
+    Private mMitarbeiterDAO As MitarbeiterDAO
+    Private mTrainerDAO As TrainerDAO
 
     'privater Konstruktor des Singletons
     Private Sub New()
         mAktuelleFactory = Nothing
+        mMitarbeiterDAO = Nothing
+        mTrainerDAO = Nothing
     End Sub
     'implementierung eines Singletons
     Public Shared ReadOnly Property Instanz As DAOFactory
@@ -20,7 +24,10 @@
 
     Public Property TrainerDAO As TrainerDAO
         Get
-            Return Nothing
+            If IsNothing(mTrainerDAO) Then
+                mTrainerDAO = New TrainerDAO
+            End If
+            Return mTrainerDAO 'die Instanz des TrainerDAOs zurückgeben
         End Get
         Set(value As TrainerDAO)
         End Set
@@ -28,7 +35,10 @@
 
     Public Property MitarbeiterDAO As MitarbeiterDAO
         Get
-            Return Nothing
+            If IsNothing(mMitarbeiterDAO) Then
+                mMitarbeiterDAO = New MitarbeiterDAO
+            End If
+            Return mMitarbeiterDAO 'die Instanz des TrainerDAOs zurückgeben
         End Get
         Set(value As MitarbeiterDAO)
         End Set
