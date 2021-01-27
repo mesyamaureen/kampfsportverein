@@ -5,7 +5,7 @@
     Private mlstKurseAlle As List(Of Kurs)
     Private mlstSchuelerAlle As List(Of Schueler)
     Private mlstTrainerAlle As List(Of Trainer)
-
+    Private mMitarbeiterDAO As MitarbeiterDAO = New MitarbeiterDAO
     Private mistMitarbeiterAlle As MitarbeiterAllePresenter
 
     Sub New()
@@ -54,6 +54,7 @@
     End Property
 
     Private Sub anzeigenMitarbeiterAlle()
+
         mView.leeren()
         mView.anzeigenSportartenuebersicht()
         'anzeigen lstSportart
@@ -67,6 +68,7 @@
     End Sub
     Public Sub verarbeiteSportartUebersichtAnzeigen() 'button Sportarten
         mErgebnis = EPresenterErgebnis.SPORTART_ANZEIGEN
+        mlstSportartAlle = mMitarbeiterDAO.findenAlleSportarten()
         anzeigenMitarbeiterAlle()
     End Sub
 
@@ -98,8 +100,21 @@
         Next
     End Sub
 
-    Public Sub verarbeiteÖffnen() 'button Öffnen
+    Public Sub verarbeiteSportartÖffnen(plngSportartId As Long) 'button Öffnen
+        ' Deklaration
+        Dim spor As Sportart ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
 
+        ' Ermitteln der Sportart anhand der ID aus der DB
+        spor = mMitarbeiterDAO.findeSportart(plngSportartId)
+        ' Übergeben der Sportart zur Anzeige im Presenter
+        sporPresenter = New SportartenPresenter(spor)
+
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im
+        ' SportartPresenter gespeichert wurden 
+        If sporPresenter.Ergebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27
+            verarbeiteSportartUebersichtAnzeigen()
+        End If
     End Sub
     Public Sub verarbeiteNeu() 'button Neu
 

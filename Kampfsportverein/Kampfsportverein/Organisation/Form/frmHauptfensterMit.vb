@@ -40,9 +40,34 @@
 
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
 
+        Dim lngSportartId As Long
+        lngSportartId = Me.lstSportart.SelectedItems(0).Text
+        mPresenter.verarbeiteSportartÖffnen(lngSportartId)
     End Sub
 
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
         mPresenter.verarbeiteBeenden()
     End Sub
+
+    Private Sub lstSportart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSportart.SelectedIndexChanged
+        geaenderteAuswahl()
+    End Sub
+
+    Private Sub geaenderteAuswahl()
+        ' Registerkarte Offene Aufgaben
+        If Me.lstSportart.SelectedItems.Count > 0 Then
+            Me.btnBeenden.Enabled = True
+            Me.btnNeu.Enabled = True
+            Me.btnOeffnen.Enabled = True
+            Me.btnLoeschen.Enabled = True
+        Else
+            Me.btnBeenden.Enabled = True
+            Me.btnNeu.Enabled = True
+            Me.btnOeffnen.Enabled = False
+            Me.btnLoeschen.Enabled = False
+        End If
+
+    End Sub
+
+
 End Class

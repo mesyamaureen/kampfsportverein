@@ -88,8 +88,8 @@
     <Compile Include="Produkt\View\AlleSchuelerView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produkt\Presenter\AlleSportartenPresenter.vb" />
-    <Compile Include="Produkt\View\AlleSportartenView.vb">
+    <Compile Include="Produkt\Presenter\SportartenPresenter.vb" />
+    <Compile Include="Produkt\View\SportartenView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Organisation\Presenter\AnmeldungPresenter.vb" />

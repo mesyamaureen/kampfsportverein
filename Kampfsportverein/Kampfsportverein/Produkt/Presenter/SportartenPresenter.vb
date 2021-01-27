@@ -1,9 +1,15 @@
 ﻿Public Class SportartenPresenter
-    Private mErgebnis As SportartenPresenter
-    Private mistSportart As Integer
-    Private mView As Integer
+    Private mErgebnis As EPresenterErgebnis
+    Private mSpor As Sportart
+    Private mView As SportartenView
 
-    Sub New()
+    Sub New(pSpor As Sportart)
+
+        mSpor = pSpor
+        mView = New SportartenView(Me)
+        mView.ShowDialog()
+
+
 
     End Sub
 
@@ -50,4 +56,13 @@
     Public Sub verarbeiteOeffnen()
 
     End Sub
+
+    Public Sub verarbeiteOk()
+
+    End Sub
+
+    Public Sub verarbeiteAbbrechen()
+
+    End Sub
+
 End Class

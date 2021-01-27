@@ -11,6 +11,9 @@
         erzeugeBeispieldaten()
         mSitzung.start()
     End Sub
+    'Hier kommt das DAO rein NH 2021-01-27
+    'Hole Daten aus der Datenbank
+    'Pushe Veränderungen in die Datenbank
 
     Public Sub erzeugeBeispieldaten()
 
