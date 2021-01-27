@@ -50,4 +50,13 @@
     Public Sub verarbeiteOeffnen()
 
     End Sub
+
+    Public Sub verarbeiteOk()
+
+    End Sub
+
+    Public Sub verarbeiteAbbrechen()
+
+    End Sub
+
 End Class
