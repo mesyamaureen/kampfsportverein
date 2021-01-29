@@ -43,19 +43,23 @@
         End Set
     End Property
 
-    Public Sub anzeigenName()
+    Public Sub anzeigenSportart(plngID As Long, pstrName As String, pstrHerkunft As String, pstrZielgruppe As String, pbytMindestalter As Byte)
+        Dim zeile As Windows.Forms.ListViewItem
 
+        ' Hinzufügen der Zeile zur Liste und Wert für erste Spalte eintragen
+
+        zeile = Me.lstSportart.Items.Add(plngID)
+
+
+        ' Weitere spalten innerhalb der gleichen Zeile füllen
+        With zeile.SubItems
+            .Add(pstrName)
+            .Add(pstrHerkunft)
+            .Add(pstrZielgruppe)
+            .Add(pbytMindestalter)
+        End With
     End Sub
 
-    Public Sub anzeigenHerkunftsland()
 
-    End Sub
 
-    Public Sub anzeigenZielgruppe()
-
-    End Sub
-
-    Public Sub anzeigenMindestalter()
-
-    End Sub
 End Class
