@@ -1,7 +1,7 @@
 ﻿Imports Kampfsportvereinverwaltung
 Public Class SportartenPresenter
-
     Inherits frmHauptfensterMit
+
     Public mErgebnis As EPresenterErgebnis
     Public Shared mSpor As Sportart
     Private mView As SportartenEinzelView
@@ -13,17 +13,13 @@ Public Class SportartenPresenter
         mView.anzeigenSportart(mSpor)
         mView.ShowDialog()
 
-
-
     End Sub
 
     Sub New()
 
-
         mView = New SportartenEinzelView(Me)
         mView.ShowDialog()
-
-
+        mSpor = New Sportart
 
     End Sub
 
@@ -80,20 +76,26 @@ Public Class SportartenPresenter
     End Sub
 
     Public Sub verarbeiteSpeichern(pSpor As Sportart)
-        mSpor.Name = pSpor.Name
-        mSpor.Herkunftsland = pSpor.Herkunftsland
-        mSpor.Zielgruppe = pSpor.Zielgruppe
-        mSpor.Mindestalter = pSpor.Mindestalter
-        mSpor.Version = pSpor.Version + 1
-
-        Dim Ergebnis As Long
-        Ergebnis = MitarbeiterDAO.speichern(mSpor)
-        If Ergebnis = mSpor.ID Then
-            mErgebnis = EPresenterErgebnis.SPEICHERN
-            Me.Close()
+        If String.IsNullOrEmpty(pSpor.Name) Or String.IsNullOrEmpty(pSpor.Herkunftsland) Or
+        String.IsNullOrEmpty(pSpor.Mindestalter) Or String.IsNullOrEmpty(pSpor.Zielgruppe) Then 'Kontrolle ob Byte NullOrEmpty Kann Fehlerquelle Sein
+            MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
         Else
-            MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            mSpor.Name = pSpor.Name
+            mSpor.Herkunftsland = pSpor.Herkunftsland
+            mSpor.Zielgruppe = pSpor.Zielgruppe
+            mSpor.Mindestalter = pSpor.Mindestalter
+            mSpor.Version = pSpor.Version + 1
+
+            Dim Ergebnis As Long
+            Ergebnis = MitarbeiterDAO.speichern(mSpor)
+            If Ergebnis = mSpor.ID Then
+                mErgebnis = EPresenterErgebnis.SPEICHERN
+                Me.Close()
+            Else
+                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            End If
         End If
+
     End Sub
 
 End Class

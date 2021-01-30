@@ -172,26 +172,26 @@ Public Class MitarbeiterDAO
     End Function
 
 
-    Public Function loeschenMitSportartId(plngIdPk As Long, plngVersion As Long) As Boolean
+    Public Shared Function loeschenMitSportartId(plngIdPk As Long, plngVersion As Long) As Boolean
         Return ElementLoeschen("tblSportarten", plngIdPk, plngVersion)
         'Deklaration
-        'Dim lngAnzahlDatensätze As Long
-        'Dim cmd As OleDbCommand
+        Dim lngAnzahlDatensätze As Long
+        Dim cmd As OleDbCommand
 
-        'oeffnenDatenbank()
+        oeffnenDatenbank()
 
-        'cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
-        'cmd.Parameters.AddWithValue("@IdPk", plngIdPk)
-        'cmd.Parameters.AddWithValue("@version", plngVersion)
+        cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
+        cmd.Parameters.AddWithValue("@IdPk", plngIdPk)
+        cmd.Parameters.AddWithValue("@version", plngVersion)
 
-        'lngAnzahlDatensätze = cmd.ExecuteNonQuery()
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery()
 
-        'schliessenDatenbank()
+        schliessenDatenbank()
 
-        'If lngAnzahlDatensätze = 1 Then
-        'Return True
-        'Else Return False
-        'End If
+        If lngAnzahlDatensätze = 1 Then
+            Return True
+        Else Return False
+        End If
 
     End Function
 
@@ -266,7 +266,7 @@ Public Class MitarbeiterDAO
     ''' <param name="pSpor">Zu speichernde neue Aufgabe</param>
     ''' <returns>Liefert die ID der neu eingefügten Aufgabe zurück. Wenn das Einfügen fehlschlug, wird -1 zurückgeliefert.</returns>
     ''' <remarks></remarks>
-    Private Shared Function hinzufuegen(pSportart As Sportart) As Long
+    Private Shared Function hinzufuegen(pSportart As Sportart) As Long 'ID Verwaltung fehlt? -2021-01-30
 
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long

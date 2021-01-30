@@ -7,11 +7,11 @@
     Private mlngVersion As Long
 
     Sub New() 'Parameterloser Konstruktor
-        mlngIdPk = 0
+        mlngIdPk = -1
         mstrName = String.Empty
         mstrHerkunftsland = String.Empty
         mstrZielgruppe = String.Empty
-        mbyteMindestalter = String.Empty
+        mbyteMindestalter = 0
         mlngVersion = 0
     End Sub
 

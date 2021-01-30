@@ -18,14 +18,14 @@
 
 
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        Dim mbrResult As MsgBoxResult
+        'Dim mbrResult As MsgBoxResult
 
-        mbrResult = MsgBox("Möchten Sie wirklich abbrechen?", MsgBoxStyle.Question + vbYesNo, "Abbrechen")
-        If mbrResult = vbNo Then
-            DialogResult = Nothing
-        Else
-            mPresenter.verarbeiteAbbrechen()
-        End If
+        'mbrResult = MsgBox("Möchten Sie wirklich abbrechen?", MsgBoxStyle.Question + vbYesNo, "Abbrechen")
+        'If mbrResult = vbNo Then
+        'DialogResult = Nothing
+        'Else
+        mPresenter.verarbeiteAbbrechen()
+        'End If
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click

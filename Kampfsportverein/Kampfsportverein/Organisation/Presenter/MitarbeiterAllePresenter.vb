@@ -118,8 +118,27 @@
     End Sub
     Public Sub verarbeiteNeu() 'button Neu
 
+        Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
+        sporPresenter = New SportartenPresenter()
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27
+            verarbeiteSportartUebersichtAnzeigen()
+        End If
     End Sub
-    Public Sub verarbeiteLoeschen() 'button Löschen
+    Public Sub verarbeiteLoeschen(plngSportartId As Long) 'button Löschen
+
+        ' Deklaration
+        Dim spor As Sportart ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim bolErgebnis As Boolean
+
+        ' Ermitteln der Sportart anhand der ID aus der DB
+        spor = mMitarbeiterDAO.findeSportart(plngSportartId)
+
+        bolErgebnis = MitarbeiterDAO.loeschenMitSportartId(plngSportartId, spor.Version)
+        If bolErgebnis Then
+            verarbeiteSportartUebersichtAnzeigen()
+        Else
+            MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
+        End If
 
     End Sub
 

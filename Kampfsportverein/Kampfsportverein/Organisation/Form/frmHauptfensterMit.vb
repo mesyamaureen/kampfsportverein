@@ -31,11 +31,13 @@
     End Sub
 
     Private Sub btnNeu_Click(sender As Object, e As EventArgs) Handles btnNeu.Click
-
+        mPresenter.verarbeiteNeu()
     End Sub
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
-
+        Dim lngSportartId As Long
+        lngSportartId = Me.lstSportart.SelectedItems(0).Text
+        mPresenter.verarbeiteLoeschen(lngSportartId)
     End Sub
 
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
