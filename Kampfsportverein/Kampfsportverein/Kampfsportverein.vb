@@ -33,9 +33,9 @@
         sport3 = New Sportart(3, "Muay Thai", "Thailand", "Zielgruppe weiß jetzt noch nicht", 10, 1)
         kurs1 = New Kurs(#12/11/2020#, "101", Tra1, 10, "Fortgeschritten", "Judo", True, sport1)
         kurs2 = New Kurs(#12/18/2020#, "101", Tra1, 10, "Fortgeschritten", "Karate", True, sport2)
-        schueler1 = New Schueler("Anna", "Müller", "annamueler@gmail.com")
-        schueler2 = New Schueler("Hans", "Klaus", "hansklaus@gmail.com")
-        schueler3 = New Schueler("Andreas", "Zimmermann", "andreaszimmermann@gmail.com")
+        schueler1 = New Schueler("Anna", "Müller", "annamueler@gmail.com", 10, 1)
+        schueler2 = New Schueler("Hans", "Klaus", "hansklaus@gmail.com", 11, 1)
+        schueler3 = New Schueler("Andreas", "Zimmermann", "andreaszimmermann@gmail.com", 12, 1)
 
         mlstTrainer = New List(Of Trainer)
         mlstTrainer.Add(Tra1)

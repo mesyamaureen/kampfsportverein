@@ -195,7 +195,7 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    Public Function speichern(pSport As Sportart) As Long
+    Public Shared Function speichern(pSport As Sportart) As Long
 
         ' Deklarationen
         Dim lngIdPK As Long ' zurückzugebender Primärschlüsselwert der neu hinzugefügten oder aktualisierten Aufagbe
@@ -215,7 +215,7 @@ Public Class MitarbeiterDAO
     End Function
 
 
-    Private Function aktualisieren(pSpor As Sportart) As Long
+    Private Shared Function aktualisieren(pSpor As Sportart) As Long
         ' Deklarationen
         Dim lngIdPk As Long ' Primärschlüssel des zu aktualisierenden Datensatzes
         Dim lngAnzahlDatensätze As Long ' Anzahl der von der Operation betroffenen Datensätze
@@ -266,7 +266,7 @@ Public Class MitarbeiterDAO
     ''' <param name="pSpor">Zu speichernde neue Aufgabe</param>
     ''' <returns>Liefert die ID der neu eingefügten Aufgabe zurück. Wenn das Einfügen fehlschlug, wird -1 zurückgeliefert.</returns>
     ''' <remarks></remarks>
-    Public Function hinzufuegen(pSportart As Sportart) As Long
+    Private Shared Function hinzufuegen(pSportart As Sportart) As Long
 
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long

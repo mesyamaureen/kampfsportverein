@@ -112,7 +112,7 @@
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im
         ' SportartPresenter gespeichert wurden 
-        If sporPresenter.Ergebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27
             verarbeiteSportartUebersichtAnzeigen()
         End If
     End Sub
