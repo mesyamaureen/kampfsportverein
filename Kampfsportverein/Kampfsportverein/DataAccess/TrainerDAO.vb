@@ -14,7 +14,7 @@ Public Class TrainerDAO
     Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenTyp = 'T'"
 
     'SQL-Anweisung, um alle Schüler zu ermitteln
-    Private Const SQL_SELECT_Schueler As String = "SELECT * FROM tblSchueler"
+    Private Const SQL_SELECT_SCHUELER As String = "SELECT * FROM tblSchueler"
 
     ' 'SQL-Anweisung, um Schueler nach ID zu filtern
     'Private Const SQL_SELECT_SCHUELER_BY_SAID As String = SELECT * FROM tblSchueler WHERE SaIdPk = @IdPk"
@@ -220,6 +220,49 @@ Public Class TrainerDAO
         Return lstSchueler
     End Function
 
+    Public Function findeAlleSchueler() As List(Of Schueler)
+        'Deklaration der Eigenschaften des Kurs
+        Dim lngIdPk As Long
+        Dim strName As String
+        Dim strVorname As String
+        Dim strEmail As String
+        Dim lngVersion As Long
+
+        'Aufgaben und Aufgabenliste
+        Dim schu As Schueler 'gelesene Aufgabe, die zur Liste der Kurs hinzugefügt werden soll
+        Dim lstSchueler As List(Of Schueler) 'Liste von Kurs, die als Ergebnis zurückgeliefert werden soll
+
+        Dim traDAO As TrainerDAO 'Benutzer, zu dem die Schueler gehört, muss geladen werden
+        'Kommando und REader für Datenbankzugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Initialisierung
+        schu = Nothing 'Aufgabe leer initialisieren, um deutlich zu machen, dass keine Aufgabe gelesen wurde
+        lstSchueler = New List(Of Schueler) 'Rückgabewert initialisieren
+        'Oeffnen der Datenbankverbindung durch geerbte Methode der Oberklasse
+        oeffnenDatenbank()
+        cmd = New OleDbCommand(SQL_SELECT_SCHUELER, mConnection)
+        'Platzhalter in SQL-Anweisung durch Eigenschaften ersetzen
+        dr = cmd.ExecuteReader()
+
+        Do While dr.Read
+            'Aus dem Data-reader die Werte auslesen
+            lngIdPk = Long.Parse(dr("SchuIdPk"))
+            strName = dr("SchuName")
+            strVorname = dr("SchuVorname")
+            strEmail = dr("SchuEMail")
+            lngVersion = Long.Parse(dr("SchuVersion"))
+
+            schu = New Schueler(strVorname, strName, strEmail, lngIdPk, lngVersion)
+            lstSchueler.Add(schu)
+        Loop
+
+        dr.Close() 'DataReader schließen
+        schliessenDatenbank() 'Methode der Oberklasse nutzen, um Datenbankverbindung zu schließen
+        'Rückgabewert
+        Return lstSchueler
+    End Function
 
     Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
 

@@ -5,7 +5,7 @@
     Private mView As TrainerAlleView
     Private mTrainerAlle As Trainer
     Private mitDAO As MitarbeiterDAO = New MitarbeiterDAO
-    Private traDAO As TrainerDAO = New TrainerDAO
+    Private mtraDAO As TrainerDAO = New TrainerDAO
 
     'Parameterloser Konstruktor
     Public Sub New()
@@ -103,21 +103,10 @@
 
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
-        'Deklaration
-        Dim traDAO As TrainerDAO
-        Dim benAngemeldet As Benutzer
-        'Initialisierung
-        benAngemeldet = BenutzerSitzung.Instanz.AktuellerBenutzer
-        traDAO = DAOFactory.Instanz.TrainerDAO
-        'Alle Schueler des Benutzers(Trainer) mit ID laden
-        'mlstSchuelerAlle = traDAO.findenBenSchueler(benAngemeldet)
+        mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
+        mtraDAO = DAOFactory.Instanz.TrainerDAO
+        mlstSchuelerAlle = mtraDAO.findeAlleSchueler()
         anzeigenSchuelerAlle()
-        mView.leeren()
-        mView.anzeigenSchueler()
-        For Each schueler As Schueler In mlstSchuelerAlle
-            mView.anzeigenSchuelerUebersicht(mlstSchuelerAlle.IndexOf(schueler), schueler.Name,
-                                           schueler.Vorname)
-        Next
     End Sub
 
     Public Sub verarbeiteOeffnen(plngIndex As Long) 'button Öffnen

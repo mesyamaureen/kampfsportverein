@@ -119,11 +119,13 @@
         anzeigenKursAlle()
     End Sub
 
-    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler --- WTF?!
+    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
         mTrainerDAO = DAOFactory.Instanz.TrainerDAO
-        'mlstSchuelerAlle = mTrainerDAO.findenAlleMitSchuelerId()
+        mlstSchuelerAlle = mTrainerDAO.findeAlleSchueler()
+        anzeigenSchueleruebersichtAnzeigen()
     End Sub
+
     Public Sub verarbeiteTrainerUebersichtAnzeigen() 'button Trainer
         mErgebnis = EPresenterErgebnis.TRAINER_ANZEIGEN
         mTrainerDAO = DAOFactory.Instanz.TrainerDAO
