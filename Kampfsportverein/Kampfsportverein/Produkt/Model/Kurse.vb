@@ -8,6 +8,7 @@
     Private mlngBenIdFk As Long
     Private mlngVersion As Long
     Private mBenutzer As Benutzer
+    Private mSportart As Sportart
 
     Sub New() 'parameterloser Konstruktor
         mlngIdPk = Nothing
@@ -39,6 +40,16 @@
         Set(value As Benutzer)
             mBenutzer = value
             mBenutzer.hinzufuegenKurs(Me)
+        End Set
+    End Property
+
+    Public Property Sportart As Sportart
+        Get
+            Return mSportart
+        End Get
+        Set(value As Sportart)
+            mSportart = value
+            mSportart.hinzufuegenKurs(Me)
         End Set
     End Property
 

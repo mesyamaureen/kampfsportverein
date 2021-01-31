@@ -185,7 +185,7 @@ Public Class MitarbeiterDAO
 
             lngIdPk = Long.Parse(dr("SaIdPk"))
             strName = dr("SaName")
-            strHerkunft = dr("SaHerkunft")
+            strHerkunft = dr("SaHerkunftsland")
             strZielgruppe = dr("SaZielgruppe")
             bytMindestalter = Byte.Parse(dr("SaMindestalter"))
             lngVersion = Long.Parse(dr("SaVersion"))
@@ -364,7 +364,7 @@ Public Class MitarbeiterDAO
 
     'KURS
     'findenAlleKurse
-    Public Function findenAlleKurse(pSportart As Sportart) As List(Of Kurs)
+    Public Function findenAlleSaKurse(pSportart As Sportart) As List(Of Kurs)
 
         'Deklaration der Eigenschaften des Kurs
         Dim lngKursIdPk As Long
@@ -407,7 +407,8 @@ Public Class MitarbeiterDAO
 
             kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
                             lngSportartIdFk, lngBenIdFK, lngVersion)
-            lstKurs.Add(kurs)
+            kurs.Sportart = pSportart 'Kurs aud der Sportart zuordnen
+            lstKurs.Add(kurs) 'Neuer Kurs zur Liste der Kursen hinzufügen
         Loop
 
         dr.Close()

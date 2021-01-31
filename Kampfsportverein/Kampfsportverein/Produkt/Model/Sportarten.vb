@@ -72,4 +72,13 @@
         End Set
     End Property
 
+    Public Sub hinzufuegenKurs(pKurs As Kurs)
+        If Not mlstKurs.Contains(pKurs) Then
+            mlstKurs.Add(pKurs)
+            If IsNothing(pKurs.Sportart) Then
+                pKurs.Sportart = Me
+            End If
+        End If
+    End Sub
+
 End Class
