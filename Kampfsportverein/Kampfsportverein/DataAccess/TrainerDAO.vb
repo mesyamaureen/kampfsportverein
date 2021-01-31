@@ -22,7 +22,7 @@ Public Class TrainerDAO
     Public Property SQL_SELECT_BY_BENUTZERID As String
 
     'finden Trainer zur Anmeldung
-    Public Function findenTraBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String)
+    Public Function findenTraBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String) As Trainer
         'Deklaration
         'Alle Eigenschaften eines Benutzers
         Dim lngBenutzerIdPk As Long
@@ -67,6 +67,55 @@ Public Class TrainerDAO
         dr.Close()
         schliessenDatenbank()
         'Rückgabe des Benutzers
+        Return tra
+    End Function
+
+    Public Function findenTrainerId(plngBenutzerIdPk As Long) As Trainer
+        'Deklaration der Eigenschaften
+        Dim lngBenutzerIdPk As Long
+        Dim strBenutzername As String
+        Dim strPasswort As String
+        Dim strVorname As String
+        Dim strName As String
+        Dim lngVersion As Long
+
+        'Gelesener Trainer, die zurückgeben werden soll
+        Dim tra As Trainer
+
+        'Kommando und Reader für Datenbankzugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Initialisierung
+        tra = Nothing
+
+        'Oeffnen der Dbverbindung
+        oeffnenDatenbank()
+
+        'Kommando vorbereiten und SQL-Anweisung
+        cmd = New OleDbCommand(SQL_SELECT_BY_BENUTZERID, mConnection)
+
+        'Platzhalter in SQL-Anweisung für die ID
+        cmd.Parameters.AddWithValue("@BenIdPk", plngBenutzerIdPk)
+
+        'Ausführen des Kommandos, als Ergebnis einen DataReader erhalten, mit dem auf die einzelnen Datensätze zugegriffen werden kann
+        dr = cmd.ExecuteReader()
+
+        'Ob es etwas im DataReader zu lesen gibt
+        If dr.Read() Then
+            lngBenutzerIdPk = Long.Parse(dr("BenIdPk"))
+            strBenutzername = dr("BenBenutzerName")
+            strPasswort = dr("BenPw")
+            strVorname = dr("BenVorname")
+            strName = dr("BenName")
+            lngVersion = Long.Parse(dr("BenVersion"))
+            'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
+            tra = New Trainer(lngBenutzerIdPk, strBenutzername, strPasswort, strVorname, strName, lngVersion)
+        End If
+        dr.Close() 'DataReader schließen
+        'Schließen der Datenbankverbindung
+        schliessenDatenbank()
+        'Rückgabe 
         Return tra
     End Function
 

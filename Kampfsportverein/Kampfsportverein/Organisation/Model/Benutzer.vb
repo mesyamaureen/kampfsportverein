@@ -28,8 +28,6 @@
         'mcharTyp = pcharTyp
     End Sub
 
-
-
     Public Property Benutzername As String
         Get
             Return mstrBenutzername
@@ -86,4 +84,19 @@
     'End Set
     'End Property
 
+    Public Sub hinzufuegenKurs(pKurs As Kurs)
+        If Not mlstKurs.Contains(pKurs) Then
+            mlstKurs.Add(pKurs)
+            If IsNothing(pKurs.Benutzer) Then
+                pKurs.Benutzer = Me
+            End If
+        End If
+    End Sub
+
+    Public Sub loeschenKurs(pKurs As Kurs)
+        If Not mlstKurs.Contains(pKurs) Then
+            pKurs.Benutzer = Nothing
+            mlstKurs.Remove(pKurs)
+        End If
+    End Sub
 End Class

@@ -7,6 +7,7 @@
     Private mlngSaIdFk As Long
     Private mlngBenIdFk As Long
     Private mlngVersion As Long
+    Private mBenutzer As Benutzer
 
     Sub New() 'parameterloser Konstruktor
         mlngIdPk = Nothing
@@ -30,6 +31,17 @@
         mlngBenIdFk = plngBenIdFk
         mlngVersion = plngVersion
     End Sub
+
+    Public Property Benutzer As Benutzer
+        Get
+            Return mBenutzer
+        End Get
+        Set(value As Benutzer)
+            mBenutzer = value
+            mBenutzer.hinzufuegenKurs(Me)
+        End Set
+    End Property
+
     Public Property IdPk As Long
         Get
             Return mlngIdPk

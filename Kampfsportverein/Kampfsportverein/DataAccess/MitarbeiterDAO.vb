@@ -364,7 +364,7 @@ Public Class MitarbeiterDAO
 
     'KURS
     'findenAlleKurse
-    Public Function findenAlleKurse() As List(Of Kurs)
+    Public Function findenAlleKurse(pSportart As Sportart) As List(Of Kurs)
 
         'Deklaration der Eigenschaften des Kurs
         Dim lngKursIdPk As Long
@@ -416,7 +416,7 @@ Public Class MitarbeiterDAO
     End Function
 
     'findenKurs
-    Public Function findeKurs(plngKursIdPk) As Kurs
+    Public Function findeKurs(plngKursIdPk As Long) As Kurs
 
         'Deklaration der Eigenschaften des Kurs
         Dim lngKursIdPk As Long
@@ -427,6 +427,9 @@ Public Class MitarbeiterDAO
         Dim lngSaIdFk As Long
         Dim lngBenIdFk As Long
         Dim lngVersion As Long
+
+        'Trainer, zu dem den Kurs gehört, muss geladen werden
+        Dim traDAO As TrainerDAO
 
         'Aufgabe und Aufgabenliste
         Dim kurs As Kurs
@@ -445,30 +448,36 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@KuIdPk", plngKursIdPk)
 
         dr = cmd.ExecuteReader
+        If dr.Read() Then
+            lngKursIdPk = Long.Parse(dr("KuIdPk"))
+            datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
+            strKursOrt = dr("KuOrt")
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+            strKursSchwierigkeit = dr("KuSchwierigkeit")
+            lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
+            lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
+            lngVersion = Long.Parse(dr("KuVersion"))
 
-        lngKursIdPk = Long.Parse(dr("KuIdPk"))
-        datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
-        strKursOrt = dr("KuOrt")
-        intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
-        strKursSchwierigkeit = dr("KuSchwierigkeit")
-        lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
-        lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
-        lngVersion = Long.Parse(dr("KuVersion"))
+            'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
+            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
 
-        kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
-                        strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            'Beziehung zum Trainer
+            traDAO = DAOFactory.Instanz.TrainerDAO
+            kurs.Benutzer = traDAO.findenTrainerId(lngBenIdFk)
 
-        dr.Close()
+            'Beziehung zur Sportart
+
+        End If
         schliessenDatenbank()
         Return kurs
 
     End Function
 
     'loeschenKurs
-    Public Shared Function loeschenKurs(plngKursIdPk As Long, plngVersion As Long) As Boolean
-        Return ElementLoeschen("tblKurse", plngKursIdPk, plngVersion)
+    Public Shared Function loeschenKursTraId(plngKursIdPk As Long, plngVersion As Long) As Boolean 'Verbindung zum Trainer
         'Deklaration
-        Dim lngAnzahlDatensätze As Long
+        Dim lngAnzahlDatensaetze As Long
         Dim cmd As OleDbCommand
 
         oeffnenDatenbank()
@@ -477,17 +486,27 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@IdPk", plngKursIdPk)
         cmd.Parameters.AddWithValue("@version", plngVersion)
 
-        lngAnzahlDatensätze = cmd.ExecuteNonQuery()
+        lngAnzahlDatensaetze = cmd.ExecuteNonQuery()
 
         schliessenDatenbank()
 
-        If lngAnzahlDatensätze = 1 Then
-            Return True
-
-        Else Return False
+        If lngAnzahlDatensaetze = 0 Then
+            Return False 'Nicht erfolgreich, deshalb False zurückgeben
+        Else
+            Return True 'erfolgreich, deshalb True
         End If
 
     End Function
+
+    Public Function loeschenKurs(pKurs As Kurs) As Boolean
+        'Deklaration
+        Dim bolErfolgreich As Boolean
+        'Initialisierung: Funktionaufruf von loeschenKursTraId
+        bolErfolgreich = loeschenKursTraId(pKurs.IdPk, pKurs.Version)
+        'Rückgabe des Ergebnisses
+        Return bolErfolgreich
+    End Function
+
 
     'speichernKurs?
     Public Shared Function speichernKurs(pKurs As Kurs) As Long
@@ -557,13 +576,15 @@ Public Class MitarbeiterDAO
     End Function
 
     'hinzufuegenKurs
-    Private Shared Function hinzufuegenKurs(pKurs As Kurs) As Long 'ID Verwaltung fehlt? -2021-01-30
+    Private Shared Function hinzufuegenKurs(pKurs As Kurs) As Long
 
-        Dim lngAnzahlDatensätze As Long
+        Dim lngAnzahlDatensaetze As Long
         Dim lngKursIdPk As Long
         Dim cmd As OleDbCommand
 
         lngKursIdPk = -1
+        oeffnenDatenbank()
+
         cmd = New OleDbCommand(SQL_INSERT_KURS, mConnection)
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
@@ -573,13 +594,11 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
         cmd.Parameters.AddWithValue("@version", pKurs.Version)
 
-        lngAnzahlDatensätze = cmd.ExecuteNonQuery
-        If lngAnzahlDatensätze = 1 Then
-            lngAnzahlDatensätze = ermittleId()
+        lngAnzahlDatensaetze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensaetze = 1 Then
+            lngAnzahlDatensaetze = ermittleId()
         End If
         schliessenDatenbank()
         Return lngKursIdPk
-
-
     End Function
 End Class
