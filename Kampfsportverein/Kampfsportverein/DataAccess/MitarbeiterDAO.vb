@@ -483,7 +483,6 @@ Public Class MitarbeiterDAO
         Dim kurs As Kurs 'gelesene Aufgabe, die zur Liste der Kurs hinzugefügt werden soll
         Dim lstKurs As List(Of Kurs) 'Liste von Kurs, die als Ergebnis zurückgeliefert werden soll
 
-        Dim mitDAO As MitarbeiterDAO 'Benutzer, zu dem die Aufgabe gehört, muss geladen werden
         'Kommando und REader für Datenbankzugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader

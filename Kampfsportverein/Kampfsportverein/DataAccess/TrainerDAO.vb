@@ -232,7 +232,6 @@ Public Class TrainerDAO
         Dim schu As Schueler 'gelesene Aufgabe, die zur Liste der Kurs hinzugefügt werden soll
         Dim lstSchueler As List(Of Schueler) 'Liste von Kurs, die als Ergebnis zurückgeliefert werden soll
 
-        Dim traDAO As TrainerDAO 'Benutzer, zu dem die Schueler gehört, muss geladen werden
         'Kommando und REader für Datenbankzugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader

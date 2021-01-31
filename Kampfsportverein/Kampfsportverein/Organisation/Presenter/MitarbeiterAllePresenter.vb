@@ -11,21 +11,21 @@
 
     Public Sub New()
         mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
-        'ermittelnSportarten() 'Sportarten aus Datenbank laden
-        'ermittelnKurse()
-        'ermittelnSchueler()
-        'ermittelnTrainer()
-        'anzeigenSportarten() 'Sportarten in der View darstellen
-        'anzeigenKurse()
-        'anzeigenSchueler()
-        'anzeigenTrainer()
-        'mView.ShowDialog() 'View anzeigen
+
         mlstSportartAlle = Kampfsportverein.mlstSportart
         mlstKurseAlle = Kampfsportverein.mlstKurs
         mlstSchuelerAlle = Kampfsportverein.mlstSchueler
         mlstTrainerAlle = Kampfsportverein.mlstTrainer
+        anzeigenMitarbeiterAlle()
+        anzeigenKursAlle()
+        anzeigenSchueleruebersichtAnzeigen()
+        anzeigenTrainerAlle()
+        verarbeiteSportartUebersichtAnzeigen()
         verarbeiteMitarbeiterEinzeln()
         verarbeiteKursuebersichtAnzeigen()
+        verarbeiteSchueleruebersichtAnzeigen()
+        verarbeiteTrainerUebersichtAnzeigen()
+
         'Daten an die Oberfläche übergeben
         anzeigenKursAlle()
         anzeigenMitarbeiterAlle()
@@ -67,7 +67,6 @@
     End Property
 
     Private Sub anzeigenMitarbeiterAlle()
-
         mView.leeren()
         mView.anzeigenSportartenuebersicht()
         'anzeigen lstSportart
@@ -105,6 +104,7 @@
     Public Sub verarbeiteMitarbeiterEinzeln() 'button Mein Konto
 
     End Sub
+
     Public Sub verarbeiteSportartUebersichtAnzeigen() 'button Sportarten
         mErgebnis = EPresenterErgebnis.SPORTART_ANZEIGEN
         mMitarbeiterDAO = DAOFactory.Instanz.MitarbeiterDAO

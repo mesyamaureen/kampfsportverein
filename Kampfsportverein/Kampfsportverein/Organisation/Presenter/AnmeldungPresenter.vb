@@ -81,7 +81,7 @@
         'falls sinnlos dann neues Diagramm
 
         'Rückgabe des angemeldeten Benutzers
-
+        Return Nothing
     End Function
 
 End Class
