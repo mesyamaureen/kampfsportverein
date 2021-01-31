@@ -41,10 +41,28 @@
     End Sub
 
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
-
         Dim lngSportartId As Long
-        lngSportartId = Me.lstSportart.SelectedItems(0).Text
-        mPresenter.verarbeiteSportartÖffnen(lngSportartId)
+        Dim lngKursId As Long
+        Dim lngSchuelerId As Long
+        Dim lngTrainer As Long
+
+        If Me.lstSportart.SelectedItems.Count > 0 Then
+            lngSportartId = Me.lstSportart.SelectedItems(0).Text
+            mPresenter.verarbeiteSportartÖffnen(lngSportartId)
+        ElseIf Me.lstKurseAlle.SelectedItems.Count > 0 Then
+            lngKursId = Me.lstKurseAlle.SelectedItems(0).Text
+            mPresenter.verarbeiteKursOeffnen(lngKursId)
+        ElseIf Me.lstSchuelerAlle.SelectedItems.Count > 0 Then
+            lngSchuelerId = Me.lstSchuelerAlle.SelectedItems(0).Text
+            mPresenter.verarbeiteSchuelerOeffnen(lngSchuelerId)
+        ElseIf Me.lstTrainer.SelectedItems.Count > 0 Then
+            lngTrainer = Me.lstTrainer.SelectedItems(0).Text
+            mPresenter.verarbeiteTrainerOeffnen(lngTrainer)
+        End If
+
+        'mPresenter.verarbeiteSportartÖffnen(lngSportartId)
+        'mPresenter.verarbeiteKursuebersichtAnzeigen(lngKursId)
+
     End Sub
 
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click

@@ -1,7 +1,7 @@
 ﻿Public Class KursPresenter
     Private mView As KursView
-    Private mErgebnis As Kurs
-    Private mistKurseAlle As Kurs
+    Public mErgebnis As EPresenterErgebnis
+    Public mistKurseAlle As Kurs
 
     Sub New(kurs As Kurs)
         mView = New KursView(Me)

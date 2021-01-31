@@ -127,7 +127,7 @@
     End Sub
 
     Public Sub verarbeiteTrainerUebersichtAnzeigen() 'button Trainer
-        mErgebnis = EPresenterErgebnis.TRAINER_ANZEIGEN
+        mErgebnis = EPresenterErgebnis.TRAINER_EINZELN
         mTrainerDAO = DAOFactory.Instanz.TrainerDAO
         mlstTrainerAlle = mTrainerDAO.findeAlleTrainer()
         anzeigenTrainerAlle()
@@ -143,12 +143,56 @@
         ' Übergeben der Sportart zur Anzeige im Presenter
         sporPresenter = New SportartenPresenter(spor)
 
-        ' Liste muss nur aktualisiert werden, wenn Änderungen im
-        ' SportartPresenter gespeichert wurden 
-        If sporPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPORTART_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteSportartUebersichtAnzeigen()
         End If
     End Sub
+
+    Public Sub verarbeiteKursOeffnen(plngKursId As Long) 'button Öffnen für Kurs
+        Dim kurs As Kurs ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim kursPresenter As KursPresenter ' Presenter zum anzeigen der Sportart
+
+        ' Ermitteln der Sportart anhand der ID aus der DB
+        kurs = mMitarbeiterDAO.findeKurs(plngKursId)
+        ' Übergeben der Sportart zur Anzeige im Presenter
+        kursPresenter = New KursPresenter(kurs)
+
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
+        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+            verarbeiteKursuebersichtAnzeigen()
+        End If
+    End Sub
+
+    Public Sub verarbeiteSchuelerOeffnen(plngSchuelerId As Long) 'button Öffnen für Schueler
+        Dim schueler As Schueler ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim schuPresenter As SchuelerAllePresenter ' Presenter zum anzeigen der Sportart
+
+        ' Ermitteln der Sportart anhand der ID aus der DB
+        'schueler = mTrainerDAO.findenAlleMitSchuelerId(plngSchuelerId) ' Übergeben der Sportart zur Anzeige im Presenter
+        schuPresenter = New SchuelerAllePresenter(schueler)
+
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
+        If schuPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+            verarbeiteSchueleruebersichtAnzeigen()
+        End If
+    End Sub
+
+    Public Sub verarbeiteTrainerOeffnen(plngTrainerId As Long) 'button Öffnen für Trainer
+        Dim tra As Trainer ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim traPresenter As TrainerkontoPresenter ' Presenter zum anzeigen der Sportart
+
+        ' Ermitteln der Sportart anhand der ID aus der DB
+        tra = mTrainerDAO.findenTrainerId(plngTrainerId)
+        ' Übergeben der Sportart zur Anzeige im Presenter
+        traPresenter = New TrainerkontoPresenter()
+
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
+        If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+            verarbeiteTrainerUebersichtAnzeigen()
+        End If
+    End Sub
+
     Public Sub verarbeiteNeu() 'button Neu
 
         Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
@@ -157,6 +201,7 @@
             verarbeiteSportartUebersichtAnzeigen()
         End If
     End Sub
+
     Public Sub verarbeiteLoeschen(plngSportartId As Long) 'button Löschen
 
         ' Deklaration

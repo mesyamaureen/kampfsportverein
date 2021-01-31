@@ -8,7 +8,7 @@ Public Class TrainerDAO
     Private Const SQL_SELECT_BY_BENUTZERNAME_PASSWORT As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenBenutzerName = @benutzername AND BenPw = @passwort AND BenTyp = 'T';"
 
     'SQL-Anweisung, um Trainer anhand Benutzer ID zu ermitteln
-    Private Const SQL_SELECT_TRAINER_BY_BENUTZERID As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenIdPk = @idPk"
+    Private Const SQL_SELECT_TRAINER_BY_BENUTZERID As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk"
 
     'SQL-Anweisung, um alle Trainer zu ermitteln
     Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenTyp = 'T'"
@@ -115,7 +115,7 @@ Public Class TrainerDAO
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
             'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
-            tra = New Trainer(lngBenutzerIdPk, strBenutzername, strPasswort, strVorname, strName, lngVersion)
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion)
         End If
         dr.Close() 'DataReader schließen
         'Schließen der Datenbankverbindung

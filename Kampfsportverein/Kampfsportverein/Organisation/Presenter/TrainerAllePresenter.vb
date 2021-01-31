@@ -1,5 +1,5 @@
 ﻿Public Class TrainerAllePresenter
-    Private mErgebnis As EPresenterErgebnis
+    Public mErgebnis As EPresenterErgebnis
     Private mlstKursAlle As List(Of Kurs)
     Private mlstSchuelerAlle As List(Of Schueler)
     Private mView As TrainerAlleView
@@ -17,7 +17,8 @@
         'Daten an die Oberfläche übergeben
         anzeigenTrainerAlle()
         'Anzeige der View als Oberfläche (Formular)
-        Application.Run(mView)
+        mView.ShowDialog()
+        'Application.Run(mView)
     End Sub
 
     Public Property Ergebnis As EPresenterErgebnis

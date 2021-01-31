@@ -1,7 +1,7 @@
 ﻿Public Class SchuelerAllePresenter
-    Private mErgebnis As EPresenterErgebnis
+    Public mErgebnis As EPresenterErgebnis
     Private mView As AlleSchuelerView
-    Private mistSchuelerAlle As List(Of Schueler)
+    Public mistSchuelerAlle As List(Of Schueler)
 
     Sub New(schueler As Schueler)
         mView = New AlleSchuelerView(Me)

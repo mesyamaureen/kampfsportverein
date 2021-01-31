@@ -24,36 +24,36 @@ Public Class Trainer
 
 End Class
 
-Interface IMyInterface
-    Sub Trainer()
-    Function Trainer(value As Integer) As Integer
-End Interface
+'Interface IMyInterface
+'    Sub Trainer()
+'    Function Trainer(value As Integer) As Integer
+'End Interface
 
-Class MyImplementation
-    Implements IMyInterface
-    Public Sub Trainer() Implements IMyInterface.Trainer
-        Throw New NotImplementedException()
-    End Sub
+'Class MyImplementation
+'    Implements IMyInterface
+'    Public Sub Trainer() Implements IMyInterface.Trainer
+'        Throw New NotImplementedException()
+'    End Sub
 
-    Public Function Trainer(value As Integer) As Integer Implements IMyInterface.Trainer
-        Throw New NotImplementedException()
-    End Function
-End Class
-End Interface
+'    Public Function Trainer(value As Integer) As Integer Implements IMyInterface.Trainer
+'        Throw New NotImplementedException()
+'    End Function
+'End Class
+'End Interface
 
-Interface IMyInterface
-    Sub TrainerDao()
-    Function TrainerDao(value As Integer) As Integer
-End Interface
+'Interface IMyInterface
+'    Sub TrainerDao()
+'    Function TrainerDao(value As Integer) As Integer
+'End Interface
 
-Class MyImplementation
-    Implements IMyInterface
-    Public Sub TrainerDao() Implements IMyInterface.TrainerDao
-        Throw New NotImplementedException()
-    End Sub
+'Class MyImplementation
+'    Implements IMyInterface
+'    Public Sub TrainerDao() Implements IMyInterface.TrainerDao
+'        Throw New NotImplementedException()
+'    End Sub
 
-    Public Function TrainerDao(value As Integer) As Integer Implements IMyInterface.TrainerDao
-        Throw New NotImplementedException()
-    End Function
-End Class
-End Interface
+'    Public Function TrainerDao(value As Integer) As Integer Implements IMyInterface.TrainerDao
+'        Throw New NotImplementedException()
+'    End Function
+'End Class
+'End Interface

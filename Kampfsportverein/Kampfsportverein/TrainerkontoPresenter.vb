@@ -1,6 +1,6 @@
 ﻿Public Class TrainerkontoPresenter
     Private mTrainerEinzel As Trainer
-    Private mErgebnis As EPresenterErgebnis
+    Public mErgebnis As EPresenterErgebnis
     Private mSitzung As BenutzerSitzung
     Private mView As TrainerkontoView
 
