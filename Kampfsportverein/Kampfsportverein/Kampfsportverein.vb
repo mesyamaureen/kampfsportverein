@@ -23,16 +23,16 @@
         Dim sport1, sport2, sport3 As Sportart
         Dim schueler1, schueler2, schueler3 As Schueler
 
-        Tra1 = New Trainer("m.meier", "pw", "Michael", "Meier", 1)
-        Tra2 = New Trainer("t.off", "pw", "Thomas", "Off", 2)
-        Ma1 = New Mitarbeiter("c.pennig", "pw", "Charlene", "Pennig", 3)
-        Ma2 = New Mitarbeiter("c.lammel", "pw", "Carina", "Lammel", 4)
-        Ma3 = New Mitarbeiter("m.jeynie", "pw", "Mesya Maureen", "Jeynie", 5)
+        Tra1 = New Trainer("m.meier", "pw", "Michael", "Meier", 1, 1) ', Nothing)
+        Tra2 = New Trainer("t.off", "pw", "Thomas", "Off", 2, 1) ', Nothing)
+        Ma1 = New Mitarbeiter("c.pennig", "pw", "Charlene", "Pennig", 3, 1) ', Nothing)
+        Ma2 = New Mitarbeiter("c.lammel", "pw", "Carina", "Lammel", 4, 1) ', Nothing)
+        Ma3 = New Mitarbeiter("m.jeynie", "pw", "Mesya Maureen", "Jeynie", 5, 1) ', Nothing)
         sport1 = New Sportart(1, "Judo", "Japan", "Zielgruppe weiß jetzt noch nicht", 10, 1)
         sport2 = New Sportart(2, "Karate", "Japan", "Zielgruppe weiß jetzt noch nicht", 12, 1)
         sport3 = New Sportart(3, "Muay Thai", "Thailand", "Zielgruppe weiß jetzt noch nicht", 10, 1)
-        kurs1 = New Kurs(#12/11/2020#, "101", Tra1, 10, "Fortgeschritten", "Judo", True, sport1)
-        kurs2 = New Kurs(#12/18/2020#, "101", Tra1, 10, "Fortgeschritten", "Karate", True, sport2)
+        kurs1 = New Kurs(21, #12/11/2020#, "B101", 10, "Fortgeschritten", 1, 1, 1)
+        kurs2 = New Kurs(22, #12/18/2020#, "C101", 10, "Fortgeschritten", 2, 2, 1)
         schueler1 = New Schueler("Anna", "Müller", "annamueler@gmail.com", 10, 1)
         schueler2 = New Schueler("Hans", "Klaus", "hansklaus@gmail.com", 11, 1)
         schueler3 = New Schueler("Andreas", "Zimmermann", "andreaszimmermann@gmail.com", 12, 1)

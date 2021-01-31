@@ -1,12 +1,12 @@
 ﻿Public Class Trainer
     Inherits Benutzer
 
-    Private mName As Integer
-    Private mVorname As Integer
-    Private mPasswort As Integer
-    Private mGeburtsdatum As Integer
-    Private mBenutzername As Integer
-    Private mBenutzerId As Integer
+    Private mName As String
+    Private mVorname As String
+    Private mPasswort As String
+    Private mGeburtsdatum As Date
+    Private mBenutzername As String
+    Private mBenutzerId As Long
 
     Sub New()
 
@@ -14,9 +14,9 @@
 
     End Sub
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer, plngVersion As Long) ', pcharTyp As Char)
 
-        MyBase.New(pstrBenutzername, pstrPasswort, pstrVorname, pstrName, pintBenutzerID)
+        MyBase.New(pstrBenutzername, pstrPasswort, pstrVorname, pstrName, pintBenutzerID, plngVersion) ', pcharTyp)
 
     End Sub
 

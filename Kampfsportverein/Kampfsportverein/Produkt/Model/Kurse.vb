@@ -1,42 +1,48 @@
 ﻿Public Class Kurs
+    Private mlngIdPk As Long
     Private mdatZeitpunkt As Date
     Private mstrOrt As String
-    Private mtraTrainer As Trainer
     Private mbytTeilnehmerzahl As Byte
     Private mstrSchwierigkeitsgrad As String
-    Private mstrName As String
-    Private mbolVerfuegbarkeit As Boolean
-    Private mSportart As Sportart
+    Private mlngSaIdFk As Long
+    Private mlngBenIdFk As Long
+    Private mlngVersion As Long
 
     Sub New() 'parameterloser Konstruktor
+        mlngIdPk = Nothing
         mdatZeitpunkt = Date.MinValue
         mstrOrt = String.Empty
-        mtraTrainer = Nothing
         mbytTeilnehmerzahl = Nothing
         mstrSchwierigkeitsgrad = String.Empty
-        mstrName = String.Empty
-        mbolVerfuegbarkeit = Boolean.TrueString
-        mSportart = Nothing
+        mlngSaIdFk = Nothing
+        mlngBenIdFk = Nothing
+        mlngVersion = Nothing
     End Sub
 
-    Sub New(pdatZeitpunkt As Date, pstrOrt As String, ptraTrainer As Trainer,
-            pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
-            pstrName As String, pbolVerfuegbarkeit As Boolean, pSportart As Sportart) 'Konstruktor mit Parameter
+    Sub New(plngIdPk As Long, pdatZeitpunkt As Date, pstrOrt As String, pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
+            plngSaIdFk As Long, plngBenIdFk As Long, plngVersion As Long) 'Konstruktor mit Parameter
+        mlngIdPk = plngIdPk
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
-        mtraTrainer = ptraTrainer
         mbytTeilnehmerzahl = pbytTeilnehmerzahl
         mstrSchwierigkeitsgrad = pstrSchwierigkeitsgrad
-        mstrName = pstrName
-        mbolVerfuegbarkeit = pbolVerfuegbarkeit
-        mSportart = pSportart
+        mlngSaIdFk = plngSaIdFk
+        mlngBenIdFk = plngBenIdFk
+        mlngVersion = plngVersion
     End Sub
+    Public Property IdPk As Long
+        Get
+            Return mlngIdPk
+        End Get
+        Set(ByVal value As Long)
+        End Set
+    End Property
 
     Public Property Teilnehmerzahl As Byte
         Get
             Return mbytTeilnehmerzahl
         End Get
-        Set(value As Byte)
+        Set(ByVal value As Byte)
         End Set
     End Property
 
@@ -44,7 +50,7 @@
         Get
             Return mdatZeitpunkt
         End Get
-        Set(value As Date)
+        Set(ByVal value As Date)
         End Set
     End Property
 
@@ -52,7 +58,7 @@
         Get
             Return mstrOrt
         End Get
-        Set(value As String)
+        Set(ByVal value As String)
         End Set
     End Property
 
@@ -60,40 +66,34 @@
         Get
             Return mstrSchwierigkeitsgrad
         End Get
-        Set(value As String)
+        Set(ByVal value As String)
         End Set
     End Property
 
-    Public Property Trainer As Trainer
+    Public Property SaIdFk As Long
         Get
-            Return mtraTrainer
+            Return mlngSaIdFk
         End Get
-        Set(value As Trainer)
+        Set(ByVal value As Long)
         End Set
     End Property
 
-    Public Property Name As String
+    Public Property BenIdFk As Long
         Get
-            Return mstrName
+            Return mlngBenIdFk
         End Get
-        Set(value As String)
+        Set(ByVal value As Long)
 
         End Set
     End Property
 
-    Public Property Sportarten As Sportart
+    Public Property Version As Long
         Get
-            Return mSportart
+            Return mlngVersion
         End Get
-        Set(value As Sportart)
+        Set(ByVal value As Long)
         End Set
     End Property
 
-    Public Property Verfuegbarkeit As Boolean
-        Get
-            Return mbolVerfuegbarkeit
-        End Get
-        Set(value As Boolean)
-        End Set
-    End Property
+
 End Class

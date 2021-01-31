@@ -61,10 +61,10 @@
     Private Sub anzeigenTrainerAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
         mView.leeren()
         mView.anzeigenKurse()
-        'anzeigen Kusliste
+        'anzeigen Kursliste
         For Each kurs As Kurs In mlstKursAlle
             mView.anzeigenKursUebersicht(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
-                                       kurs.Sportarten, kurs.Verfuegbarkeit)
+                                       kurs.SaIdFk, kurs.BenIdFk)
         Next
     End Sub
 

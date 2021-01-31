@@ -55,9 +55,10 @@
         End If
     End Sub
 
-    Private Function anmelden(pstrBenutzername As String, pstrPasswort As String) As Benutzer
+    Private Function anmelden(pstrBenutzername As String, pstrPasswort As String)
         'Deklaration
-        Dim ben As Benutzer 'Benutzer
+        Dim mitarb As Mitarbeiter
+        Dim tra As Trainer
         Dim mitDAO As MitarbeiterDAO 'MitarbeiterDAO
         Dim traDAO As TrainerDAO 'TrainerDAO
 
@@ -67,11 +68,20 @@
 
         'Nutzen des DAOs, um den angemeldeten Benutzer zu finden anhand 
         'Benutzername und Passwort 'If ben=mitarbeiter then ben = mitDAO.findenMitBenutzernamePasswort(..)
-        ben = mitDAO.findenMitBenutzernamePasswort(pstrBenutzername, pstrPasswort) 'Formulierung einer Verzweigung, 
+        mitarb = mitDAO.findenMitBenutzernamePasswort(pstrBenutzername, pstrPasswort)
+        'Formulierung einer Verzweigung, 
+        If mitarb Is Nothing Then
+            tra = traDAO.findenTraBenutzernamePasswort(pstrBenutzername, pstrPasswort)
+            If tra IsNot Nothing Then
+                Return tra
+            End If
+        ElseIf mitarb IsNot Nothing Then
+            Return mitarb
+        End If
         'falls sinnlos dann neues Diagramm
 
         'Rückgabe des angemeldeten Benutzers
-        Return ben
+
     End Function
 
 End Class

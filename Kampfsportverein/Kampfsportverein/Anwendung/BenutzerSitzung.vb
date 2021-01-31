@@ -70,8 +70,8 @@
         Select Case presenter.Ergebnis
             Case EPresenterErgebnis.BEENDEN
                 beenden()
-                'Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
-                'presenter.verarbeiteKursuebersichtAnzeigen(i)
+            Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
+                presenter.verarbeiteKursuebersichtAnzeigen() '(i)
             Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
                 presenter.verarbeiteEigenesProfilAnzeigen()
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN

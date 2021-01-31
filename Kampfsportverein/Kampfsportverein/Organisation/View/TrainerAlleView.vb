@@ -31,14 +31,14 @@
         Me.Close()
     End Sub
 
-    Public Sub anzeigenKursUebersicht(plngKursID As Long, pdatKurs As Date, pSportart As Sportart,
-                                pbolVerfuegbarkeit As Boolean)
+    Public Sub anzeigenKursUebersicht(plngKursID As Long, pdatKurs As Date, plngSaIdFk As Long,
+                                plngBenIdFk As Long)
         Dim kurszeile As ListViewItem
         kurszeile = Me.lstKurse.Items.Add(plngKursID)
         With kurszeile.SubItems
             .Add(pdatKurs)
-            .Add(pSportart.Name)
-            .Add(pbolVerfuegbarkeit)
+            .Add(plngSaIdFk)
+            .Add(plngBenIdFk)
         End With
     End Sub
 

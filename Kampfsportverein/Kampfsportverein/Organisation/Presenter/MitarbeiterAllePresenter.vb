@@ -78,7 +78,7 @@
         mView.anzeigenKursuebersicht()
         For Each kurs As Kurs In mlstKurseAlle
             mView.hinzufuegenZeileKurse(mlstKurseAlle.IndexOf(kurs), kurs.Zeitpunkt,
-                                        kurs.Sportarten, kurs.Verfuegbarkeit)
+                                        kurs.SaIdFk, kurs.BenIdFk)
         Next
     End Sub
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler

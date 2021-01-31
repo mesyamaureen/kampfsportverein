@@ -5,13 +5,13 @@ Public Class MitarbeiterDAO
     Inherits DAO
 
     'SQL-Anweisung, um einen Mitarbeiter anhand des Benutzernamens und des Passwortes zu ermitteln
-    Private Const SQL_SELECT_BY_BENUTZERNAME_PASSWORT As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenBenutzerName = @benutzername AND BenPw = @passwort;"
+    Private Const SQL_SELECT_BY_BENUTZERNAME_PASSWORT As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenBenutzerName = @benutzername AND BenPw = @passwort AND BenTyp = 'M';"
 
     'SQL-Anweisung, um einen Mitarbeiter anhand der ID zu ermitteln
     Private Const SQL_SELECT_BY_ID As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenIdPk = @idPk;"
 
-    'SQL-Anweisung, um alle Mitarbeiter zu ermitteln
-    Private Const SQL_SELECT_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer;"
+    'SQL-Anweisung, um alle Mitarbeiter zu ermitteln - braucht man?
+    'Private Const SQL_SELECT_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer;"
 
     'SQL-Anweisung, um alle Sportarten zu ermitteln
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM tblSportarten"
@@ -30,8 +30,28 @@ Public Class MitarbeiterDAO
     ' SQL-Anweisung, um eine Sportart zu löschen
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportart WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
 
+    'SQL-Anweisung, um eine Sportart anhand der ID zu ermitteln
     Private Const SQL_SELECT_SPORTART_BY_ID As String = "SELECT FROM tblSportarten WHERE SaIdPk = @SaIdPk"
 
+    'SQL-Anweisung, um einen Kurs anhand der Sportart / Trainer? zu ermitteln
+    'SQL-Anweisung, um einen Kurs nach ID zu ermitteln
+    Private Const SQL_SELECT_KURS_BY_ID As String = "SELECT * FROM tblKurse WHERE KuIdPk = @kIdPk"
+
+    'SQL-Anweisung, um alle Kurse zu ermitteln
+    Private Const SQL_SELECT_KURS As String = "SELECT * FROM tblKurse"
+
+    'SQL-Anweisung, um Kurse zu aktualisieren
+    Private Const SQL_UPDATE_KURS As String = "UPDATE tblKurse SET KuZeitpunkt = @kZeitpunkt, KuOrt = @kOrt, KuTeilnehmerZahl = @kTeilnehmer, KuSchwierigkeit = @kSchwierigkeit,
+                                                KuVersion = @kVersion"
+
+    'SQL-Anweisung, um neuer Kurs hinzufügen
+    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuVersion" &
+                                           "VALUES @kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kVersion"
+
+    'SQL-Anweisung, um einen Kurs zu löschen
+    Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @kIdPk AND KuVersion = @kVersion;"
+
+    'finden Mitarbeiter zur Anmeldung
     Public Function findenMitBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String)
         'Deklaration
         'Alle Eigenschaften eines Benutzers
@@ -41,17 +61,17 @@ Public Class MitarbeiterDAO
         Dim strVorname As String
         Dim strName As String
         Dim lngVersion As Long
-        Dim intTyp As Integer
+        'Dim charTyp As Char
 
         'Gesuchter Benutzer
-        Dim ben As Benutzer
+        Dim mit As Mitarbeiter
 
         'Alles für den Datenbankzugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader
 
         'Initialisierung
-        ben = Nothing
+        mit = Nothing
 
         'Datenbank oeffnen
         oeffnenDatenbank()
@@ -69,15 +89,67 @@ Public Class MitarbeiterDAO
             strPasswort = dr("BenPw")
             strVorname = dr("BenVorname")
             strName = dr("BenName")
-            lngVersion = Long.Parse(dr("BenVersion")) 'soll hier eine neue Eigenschaft bei Benutzer.vb hinzugefügt werden?
-            intTyp = Integer.Parse(dr("BenTyp")) 'soll hier eine neue Eigenschaft bei Benutzer.vb hinzugefügt werden?
+            lngVersion = Long.Parse(dr("BenVersion"))
+            'charTyp = Char.Parse(dr("BenTyp"))
 
-            ben = New Benutzer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk) 'lngVersion, intTyp? -mesya
+            mit = New Mitarbeiter(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion) ', charTyp)
+        End If
+        dr.Close()
+        schliessenDatenbank()
+        'Rückgabe des Benutzers
+        Return mit
+    End Function
+
+    'Mitarbeiter auswählen anhand Benutzer ID
+    Public Function findenMitarbeiterId(plngBenIdPk) As Benutzer
+        'Deklaration
+        'Alle Eigenschaften eines Benutzers
+        Dim lngBenutzerIdPk As Long
+        Dim strBenutzername As String
+        Dim strPasswort As String
+        Dim strVorname As String
+        Dim strName As String
+        'Dim charTyp As Char
+        Dim lngVersion As Long
+
+        'Gesuchter Benutzer
+        Dim ben As Benutzer
+
+        'Alles für den Datenbankzugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Initialisierung
+        ben = Nothing
+
+        'Datenbank oeffnen
+        oeffnenDatenbank()
+
+        'Kommando für Datenbankzugriff
+        cmd = New OleDbCommand(SQL_SELECT_BY_ID, mConnection)
+
+        'Platzhalter ersetzen
+        cmd.Parameters.AddWithValue("@BenIdPk", plngBenIdPk)
+
+        'Ausführen der Anweisung
+        dr = cmd.ExecuteReader()
+        'Wenn etwas gefunden wurde - vergleich mit diesen Angaben
+        If dr.Read Then
+            lngBenutzerIdPk = Long.Parse(dr("BenIdPk"))
+            strBenutzername = dr("BenBenutzerName")
+            strPasswort = dr("BenPw")
+            strVorname = dr("BenVorname")
+            strName = dr("BenName")
+            lngVersion = Long.Parse(dr("BenVersion"))
+            'charTyp = Char.Parse(dr("BenTyp"))
+
+            ben = New Benutzer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion) ', charTyp)
         End If
         dr.Close()
         schliessenDatenbank()
         'Rückgabe des Benutzers
         Return ben
+
     End Function
 
     Public Function findenAlleSportarten() As List(Of Sportart)
@@ -290,8 +362,224 @@ Public Class MitarbeiterDAO
 
     End Function
 
+    'KURS
+    'findenAlleKurse
+    Public Function findenAlleKurse() As List(Of Kurs)
+
+        'Deklaration der Eigenschaften des Kurs
+        Dim lngKursIdPk As Long
+        Dim datKursZeitpunkt As Date
+        Dim strKursOrt As String
+        Dim intKursTeilnZahl As Integer
+        Dim strKursSchwierigkeit As String
+        Dim lngSportartIdFk As Long
+        Dim lngBenIdFK As Long
+        Dim lngVersion As Long
+
+        'Aufgabe und Aufgabenliste
+        Dim kurs As Kurs
+        Dim lstKurs As List(Of Kurs)
+
+        'Initialisierung Liste
+        kurs = Nothing
+        lstKurs = New List(Of Kurs)
+
+        'Kommando und Reader für DB Zugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Öffnen DBVerbindung durch Methode
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_SELECT_KURS, mConnection)
+        dr = cmd.ExecuteReader
+
+        Do While dr.Read
+
+            lngKursIdPk = Long.Parse(dr("KuIdPk"))
+            datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
+            strKursOrt = dr("KuOrt")
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerzahl"))
+            strKursSchwierigkeit = dr("KuSchwierigkeit")
+            lngSportartIdFk = Long.Parse(dr("KuSaIdFk"))
+            lngBenIdFK = Long.Parse(dr("KuBenIdFk"))
+            lngVersion = Long.Parse(dr("KuVersion"))
+
+            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
+                            lngSportartIdFk, lngBenIdFK, lngVersion)
+            lstKurs.Add(kurs)
+        Loop
+
+        dr.Close()
+        schliessenDatenbank()
+        Return lstKurs
+    End Function
+
+    'findenKurs
+    Public Function findeKurs(plngKursIdPk) As Kurs
+
+        'Deklaration der Eigenschaften des Kurs
+        Dim lngKursIdPk As Long
+        Dim datKursZeitpunkt As Date
+        Dim strKursOrt As String
+        Dim intKursTeilnZahl As Integer
+        Dim strKursSchwierigkeit As String
+        Dim lngSaIdFk As Long
+        Dim lngBenIdFk As Long
+        Dim lngVersion As Long
+
+        'Aufgabe und Aufgabenliste
+        Dim kurs As Kurs
+
+        'Initialisierung Liste
+        kurs = Nothing
+
+        'Kommando und Reader für DB Zugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Öffnen DBVerbindung durch Methode
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_SELECT_KURS_BY_ID, mConnection)
+        cmd.Parameters.AddWithValue("@KuIdPk", plngKursIdPk)
+
+        dr = cmd.ExecuteReader
+
+        lngKursIdPk = Long.Parse(dr("KuIdPk"))
+        datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
+        strKursOrt = dr("KuOrt")
+        intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+        strKursSchwierigkeit = dr("KuSchwierigkeit")
+        lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
+        lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
+        lngVersion = Long.Parse(dr("KuVersion"))
+
+        kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+                        strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+
+        dr.Close()
+        schliessenDatenbank()
+        Return kurs
+
+    End Function
+
+    'loeschenKurs
+    Public Shared Function loeschenKurs(plngKursIdPk As Long, plngVersion As Long) As Boolean
+        Return ElementLoeschen("tblKurse", plngKursIdPk, plngVersion)
+        'Deklaration
+        Dim lngAnzahlDatensätze As Long
+        Dim cmd As OleDbCommand
+
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_DELETE_BY_VERSION_KURS, mConnection)
+        cmd.Parameters.AddWithValue("@IdPk", plngKursIdPk)
+        cmd.Parameters.AddWithValue("@version", plngVersion)
+
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery()
+
+        schliessenDatenbank()
+
+        If lngAnzahlDatensätze = 1 Then
+            Return True
+
+        Else Return False
+        End If
+
+    End Function
+
+    'speichernKurs?
+    Public Shared Function speichernKurs(pKurs As Kurs) As Long
+
+        ' Deklarationen
+        Dim lngKursIdPK As Long ' zurückzugebender Primärschlüsselwert der neu hinzugefügten oder aktualisierten Aufagbe
+
+        ' Wenn die Aufgabe bereits als Datensatz gespeichert ist (also ihr Primärschlüsselwert > 0 ist)
+        If pKurs.IdPk > 0 Then
+            ' Muss die Aufgabe aktualisiert werden 
+            lngKursIdPK = aktualisierenKurs(pKurs)
+        Else
+            ' Andernfalls muss die Aufgabe neu hinzugefügt werden
+            lngKursIdPK = hinzufuegenKurs(pKurs)
+        End If
+
+        ' Primärschlüsselwert der neu hinzugefügten oder aktualisierten Aufgabe zurückliefern
+        Return lngKursIdPK
+
+    End Function
+
+    'aktualisierenKurs?
+    Private Shared Function aktualisierenKurs(pKurs As Kurs) As Long
+        ' Deklarationen
+        Dim lngKursIdPk As Long ' Primärschlüssel des zu aktualisierenden Datensatzes
+        Dim lngAnzahlDatensätze As Long ' Anzahl der von der Operation betroffenen Datensätze
+        Dim cmd As OleDbCommand ' Kommando für den Datenbankzugriff
+
+        ' Initialisierung
+        lngKursIdPk = -1 ' Wert für Primärschlüssel, der erkennbar macht, dass Datensatz (noch) nicht aktualisierenden wurde
 
 
+        'Öffnen der Datenbankverbindung durch geerbte Methode der Oberklasse
+        oeffnenDatenbank()
+
+        ' Kommando für den Datenbankzugriff vorbereiten
+        ' SQL-Anweisung aus Konstante verwenden (Deklaration oben) und initialisierte Datenbankverbindung (aus Oberklasse geerbt)
+        cmd = New OleDbCommand(SQL_UPDATE_KURS, mConnection)
+
+        ' Platzhalter in der SQL-Anweisung durch Eigenschaften der als Parameter übergebenen Aufgabe ersetzen
+        ' Wichtig: Bei Zugriff auf MS Access-Datenbank müssen die Parameter in der Reihenfolge befüllt werden,
+        ' in der sie in der SQL-Anweisung vorkommen (z.B. erst Titel und dann Beschreibung)!
+        cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
+        cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
+        cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
+        cmd.Parameters.AddWithValue("@KuTeilnehmerZahl", pKurs.Teilnehmerzahl)
+        cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
+        cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
+        cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
+        cmd.Parameters.AddWithValue("@Version", pKurs.Version)
+
+        ' Ausführen des Kommandos, als Ergebnis die Anzahl betroffener Datensätze merken
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery
+
+        ' Wenn ein Datensatz betroffen ist
+        If lngAnzahlDatensätze = 1 Then
+            ' Aktualisieren war erfolgreich, nun Primärschlüssel als Ergebnis zurückliefern
+            lngKursIdPk = pKurs.IdPk
+        End If
+
+        'Schließen der Datenbankverbindung durch geerbte Methode der Oberklasse
+        schliessenDatenbank()
+
+        ' Rückgabe des Primärschlüssel-Wertes der aktualisierten Aufgabe
+        Return lngKursIdPk
+
+    End Function
+
+    'hinzufuegenKurs
+    Private Shared Function hinzufuegenKurs(pKurs As Kurs) As Long 'ID Verwaltung fehlt? -2021-01-30
+
+        Dim lngAnzahlDatensätze As Long
+        Dim lngKursIdPk As Long
+        Dim cmd As OleDbCommand
+
+        lngKursIdPk = -1
+        cmd = New OleDbCommand(SQL_INSERT_KURS, mConnection)
+        cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
+        cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
+        cmd.Parameters.AddWithValue("@KuTeilnehmerZahl", pKurs.Teilnehmerzahl)
+        cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
+        cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
+        cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
+        cmd.Parameters.AddWithValue("@version", pKurs.Version)
+
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensätze = 1 Then
+            lngAnzahlDatensätze = ermittleId()
+        End If
+        schliessenDatenbank()
+        Return lngKursIdPk
 
 
+    End Function
 End Class

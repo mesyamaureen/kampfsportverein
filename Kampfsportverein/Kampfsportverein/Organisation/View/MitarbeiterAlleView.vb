@@ -62,14 +62,14 @@
         End With
     End Sub
 
-    Public Sub hinzufuegenZeileKurse(plngKursID As Long, pdatKurs As Date,
-                                     pSportartKurs As Sportart, pbolVerfuegbarkeit As Boolean)
+    Public Sub hinzufuegenZeileKurse(plngKursIdPk As Long, pdatKursZeitpunkt As Date,
+                                     plngSaIdFk As Long, plngBenIdFk As Long)
         Dim kursZeile As ListViewItem
-        kursZeile = Me.lstKurseAlle.Items.Add(plngKursID)
+        kursZeile = Me.lstKurseAlle.Items.Add(plngKursIdPk)
         With kursZeile.SubItems
-            .Add(pdatKurs)
-            .Add(pSportartKurs.Name)
-            .Add(pbolVerfuegbarkeit)
+            .Add(pdatKursZeitpunkt)
+            .Add(plngSaIdFk)
+            .Add(plngBenIdFk)
         End With
     End Sub
     Public Sub hinzufuegenZeileSchueler(plngSchuelerID As Long,

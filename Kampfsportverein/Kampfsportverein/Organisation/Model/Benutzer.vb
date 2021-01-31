@@ -4,6 +4,8 @@
     Private mstrVorname As String
     Private mstrName As String
     Private mlngBenutzerID As Long
+    Private mlngVersion As Long
+    'Private mcharTyp As Char
 
     Sub New()
 
@@ -12,16 +14,18 @@
         mstrVorname = String.Empty
         mstrName = String.Empty
         mlngBenutzerID = Nothing
-
+        mlngVersion = Nothing
+        ' mcharTyp = Nothing
     End Sub
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer, plngVersion As Long) ', pcharTyp As Char)
         mstrBenutzername = pstrBenutzername
         mstrPasswort = pstrPasswort
         mstrVorname = pstrVorname
         mstrName = pstrName
         mlngBenutzerID = pintBenutzerID
-
+        mlngVersion = plngVersion
+        'mcharTyp = pcharTyp
     End Sub
 
 
@@ -65,5 +69,21 @@
         Set(ByVal value As Long)
         End Set
     End Property
+
+    Public Property Version As Long
+        Get
+            Return mlngVersion
+        End Get
+        Set(ByVal value As Long)
+        End Set
+    End Property
+
+    'Public Property Typ As Char
+    'Get
+    'Return mcharTyp
+    'End Get
+    'Set(ByVal value As Char)
+    'End Set
+    'End Property
 
 End Class
