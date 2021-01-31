@@ -24,11 +24,10 @@
   <Class Name="Kampfsportverein.SportartenPresenter">
     <Position X="4" Y="4.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AACAgAgAAAAAIAAAAAAAABAAAAABpAAAAAAAIAAAAQA=</HashCode>
-      <FileName>Produkt\Presenter\AlleSportartenPresenter.vb</FileName>
+      <HashCode>AACAgAgAAAAAAAAAAAAAAAAAACAhBBAAAAAAAAAAAAg=</HashCode>
+      <FileName>Produkt\Presenter\SportartenPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="View" />
       <Property Name="SportartenAlle" />
     </ShowAsAssociation>
   </Class>
@@ -46,14 +45,14 @@
   <Class Name="Kampfsportverein.Schueler">
     <Position X="7.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAABAAAAAAAAAAAAQAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <HashCode>IAACAAAAABIQAAAAAAAAAAQAAAAAAgAAAAAAAQAAAgA=</HashCode>
       <FileName>Produkt\Model\Schueler.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Sportart">
-    <Position X="7.5" Y="3.75" Width="1.75" />
+    <Position X="7.75" Y="4.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAhAACAAAAQAAAAAAEAAAAAAAQABAAA=</HashCode>
+      <HashCode>IAQAAIAAAAAQgAhAACAAAAQAAAAAAEAAAAAEAQABAAA=</HashCode>
       <FileName>Produkt\Model\Sportarten.vb</FileName>
     </TypeIdentifier>
   </Class>
@@ -65,7 +64,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.SportartenView">
-    <Position X="0.5" Y="5.5" Width="2" />
+    <Position X="0.5" Y="5.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAIAAAAAAAAAAEAAAAAgAAAAAAAAgAA=</HashCode>
       <FileName>Produkt\View\AlleSportartenView.vb</FileName>
@@ -74,19 +73,16 @@
   <Class Name="Kampfsportverein.KursView" Collapsed="true">
     <Position X="0.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAAUAAAAAAAAAAAEAAABAAAAAAwAAAgAAAEAAAg=</HashCode>
+      <HashCode>CAAAAAAQAAAAAAAAAAAEAAABAAAAAAQAAAgAAAEAAAg=</HashCode>
       <FileName>Produkt\View\AlleKurseView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Kurs">
     <Position X="7.75" Y="7.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAACIIMAAAYAAAAIAAAAQAACCAAAAhABAAAQAAAAI=</HashCode>
+      <HashCode>IAQAACAYEAASIAAAAAAAAAAABBAAgAAhABgAAgAAAAI=</HashCode>
       <FileName>Produkt\Model\Kurse.vb</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Sportarten" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.dlgKursEinzeln" Collapsed="true">
     <Position X="0.75" Y="8" Width="1.5" />

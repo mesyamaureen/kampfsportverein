@@ -26,8 +26,6 @@ Public Class TrainerDAO
     ' SQL-Anweisung, um eine Schueler zu löschen
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSchueler WHERE SchuIdPk = @IdPk And SchuVersion = @Version"
 
-
-
     'finden Trainer zur Anmeldung
     Public Function findenTraBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String) As Trainer
         'Deklaration
@@ -265,26 +263,26 @@ Public Class TrainerDAO
 
     Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
 
-    'Deklaration
-    Dim lngAnzahlDatensätze As Long
-    Dim cmd As OleDbCommand
+        'Deklaration
+        Dim lngAnzahlDatensätze As Long
+        Dim cmd As OleDbCommand
 
-    oeffnenDatenbank()
+        oeffnenDatenbank()
 
-    cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
-    cmd.Parameters.AddWithValue("@SchuIdPk", plngIdPk)
-    cmd.Parameters.AddWithValue("@version", plngVersion)
+        cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
+        cmd.Parameters.AddWithValue("@SchuIdPk", plngIdPk)
+        cmd.Parameters.AddWithValue("@version", plngVersion)
 
-    lngAnzahlDatensätze = cmd.ExecuteNonQuery()
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery()
 
-    schliessenDatenbank()
+        schliessenDatenbank()
 
-    If lngAnzahlDatensätze = 1 Then
-        Return True
-    Else Return False
-    End If
+        If lngAnzahlDatensätze = 1 Then
+            Return True
+        Else Return False
+        End If
 
-End Function
+    End Function
     'Public Function Speichern() As Integer
 
     'Return 0
@@ -314,3 +312,4 @@ End Function
     End Function
 
 End Class
+

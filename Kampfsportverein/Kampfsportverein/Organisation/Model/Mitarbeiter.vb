@@ -1,13 +1,13 @@
 ﻿Public Class Mitarbeiter
     Inherits Benutzer
 
-    Private mKurse As Integer
-    Private mName As Integer
-    Private mGeburtsdatum As Integer
-    Private mBenutzerId As Integer
-    Private mBenutzername As Integer
-    Private mPasswort As Integer
-    Private mVorname As Integer
+    Private mKurse As String
+    Private mName As String
+    Private mGeburtsdatum As Date
+    Private mBenutzerId As Long
+    Private mBenutzername As String
+    Private mPasswort As String
+    Private mVorname As String
 
 
     ' Public Shared Widening Operator CType(v As (String, String, String, String, Integer)) As Mitarbeiter
