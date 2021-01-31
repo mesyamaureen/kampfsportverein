@@ -14,9 +14,9 @@
 
     End Sub
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer, plngVersion As Long) ', pcharTyp As Char)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, plngBenutzerID As Long, plngVersion As Long) ', pcharTyp As Char)
 
-        MyBase.New(pstrBenutzername, pstrPasswort, pstrVorname, pstrName, pintBenutzerID, plngVersion) ', pcharTyp)
+        MyBase.New(pstrBenutzername, pstrPasswort, pstrVorname, pstrName, plngBenutzerID, plngVersion) ', pcharTyp)
 
     End Sub
 

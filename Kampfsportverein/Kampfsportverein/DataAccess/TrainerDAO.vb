@@ -11,7 +11,7 @@ Public Class TrainerDAO
     Private Const SQL_SELECT_TRAINER_BY_BENUTZERID As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenIdPk = @idPk"
 
     'SQL-Anweisung, um alle Trainer zu ermitteln
-    Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenTyp = 'T'"
+    Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenTyp = 'T'"
 
     'SQL-Anweisung, um alle Schüler zu ermitteln
     Private Const SQL_SELECT_Schueler As String = "SELECT * FROM tblSchueler"
@@ -126,7 +126,7 @@ Public Class TrainerDAO
         Return tra
     End Function
 
-    Public Function findeAlleTrainer(pBenutzer As Benutzer) As List(Of Trainer)
+    Public Function findeAlleTrainer() As List(Of Trainer)
 
         'Deklaration der Eigenschaften des Kurs
         Dim lngBenutzerIdPk As Long
@@ -136,12 +136,9 @@ Public Class TrainerDAO
         Dim strName As String
         Dim lngVersion As Long
 
-        'Trainer und Trainerliste
+        'Aufgabe und Aufgabenliste
         Dim tra As Trainer
         Dim lstTrainer As List(Of Trainer)
-
-        'Benutzer zu dem die Aufgabe gehört muss geladen werden
-        'Dim mitDAO As MitarbeiterDAO???
 
         'Kommando und Reader für DB Zugriff
         Dim cmd As OleDbCommand
@@ -154,8 +151,6 @@ Public Class TrainerDAO
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_SELECT_TRAINER_ALL, mConnection)
-        cmd.Parameters.AddWithValue("@BenIdPk", pBenutzer.BenutzerID)
-
         dr = cmd.ExecuteReader
         Do While dr.Read()
             lngBenutzerIdPk = Long.Parse(dr("BenIdPk"))
@@ -164,10 +159,9 @@ Public Class TrainerDAO
             strVorname = dr("BenVorname")
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
+            'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion)
 
-            'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
-            tra = New Trainer(lngBenutzerIdPk, strBenutzername, strPasswort, strVorname, strName, lngVersion)
-            tra = pBenutzer
             lstTrainer.Add(tra)
         Loop
         dr.Close()
@@ -200,7 +194,6 @@ Public Class TrainerDAO
         lstSchueler = New List(Of Schueler)
 
         'Datebankverbindung oeffnen
-        Main()
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_SELECT_TRAINER_BY_BENUTZERID, mConnection)

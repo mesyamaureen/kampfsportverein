@@ -6,6 +6,7 @@
     Private mlstSchuelerAlle As List(Of Schueler)
     Private mlstTrainerAlle As List(Of Trainer)
     Private mMitarbeiterDAO As MitarbeiterDAO = New MitarbeiterDAO
+    Private mTrainerDAO As TrainerDAO = New TrainerDAO
     Private mistMitarbeiterAlle As MitarbeiterAllePresenter
 
     Public Sub New()
@@ -84,11 +85,29 @@
         Next
     End Sub
 
+    Private Sub anzeigenSchueleruebersichtAnzeigen()
+        mView.leeren()
+        mView.anzeigenSchueleruebersicht()
+        'anzeigen lstKurs
+        For Each schueler As Schueler In mlstSchuelerAlle
+            mView.hinzufuegenZeileSchueler(mlstSchuelerAlle.IndexOf(schueler), schueler.Name, schueler.Vorname)
+        Next
+    End Sub
+
+    Private Sub anzeigenTrainerAlle()
+        mView.leeren()
+        mView.anzeigenTraineruebersicht()
+        For Each trainer As Trainer In mlstTrainerAlle
+            mView.hinzufuegenZeileTrainer(mlstTrainerAlle.IndexOf(trainer), trainer.Name, trainer.Vorname)
+        Next
+    End Sub
+
     Public Sub verarbeiteMitarbeiterEinzeln() 'button Mein Konto
 
     End Sub
     Public Sub verarbeiteSportartUebersichtAnzeigen() 'button Sportarten
         mErgebnis = EPresenterErgebnis.SPORTART_ANZEIGEN
+        mMitarbeiterDAO = DAOFactory.Instanz.MitarbeiterDAO
         mlstSportartAlle = mMitarbeiterDAO.findenAlleSportarten()
         anzeigenMitarbeiterAlle()
     End Sub
@@ -100,23 +119,16 @@
         anzeigenKursAlle()
     End Sub
 
-    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
+    Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler --- WTF?!
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
-        mView.leeren()
-        mView.anzeigenSchueleruebersicht()
-        For Each schueler As Schueler In mlstSchuelerAlle
-            mView.hinzufuegenZeileSchueler(mlstSchuelerAlle.IndexOf(schueler),
-                                           schueler.Name, schueler.Vorname)
-        Next
+        mTrainerDAO = DAOFactory.Instanz.TrainerDAO
+        'mlstSchuelerAlle = mTrainerDAO.findenAlleMitSchuelerId()
     End Sub
     Public Sub verarbeiteTrainerUebersichtAnzeigen() 'button Trainer
         mErgebnis = EPresenterErgebnis.TRAINER_ANZEIGEN
-        mView.leeren()
-        mView.anzeigenTraineruebersicht()
-        For Each trainer As Trainer In mlstTrainerAlle
-            mView.hinzufuegenZeileTrainer(mlstTrainerAlle.IndexOf(trainer),
-                                          trainer.Name, trainer.Vorname)
-        Next
+        mTrainerDAO = DAOFactory.Instanz.TrainerDAO
+        mlstTrainerAlle = mTrainerDAO.findeAlleTrainer()
+        anzeigenTrainerAlle()
     End Sub
 
     Public Sub verarbeiteSportartÖffnen(plngSportartId As Long) 'button Öffnen
