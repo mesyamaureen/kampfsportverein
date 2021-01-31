@@ -10,7 +10,7 @@ Public Class MitarbeiterDAO
     'SQL-Anweisung, um einen Mitarbeiter anhand der ID zu ermitteln
     Private Const SQL_SELECT_BY_ID As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenIdPk = @idPk;"
 
-    'SQL-Anweisung, um alle Mitarbeiter zu ermitteln - braucht man?
+    'SQL-Anweisung, um alle Mitarbeiter zu ermitteln
     'Private Const SQL_SELECT_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer;"
 
     'SQL-Anweisung, um alle Sportarten zu ermitteln
@@ -33,7 +33,9 @@ Public Class MitarbeiterDAO
     'SQL-Anweisung, um eine Sportart anhand der ID zu ermitteln
     Private Const SQL_SELECT_SPORTART_BY_ID As String = "SELECT FROM tblSportarten WHERE SaIdPk = @SaIdPk"
 
-    'SQL-Anweisung, um einen Kurs anhand der Sportart / Trainer? zu ermitteln
+    'SQL-Anweisung, um einen Kurs anhand der Benutzer
+    Private Const SQL_SELECT_KURS_BY_BENUTZERID As String = "SELECT * FROM tblKurse WHERE KuBenIdFk = @kBenIdFk"
+
     'SQL-Anweisung, um einen Kurs nach ID zu ermitteln
     Private Const SQL_SELECT_KURS_BY_ID As String = "SELECT * FROM tblKurse WHERE KuIdPk = @kIdPk"
 
@@ -223,7 +225,7 @@ Public Class MitarbeiterDAO
         'Öffnen DBVerbindung durch Methode
         oeffnenDatenbank()
 
-        cmd = New OleDbCommand(SQL_SELECT_SPORTART, mConnection)
+        cmd = New OleDbCommand(SQL_SELECT_SPORTART_BY_ID, mConnection)
         cmd.Parameters.AddWithValue("@SaIdPk", plngIdPk)
 
         dr = cmd.ExecuteReader
@@ -415,6 +417,54 @@ Public Class MitarbeiterDAO
         schliessenDatenbank()
         Return lstKurs
     End Function
+
+    Public Function findeAlleKurse() As List(Of Kurs)
+
+        'Deklaration der Eigenschaften des Kurs
+        Dim lngKursIdPk As Long
+        Dim datKursZeitpunkt As Date
+        Dim strKursOrt As String
+        Dim intKursTeilnZahl As Integer
+        Dim strKursSchwierigkeit As String
+        Dim lngSaIdFk As Long
+        Dim lngBenIdFk As Long
+        Dim lngVersion As Long
+
+        'Aufgabe und Aufgabenliste
+        Dim kurs As Kurs
+        Dim lstKurs As List(Of Kurs)
+
+        'Kommando und Reader für DB Zugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+        'Initialisierung Liste
+        kurs = Nothing
+        lstKurs = New List(Of Kurs)
+
+        'Öffnen DBVerbindung durch Methode
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_SELECT_KURS, mConnection)
+        dr = cmd.ExecuteReader
+        Do While dr.Read()
+            lngKursIdPk = Long.Parse(dr("KuIdPk"))
+            datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
+            strKursOrt = dr("KuOrt")
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+            strKursSchwierigkeit = dr("KuSchwierigkeit")
+            lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
+            lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
+            lngVersion = Long.Parse(dr("KuVersion"))
+
+            'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
+            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+        Loop
+        dr.Close()
+        schliessenDatenbank()
+        Return lstKurs
+    End Function
+
 
     'findenKurs
     Public Function findeKurs(plngKursIdPk As Long) As Kurs

@@ -8,13 +8,25 @@
     Private mMitarbeiterDAO As MitarbeiterDAO = New MitarbeiterDAO
     Private mistMitarbeiterAlle As MitarbeiterAllePresenter
 
-    Sub New()
-        mView = New MitarbeiterAlleView(Me)
+    Public Sub New()
+        mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
+        'ermittelnSportarten() 'Sportarten aus Datenbank laden
+        'ermittelnKurse()
+        'ermittelnSchueler()
+        'ermittelnTrainer()
+        'anzeigenSportarten() 'Sportarten in der View darstellen
+        'anzeigenKurse()
+        'anzeigenSchueler()
+        'anzeigenTrainer()
+        'mView.ShowDialog() 'View anzeigen
         mlstSportartAlle = Kampfsportverein.mlstSportart
         mlstKurseAlle = Kampfsportverein.mlstKurs
         mlstSchuelerAlle = Kampfsportverein.mlstSchueler
         mlstTrainerAlle = Kampfsportverein.mlstTrainer
+        verarbeiteMitarbeiterEinzeln()
+        verarbeiteKursuebersichtAnzeigen()
         'Daten an die Oberfläche übergeben
+        anzeigenKursAlle()
         anzeigenMitarbeiterAlle()
         'Anzeige der View als Oberfläche
         Application.Run(mView)
@@ -63,6 +75,15 @@
         Next
     End Sub
 
+    Private Sub anzeigenKursAlle()
+        mView.leeren()
+        mView.anzeigenKursuebersicht()
+        'anzeigen lstKurs
+        For Each kurs As Kurs In mlstKurseAlle
+            mView.hinzufuegenZeileKurse(mlstKurseAlle.IndexOf(kurs), kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
+        Next
+    End Sub
+
     Public Sub verarbeiteMitarbeiterEinzeln() 'button Mein Konto
 
     End Sub
@@ -74,13 +95,10 @@
 
     Public Sub verarbeiteKursuebersichtAnzeigen() 'button Kurse
         mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
-        mView.leeren()
-        mView.anzeigenKursuebersicht()
-        For Each kurs As Kurs In mlstKurseAlle
-            mView.hinzufuegenZeileKurse(mlstKurseAlle.IndexOf(kurs), kurs.Zeitpunkt,
-                                        kurs.SaIdFk, kurs.BenIdFk)
-        Next
+        mlstKurseAlle = mMitarbeiterDAO.findeAlleKurse()
+        anzeigenKursAlle()
     End Sub
+
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
         mView.leeren()
