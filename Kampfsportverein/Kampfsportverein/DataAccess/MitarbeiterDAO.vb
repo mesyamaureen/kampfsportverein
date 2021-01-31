@@ -467,6 +467,63 @@ Public Class MitarbeiterDAO
         Return lstKurs
     End Function
 
+    'finden Kurs von Benutzer
+    Public Function findenBenKurs(pBenutzer As Benutzer) As List(Of Kurs)
+        'Deklaration der Eigenschaften des Kurs
+        Dim lngKursIdPk As Long
+        Dim datKursZeitpunkt As Date
+        Dim strKursOrt As String
+        Dim intKursTeilnZahl As Integer
+        Dim strKursSchwierigkeit As String
+        Dim lngSaIdFk As Long
+        Dim lngBenIdFk As Long
+        Dim lngVersion As Long
+
+        'Aufgaben und Aufgabenliste
+        Dim kurs As Kurs 'gelesene Aufgabe, die zur Liste der Kurs hinzugefügt werden soll
+        Dim lstKurs As List(Of Kurs) 'Liste von Kurs, die als Ergebnis zurückgeliefert werden soll
+
+        Dim mitDAO As MitarbeiterDAO 'Benutzer, zu dem die Aufgabe gehört, muss geladen werden
+        'Kommando und REader für Datenbankzugriff
+        Dim cmd As OleDbCommand
+        Dim dr As OleDbDataReader
+
+        'Initialisierung
+        kurs = Nothing 'Aufgabe leer initialisieren, um deutlich zu machen, dass keine Aufgabe gelesen wurde
+        lstKurs = New List(Of Kurs) 'Rückgabewert initialisieren
+        'Oeffnen der Datenbankverbindung durch geerbte Methode der Oberklasse
+        oeffnenDatenbank()
+        cmd = New OleDbCommand(SQL_SELECT_KURS_BY_BENUTZERID, mConnection)
+        'Platzhalter in SQL-Anweisung durch Eigenschaften ersetzen
+        'Hier nur ein Platzhalter für die ID
+        cmd.Parameters.AddWithValue("@KuBenIdFk", pBenutzer.BenutzerID)
+        dr = cmd.ExecuteReader()
+
+        Do While dr.Read
+            'Aus dem Data-reader die Werte auslesen
+            lngKursIdPk = Long.Parse(dr("KuIdPk"))
+            datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
+            strKursOrt = dr("KuOrt")
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+            strKursSchwierigkeit = dr("KuSchwierigkeit")
+            lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
+            lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
+            lngVersion = Long.Parse(dr("KuVersion"))
+
+            'Neue Aufgabe erstellen und mit den gelesenen Werten initialisieren
+            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            'Aufgabe dem Benutzer zuordnen
+            kurs.Benutzer = pBenutzer
+            'Neue Aufgabe zur Liste der Aufgaben hinzufügen
+            lstKurs.Add(kurs)
+        Loop
+
+        dr.Close() 'DataReader schließen
+        schliessenDatenbank() 'Methode der Oberklasse nutzen, um Datenbankverbindung zu schließen
+        'Rückgabewert
+        Return lstKurs
+    End Function
+
 
     'findenKurs
     Public Function findeKurs(plngKursIdPk As Long) As Kurs

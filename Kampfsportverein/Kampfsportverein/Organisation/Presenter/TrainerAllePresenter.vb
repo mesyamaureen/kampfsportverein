@@ -4,6 +4,8 @@
     Private mlstSchuelerAlle As List(Of Schueler)
     Private mView As TrainerAlleView
     Private mTrainerAlle As Trainer
+    Private mitDAO As MitarbeiterDAO = New MitarbeiterDAO
+    Private traDAO As TrainerDAO = New TrainerDAO
 
     'Parameterloser Konstruktor
     Public Sub New()
@@ -68,6 +70,15 @@
         Next
     End Sub
 
+    Private Sub anzeigenSchuelerAlle()
+        mView.leeren()
+        mView.anzeigenSchueler()
+        'anzeigen Schuelerliste
+        For Each schueler As Schueler In mlstSchuelerAlle
+            mView.anzeigenSchuelerUebersicht(mlstSchuelerAlle.IndexOf(schueler), schueler.Name, schueler.Vorname)
+        Next
+    End Sub
+
     Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto
         Dim presenter As TrainerkontoPresenter = New TrainerkontoPresenter()
         If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
@@ -78,11 +89,29 @@
 
     Public Sub verarbeiteKursuebersichtAnzeigen() 'button Kurse
         mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
+        Dim mitDAO As MitarbeiterDAO
+        Dim benAngemeldet As Benutzer
+
+        'Initialisierung
+        benAngemeldet = BenutzerSitzung.Instanz.AktuellerBenutzer
+        mitDAO = DAOFactory.Instanz.MitarbeiterDAO
+
+        'Alle Kurse des Benutzers mit ID laden
+        mlstKursAlle = mitDAO.findenBenKurs(benAngemeldet)
         anzeigenTrainerAlle()
     End Sub
 
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
+        'Deklaration
+        Dim traDAO As TrainerDAO
+        Dim benAngemeldet As Benutzer
+        'Initialisierung
+        benAngemeldet = BenutzerSitzung.Instanz.AktuellerBenutzer
+        traDAO = DAOFactory.Instanz.TrainerDAO
+        'Alle Schueler des Benutzers(Trainer) mit ID laden
+        'mlstSchuelerAlle = traDAO.findenBenSchueler(benAngemeldet)
+        anzeigenSchuelerAlle()
         mView.leeren()
         mView.anzeigenSchueler()
         For Each schueler As Schueler In mlstSchuelerAlle
