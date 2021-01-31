@@ -95,6 +95,7 @@
 
     Public Sub verarbeiteKursuebersichtAnzeigen() 'button Kurse
         mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
+        mMitarbeiterDAO = DAOFactory.Instanz.MitarbeiterDAO
         mlstKurseAlle = mMitarbeiterDAO.findeAlleKurse()
         anzeigenKursAlle()
     End Sub

@@ -459,6 +459,8 @@ Public Class MitarbeiterDAO
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
             kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
                             strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+
+            lstKurs.Add(kurs)
         Loop
         dr.Close()
         schliessenDatenbank()
