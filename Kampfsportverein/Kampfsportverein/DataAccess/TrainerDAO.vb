@@ -168,7 +168,7 @@ Public Class TrainerDAO
     End Function
 
 
-    Public Function findenAlleMitSchuelerId(plngIdPk As Long) As List(Of Schueler)
+    Public Function findenAlleMitSchuelerId(plngIdPk As Long) As Schueler
 
         'Deklaratiom
         'Eigenschaften der Schueler
@@ -215,7 +215,7 @@ Public Class TrainerDAO
 
         dr.Close()
         schliessenDatenbank()
-        Return lstSchueler
+        Return schu
     End Function
 
     Public Function findeAlleSchueler() As List(Of Schueler)

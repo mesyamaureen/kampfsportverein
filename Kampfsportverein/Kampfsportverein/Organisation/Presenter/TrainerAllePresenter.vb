@@ -4,7 +4,7 @@
     Private mlstSchuelerAlle As List(Of Schueler)
     Private mView As TrainerAlleView
     Private mTrainerAlle As Trainer
-    Private mitDAO As MitarbeiterDAO = New MitarbeiterDAO
+    Private mmitDAO As MitarbeiterDAO = New MitarbeiterDAO
     Private mtraDAO As TrainerDAO = New TrainerDAO
 
     'Parameterloser Konstruktor
@@ -114,26 +114,32 @@
         anzeigenSchuelerAlle()
     End Sub
 
-    Public Sub verarbeiteOeffnen(plngIndex As Long) 'button Öffnen
+    Public Sub verarbeiteKursOeffnen(plngKursId As Long) 'buttonÖffnen
+        'Deklaration
         Dim kurs As Kurs
         Dim kursPresenter As KursPresenter
-        Dim schueler As Schueler
-        Dim schuelerPresenter As SchuelerAllePresenter
 
-        kurs = mlstKursAlle.Item(plngIndex)
-        schueler = mlstSchuelerAlle.Item(plngIndex)
-
+        'Ermitteln des Kurs anhand ID
+        kurs = mmitDAO.findeKurs(plngKursId)
+        'Übergeben der Sportart zur Anzeige im Presenter
         kursPresenter = New KursPresenter(kurs)
-        schuelerPresenter = New SchuelerAllePresenter(schueler)
+        'Liste muss aktualisiert, wenn es Änderungen gibt
+        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then
+            verarbeiteKursuebersichtAnzeigen()
+        End If
+    End Sub
 
-        If mErgebnis = EPresenterErgebnis.SPEICHERN Then
-            kursPresenter.anzeigenKurs()
-        ElseIf mErgebnis = EPresenterErgebnis.ABBRECHEN Then
-            kursPresenter.beenden()
-        ElseIf mErgebnis = EPresenterErgebnis.ABSAGEN Then
-            kursPresenter.verarbeiteKursAbsagen()
-        Else
-            'tun nichts
+    Public Sub verarbeiteSchuelerOeffnen(plngSchuId As Long) 'button Öffnen
+        'Deklaration
+        Dim schueler As Schueler
+        Dim schuPresenter As SchuelerAllePresenter
+        'Ermitteln des Schuelers anhand ID
+        schueler = mtraDAO.findenAlleMitSchuelerId(plngSchuId)
+        'Übergeben des Schuelers zur Anzeige im Presenter
+        schuPresenter = New SchuelerAllePresenter(schueler)
+        'Liste muss aktualisiert, wenn es Änderungen gibt
+        If schuPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_EINZELN Then
+            verarbeiteSchueleruebersichtAnzeigen()
         End If
     End Sub
 

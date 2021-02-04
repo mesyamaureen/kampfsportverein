@@ -29,8 +29,16 @@
     End Sub
 
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
-        Dim lngAktuelleID As Long
-        mPresenter.verarbeiteOeffnen(lngAktuelleID)
+        Dim lngKursId As Long
+        Dim lngSchuelerId As Long
+
+        If Me.lstKurse.SelectedItems.Count > 0 Then
+            lngKursId = Me.lstKurse.SelectedItems(0).Text
+            mPresenter.verarbeiteKursOeffnen(lngKursId)
+        ElseIf Me.lstSchueler.SelectedItems.Count > 0 Then
+            lngSchuelerId = Me.lstSchueler.SelectedItems(0).Text
+            mPresenter.verarbeiteSchuelerOeffnen(lngSchuelerId)
+        End If
     End Sub
 
     Private Sub btnBeenden_Click(sender As Object, e As EventArgs) Handles btnBeenden.Click
