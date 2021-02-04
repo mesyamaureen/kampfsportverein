@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\lukas\OneDrive - beuthhs\vbaProject\kampfsportverein\Kampfsportverein\Kampsportverein_DataAcess\Kampfsport_DB.accdb</Value>
+      <Value Profile="(Default)">C:\Users\hochtritt\Desktop\DBS2\kampfsportverein\Kampfsportverein\Kampsportverein_DataAcess\Datenbank_Lokal</Value>
     </Setting>
   </Settings>
 </SettingsFile>
