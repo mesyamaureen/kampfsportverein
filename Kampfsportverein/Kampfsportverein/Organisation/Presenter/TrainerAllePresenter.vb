@@ -15,7 +15,12 @@
         mTrainerAlle = New Trainer
 
         'Daten an die Oberfläche übergeben
-        anzeigenTrainerAlle()
+        anzeigenKursAlle()
+        anzeigenSchuelerAlle()
+        verarbeiteKursuebersichtAnzeigen()
+        verarbeiteEigenesProfilAnzeigen()
+        verarbeiteSchueleruebersichtAnzeigen()
+
         'Anzeige der View als Oberfläche (Formular)
         mView.ShowDialog()
         'Application.Run(mView)
@@ -61,13 +66,12 @@
     '    End Set
     'End Property
 
-    Private Sub anzeigenTrainerAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
+    Private Sub anzeigenKursAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
         mView.leeren()
         mView.anzeigenKurse()
         'anzeigen Kursliste
         For Each kurs As Kurs In mlstKursAlle
-            mView.anzeigenKursUebersicht(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt,
-                                       kurs.SaIdFk, kurs.BenIdFk)
+            mView.anzeigenKursUebersicht(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
         Next
     End Sub
 
@@ -80,7 +84,7 @@
         Next
     End Sub
 
-    Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto
+    Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto 
         Dim presenter As TrainerkontoPresenter = New TrainerkontoPresenter()
         If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
             presenter.anzeigen()
@@ -99,7 +103,7 @@
 
         'Alle Kurse des Benutzers mit ID laden
         mlstKursAlle = mitDAO.findenBenKurs(benAngemeldet)
-        anzeigenTrainerAlle()
+        anzeigenKursAlle()
     End Sub
 
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
@@ -136,7 +140,7 @@
     Public Sub verarbeiteLoeschen(plngIndex As Long) 'button Löschen
         mlstKursAlle.RemoveAt(plngIndex)
         mlstSchuelerAlle.RemoveAt(plngIndex)
-        anzeigenTrainerAlle()
+        anzeigenKursAlle()
     End Sub
 
     Public Sub verarbeiteNeu() 'button Neu

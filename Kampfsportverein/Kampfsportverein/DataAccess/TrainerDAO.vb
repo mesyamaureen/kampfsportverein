@@ -16,8 +16,8 @@ Public Class TrainerDAO
     'SQL-Anweisung, um alle Schüler zu ermitteln
     Private Const SQL_SELECT_SCHUELER As String = "SELECT * FROM tblSchueler"
 
-    ' 'SQL-Anweisung, um Schueler nach ID zu filtern
-    'Private Const SQL_SELECT_SCHUELER_BY_SAID As String = SELECT * FROM tblSchueler WHERE SaIdPk = @IdPk"
+    'SQL-Anweisung, um Schueler nach ID zu filtern
+    Private Const SQL_SELECT_SCHUELER_BY_SAID As String = "SELECT * FROM tblSchueler WHERE SaIdPk = @IdPk"
 
     ' SQL-Anweisung, um einen Schueler neu hinzuzufügen
     Private Const SQL_INSERT As String = "INSERT INTO tblSchueler(SchuIdPk, SchuVorname, SchuName, SchuEMail, SchuVersion)" &
@@ -194,7 +194,7 @@ Public Class TrainerDAO
         'Datebankverbindung oeffnen
         oeffnenDatenbank()
 
-        cmd = New OleDbCommand(SQL_SELECT_TRAINER_BY_BENUTZERID, mConnection)
+        cmd = New OleDbCommand(SQL_SELECT_SCHUELER_BY_SAID, mConnection)
 
         'Platzhalter ersetzen
         cmd.Parameters.AddWithValue("@SchuIdPk", plngIdPk)
