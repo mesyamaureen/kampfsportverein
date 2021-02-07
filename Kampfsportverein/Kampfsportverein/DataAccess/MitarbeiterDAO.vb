@@ -607,7 +607,7 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    Public Function loeschenKurs(pKurs As Kurs) As Boolean
+    Public Function loeschenKurs(pKurs As Kurs) As Boolean 'Fix this please Mesya!
         'Deklaration
         Dim bolErfolgreich As Boolean
         'Initialisierung: Funktionaufruf von loeschenKursTraId

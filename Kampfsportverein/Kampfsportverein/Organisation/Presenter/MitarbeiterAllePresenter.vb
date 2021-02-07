@@ -20,6 +20,7 @@
         anzeigenKursAlle()
         anzeigenSchueleruebersichtAnzeigen()
         anzeigenTrainerAlle()
+        verarbeiteMitarbeiterEinzeln()
         verarbeiteSportartUebersichtAnzeigen()
         verarbeiteMitarbeiterEinzeln()
         verarbeiteKursuebersichtAnzeigen()
@@ -102,7 +103,8 @@
     End Sub
 
     Public Sub verarbeiteMitarbeiterEinzeln() 'button Mein Konto
-
+        'mView.anzeigenMeinKonto()
+        'Dim trakontoPresenter As 
     End Sub
 
     Public Sub verarbeiteSportartUebersichtAnzeigen() 'button Sportarten
@@ -197,9 +199,21 @@
 
         Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
         sporPresenter = New SportartenPresenter()
-        If sporPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht vorhanden -2021-01-27
             verarbeiteSportartUebersichtAnzeigen()
         End If
+    End Sub
+
+    Public Sub verarbeiteNeuKurs()
+        'Neu MVP für Hinzufügen-Seite
+    End Sub
+
+    Public Sub verarbeiteNeuSchueler()
+        'Neu MVP für Hinzufügen-Seite
+    End Sub
+
+    Public Sub verarbeiteNeuTrainer()
+        'Neu MVP für Hinzufügen-Seite
     End Sub
 
     Public Sub verarbeiteLoeschen(plngSportartId As Long) 'button Löschen
@@ -207,10 +221,7 @@
         ' Deklaration
         Dim spor As Sportart ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
         Dim bolErgebnis As Boolean
-
-        ' Ermitteln der Sportart anhand der ID aus der DB
-        spor = mMitarbeiterDAO.findeSportart(plngSportartId)
-
+        spor = mMitarbeiterDAO.findeSportart(plngSportartId) ' Ermitteln der Sportart anhand der ID aus der DB
         bolErgebnis = MitarbeiterDAO.loeschenMitSportartId(plngSportartId, spor.Version)
         If bolErgebnis Then
             verarbeiteSportartUebersichtAnzeigen()
@@ -218,6 +229,37 @@
             MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
         End If
 
+    End Sub
+
+    Public Sub verarbeiteLoeschenKurs(plngKursId As Long)
+        Dim kurs As Kurs
+        Dim bolKursErgebnis As Boolean
+        kurs = mMitarbeiterDAO.findeKurs(plngKursId)
+        bolKursErgebnis = MitarbeiterDAO.loeschenKursTraId(plngKursId, kurs.Version)
+        If bolKursErgebnis Then
+            verarbeiteKursuebersichtAnzeigen()
+        Else
+            MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
+        End If
+    End Sub
+
+    Public Sub verarbeiteLoeschenSchueler(plngSchuId As Long)
+        Dim schu As Schueler
+        Dim bolSchuErgebnis As Boolean
+        schu = mTrainerDAO.findenAlleMitSchuelerId(plngSchuId)
+        bolSchuErgebnis = TrainerDAO.loeschenMitSchuelerId(plngSchuId, schu.Version)
+        If bolSchuErgebnis Then
+            verarbeiteSchueleruebersichtAnzeigen()
+        Else
+            MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
+        End If
+    End Sub
+
+    Public Sub verarbeiteLoeschenTrainer(plngTraId As Long)
+        Dim tra As Trainer
+        Dim bolTraErgebnis As Boolean
+        tra = mTrainerDAO.findenTrainerId(plngTraId)
+        'need to create a loeschenTrainerId Function in TrainerDAO!
     End Sub
 
     Public Sub verarbeiteBeenden() 'button Beenden

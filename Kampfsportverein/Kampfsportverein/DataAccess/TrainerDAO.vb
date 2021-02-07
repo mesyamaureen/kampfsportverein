@@ -261,8 +261,8 @@ Public Class TrainerDAO
         Return lstSchueler
     End Function
 
-    Public Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
-
+    Public Shared Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
+        Return ElementLoeschen("tblSchueler", plngIdPk, plngVersion)
         'Deklaration
         Dim lngAnzahlDatensätze As Long
         Dim cmd As OleDbCommand
@@ -277,9 +277,10 @@ Public Class TrainerDAO
 
         schliessenDatenbank()
 
-        If lngAnzahlDatensätze = 1 Then
+        If lngAnzahlDatensätze = 0 Then
+            Return False
+        Else
             Return True
-        Else Return False
         End If
 
     End Function
