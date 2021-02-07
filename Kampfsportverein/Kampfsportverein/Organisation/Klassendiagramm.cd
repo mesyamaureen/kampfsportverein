@@ -22,6 +22,13 @@
   </Class>
   <Class Name="Kampfsportverein.MitarbeiterAllePresenter">
     <Position X="4.75" Y="0.5" Width="2.25" />
+    <AssociationLine Name="MitarbeiterAlle" Type="Kampfsportverein.Mitarbeiter" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7" Y="3" />
+        <Point X="9.688" Y="3" />
+        <Point X="9.688" Y="5.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AJBBgQwAgBAAAAABAAgECHAAYQwBBAIEgAABAACAAaA=</HashCode>
       <FileName>Organisation\Presenter\MitarbeiterAllePresenter.vb</FileName>
@@ -32,7 +39,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Mitarbeiter">
-    <Position X="9" Y="0.5" Width="1.75" />
+    <Position X="8.75" Y="5.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>IAAgAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgCAAQBAAA=</HashCode>
       <FileName>Organisation\Model\Mitarbeiter.vb</FileName>
@@ -140,9 +147,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.dlgNeuerTrainer" Collapsed="true">
-    <Position X="0.75" Y="35" Width="1.5" />
+    <Position X="0.75" Y="37.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQEAgAAAACAEAgAAAACiAgACAAAgAAAAIEAAgAAAAAQ=</HashCode>
+      <HashCode>AQEAgAAAACAEAgAAAACiAgACAAAgAAAAIEgAgAAAAAQ=</HashCode>
       <FileName>Organisation\Form\dlgNeuerTrainer.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -150,14 +157,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.NeuerTrainerView">
-    <Position X="0.75" Y="36.5" Width="1.5" />
+    <Position X="0.75" Y="39" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\View\NeuerTrainerView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.NeuerTrainerPresenter">
-    <Position X="4.25" Y="35.25" Width="2.5" />
+    <Position X="4.25" Y="37.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AgAAgAgAAAABgAAAAQAAAAAAACABBIAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\Presenter\NeuerTrainerPresenter.vb</FileName>
