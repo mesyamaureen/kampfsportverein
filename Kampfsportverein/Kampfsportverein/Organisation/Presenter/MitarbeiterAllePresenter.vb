@@ -20,9 +20,8 @@
         anzeigenKursAlle()
         anzeigenSchueleruebersichtAnzeigen()
         anzeigenTrainerAlle()
-        verarbeiteMitarbeiterEinzeln()
+        'verarbeiteMitarbeiterEinzeln()
         verarbeiteSportartUebersichtAnzeigen()
-        verarbeiteMitarbeiterEinzeln()
         verarbeiteKursuebersichtAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
         verarbeiteTrainerUebersichtAnzeigen()
@@ -102,9 +101,16 @@
         Next
     End Sub
 
-    Public Sub verarbeiteMitarbeiterEinzeln() 'button Mein Konto
-        'mView.anzeigenMeinKonto()
-        'Dim trakontoPresenter As 
+    Public Sub verarbeiteMitarbeiterEinzeln(plngBenIdPk As Long) 'button Mein Konto
+        mView.anzeigenMeinKonto()
+        Dim mit As Mitarbeiter
+        Dim mitKontoPresenter As MitarbeiterKontoPresenter
+        mit = mMitarbeiterDAO.findenMitarbeiterId(plngBenIdPk)
+        ' Übergeben der Sportart zur Anzeige im Presenter
+        'mitKontoPresenter = New MitarbeiterKontoPresenter(mit)
+        'If MitarbeiterKontoPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        'verarbeiteKursuebersichtAnzeigen()
+        'End If
     End Sub
 
     Public Sub verarbeiteSportartUebersichtAnzeigen() 'button Sportarten
@@ -171,7 +177,7 @@
         Dim schuPresenter As SchuelerAllePresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
-        'schueler = mTrainerDAO.findenAlleMitSchuelerId(plngSchuelerId) ' Übergeben der Sportart zur Anzeige im Presenter
+        schueler = mTrainerDAO.findenAlleMitSchuelerId(plngSchuelerId) ' Übergeben der Sportart zur Anzeige im Presenter
         schuPresenter = New SchuelerAllePresenter(schueler)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 

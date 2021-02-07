@@ -103,7 +103,7 @@ Public Class MitarbeiterDAO
     End Function
 
     'Mitarbeiter auswählen anhand Benutzer ID
-    Public Function findenMitarbeiterId(plngBenIdPk) As Benutzer
+    Public Function findenMitarbeiterId(plngBenIdPk As Long) As Benutzer
         'Deklaration
         'Alle Eigenschaften eines Benutzers
         Dim lngBenutzerIdPk As Long

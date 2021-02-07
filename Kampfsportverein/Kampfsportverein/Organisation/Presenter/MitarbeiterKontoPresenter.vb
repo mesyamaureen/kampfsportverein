@@ -4,7 +4,7 @@
     Private mSitzung As BenutzerSitzung
     Private mView As MitarbeiterKontoView
     Sub New()
-        'MyBase.New
+        MyBase.New
         mView = New MitarbeiterKontoView(Me)
         mMitEinzel = New Mitarbeiter
 
