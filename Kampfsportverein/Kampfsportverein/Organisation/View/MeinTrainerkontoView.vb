@@ -13,14 +13,14 @@
         Me.txtPasswort.Text = String.Empty
     End Sub
 
-    Public Sub anzeigen(pintBenutzerID As Integer, pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
+    Public Sub anzeigen(plngBenutzerID As Long, pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
         Me.txtTrainerID.Enabled = False
         Me.txtVorname.Enabled = True
         Me.txtName.Enabled = True
         Me.txtBenutzername.Enabled = False
         Me.txtPasswort.Enabled = True
 
-        Me.txtTrainerID.Text = pintBenutzerID
+        Me.txtTrainerID.Text = plngBenutzerID
         Me.txtVorname.Text = pstrVorname
         Me.txtName.Text = pstrName
         Me.txtBenutzername.Text = pstrBenutzername
