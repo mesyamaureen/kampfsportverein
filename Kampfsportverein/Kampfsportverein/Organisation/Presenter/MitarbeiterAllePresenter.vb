@@ -102,10 +102,10 @@
     End Sub
 
     Public Sub verarbeiteMitarbeiterEinzeln(plngBenIdPk As Long) 'button Mein Konto
-        mView.anzeigenMeinKonto()
-        Dim mit As Mitarbeiter
-        Dim mitKontoPresenter As MitarbeiterKontoPresenter
-        mit = mMitarbeiterDAO.findenMitarbeiterId(plngBenIdPk)
+        'mView.anzeigenMeinKonto()
+        'Dim mit As Mitarbeiter
+        'Dim mitKontoPresenter As MitarbeiterKontoPresenter
+        'mit = mMitarbeiterDAO.findenMitarbeiterId(plngBenIdPk)
         ' Übergeben der Sportart zur Anzeige im Presenter
         'mitKontoPresenter = New MitarbeiterKontoPresenter(mit)
         'If MitarbeiterKontoPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
@@ -219,7 +219,11 @@
     End Sub
 
     Public Sub verarbeiteNeuTrainer()
-        'Neu MVP für Hinzufügen-Seite
+        Dim neuerTrainerPresenter As NeuerTrainerPresenter
+        neuerTrainerPresenter = New NeuerTrainerPresenter()
+        If neuerTrainerPresenter.mErgebnis = EPresenterErgebnis.TRAINER_ERSTELLEN Then
+            'mView. -- Wieeeee??
+        End If
     End Sub
 
     Public Sub verarbeiteLoeschen(plngSportartId As Long) 'button Löschen
