@@ -11,7 +11,7 @@
     End Property
 
     Private Sub btnMeinKonto_Click(sender As Object, e As EventArgs) Handles btnMeinKonto.Click
-        mPresenter.verarbeiteMitarbeiterEinzeln()
+        'mPresenter.verarbeiteMitarbeiterEinzeln()
     End Sub
 
     Private Sub btnSportarten_Click(sender As Object, e As EventArgs) Handles btnSportarten.Click

@@ -31,7 +31,7 @@ Public Class MitarbeiterDAO
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportart WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
 
     'SQL-Anweisung, um eine Sportart anhand der ID zu ermitteln
-    Private Const SQL_SELECT_SPORTART_BY_ID As String = "SELECT FROM tblSportarten WHERE SaIdPk = @SaIdPk"
+    Private Const SQL_SELECT_SPORTART_BY_ID As String = "SELECT * FROM tblSportarten WHERE SaIdPk = @SaIdPk"
 
     'SQL-Anweisung, um einen Kurs anhand der Benutzer
     Private Const SQL_SELECT_KURS_BY_BENUTZERID As String = "SELECT * FROM tblKurse WHERE KuBenIdFk = @kBenIdFk"
@@ -229,17 +229,18 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@SaIdPk", plngIdPk)
 
         dr = cmd.ExecuteReader
-
-        lngIdPk = Long.Parse(dr("SaIdPk"))
+        If dr.Read() Then
+            lngIdPk = Long.Parse(dr("SaIdPk"))
+            'Debug.Print(lngIdPk)
             strName = dr("SaName")
-            strHerkunft = dr("SaHerkunft")
+            strHerkunft = dr("SaHerkunftsland")
             strZielgruppe = dr("SaZielgruppe")
             bytMindestalter = Byte.Parse(dr("SaMindestalter"))
             lngVersion = Long.Parse(dr("SaVersion"))
 
             spor = New Sportart(lngIdPk, strName, strHerkunft, strZielgruppe, bytMindestalter, lngVersion)
-
-            dr.Close()
+        End If
+        dr.Close()
         schliessenDatenbank()
         Return spor
 
