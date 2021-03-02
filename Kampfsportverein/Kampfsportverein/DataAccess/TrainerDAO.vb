@@ -199,9 +199,9 @@ Public Class TrainerDAO
         'Platzhalter ersetzen
         cmd.Parameters.AddWithValue("@SchuIdPk", plngIdPk)
 
-        dr = cmd.ExecuteReader
+        dr = cmd.ExecuteReader()
 
-        Do While dr.Read
+        Do While dr.Read()
 
             lngIdPk = Long.Parse(dr("SchuIdPk"))
             strName = dr("SchuName")
