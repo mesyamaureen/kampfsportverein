@@ -6,4 +6,5 @@
         Set(value As KursPresenter)
         End Set
     End Property
+
 End Class

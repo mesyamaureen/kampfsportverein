@@ -31,9 +31,6 @@ Partial Class dlgSportEinzel
         Me.tabZielgruppe = New System.Windows.Forms.TabPage()
         Me.rtxtZielgruppe = New System.Windows.Forms.RichTextBox()
         Me.tabKurs = New System.Windows.Forms.TabPage()
-        Me.btnBearbeiten = New System.Windows.Forms.Button()
-        Me.btnNeuerKurs = New System.Windows.Forms.Button()
-        Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colZeitpunkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -44,9 +41,9 @@ Partial Class dlgSportEinzel
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtHerkunftsland = New System.Windows.Forms.TextBox()
         Me.txtMindestalter = New System.Windows.Forms.TextBox()
-        Me.btnClose = New System.Windows.Forms.Button()
         Me.txtVersion = New System.Windows.Forms.TextBox()
         Me.lblVersion = New System.Windows.Forms.Label()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.tabSportart.SuspendLayout()
         Me.tabZielgruppe.SuspendLayout()
         Me.tabKurs.SuspendLayout()
@@ -55,20 +52,20 @@ Partial Class dlgSportEinzel
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(832, 457)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1109, 571)
+        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(99, 37)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(132, 46)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(722, 457)
-        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnSpeichern.Location = New System.Drawing.Point(963, 571)
+        Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(99, 37)
+        Me.btnSpeichern.Size = New System.Drawing.Size(132, 46)
         Me.btnSpeichern.TabIndex = 1
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
@@ -76,30 +73,27 @@ Partial Class dlgSportEinzel
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(9, 23)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblName.Location = New System.Drawing.Point(12, 29)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(51, 20)
+        Me.lblName.Size = New System.Drawing.Size(68, 25)
         Me.lblName.TabIndex = 2
         Me.lblName.Text = "Name"
         '
         'lblHerkunftsland
         '
         Me.lblHerkunftsland.AutoSize = True
-        Me.lblHerkunftsland.Location = New System.Drawing.Point(9, 64)
-        Me.lblHerkunftsland.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblHerkunftsland.Location = New System.Drawing.Point(12, 80)
         Me.lblHerkunftsland.Name = "lblHerkunftsland"
-        Me.lblHerkunftsland.Size = New System.Drawing.Size(109, 20)
+        Me.lblHerkunftsland.Size = New System.Drawing.Size(145, 25)
         Me.lblHerkunftsland.TabIndex = 3
         Me.lblHerkunftsland.Text = "Herkunftsland"
         '
         'lblMindestalter
         '
         Me.lblMindestalter.AutoSize = True
-        Me.lblMindestalter.Location = New System.Drawing.Point(10, 97)
-        Me.lblMindestalter.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblMindestalter.Location = New System.Drawing.Point(13, 121)
         Me.lblMindestalter.Name = "lblMindestalter"
-        Me.lblMindestalter.Size = New System.Drawing.Size(96, 20)
+        Me.lblMindestalter.Size = New System.Drawing.Size(130, 25)
         Me.lblMindestalter.TabIndex = 4
         Me.lblMindestalter.Text = "Mindestalter"
         '
@@ -107,21 +101,21 @@ Partial Class dlgSportEinzel
         '
         Me.tabSportart.Controls.Add(Me.tabZielgruppe)
         Me.tabSportart.Controls.Add(Me.tabKurs)
-        Me.tabSportart.Location = New System.Drawing.Point(13, 178)
-        Me.tabSportart.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabSportart.Location = New System.Drawing.Point(17, 222)
+        Me.tabSportart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tabSportart.Name = "tabSportart"
         Me.tabSportart.SelectedIndex = 0
-        Me.tabSportart.Size = New System.Drawing.Size(919, 261)
+        Me.tabSportart.Size = New System.Drawing.Size(1225, 326)
         Me.tabSportart.TabIndex = 5
         '
         'tabZielgruppe
         '
         Me.tabZielgruppe.Controls.Add(Me.rtxtZielgruppe)
-        Me.tabZielgruppe.Location = New System.Drawing.Point(4, 29)
-        Me.tabZielgruppe.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabZielgruppe.Location = New System.Drawing.Point(8, 39)
+        Me.tabZielgruppe.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tabZielgruppe.Name = "tabZielgruppe"
-        Me.tabZielgruppe.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabZielgruppe.Size = New System.Drawing.Size(911, 228)
+        Me.tabZielgruppe.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabZielgruppe.Size = New System.Drawing.Size(1209, 279)
         Me.tabZielgruppe.TabIndex = 0
         Me.tabZielgruppe.Text = "Zielgruppe"
         Me.tabZielgruppe.UseVisualStyleBackColor = True
@@ -129,69 +123,37 @@ Partial Class dlgSportEinzel
         'rtxtZielgruppe
         '
         Me.rtxtZielgruppe.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtxtZielgruppe.Location = New System.Drawing.Point(2, 2)
-        Me.rtxtZielgruppe.Margin = New System.Windows.Forms.Padding(2)
+        Me.rtxtZielgruppe.Location = New System.Drawing.Point(3, 2)
+        Me.rtxtZielgruppe.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.rtxtZielgruppe.Name = "rtxtZielgruppe"
-        Me.rtxtZielgruppe.Size = New System.Drawing.Size(907, 224)
+        Me.rtxtZielgruppe.Size = New System.Drawing.Size(1203, 275)
         Me.rtxtZielgruppe.TabIndex = 0
         Me.rtxtZielgruppe.Text = ""
         '
         'tabKurs
         '
-        Me.tabKurs.Controls.Add(Me.btnBearbeiten)
-        Me.tabKurs.Controls.Add(Me.btnNeuerKurs)
-        Me.tabKurs.Controls.Add(Me.btnLoeschen)
         Me.tabKurs.Controls.Add(Me.ListView1)
-        Me.tabKurs.Location = New System.Drawing.Point(4, 29)
-        Me.tabKurs.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabKurs.Location = New System.Drawing.Point(8, 39)
+        Me.tabKurs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tabKurs.Name = "tabKurs"
-        Me.tabKurs.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabKurs.Size = New System.Drawing.Size(911, 228)
+        Me.tabKurs.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabKurs.Size = New System.Drawing.Size(1209, 279)
         Me.tabKurs.TabIndex = 1
         Me.tabKurs.Text = "Kurs"
         Me.tabKurs.UseVisualStyleBackColor = True
         '
-        'btnBearbeiten
-        '
-        Me.btnBearbeiten.Location = New System.Drawing.Point(592, 190)
-        Me.btnBearbeiten.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnBearbeiten.Name = "btnBearbeiten"
-        Me.btnBearbeiten.Size = New System.Drawing.Size(95, 30)
-        Me.btnBearbeiten.TabIndex = 3
-        Me.btnBearbeiten.Text = "Bearbeiten"
-        Me.btnBearbeiten.UseVisualStyleBackColor = True
-        '
-        'btnNeuerKurs
-        '
-        Me.btnNeuerKurs.Location = New System.Drawing.Point(700, 190)
-        Me.btnNeuerKurs.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnNeuerKurs.Name = "btnNeuerKurs"
-        Me.btnNeuerKurs.Size = New System.Drawing.Size(104, 30)
-        Me.btnNeuerKurs.TabIndex = 2
-        Me.btnNeuerKurs.Text = "Neuer Kurs"
-        Me.btnNeuerKurs.UseVisualStyleBackColor = True
-        '
-        'btnLoeschen
-        '
-        Me.btnLoeschen.Location = New System.Drawing.Point(814, 190)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(86, 30)
-        Me.btnLoeschen.TabIndex = 1
-        Me.btnLoeschen.Text = "Löschen"
-        Me.btnLoeschen.UseVisualStyleBackColor = True
-        '
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colZeitpunkt, Me.colOrt, Me.colTrainer, Me.colVerfuegbarkeit, Me.colSchwierigkeit})
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(0, 2)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.ListView1.Location = New System.Drawing.Point(3, 2)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(908, 183)
+        Me.ListView1.Size = New System.Drawing.Size(1203, 275)
         Me.ListView1.TabIndex = 0
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -233,67 +195,66 @@ Partial Class dlgSportEinzel
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(166, 16)
-        Me.txtName.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtName.Location = New System.Drawing.Point(221, 20)
+        Me.txtName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtName.Multiline = True
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(760, 34)
+        Me.txtName.Size = New System.Drawing.Size(1012, 42)
         Me.txtName.TabIndex = 6
         '
         'txtHerkunftsland
         '
-        Me.txtHerkunftsland.Location = New System.Drawing.Point(166, 54)
-        Me.txtHerkunftsland.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtHerkunftsland.Location = New System.Drawing.Point(221, 68)
+        Me.txtHerkunftsland.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtHerkunftsland.Multiline = True
         Me.txtHerkunftsland.Name = "txtHerkunftsland"
-        Me.txtHerkunftsland.Size = New System.Drawing.Size(760, 34)
+        Me.txtHerkunftsland.Size = New System.Drawing.Size(1012, 42)
         Me.txtHerkunftsland.TabIndex = 7
         '
         'txtMindestalter
         '
-        Me.txtMindestalter.Location = New System.Drawing.Point(166, 92)
-        Me.txtMindestalter.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtMindestalter.Location = New System.Drawing.Point(221, 115)
+        Me.txtMindestalter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtMindestalter.Multiline = True
         Me.txtMindestalter.Name = "txtMindestalter"
-        Me.txtMindestalter.Size = New System.Drawing.Size(760, 34)
+        Me.txtMindestalter.Size = New System.Drawing.Size(1012, 42)
         Me.txtMindestalter.TabIndex = 8
-        '
-        'btnClose
-        '
-        Me.btnClose.Location = New System.Drawing.Point(603, 455)
-        Me.btnClose.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(99, 37)
-        Me.btnClose.TabIndex = 9
-        Me.btnClose.Text = "Schließen"
-        Me.btnClose.UseVisualStyleBackColor = True
         '
         'txtVersion
         '
-        Me.txtVersion.Location = New System.Drawing.Point(166, 130)
-        Me.txtVersion.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtVersion.Location = New System.Drawing.Point(221, 162)
+        Me.txtVersion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVersion.Multiline = True
         Me.txtVersion.Name = "txtVersion"
-        Me.txtVersion.Size = New System.Drawing.Size(760, 34)
+        Me.txtVersion.Size = New System.Drawing.Size(1012, 42)
         Me.txtVersion.TabIndex = 10
         '
         'lblVersion
         '
         Me.lblVersion.AutoSize = True
-        Me.lblVersion.Location = New System.Drawing.Point(10, 133)
-        Me.lblVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblVersion.Location = New System.Drawing.Point(13, 166)
         Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(63, 20)
+        Me.lblVersion.Size = New System.Drawing.Size(85, 25)
         Me.lblVersion.TabIndex = 11
         Me.lblVersion.Text = "Version"
+        '
+        'btnClose
+        '
+        Me.btnClose.Location = New System.Drawing.Point(804, 569)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(132, 46)
+        Me.btnClose.TabIndex = 9
+        Me.btnClose.Text = "Schließen"
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'dlgSportEinzel
         '
         Me.AcceptButton = Me.btnSpeichern
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(940, 503)
+        Me.ClientSize = New System.Drawing.Size(1253, 629)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.txtVersion)
         Me.Controls.Add(Me.btnClose)
@@ -306,7 +267,7 @@ Partial Class dlgSportEinzel
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "dlgSportEinzel"
         Me.Text = "Sportart"
         Me.tabSportart.ResumeLayout(False)
@@ -329,9 +290,6 @@ Partial Class dlgSportEinzel
     Friend WithEvents txtHerkunftsland As TextBox
     Friend WithEvents txtMindestalter As TextBox
     Friend WithEvents rtxtZielgruppe As RichTextBox
-    Friend WithEvents btnBearbeiten As Button
-    Friend WithEvents btnNeuerKurs As Button
-    Friend WithEvents btnLoeschen As Button
     Friend WithEvents ListView1 As ListView
     Friend WithEvents colID As ColumnHeader
     Friend WithEvents colZeitpunkt As ColumnHeader
@@ -339,7 +297,7 @@ Partial Class dlgSportEinzel
     Friend WithEvents colTrainer As ColumnHeader
     Friend WithEvents colVerfuegbarkeit As ColumnHeader
     Friend WithEvents colSchwierigkeit As ColumnHeader
-    Friend WithEvents btnClose As Button
     Friend WithEvents txtVersion As TextBox
     Friend WithEvents lblVersion As Label
+    Friend WithEvents btnClose As Button
 End Class
