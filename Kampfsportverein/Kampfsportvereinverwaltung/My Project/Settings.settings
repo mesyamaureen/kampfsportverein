@@ -5,9 +5,11 @@
     <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mesya\Desktop\datenbanksystem02\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfsport_DB.accdb;Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\lukas\OneDrive - beuthhs\vbaProject\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfsport_DB.accdb";Persist Security Info=True
+&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mesya\Desktop\datenbanksystem02\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfsport_DB.accdb;Persist Security Info=True</Value>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\lukas\OneDrive - beuthhs\vbaProject\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfsport_DB.accdb";Persist Security Info=True
+</Value>
     </Setting>
   </Settings>
 </SettingsFile>

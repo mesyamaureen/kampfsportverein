@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -57,9 +57,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mesya\Desktop\datenbanksys"& _ 
-            "tem02\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfsport_DB"& _ 
-            ".accdb;Persist Security Info=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""C:\Users\lukas\OneDrive - beuthhs\"& _ 
+            "vbaProject\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfspo"& _ 
+            "rt_DB.accdb"";Persist Security Info=True"&Global.Microsoft.VisualBasic.ChrW(10))>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)
