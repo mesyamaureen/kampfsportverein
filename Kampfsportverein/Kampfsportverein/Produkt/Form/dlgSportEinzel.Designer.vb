@@ -31,12 +31,11 @@ Partial Class dlgSportEinzel
         Me.tabZielgruppe = New System.Windows.Forms.TabPage()
         Me.rtxtZielgruppe = New System.Windows.Forms.RichTextBox()
         Me.tabKurs = New System.Windows.Forms.TabPage()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.lstKurse = New System.Windows.Forms.ListView()
         Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colZeitpunkt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colOrt = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colTrainer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSchwierigkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtHerkunftsland = New System.Windows.Forms.TextBox()
@@ -132,7 +131,7 @@ Partial Class dlgSportEinzel
         '
         'tabKurs
         '
-        Me.tabKurs.Controls.Add(Me.ListView1)
+        Me.tabKurs.Controls.Add(Me.lstKurse)
         Me.tabKurs.Location = New System.Drawing.Point(8, 39)
         Me.tabKurs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tabKurs.Name = "tabKurs"
@@ -142,21 +141,21 @@ Partial Class dlgSportEinzel
         Me.tabKurs.Text = "Kurs"
         Me.tabKurs.UseVisualStyleBackColor = True
         '
-        'ListView1
+        'lstKurse
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colZeitpunkt, Me.colOrt, Me.colTrainer, Me.colVerfuegbarkeit, Me.colSchwierigkeit})
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(3, 2)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ListView1.MultiSelect = False
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1203, 275)
-        Me.ListView1.TabIndex = 0
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.lstKurse.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colZeitpunkt, Me.colOrt, Me.colTrainer, Me.colSchwierigkeit})
+        Me.lstKurse.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lstKurse.FullRowSelect = True
+        Me.lstKurse.GridLines = True
+        Me.lstKurse.HideSelection = False
+        Me.lstKurse.Location = New System.Drawing.Point(3, 2)
+        Me.lstKurse.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstKurse.MultiSelect = False
+        Me.lstKurse.Name = "lstKurse"
+        Me.lstKurse.Size = New System.Drawing.Size(1203, 275)
+        Me.lstKurse.TabIndex = 0
+        Me.lstKurse.UseCompatibleStateImageBehavior = False
+        Me.lstKurse.View = System.Windows.Forms.View.Details
         '
         'colID
         '
@@ -173,25 +172,19 @@ Partial Class dlgSportEinzel
         '
         Me.colOrt.Text = "Ort"
         Me.colOrt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colOrt.Width = 174
+        Me.colOrt.Width = 236
         '
         'colTrainer
         '
         Me.colTrainer.Text = "Trainer"
         Me.colTrainer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colTrainer.Width = 227
-        '
-        'colVerfuegbarkeit
-        '
-        Me.colVerfuegbarkeit.Text = "Verfügbarkeit"
-        Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVerfuegbarkeit.Width = 175
+        Me.colTrainer.Width = 269
         '
         'colSchwierigkeit
         '
         Me.colSchwierigkeit.Text = "Schwierigkeitsgrad"
         Me.colSchwierigkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colSchwierigkeit.Width = 193
+        Me.colSchwierigkeit.Width = 252
         '
         'txtName
         '
@@ -290,12 +283,11 @@ Partial Class dlgSportEinzel
     Friend WithEvents txtHerkunftsland As TextBox
     Friend WithEvents txtMindestalter As TextBox
     Friend WithEvents rtxtZielgruppe As RichTextBox
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents lstKurse As ListView
     Friend WithEvents colID As ColumnHeader
     Friend WithEvents colZeitpunkt As ColumnHeader
     Friend WithEvents colOrt As ColumnHeader
     Friend WithEvents colTrainer As ColumnHeader
-    Friend WithEvents colVerfuegbarkeit As ColumnHeader
     Friend WithEvents colSchwierigkeit As ColumnHeader
     Friend WithEvents txtVersion As TextBox
     Friend WithEvents lblVersion As Label

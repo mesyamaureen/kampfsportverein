@@ -66,5 +66,23 @@
         Me.txtVersion.Text = pSpor.Version
     End Sub
 
+    Public Sub anzeigenKursuebersicht()
+        Me.lstKurse.Visible = True
+    End Sub
+
+    Public Sub hinzufuegenZeileKurs(plngKursID As Long, pdatZeitpunkt As Date, pstrOrt As String, pTrainer As String, pstrSchwierigkeitsgrad As String)
+        Dim kursZeile As ListViewItem
+        kursZeile = Me.lstKurse.Items.Add(plngKursID)
+        With kursZeile.SubItems
+            .Add(pdatZeitpunkt)
+            .Add(pstrOrt)
+            .Add(pTrainer)
+            .Add(pstrSchwierigkeitsgrad)
+        End With
+    End Sub
+
+    Public Sub leeren()
+        Me.lstKurse.Items.Clear()
+    End Sub
 
 End Class

@@ -5,12 +5,17 @@ Public Class SportartenPresenter
     Public mErgebnis As EPresenterErgebnis
     Public Shared mSpor As Sportart
     Private mView As SportartenEinzelView
+    Private mlstKurse As List(Of Kurs)
+    Private mmitDAO As MitarbeiterDAO
+    Private mtraDAO As TrainerDAO
 
     Sub New(pSpor As Sportart)
 
         mSpor = pSpor
         mView = New SportartenEinzelView(Me)
         mView.anzeigenSportart(mSpor)
+        verarbeiteKursUebersichtAnzeigen()
+        anzeigeKursAlle()
         mView.ShowDialog()
 
     End Sub
@@ -45,6 +50,30 @@ Public Class SportartenPresenter
             Return Nothing
         End Get
         Set(value As Sportart)
+        End Set
+    End Property
+
+    Public Property ListeKurs As List(Of Kurs)
+        Get
+            Return mlstKurse
+        End Get
+        Set(value As List(Of Kurs))
+        End Set
+    End Property
+
+    Public Property MitarbeiterDAO As MitarbeiterDAO
+        Get
+            Return mmitDAO
+        End Get
+        Set(value As MitarbeiterDAO)
+        End Set
+    End Property
+
+    Public Property TrainerDAO As TrainerDAO
+        Get
+            Return mtraDAO
+        End Get
+        Set(value As TrainerDAO)
         End Set
     End Property
 
@@ -101,4 +130,24 @@ Public Class SportartenPresenter
 
     End Sub
 
+    Public Sub anzeigeKursAlle()
+        mView.leeren()
+        mView.anzeigenKursuebersicht()
+        mtraDAO = DAOFactory.Instanz.TrainerDAO
+        Dim ausgewaehlteTra As Trainer
+        For Each kurs As Kurs In mlstKurse
+            ausgewaehlteTra = mtraDAO.findenTrainerId(kurs.BenIdFk)
+            mView.hinzufuegenZeileKurs(mlstKurse.IndexOf(kurs), kurs.Zeitpunkt, kurs.Ort, ausgewaehlteTra.Name, kurs.Schwierigkeitsgrad)
+        Next
+    End Sub
+
+
+    Public Sub verarbeiteKursUebersichtAnzeigen() 'plngSportartIdPk As Long)
+        mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
+        mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
+        'Dim ausgewaehlteSA As Sportart
+        'ausgewaehlteSA = mmitDAO.findeSportart(plngSportartIdPk)
+        mlstKurse = mmitDAO.findenAlleSaKurse(mSpor)
+        anzeigeKursAlle()
+    End Sub
 End Class
