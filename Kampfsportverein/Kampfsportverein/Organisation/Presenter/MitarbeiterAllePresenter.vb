@@ -71,7 +71,7 @@
         mView.anzeigenSportartenuebersicht()
         'anzeigen lstSportart
         For Each sport As Sportart In mlstSportartAlle
-            mView.hinzufuegenZeileSportart(mlstSportartAlle.IndexOf(sport), sport.Name)
+            mView.hinzufuegenZeileSportart(sport.ID, sport.Name)
         Next
     End Sub
 
@@ -141,7 +141,7 @@
         anzeigenTrainerAlle()
     End Sub
 
-    Public Sub verarbeiteSportartÖffnen(plngSportartId As Long) 'button Öffnen
+    Public Sub verarbeiteSportartOeffnen(plngSportartId As Long) 'button Öffnen
         ' Deklaration
         Dim spor As Sportart ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
         Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
@@ -205,7 +205,8 @@
 
         Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
         sporPresenter = New SportartenPresenter()
-        If sporPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht vorhanden -2021-01-27
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPORTART_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteSportartUebersichtAnzeigen()
         End If
     End Sub

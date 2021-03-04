@@ -4,7 +4,8 @@ Imports System.Data.OleDb
 
 Public Class DAO
 
-    Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM @table WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
+    'Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM @table WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
+    Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportarten WHERE SaIdPk = @IdPk AND SaVersion = @Version"
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM @table WHERE @Suchfeld = @Suchbegriff"
     'Eintrag Löschen
     Public Shared Function ElementLoeschen(pstrTable As String, plngIdPk As Long, plngVersion As Long) As Boolean
@@ -13,10 +14,10 @@ Public Class DAO
         Dim cmd As OleDbCommand
         Dim bytresult As Byte
         cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
-        '''Optional: Prüfung ob Datensatz vorhanden ist
+        'Optional: Prüfung ob Datensatz vorhanden ist
         'Platzhalter ersetzen
         cmd.Parameters.AddWithValue("@IdPk", plngIdPk)
-        cmd.Parameters.AddWithValue("@table", pstrTable)
+        'cmd.Parameters.AddWithValue("@table", pstrTable)
         cmd.Parameters.AddWithValue("@Version", plngVersion)
 
         bytresult = cmd.ExecuteNonQuery()

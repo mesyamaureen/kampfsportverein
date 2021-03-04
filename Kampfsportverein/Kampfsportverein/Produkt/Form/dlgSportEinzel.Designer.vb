@@ -45,6 +45,8 @@ Partial Class dlgSportEinzel
         Me.txtHerkunftsland = New System.Windows.Forms.TextBox()
         Me.txtMindestalter = New System.Windows.Forms.TextBox()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.txtVersion = New System.Windows.Forms.TextBox()
+        Me.lblVersion = New System.Windows.Forms.Label()
         Me.tabSportart.SuspendLayout()
         Me.tabZielgruppe.SuspendLayout()
         Me.tabKurs.SuspendLayout()
@@ -84,7 +86,7 @@ Partial Class dlgSportEinzel
         'lblHerkunftsland
         '
         Me.lblHerkunftsland.AutoSize = True
-        Me.lblHerkunftsland.Location = New System.Drawing.Point(9, 74)
+        Me.lblHerkunftsland.Location = New System.Drawing.Point(9, 64)
         Me.lblHerkunftsland.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblHerkunftsland.Name = "lblHerkunftsland"
         Me.lblHerkunftsland.Size = New System.Drawing.Size(109, 20)
@@ -94,7 +96,7 @@ Partial Class dlgSportEinzel
         'lblMindestalter
         '
         Me.lblMindestalter.AutoSize = True
-        Me.lblMindestalter.Location = New System.Drawing.Point(9, 126)
+        Me.lblMindestalter.Location = New System.Drawing.Point(10, 97)
         Me.lblMindestalter.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblMindestalter.Name = "lblMindestalter"
         Me.lblMindestalter.Size = New System.Drawing.Size(96, 20)
@@ -240,7 +242,7 @@ Partial Class dlgSportEinzel
         '
         'txtHerkunftsland
         '
-        Me.txtHerkunftsland.Location = New System.Drawing.Point(166, 67)
+        Me.txtHerkunftsland.Location = New System.Drawing.Point(166, 54)
         Me.txtHerkunftsland.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHerkunftsland.Multiline = True
         Me.txtHerkunftsland.Name = "txtHerkunftsland"
@@ -249,7 +251,7 @@ Partial Class dlgSportEinzel
         '
         'txtMindestalter
         '
-        Me.txtMindestalter.Location = New System.Drawing.Point(166, 121)
+        Me.txtMindestalter.Location = New System.Drawing.Point(166, 92)
         Me.txtMindestalter.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMindestalter.Multiline = True
         Me.txtMindestalter.Name = "txtMindestalter"
@@ -266,6 +268,25 @@ Partial Class dlgSportEinzel
         Me.btnClose.Text = "Schließen"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'txtVersion
+        '
+        Me.txtVersion.Location = New System.Drawing.Point(166, 130)
+        Me.txtVersion.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtVersion.Multiline = True
+        Me.txtVersion.Name = "txtVersion"
+        Me.txtVersion.Size = New System.Drawing.Size(760, 34)
+        Me.txtVersion.TabIndex = 10
+        '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.Location = New System.Drawing.Point(10, 133)
+        Me.lblVersion.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(63, 20)
+        Me.lblVersion.TabIndex = 11
+        Me.lblVersion.Text = "Version"
+        '
         'dlgSportEinzel
         '
         Me.AcceptButton = Me.btnSpeichern
@@ -273,6 +294,8 @@ Partial Class dlgSportEinzel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(940, 503)
+        Me.Controls.Add(Me.lblVersion)
+        Me.Controls.Add(Me.txtVersion)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.txtMindestalter)
         Me.Controls.Add(Me.txtHerkunftsland)
@@ -317,4 +340,6 @@ Partial Class dlgSportEinzel
     Friend WithEvents colVerfuegbarkeit As ColumnHeader
     Friend WithEvents colSchwierigkeit As ColumnHeader
     Friend WithEvents btnClose As Button
+    Friend WithEvents txtVersion As TextBox
+    Friend WithEvents lblVersion As Label
 End Class

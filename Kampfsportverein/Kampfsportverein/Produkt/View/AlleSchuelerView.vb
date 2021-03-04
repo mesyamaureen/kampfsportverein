@@ -34,4 +34,18 @@
     Public Sub anzeigenGeburtsdatum()
 
     End Sub
+
+    Private Sub InitializeComponent()
+        Me.SuspendLayout()
+        '
+        'AlleSchuelerView
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.ClientSize = New System.Drawing.Size(580, 423)
+        Me.Name = "AlleSchuelerView"
+        Me.Text = "gibt dem benutzer ei"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
 End Class

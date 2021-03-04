@@ -20,15 +20,14 @@ Public Class MitarbeiterDAO
     'Private Const SQL_SELECT_SPORTART_BY_SAID As String = "SELECT * FROM tblSportarten WHERE SaIdPk = @IdPk"
 
     ' SQL-Anweisung, um eine Aufgabe zu aktualisieren
-    Private Const SQL_UPDATE As String = "UPDATE tblSportarten SET SaName = @name, SaHerkunft = @herkunft, SaZielgruppe = @zielgruppe, SaMindestalter = @mindestalter, SaVersion = @version"
+    Private Const SQL_UPDATE As String = "UPDATE tblSportarten SET SaName = @name, SaHerkunftsland = @herkunft, SaZielgruppe = @zielgruppe, SaMindestalter = @mindestalter, SaVersion = @version WHERE SaIdPk = @idPk "
 
     ' SQL-Anweisung, um eine Sportart neu hinzuzufügen
-    Private Const SQL_INSERT As String = "INSERT INTO tblSportarten(SaName, SaHerkunft, SaZielgruppe, SaMindestalter, SaVersion)" &
-        "VALUES @name, @herkunft, @zielgruppe, @mindestalter, @version"
+    Private Const SQL_INSERT As String = "INSERT INTO tblSportarten(SaName, SaHerkunftsland, SaZielgruppe, SaMindestalter, SaVersion) VALUES (@name, @herkunft, @zielgruppe, @mindestalter, @version)"
 
 
     ' SQL-Anweisung, um eine Sportart zu löschen
-    Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportart WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
+    Private Const SQL_DELETE_SA_BY_VERSION As String = "DELETE FROM tblSportarten WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
 
     'SQL-Anweisung, um eine Sportart anhand der ID zu ermitteln
     Private Const SQL_SELECT_SPORTART_BY_ID As String = "SELECT * FROM tblSportarten WHERE SaIdPk = @SaIdPk"
@@ -47,8 +46,8 @@ Public Class MitarbeiterDAO
                                                 KuVersion = @kVersion"
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
-    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuVersion" &
-                                           "VALUES @kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kVersion"
+    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuVersion)" &
+                                           "VALUES (@kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kVersion)"
 
     'SQL-Anweisung, um einen Kurs zu löschen
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @kIdPk AND KuVersion = @kVersion;"
@@ -248,14 +247,14 @@ Public Class MitarbeiterDAO
 
 
     Public Shared Function loeschenMitSportartId(plngIdPk As Long, plngVersion As Long) As Boolean
-        Return ElementLoeschen("tblSportarten", plngIdPk, plngVersion)
+        'Return ElementLoeschen("tblSportarten", plngIdPk, plngVersion)
         'Deklaration
         Dim lngAnzahlDatensätze As Long
         Dim cmd As OleDbCommand
 
         oeffnenDatenbank()
 
-        cmd = New OleDbCommand(SQL_DELETE_BY_VERSION, mConnection)
+        cmd = New OleDbCommand(SQL_DELETE_SA_BY_VERSION, mConnection)
         cmd.Parameters.AddWithValue("@IdPk", plngIdPk)
         cmd.Parameters.AddWithValue("@version", plngVersion)
 
@@ -338,7 +337,7 @@ Public Class MitarbeiterDAO
     ''' <summary>
     ''' Hinzufügen einer neuen Aufgabe, indem diese als Datenstaz in die Tabelle tblAufgaben eingefügt wird
     ''' </summary>
-    ''' <param name="pSpor">Zu speichernde neue Aufgabe</param>
+    ' <param name="pSpor">Zu speichernde neue Aufgabe</param>
     ''' <returns>Liefert die ID der neu eingefügten Aufgabe zurück. Wenn das Einfügen fehlschlug, wird -1 zurückgeliefert.</returns>
     ''' <remarks></remarks>
     Private Shared Function hinzufuegen(pSportart As Sportart) As Long 'ID Verwaltung fehlt? -2021-01-30
@@ -348,7 +347,11 @@ Public Class MitarbeiterDAO
         Dim cmd As OleDbCommand
 
         lngIdPk = -1
+
+        oeffnenDatenbank()
+
         cmd = New OleDbCommand(SQL_INSERT, mConnection)
+
         cmd.Parameters.AddWithValue("@name", pSportart.Name)
         cmd.Parameters.AddWithValue("@herkunft", pSportart.Herkunftsland)
         cmd.Parameters.AddWithValue("@zielgruppe", pSportart.Zielgruppe)
@@ -693,6 +696,7 @@ Public Class MitarbeiterDAO
         Dim cmd As OleDbCommand
 
         lngKursIdPk = -1
+
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_INSERT_KURS, mConnection)

@@ -246,7 +246,7 @@
     </Compile>
     <Compile Include="DataAccess\TrainerDAO.vb" />
     <Compile Include="Settings.vb" />
-    <Compile Include="TrainerkontoPresenter.vb" />
+    <Compile Include="Organisation\Presenter\TrainerkontoPresenter.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -299,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produkt\Form\dlgSportEinzel.resx">
       <DependentUpon>dlgSportEinzel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Produkt\View\AlleSchuelerView.resx">
+      <DependentUpon>AlleSchuelerView.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

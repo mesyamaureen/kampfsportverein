@@ -36,6 +36,7 @@
             Return mbyteMindestalter
         End Get
         Set(value As Byte)
+            mbyteMindestalter = value
         End Set
     End Property
 
@@ -44,6 +45,7 @@
             Return mstrHerkunftsland
         End Get
         Set(value As String)
+            mstrHerkunftsland = value
         End Set
     End Property
 
@@ -52,6 +54,7 @@
             Return mstrName
         End Get
         Set(value As String)
+            mstrName = value
         End Set
     End Property
 
@@ -60,6 +63,7 @@
             Return mstrZielgruppe
         End Get
         Set(value As String)
+            mstrZielgruppe = value
         End Set
     End Property
 
@@ -68,7 +72,7 @@
             Return mlngVersion
         End Get
         Set(value As Long)
-
+            mlngVersion = value
         End Set
     End Property
 

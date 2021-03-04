@@ -48,7 +48,7 @@
 
         If Me.lstSportart.SelectedItems.Count > 0 Then
             lngSportartId = Me.lstSportart.SelectedItems(0).Text
-            mPresenter.verarbeiteSportartÖffnen(lngSportartId)
+            mPresenter.verarbeiteSportartOeffnen(lngSportartId)
         ElseIf Me.lstKurseAlle.SelectedItems.Count > 0 Then
             lngKursId = Me.lstKurseAlle.SelectedItems(0).Text
             mPresenter.verarbeiteKursOeffnen(lngKursId)

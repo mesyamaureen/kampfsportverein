@@ -24,7 +24,8 @@
         'If mbrResult = vbNo Then
         'DialogResult = Nothing
         'Else
-        mPresenter.verarbeiteAbbrechen()
+        'mPresenter.verarbeiteAbbrechen()
+        MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel)
         'End If
     End Sub
 
@@ -34,17 +35,25 @@
         mSpor.Herkunftsland = Me.txtHerkunftsland.Text
         mSpor.Mindestalter = Me.txtMindestalter.Text
         mSpor.Zielgruppe = Me.rtxtZielgruppe.Text
+        mSpor.Version = Me.txtVersion.Text
 
         mPresenter.verarbeiteClose(mSpor)
     End Sub
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
         Dim mSpor As Sportart = New Sportart
-        mSpor.Name = Me.txtName.Text
-        mSpor.Herkunftsland = Me.txtHerkunftsland.Text
-        mSpor.Mindestalter = Me.txtMindestalter.Text
-        mSpor.Zielgruppe = Me.rtxtZielgruppe.Text
-
+        Try
+            mSpor.Name = Me.txtName.Text
+            mSpor.Herkunftsland = Me.txtHerkunftsland.Text
+            mSpor.Mindestalter = Me.txtMindestalter.Text
+            mSpor.Zielgruppe = Me.rtxtZielgruppe.Text
+            mSpor.Version = Me.txtVersion.Text
+            Exit Try
+        Catch
+            MsgBox("Bitte Überprüfen Sie die Eingaben")
+            Exit Sub
+            Exit Try
+        End Try
         mPresenter.verarbeiteSpeichern(mSpor)
     End Sub
 
@@ -54,7 +63,7 @@
         Me.txtHerkunftsland.Text = pSpor.Herkunftsland
         Me.txtMindestalter.Text = pSpor.Mindestalter
         Me.rtxtZielgruppe.Text = pSpor.Zielgruppe
-
+        Me.txtVersion.Text = pSpor.Version
     End Sub
 
 

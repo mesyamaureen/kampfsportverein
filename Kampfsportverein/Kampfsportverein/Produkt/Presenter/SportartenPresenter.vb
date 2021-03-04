@@ -18,8 +18,9 @@ Public Class SportartenPresenter
     Sub New()
 
         mView = New SportartenEinzelView(Me)
-        mView.ShowDialog()
         mSpor = New Sportart
+        mView.ShowDialog()
+
 
     End Sub
 
@@ -54,13 +55,13 @@ Public Class SportartenPresenter
         If mSpor.Name = pSpor.Name And mSpor.Herkunftsland = pSpor.Herkunftsland And
             mSpor.Mindestalter = pSpor.Mindestalter And mSpor.Zielgruppe = pSpor.Zielgruppe Then
 
-            Me.Close()
+            mView.Close()
         Else
             If MessageBox.Show("Wollen Sie die eingegebenen Änderungen abspeichern?", "Speichern", MessageBoxButtons.YesNo) _
             = Windows.Forms.DialogResult.Yes Then
                 verarbeiteSpeichern(pSpor)
             Else
-                Me.Close()
+                mView.Close()
             End If
         End If
     End Sub
@@ -68,29 +69,31 @@ Public Class SportartenPresenter
     Public Sub verarbeiteAbbrechen()
         'Prüfschleife ob abgebrochen werde soll - Yes No
 
-        If MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.YesNo) _
-        = Windows.Forms.DialogResult.Yes Then
-            Me.Close()
+        If MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel) _
+        = Windows.Forms.DialogResult.OK Then
+            mView.Close()
         End If
 
     End Sub
 
     Public Sub verarbeiteSpeichern(pSpor As Sportart)
+
         If String.IsNullOrEmpty(pSpor.Name) Or String.IsNullOrEmpty(pSpor.Herkunftsland) Or
-        String.IsNullOrEmpty(pSpor.Mindestalter) Or String.IsNullOrEmpty(pSpor.Zielgruppe) Then 'Kontrolle ob Byte NullOrEmpty Kann Fehlerquelle Sein
+        String.IsNullOrEmpty(pSpor.Mindestalter) Or String.IsNullOrEmpty(pSpor.Zielgruppe) Then
             MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
         Else
             mSpor.Name = pSpor.Name
             mSpor.Herkunftsland = pSpor.Herkunftsland
             mSpor.Zielgruppe = pSpor.Zielgruppe
             mSpor.Mindestalter = pSpor.Mindestalter
+
             mSpor.Version = pSpor.Version + 1
 
             Dim Ergebnis As Long
             Ergebnis = MitarbeiterDAO.speichern(mSpor)
             If Ergebnis = mSpor.ID Then
-                mErgebnis = EPresenterErgebnis.SPEICHERN
-                Me.Close()
+                mErgebnis = EPresenterErgebnis.SPORTART_EINZELN
+                mView.Close()
             Else
                 MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
             End If

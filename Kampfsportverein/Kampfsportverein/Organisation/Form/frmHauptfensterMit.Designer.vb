@@ -66,7 +66,7 @@ Partial Class frmHauptfensterMit
         'btnBeenden
         '
         Me.btnBeenden.Location = New System.Drawing.Point(830, 718)
-        Me.btnBeenden.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnBeenden.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBeenden.Name = "btnBeenden"
         Me.btnBeenden.Size = New System.Drawing.Size(95, 35)
         Me.btnBeenden.TabIndex = 0
@@ -86,9 +86,9 @@ Partial Class frmHauptfensterMit
         Me.grpboxMenu.Controls.Add(Me.picboxNeuerTrainer)
         Me.grpboxMenu.Controls.Add(Me.picboxNeueSportart)
         Me.grpboxMenu.Location = New System.Drawing.Point(9, 10)
-        Me.grpboxMenu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.grpboxMenu.Name = "grpboxMenu"
-        Me.grpboxMenu.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxMenu.Padding = New System.Windows.Forms.Padding(2)
         Me.grpboxMenu.Size = New System.Drawing.Size(260, 678)
         Me.grpboxMenu.TabIndex = 1
         Me.grpboxMenu.TabStop = False
@@ -96,7 +96,7 @@ Partial Class frmHauptfensterMit
         'btnTrainer
         '
         Me.btnTrainer.Location = New System.Drawing.Point(123, 584)
-        Me.btnTrainer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnTrainer.Margin = New System.Windows.Forms.Padding(2)
         Me.btnTrainer.Name = "btnTrainer"
         Me.btnTrainer.Size = New System.Drawing.Size(109, 52)
         Me.btnTrainer.TabIndex = 9
@@ -106,7 +106,7 @@ Partial Class frmHauptfensterMit
         'btnSchueler
         '
         Me.btnSchueler.Location = New System.Drawing.Point(123, 443)
-        Me.btnSchueler.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSchueler.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSchueler.Name = "btnSchueler"
         Me.btnSchueler.Size = New System.Drawing.Size(109, 52)
         Me.btnSchueler.TabIndex = 8
@@ -116,7 +116,7 @@ Partial Class frmHauptfensterMit
         'PictureBox2
         '
         Me.PictureBox2.Location = New System.Drawing.Point(14, 565)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(91, 88)
         Me.PictureBox2.TabIndex = 7
@@ -125,7 +125,7 @@ Partial Class frmHauptfensterMit
         'PictureBox1
         '
         Me.PictureBox1.Location = New System.Drawing.Point(14, 425)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(91, 88)
         Me.PictureBox1.TabIndex = 6
@@ -134,7 +134,7 @@ Partial Class frmHauptfensterMit
         'btnKurs
         '
         Me.btnKurs.Location = New System.Drawing.Point(123, 306)
-        Me.btnKurs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnKurs.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKurs.Name = "btnKurs"
         Me.btnKurs.Size = New System.Drawing.Size(109, 52)
         Me.btnKurs.TabIndex = 5
@@ -144,7 +144,7 @@ Partial Class frmHauptfensterMit
         'picboxNeuerKurs
         '
         Me.picboxNeuerKurs.Location = New System.Drawing.Point(14, 289)
-        Me.picboxNeuerKurs.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picboxNeuerKurs.Margin = New System.Windows.Forms.Padding(2)
         Me.picboxNeuerKurs.Name = "picboxNeuerKurs"
         Me.picboxNeuerKurs.Size = New System.Drawing.Size(91, 88)
         Me.picboxNeuerKurs.TabIndex = 4
@@ -153,7 +153,7 @@ Partial Class frmHauptfensterMit
         'btnSportarten
         '
         Me.btnSportarten.Location = New System.Drawing.Point(123, 172)
-        Me.btnSportarten.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnSportarten.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSportarten.Name = "btnSportarten"
         Me.btnSportarten.Size = New System.Drawing.Size(109, 52)
         Me.btnSportarten.TabIndex = 3
@@ -163,7 +163,7 @@ Partial Class frmHauptfensterMit
         'btnMeinKonto
         '
         Me.btnMeinKonto.Location = New System.Drawing.Point(123, 46)
-        Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(109, 52)
         Me.btnMeinKonto.TabIndex = 2
@@ -173,7 +173,7 @@ Partial Class frmHauptfensterMit
         'picboxNeuerTrainer
         '
         Me.picboxNeuerTrainer.Location = New System.Drawing.Point(14, 154)
-        Me.picboxNeuerTrainer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picboxNeuerTrainer.Margin = New System.Windows.Forms.Padding(2)
         Me.picboxNeuerTrainer.Name = "picboxNeuerTrainer"
         Me.picboxNeuerTrainer.Size = New System.Drawing.Size(91, 88)
         Me.picboxNeuerTrainer.TabIndex = 1
@@ -182,7 +182,7 @@ Partial Class frmHauptfensterMit
         'picboxNeueSportart
         '
         Me.picboxNeueSportart.Location = New System.Drawing.Point(14, 24)
-        Me.picboxNeueSportart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.picboxNeueSportart.Margin = New System.Windows.Forms.Padding(2)
         Me.picboxNeueSportart.Name = "picboxNeueSportart"
         Me.picboxNeueSportart.Size = New System.Drawing.Size(91, 88)
         Me.picboxNeueSportart.TabIndex = 0
@@ -198,9 +198,9 @@ Partial Class frmHauptfensterMit
         Me.grpboxSportartliste.Controls.Add(Me.lstSchuelerAlle)
         Me.grpboxSportartliste.Controls.Add(Me.lstKurseAlle)
         Me.grpboxSportartliste.Location = New System.Drawing.Point(282, 10)
-        Me.grpboxSportartliste.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxSportartliste.Margin = New System.Windows.Forms.Padding(2)
         Me.grpboxSportartliste.Name = "grpboxSportartliste"
-        Me.grpboxSportartliste.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.grpboxSportartliste.Padding = New System.Windows.Forms.Padding(2)
         Me.grpboxSportartliste.Size = New System.Drawing.Size(643, 678)
         Me.grpboxSportartliste.TabIndex = 2
         Me.grpboxSportartliste.TabStop = False
@@ -208,7 +208,7 @@ Partial Class frmHauptfensterMit
         'btnNeu
         '
         Me.btnNeu.Location = New System.Drawing.Point(327, 627)
-        Me.btnNeu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnNeu.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNeu.Name = "btnNeu"
         Me.btnNeu.Size = New System.Drawing.Size(95, 35)
         Me.btnNeu.TabIndex = 6
@@ -218,7 +218,7 @@ Partial Class frmHauptfensterMit
         'btnLoeschen
         '
         Me.btnLoeschen.Location = New System.Drawing.Point(435, 627)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoeschen.Name = "btnLoeschen"
         Me.btnLoeschen.Size = New System.Drawing.Size(95, 35)
         Me.btnLoeschen.TabIndex = 5
@@ -228,7 +228,7 @@ Partial Class frmHauptfensterMit
         'btnOeffnen
         '
         Me.btnOeffnen.Location = New System.Drawing.Point(543, 627)
-        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(2)
         Me.btnOeffnen.Name = "btnOeffnen"
         Me.btnOeffnen.Size = New System.Drawing.Size(95, 35)
         Me.btnOeffnen.TabIndex = 4
@@ -242,7 +242,7 @@ Partial Class frmHauptfensterMit
         Me.lstSportart.GridLines = True
         Me.lstSportart.HideSelection = False
         Me.lstSportart.Location = New System.Drawing.Point(-9, 7)
-        Me.lstSportart.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstSportart.Margin = New System.Windows.Forms.Padding(2)
         Me.lstSportart.MultiSelect = False
         Me.lstSportart.Name = "lstSportart"
         Me.lstSportart.Size = New System.Drawing.Size(644, 604)
@@ -253,13 +253,13 @@ Partial Class frmHauptfensterMit
         'colID
         '
         Me.colID.Text = "ID"
-        Me.colID.Width = 129
+        Me.colID.Width = 100
         '
         'colSportart
         '
         Me.colSportart.Text = "Sportart"
         Me.colSportart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colSportart.Width = 721
+        Me.colSportart.Width = 300
         '
         'lstTrainer
         '
@@ -268,7 +268,7 @@ Partial Class frmHauptfensterMit
         Me.lstTrainer.GridLines = True
         Me.lstTrainer.HideSelection = False
         Me.lstTrainer.Location = New System.Drawing.Point(4, 7)
-        Me.lstTrainer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstTrainer.Margin = New System.Windows.Forms.Padding(2)
         Me.lstTrainer.MultiSelect = False
         Me.lstTrainer.Name = "lstTrainer"
         Me.lstTrainer.Size = New System.Drawing.Size(644, 604)
@@ -300,7 +300,7 @@ Partial Class frmHauptfensterMit
         Me.lstSchuelerAlle.GridLines = True
         Me.lstSchuelerAlle.HideSelection = False
         Me.lstSchuelerAlle.Location = New System.Drawing.Point(4, 7)
-        Me.lstSchuelerAlle.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstSchuelerAlle.Margin = New System.Windows.Forms.Padding(2)
         Me.lstSchuelerAlle.MultiSelect = False
         Me.lstSchuelerAlle.Name = "lstSchuelerAlle"
         Me.lstSchuelerAlle.Size = New System.Drawing.Size(644, 604)
@@ -332,7 +332,7 @@ Partial Class frmHauptfensterMit
         Me.lstKurseAlle.GridLines = True
         Me.lstKurseAlle.HideSelection = False
         Me.lstKurseAlle.Location = New System.Drawing.Point(4, 7)
-        Me.lstKurseAlle.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstKurseAlle.Margin = New System.Windows.Forms.Padding(2)
         Me.lstKurseAlle.MultiSelect = False
         Me.lstKurseAlle.Name = "lstKurseAlle"
         Me.lstKurseAlle.Size = New System.Drawing.Size(644, 604)
@@ -371,7 +371,7 @@ Partial Class frmHauptfensterMit
         Me.Controls.Add(Me.grpboxSportartliste)
         Me.Controls.Add(Me.grpboxMenu)
         Me.Controls.Add(Me.btnBeenden)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmHauptfensterMit"
         Me.Text = "Kampfsportverein"
         Me.grpboxMenu.ResumeLayout(False)
