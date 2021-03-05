@@ -15,7 +15,7 @@
 
     Public Property Ergebnis As EPresenterErgebnis
         Get
-            Return Nothing
+            Return mErgebnis
         End Get
         Set(value As EPresenterErgebnis)
         End Set

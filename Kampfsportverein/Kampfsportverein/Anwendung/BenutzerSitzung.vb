@@ -72,10 +72,10 @@
                 beenden()
             Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
                 presenter.verarbeiteKursuebersichtAnzeigen() '(i)
-            Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
-                presenter.verarbeiteEigenesProfilAnzeigen()
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
                 presenter.verarbeiteSchueleruebersichtAnzeigen()
+            Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
+                presenter.verarbeiteEigenesProfilAnzeigen()
             Case Else
                 MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
                        MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")

@@ -16,8 +16,8 @@
 
         'Daten an die Oberfläche übergeben
         verarbeiteKursuebersichtAnzeigen()
-        verarbeiteEigenesProfilAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
+        verarbeiteEigenesProfilAnzeigen()
         anzeigenKursAlle()
         anzeigenSchuelerAlle()
 
@@ -58,14 +58,6 @@
         End Set
     End Property
 
-    'Public Property Trainer As Trainer
-    '    Get
-    '        Return mTrainerAlle
-    '    End Get
-    '    Set(value As Trainer)
-    '    End Set
-    'End Property
-
     Private Sub anzeigenKursAlle() 'anzeigen der Liste von Kurs auf dem frmHauptfensterTrainer
         mView.leeren()
         mView.anzeigenKurse()
@@ -83,17 +75,8 @@
             mView.anzeigenSchuelerUebersicht(mlstSchuelerAlle.IndexOf(schueler), schueler.Name, schueler.Vorname)
         Next
     End Sub
-
-    Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto 
-        Dim presenter As TrainerkontoPresenter = New TrainerkontoPresenter()
-        If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
-            presenter.anzeigen()
-        Else 'nichts tun
-        End If
-    End Sub
-
     Public Sub verarbeiteKursuebersichtAnzeigen() 'button Kurse
-        mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
+        mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
         Dim mitDAO As MitarbeiterDAO
         Dim benAngemeldet As Benutzer
 
@@ -105,13 +88,19 @@
         mlstKursAlle = mitDAO.findenBenKurs(benAngemeldet)
         anzeigenKursAlle()
     End Sub
-
     Public Sub verarbeiteSchueleruebersichtAnzeigen() 'button Schüler
-        mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
         mErgebnis = EPresenterErgebnis.MITGLIEDER_ANZEIGEN
         mtraDAO = DAOFactory.Instanz.TrainerDAO
         mlstSchuelerAlle = mtraDAO.findeAlleSchueler()
         anzeigenSchuelerAlle()
+    End Sub
+
+    Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto 
+        Dim presenter As TrainerkontoPresenter = New TrainerkontoPresenter()
+        If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
+            presenter.anzeigen()
+        Else 'nichts tun
+        End If
     End Sub
 
     Public Sub verarbeiteKursOeffnen(plngKursId As Long) 'buttonÖffnen

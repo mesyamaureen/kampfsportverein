@@ -22,7 +22,4 @@
         mPresenter.verarbeitenAbbrechen()
     End Sub
 
-    Private Sub txtPasswort_TextChanged(sender As Object, e As EventArgs) Handles txtPasswort.TextChanged
-
-    End Sub
 End Class

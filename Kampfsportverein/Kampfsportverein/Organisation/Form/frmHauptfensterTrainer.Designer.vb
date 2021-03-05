@@ -67,7 +67,7 @@ Partial Class frmHauptfensterTrainer
         '
         'btnSchueler
         '
-        Me.btnSchueler.Location = New System.Drawing.Point(17, 572)
+        Me.btnSchueler.Location = New System.Drawing.Point(17, 314)
         Me.btnSchueler.Name = "btnSchueler"
         Me.btnSchueler.Size = New System.Drawing.Size(309, 222)
         Me.btnSchueler.TabIndex = 5
@@ -77,7 +77,7 @@ Partial Class frmHauptfensterTrainer
         '
         'btnKurse
         '
-        Me.btnKurse.Location = New System.Drawing.Point(17, 299)
+        Me.btnKurse.Location = New System.Drawing.Point(17, 30)
         Me.btnKurse.Name = "btnKurse"
         Me.btnKurse.Size = New System.Drawing.Size(309, 222)
         Me.btnKurse.TabIndex = 4
@@ -87,7 +87,7 @@ Partial Class frmHauptfensterTrainer
         '
         'btnMeinKonto
         '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(17, 30)
+        Me.btnMeinKonto.Location = New System.Drawing.Point(17, 604)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(309, 222)
         Me.btnMeinKonto.TabIndex = 3
