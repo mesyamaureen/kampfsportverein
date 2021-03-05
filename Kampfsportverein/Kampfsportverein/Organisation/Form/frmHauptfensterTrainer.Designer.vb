@@ -72,7 +72,7 @@ Partial Class frmHauptfensterTrainer
         Me.btnSchueler.Size = New System.Drawing.Size(309, 222)
         Me.btnSchueler.TabIndex = 5
         Me.btnSchueler.Text = "Schüler"
-        Me.btnSchueler.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnSchueler.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSchueler.UseVisualStyleBackColor = True
         '
         'btnKurse
@@ -82,7 +82,7 @@ Partial Class frmHauptfensterTrainer
         Me.btnKurse.Size = New System.Drawing.Size(309, 222)
         Me.btnKurse.TabIndex = 4
         Me.btnKurse.Text = "Kurse"
-        Me.btnKurse.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnKurse.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnKurse.UseVisualStyleBackColor = True
         '
         'btnMeinKonto
@@ -92,7 +92,7 @@ Partial Class frmHauptfensterTrainer
         Me.btnMeinKonto.Size = New System.Drawing.Size(309, 222)
         Me.btnMeinKonto.TabIndex = 3
         Me.btnMeinKonto.Text = "Mein Konto"
-        Me.btnMeinKonto.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnMeinKonto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnMeinKonto.UseVisualStyleBackColor = True
         '
         'grpboxKurs
@@ -110,20 +110,22 @@ Partial Class frmHauptfensterTrainer
         '
         'btnLoeschen
         '
-        Me.btnLoeschen.Location = New System.Drawing.Point(571, 802)
+        Me.btnLoeschen.Location = New System.Drawing.Point(559, 802)
         Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(135, 40)
+        Me.btnLoeschen.Size = New System.Drawing.Size(147, 40)
         Me.btnLoeschen.TabIndex = 5
         Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnLoeschen.UseVisualStyleBackColor = True
         '
         'btnNeu
         '
-        Me.btnNeu.Location = New System.Drawing.Point(419, 802)
+        Me.btnNeu.Location = New System.Drawing.Point(407, 802)
         Me.btnNeu.Name = "btnNeu"
         Me.btnNeu.Size = New System.Drawing.Size(135, 40)
         Me.btnNeu.TabIndex = 4
         Me.btnNeu.Text = "Neu"
+        Me.btnNeu.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNeu.UseVisualStyleBackColor = True
         '
         'btnOeffnen
@@ -133,6 +135,7 @@ Partial Class frmHauptfensterTrainer
         Me.btnOeffnen.Size = New System.Drawing.Size(135, 40)
         Me.btnOeffnen.TabIndex = 3
         Me.btnOeffnen.Text = "Öffnen"
+        Me.btnOeffnen.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnOeffnen.UseVisualStyleBackColor = True
         '
         'lstSchueler
