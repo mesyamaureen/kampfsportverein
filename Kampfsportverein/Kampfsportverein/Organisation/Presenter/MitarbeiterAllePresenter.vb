@@ -11,20 +11,20 @@
 
     Public Sub New()
         mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
-
-        mlstSportartAlle = Kampfsportverein.mlstSportart
-        mlstKurseAlle = Kampfsportverein.mlstKurs
-        mlstSchuelerAlle = Kampfsportverein.mlstSchueler
-        mlstTrainerAlle = Kampfsportverein.mlstTrainer
-        anzeigenMitarbeiterAlle()
-        anzeigenKursAlle()
-        anzeigenSchueleruebersichtAnzeigen()
-        anzeigenTrainerAlle()
+        'SOLLTE BIS ZEILE 18 GELÖSCHT WERDEN (AM ENDE)
+        'mlstSportartAlle = Kampfsportverein.mlstSportart
+        'mlstKurseAlle = Kampfsportverein.mlstKurs
+        'mlstSchuelerAlle = Kampfsportverein.mlstSchueler
+        'mlstTrainerAlle = Kampfsportverein.mlstTrainer
         'verarbeiteMitarbeiterEinzeln()
         verarbeiteSportartUebersichtAnzeigen()
         verarbeiteKursuebersichtAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
         verarbeiteTrainerUebersichtAnzeigen()
+        anzeigenMitarbeiterAlle()
+        anzeigenKursAlle()
+        anzeigenSchueleruebersichtAnzeigen()
+        anzeigenTrainerAlle()
 
         'Daten an die Oberfläche übergeben
         anzeigenKursAlle()

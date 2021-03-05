@@ -10,16 +10,16 @@
     'Parameterloser Konstruktor
     Public Sub New()
         mView = New TrainerAlleView(Me)
-        mlstKursAlle = Kampfsportverein.mlstKurs
-        mlstSchuelerAlle = Kampfsportverein.mlstSchueler
+        'mlstKursAlle = Kampfsportverein.mlstKurs
+        'mlstSchuelerAlle = Kampfsportverein.mlstSchueler SOLLTE BIS HIER GELÖSCHT WERDEN (AM ENDE)
         mTrainerAlle = New Trainer
 
         'Daten an die Oberfläche übergeben
-        anzeigenKursAlle()
-        anzeigenSchuelerAlle()
         verarbeiteKursuebersichtAnzeigen()
         verarbeiteEigenesProfilAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
+        anzeigenKursAlle()
+        anzeigenSchuelerAlle()
 
         'Anzeige der View als Oberfläche (Formular)
         mView.ShowDialog()
