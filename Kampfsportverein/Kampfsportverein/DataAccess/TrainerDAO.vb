@@ -13,6 +13,9 @@ Public Class TrainerDAO
     'SQL-Anweisung, um alle Trainer zu ermitteln
     Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenTyp = 'T'"
 
+    'SQL-Anweisung, um Trainer zu löschen
+    Private Const SQL_DELETE_BY_VERSION_TRAINER As String = "DELETE FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk AND BenVersion = @benVersion AND BenTyp = 'T';"
+
     'SQL-Anweisung, um alle Schüler zu ermitteln
     Private Const SQL_SELECT_SCHUELER As String = "SELECT * FROM tblSchueler"
 
@@ -167,6 +170,28 @@ Public Class TrainerDAO
         Return lstTrainer
     End Function
 
+    Public Shared Function loeschenTrainer(plngBenutzerIdPk As Long, plngVersion As Long) As Boolean
+        'Deklaration
+        Dim lngAnzahlDatensaetze As Long
+        Dim cmd As OleDbCommand
+
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_DELETE_BY_VERSION_TRAINER, mConnection)
+        cmd.Parameters.AddWithValue("@BenIdPk", plngBenutzerIdPk)
+        cmd.Parameters.AddWithValue("@BenVersion", plngVersion)
+
+        lngAnzahlDatensaetze = cmd.ExecuteNonQuery()
+
+        schliessenDatenbank()
+
+        If lngAnzahlDatensaetze = 1 Then
+            Return True 'Nicht erfolgreich, deshalb False zurückgeben
+        Else
+            Return False 'erfolgreich, deshalb True
+        End If
+
+    End Function
 
     Public Function findenAlleMitSchuelerId(plngIdPk As Long) As Schueler
 

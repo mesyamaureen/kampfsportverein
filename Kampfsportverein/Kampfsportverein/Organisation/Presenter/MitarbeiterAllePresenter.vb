@@ -255,9 +255,10 @@
     Public Sub verarbeiteLoeschenSchueler(plngSchuId As Long)
         Dim schu As Schueler
         Dim bolSchuErgebnis As Boolean
-        schu = mTrainerDAO.findenAlleMitSchuelerId(plngSchuId)
-        bolSchuErgebnis = TrainerDAO.loeschenMitSchuelerId(plngSchuId, schu.Version)
-        If bolSchuErgebnis Then
+        plngSchuId -= 1
+        schu = mlstSchuelerAlle.Item(plngSchuId)
+        bolSchuErgebnis = TrainerDAO.loeschenMitSchuelerId(schu.SchuelerIdPk, schu.Version)
+        If bolSchuErgebnis = True Then
             verarbeiteSchueleruebersichtAnzeigen()
         Else
             MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
@@ -267,8 +268,14 @@
     Public Sub verarbeiteLoeschenTrainer(plngTraId As Long)
         Dim tra As Trainer
         Dim bolTraErgebnis As Boolean
+        'plngTraId -= 1
         tra = mTrainerDAO.findenTrainerId(plngTraId)
-        'need to create a loeschenTrainerId Function in TrainerDAO!
+        bolTraErgebnis = TrainerDAO.loeschenTrainer(tra.BenutzerID, tra.Version)
+        If bolTraErgebnis = True Then
+            verarbeiteTrainerUebersichtAnzeigen()
+        Else
+            MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
+        End If
     End Sub
 
     Public Sub verarbeiteBeenden() 'button Beenden
