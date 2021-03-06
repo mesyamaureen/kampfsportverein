@@ -33,14 +33,6 @@
         End Set
     End Property
 
-    Public Property Ergebnis As EPresenterErgebnis
-        Get
-            Return mErgebnis
-        End Get
-        Set(value As EPresenterErgebnis)
-        End Set
-    End Property
-
     Public Property TraDAO As TrainerDAO
         Get
             Return mtraDAO

@@ -78,18 +78,16 @@
     Private Sub anzeigenKursAlle()
         mView.leeren()
         mView.anzeigenKursuebersicht()
-        'anzeigen lstKurs
         For Each kurs As Kurs In mlstKurseAlle
-            mView.hinzufuegenZeileKurse(mlstKurseAlle.IndexOf(kurs), kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
+            mView.hinzufuegenZeileKurse(kurs.IdPk, kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
         Next
     End Sub
 
     Private Sub anzeigenSchueleruebersichtAnzeigen()
         mView.leeren()
         mView.anzeigenSchueleruebersicht()
-        'anzeigen lstKurs
         For Each schueler As Schueler In mlstSchuelerAlle
-            mView.hinzufuegenZeileSchueler(mlstSchuelerAlle.IndexOf(schueler), schueler.Name, schueler.Vorname)
+            mView.hinzufuegenZeileSchueler(schueler.SchuelerIdPk, schueler.Name, schueler.Vorname)
         Next
     End Sub
 
@@ -97,7 +95,7 @@
         mView.leeren()
         mView.anzeigenTraineruebersicht()
         For Each trainer As Trainer In mlstTrainerAlle
-            mView.hinzufuegenZeileTrainer(mlstTrainerAlle.IndexOf(trainer), trainer.Name, trainer.Vorname)
+            mView.hinzufuegenZeileTrainer(trainer.BenutzerID, trainer.Name, trainer.Vorname)
         Next
     End Sub
 
@@ -162,7 +160,6 @@
         Dim kursPresenter As KursPresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
-        plngKursId += 1  'weil Index auf Datenbank von 1 anfängt
         ausgewaehlterKurs = mMitarbeiterDAO.findeKurs(plngKursId)
         ' Übergeben der Sportart zur Anzeige im Presenter
         kursPresenter = New KursPresenter(ausgewaehlterKurs)
@@ -178,7 +175,6 @@
         Dim schuPresenter As SchuelerAllePresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
-        plngSchuelerId += 1
         schueler = mTrainerDAO.findenAlleMitSchuelerId(plngSchuelerId) ' Übergeben der Sportart zur Anzeige im Presenter
         schuPresenter = New SchuelerAllePresenter(schueler)
 
@@ -190,13 +186,12 @@
 
     Public Sub verarbeiteTrainerOeffnen(plngTrainerId As Long) 'button Öffnen für Trainer
         Dim tra As Trainer ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
-        Dim traPresenter As TrainerkontoPresenter ' Presenter zum anzeigen der Sportart
+        Dim traPresenter As KontoTrainerPresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
-        plngTrainerId += 1
         tra = mTrainerDAO.findenTrainerId(plngTrainerId)
         ' Übergeben der Sportart zur Anzeige im Presenter
-        traPresenter = New TrainerkontoPresenter()
+        traPresenter = New KontoTrainerPresenter(tra)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
         If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31

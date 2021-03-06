@@ -1,6 +1,5 @@
-﻿Public Class dlgMeinKontoTrainer
-
-    Public mPresenter As TrainerkontoPresenter
+﻿Public Class dlgKontoTrainer
+    Private mPresenter As KontoTrainerPresenter
     Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
@@ -10,11 +9,11 @@
 
     End Sub
 
-    Public Property Presenter As TrainerkontoPresenter
+    Public Property Presenter As KontoTrainerPresenter
         Get
-            Return Nothing
+            Return mPresenter
         End Get
-        Set(value As TrainerkontoPresenter)
+        Set(value As KontoTrainerPresenter)
         End Set
     End Property
 
@@ -22,8 +21,7 @@
         mPresenter.verarbeiteSpeichern()
     End Sub
 
-    Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        mPresenter.verarbeiteAbbrechen()
-    End Sub
-
+    'Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
+    '    mPresenter.verarbeiteAbbrechen()
+    'End Sub
 End Class

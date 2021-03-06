@@ -97,7 +97,7 @@
     <Compile Include="Organisation\View\NeuerTrainerView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organisation\View\MeinTrainerkontoView.vb">
+    <Compile Include="Organisation\View\KontoTrainerView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Organisation\View\MitarbeiterKontoView.vb">
@@ -167,10 +167,10 @@
     <Compile Include="Organisation\Form\dlgMeinKontoMit.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organisation\Form\dlgMeinKontoTrainer.Designer.vb">
-      <DependentUpon>dlgMeinKontoTrainer.vb</DependentUpon>
+    <Compile Include="Organisation\Form\dlgKontoTrainer.Designer.vb">
+      <DependentUpon>dlgKontoTrainer.vb</DependentUpon>
     </Compile>
-    <Compile Include="Organisation\Form\dlgMeinKontoTrainer.vb">
+    <Compile Include="Organisation\Form\dlgKontoTrainer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Organisation\Form\dlgNeuerTrainer.Designer.vb">
@@ -182,9 +182,7 @@
     <Compile Include="Organisation\Form\dlgTrainerKonto.Designer.vb">
       <DependentUpon>dlgTrainerKonto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Organisation\Form\dlgTrainerKonto.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Organisation\Form\dlgTrainerKonto.vb" />
     <Compile Include="Organisation\Form\frmHauptfensterMit.Designer.vb">
       <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
     </Compile>
@@ -246,7 +244,7 @@
     </Compile>
     <Compile Include="DataAccess\TrainerDAO.vb" />
     <Compile Include="Settings.vb" />
-    <Compile Include="Organisation\Presenter\TrainerkontoPresenter.vb" />
+    <Compile Include="Organisation\Presenter\KontoTrainerPresenter.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -267,8 +265,8 @@
     <EmbeddedResource Include="Organisation\Form\dlgMeinKontoMit.resx">
       <DependentUpon>dlgMeinKontoMit.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Organisation\Form\dlgMeinKontoTrainer.resx">
-      <DependentUpon>dlgMeinKontoTrainer.vb</DependentUpon>
+    <EmbeddedResource Include="Organisation\Form\dlgKontoTrainer.resx">
+      <DependentUpon>dlgKontoTrainer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Organisation\Form\dlgNeuerTrainer.resx">
       <DependentUpon>dlgNeuerTrainer.vb</DependentUpon>

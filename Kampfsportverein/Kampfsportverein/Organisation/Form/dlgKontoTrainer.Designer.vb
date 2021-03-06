@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class dlgMeinKontoTrainer
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class dlgKontoTrainer
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class dlgMeinKontoTrainer
     'Hinweis: Die folgende Prozedur ist für den Windows Form-Designer erforderlich.
     'Das Bearbeiten ist mit dem Windows Form-Designer möglich.  
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -85,7 +85,7 @@ Partial Class dlgMeinKontoTrainer
         '
         'txtTrainerID
         '
-        Me.txtTrainerID.Location = New System.Drawing.Point(244, 42)
+        Me.txtTrainerID.Location = New System.Drawing.Point(266, 39)
         Me.txtTrainerID.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTrainerID.Multiline = True
         Me.txtTrainerID.Name = "txtTrainerID"
@@ -95,29 +95,29 @@ Partial Class dlgMeinKontoTrainer
         '
         'txtVorname
         '
-        Me.txtVorname.Location = New System.Drawing.Point(244, 134)
+        Me.txtVorname.Location = New System.Drawing.Point(266, 134)
         Me.txtVorname.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtVorname.Multiline = True
         Me.txtVorname.Name = "txtVorname"
-        Me.txtVorname.Size = New System.Drawing.Size(999, 43)
+        Me.txtVorname.Size = New System.Drawing.Size(977, 43)
         Me.txtVorname.TabIndex = 7
         '
         'txtName
         '
-        Me.txtName.Location = New System.Drawing.Point(244, 226)
+        Me.txtName.Location = New System.Drawing.Point(266, 226)
         Me.txtName.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtName.Multiline = True
         Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(999, 43)
+        Me.txtName.Size = New System.Drawing.Size(977, 43)
         Me.txtName.TabIndex = 8
         '
         'txtBenutzername
         '
-        Me.txtBenutzername.Location = New System.Drawing.Point(244, 315)
+        Me.txtBenutzername.Location = New System.Drawing.Point(266, 315)
         Me.txtBenutzername.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtBenutzername.Multiline = True
         Me.txtBenutzername.Name = "txtBenutzername"
-        Me.txtBenutzername.Size = New System.Drawing.Size(999, 43)
+        Me.txtBenutzername.Size = New System.Drawing.Size(977, 43)
         Me.txtBenutzername.TabIndex = 10
         '
         'lblPasswort
@@ -126,17 +126,17 @@ Partial Class dlgMeinKontoTrainer
         Me.lblPasswort.Location = New System.Drawing.Point(36, 416)
         Me.lblPasswort.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPasswort.Name = "lblPasswort"
-        Me.lblPasswort.Size = New System.Drawing.Size(100, 25)
+        Me.lblPasswort.Size = New System.Drawing.Size(164, 25)
         Me.lblPasswort.TabIndex = 11
-        Me.lblPasswort.Text = "Passwort"
+        Me.lblPasswort.Text = "Neuer Passwort"
         '
         'txtPasswort
         '
-        Me.txtPasswort.Location = New System.Drawing.Point(244, 409)
+        Me.txtPasswort.Location = New System.Drawing.Point(266, 409)
         Me.txtPasswort.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPasswort.Multiline = True
         Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.Size = New System.Drawing.Size(999, 44)
+        Me.txtPasswort.Size = New System.Drawing.Size(977, 44)
         Me.txtPasswort.TabIndex = 12
         '
         'btnSpeichern
@@ -148,7 +148,7 @@ Partial Class dlgMeinKontoTrainer
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
         '
-        'dlgMeinKontoTrainer
+        'dlgKontoTrainer
         '
         Me.AcceptButton = Me.btnSpeichern
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -168,8 +168,8 @@ Partial Class dlgMeinKontoTrainer
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAbbrechen)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Name = "dlgMeinKontoTrainer"
-        Me.Text = "Mein Trainerkonto"
+        Me.Name = "dlgKontoTrainer"
+        Me.Text = "Trainerkonto"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
