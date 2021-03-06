@@ -29,13 +29,13 @@ Partial Class dlgNeuerKurs
         Me.lblTrainer = New System.Windows.Forms.Label()
         Me.lblTeilnZahl = New System.Windows.Forms.Label()
         Me.lblSchwierigkeitsgrad = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.rbtnAnfaenger = New System.Windows.Forms.RadioButton()
-        Me.rbtnFortgeschritten = New System.Windows.Forms.RadioButton()
-        Me.rbtnExperte = New System.Windows.Forms.RadioButton()
-        Me.cboxTrainer = New System.Windows.Forms.ComboBox()
+        Me.txtOrt = New System.Windows.Forms.TextBox()
+        Me.txtTeilnZahl = New System.Windows.Forms.TextBox()
+        Me.cmbTrainer = New System.Windows.Forms.ComboBox()
+        Me.cmbSchwierigkeit = New System.Windows.Forms.ComboBox()
+        Me.cmbSportart = New System.Windows.Forms.ComboBox()
+        Me.lblSportart = New System.Windows.Forms.Label()
+        Me.datKurs = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -60,7 +60,7 @@ Partial Class dlgNeuerKurs
         'lblZeitpunkt
         '
         Me.lblZeitpunkt.AutoSize = True
-        Me.lblZeitpunkt.Location = New System.Drawing.Point(12, 31)
+        Me.lblZeitpunkt.Location = New System.Drawing.Point(12, 99)
         Me.lblZeitpunkt.Name = "lblZeitpunkt"
         Me.lblZeitpunkt.Size = New System.Drawing.Size(101, 25)
         Me.lblZeitpunkt.TabIndex = 2
@@ -69,7 +69,7 @@ Partial Class dlgNeuerKurs
         'lblOrt
         '
         Me.lblOrt.AutoSize = True
-        Me.lblOrt.Location = New System.Drawing.Point(12, 112)
+        Me.lblOrt.Location = New System.Drawing.Point(12, 174)
         Me.lblOrt.Name = "lblOrt"
         Me.lblOrt.Size = New System.Drawing.Size(41, 25)
         Me.lblOrt.TabIndex = 3
@@ -78,7 +78,7 @@ Partial Class dlgNeuerKurs
         'lblTrainer
         '
         Me.lblTrainer.AutoSize = True
-        Me.lblTrainer.Location = New System.Drawing.Point(12, 199)
+        Me.lblTrainer.Location = New System.Drawing.Point(12, 400)
         Me.lblTrainer.Name = "lblTrainer"
         Me.lblTrainer.Size = New System.Drawing.Size(80, 25)
         Me.lblTrainer.TabIndex = 4
@@ -87,7 +87,7 @@ Partial Class dlgNeuerKurs
         'lblTeilnZahl
         '
         Me.lblTeilnZahl.AutoSize = True
-        Me.lblTeilnZahl.Location = New System.Drawing.Point(12, 285)
+        Me.lblTeilnZahl.Location = New System.Drawing.Point(12, 254)
         Me.lblTeilnZahl.Name = "lblTeilnZahl"
         Me.lblTeilnZahl.Size = New System.Drawing.Size(159, 25)
         Me.lblTeilnZahl.TabIndex = 5
@@ -96,76 +96,70 @@ Partial Class dlgNeuerKurs
         'lblSchwierigkeitsgrad
         '
         Me.lblSchwierigkeitsgrad.AutoSize = True
-        Me.lblSchwierigkeitsgrad.Location = New System.Drawing.Point(12, 379)
+        Me.lblSchwierigkeitsgrad.Location = New System.Drawing.Point(12, 331)
         Me.lblSchwierigkeitsgrad.Name = "lblSchwierigkeitsgrad"
         Me.lblSchwierigkeitsgrad.Size = New System.Drawing.Size(193, 25)
         Me.lblSchwierigkeitsgrad.TabIndex = 6
         Me.lblSchwierigkeitsgrad.Text = "Schwierigkeitsgrad"
         '
-        'TextBox1
+        'txtOrt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(244, 24)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(518, 42)
-        Me.TextBox1.TabIndex = 7
+        Me.txtOrt.Location = New System.Drawing.Point(244, 165)
+        Me.txtOrt.Multiline = True
+        Me.txtOrt.Name = "txtOrt"
+        Me.txtOrt.Size = New System.Drawing.Size(518, 42)
+        Me.txtOrt.TabIndex = 8
         '
-        'TextBox2
+        'txtTeilnZahl
         '
-        Me.TextBox2.Location = New System.Drawing.Point(244, 103)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(518, 42)
-        Me.TextBox2.TabIndex = 8
+        Me.txtTeilnZahl.Location = New System.Drawing.Point(244, 243)
+        Me.txtTeilnZahl.Multiline = True
+        Me.txtTeilnZahl.Name = "txtTeilnZahl"
+        Me.txtTeilnZahl.Size = New System.Drawing.Size(518, 42)
+        Me.txtTeilnZahl.TabIndex = 9
         '
-        'TextBox3
+        'cmbTrainer
         '
-        Me.TextBox3.Location = New System.Drawing.Point(244, 274)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(518, 42)
-        Me.TextBox3.TabIndex = 9
+        Me.cmbTrainer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTrainer.FormattingEnabled = True
+        Me.cmbTrainer.Location = New System.Drawing.Point(244, 395)
+        Me.cmbTrainer.Name = "cmbTrainer"
+        Me.cmbTrainer.Size = New System.Drawing.Size(518, 33)
+        Me.cmbTrainer.TabIndex = 13
         '
-        'rbtnAnfaenger
+        'cmbSchwierigkeit
         '
-        Me.rbtnAnfaenger.AutoSize = True
-        Me.rbtnAnfaenger.Location = New System.Drawing.Point(244, 377)
-        Me.rbtnAnfaenger.Name = "rbtnAnfaenger"
-        Me.rbtnAnfaenger.Size = New System.Drawing.Size(130, 29)
-        Me.rbtnAnfaenger.TabIndex = 10
-        Me.rbtnAnfaenger.TabStop = True
-        Me.rbtnAnfaenger.Text = "Anfänger"
-        Me.rbtnAnfaenger.UseVisualStyleBackColor = True
+        Me.cmbSchwierigkeit.FormattingEnabled = True
+        Me.cmbSchwierigkeit.Location = New System.Drawing.Point(244, 323)
+        Me.cmbSchwierigkeit.Name = "cmbSchwierigkeit"
+        Me.cmbSchwierigkeit.Size = New System.Drawing.Size(518, 33)
+        Me.cmbSchwierigkeit.TabIndex = 14
         '
-        'rbtnFortgeschritten
+        'cmbSportart
         '
-        Me.rbtnFortgeschritten.AutoSize = True
-        Me.rbtnFortgeschritten.Location = New System.Drawing.Point(423, 379)
-        Me.rbtnFortgeschritten.Name = "rbtnFortgeschritten"
-        Me.rbtnFortgeschritten.Size = New System.Drawing.Size(187, 29)
-        Me.rbtnFortgeschritten.TabIndex = 11
-        Me.rbtnFortgeschritten.TabStop = True
-        Me.rbtnFortgeschritten.Text = "Fortgeschritten"
-        Me.rbtnFortgeschritten.UseVisualStyleBackColor = True
+        Me.cmbSportart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbSportart.FormattingEnabled = True
+        Me.cmbSportart.Location = New System.Drawing.Point(244, 23)
+        Me.cmbSportart.Name = "cmbSportart"
+        Me.cmbSportart.Size = New System.Drawing.Size(518, 33)
+        Me.cmbSportart.TabIndex = 16
         '
-        'rbtnExperte
+        'lblSportart
         '
-        Me.rbtnExperte.AutoSize = True
-        Me.rbtnExperte.Location = New System.Drawing.Point(645, 379)
-        Me.rbtnExperte.Name = "rbtnExperte"
-        Me.rbtnExperte.Size = New System.Drawing.Size(117, 29)
-        Me.rbtnExperte.TabIndex = 12
-        Me.rbtnExperte.TabStop = True
-        Me.rbtnExperte.Text = "Experte"
-        Me.rbtnExperte.UseVisualStyleBackColor = True
+        Me.lblSportart.AutoSize = True
+        Me.lblSportart.Location = New System.Drawing.Point(12, 28)
+        Me.lblSportart.Name = "lblSportart"
+        Me.lblSportart.Size = New System.Drawing.Size(88, 25)
+        Me.lblSportart.TabIndex = 15
+        Me.lblSportart.Text = "Sportart"
         '
-        'cboxTrainer
+        'datKurs
         '
-        Me.cboxTrainer.FormattingEnabled = True
-        Me.cboxTrainer.Location = New System.Drawing.Point(244, 194)
-        Me.cboxTrainer.Name = "cboxTrainer"
-        Me.cboxTrainer.Size = New System.Drawing.Size(518, 33)
-        Me.cboxTrainer.TabIndex = 13
+        Me.datKurs.Location = New System.Drawing.Point(244, 93)
+        Me.datKurs.MinDate = New Date(2021, 3, 6, 0, 0, 0, 0)
+        Me.datKurs.Name = "datKurs"
+        Me.datKurs.Size = New System.Drawing.Size(518, 31)
+        Me.datKurs.TabIndex = 17
         '
         'dlgNeuerKurs
         '
@@ -174,13 +168,13 @@ Partial Class dlgNeuerKurs
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
-        Me.Controls.Add(Me.cboxTrainer)
-        Me.Controls.Add(Me.rbtnExperte)
-        Me.Controls.Add(Me.rbtnFortgeschritten)
-        Me.Controls.Add(Me.rbtnAnfaenger)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.datKurs)
+        Me.Controls.Add(Me.cmbSportart)
+        Me.Controls.Add(Me.lblSportart)
+        Me.Controls.Add(Me.cmbSchwierigkeit)
+        Me.Controls.Add(Me.cmbTrainer)
+        Me.Controls.Add(Me.txtTeilnZahl)
+        Me.Controls.Add(Me.txtOrt)
         Me.Controls.Add(Me.lblSchwierigkeitsgrad)
         Me.Controls.Add(Me.lblTeilnZahl)
         Me.Controls.Add(Me.lblTrainer)
@@ -202,11 +196,11 @@ Partial Class dlgNeuerKurs
     Friend WithEvents lblTrainer As Label
     Friend WithEvents lblTeilnZahl As Label
     Friend WithEvents lblSchwierigkeitsgrad As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents rbtnAnfaenger As RadioButton
-    Friend WithEvents rbtnFortgeschritten As RadioButton
-    Friend WithEvents rbtnExperte As RadioButton
-    Friend WithEvents cboxTrainer As ComboBox
+    Friend WithEvents txtOrt As TextBox
+    Friend WithEvents txtTeilnZahl As TextBox
+    Friend WithEvents cmbTrainer As ComboBox
+    Friend WithEvents cmbSchwierigkeit As ComboBox
+    Friend WithEvents cmbSportart As ComboBox
+    Friend WithEvents lblSportart As Label
+    Friend WithEvents datKurs As DateTimePicker
 End Class
