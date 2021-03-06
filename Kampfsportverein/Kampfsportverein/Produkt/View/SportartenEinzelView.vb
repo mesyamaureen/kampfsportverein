@@ -1,6 +1,5 @@
 ﻿Public Class SportartenEinzelView
     Inherits dlgSportEinzel
-    Protected mPresenter As SportartenPresenter
 
     Sub New(pPresenter As SportartenPresenter)
         mPresenter = pPresenter

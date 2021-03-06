@@ -96,12 +96,16 @@
     End Sub
 
     Public Sub verarbeiteEigenesProfilAnzeigen() 'button Mein Konto 
-        Dim presenter As KontoTrainerPresenter = New KontoTrainerPresenter()
-        If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
-            presenter.anzeigenAusgewaehlterTrainer()
-        Else 'nichts tun
-        End If
+        Dim traBen As Benutzer
+        Dim traKontoPresenter As KontoTrainerPresenter
+        traBen = mtraDAO.findenTrainerId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
+        traKontoPresenter = New KontoTrainerPresenter(traBen)
+        'If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
+        '    presenter.anzeigenAusgewaehlterTrainer()
+        'Else 'nichts tun
+        'End If
     End Sub
+
 
     Public Sub verarbeiteKursOeffnen(plngKursId As Long) 'buttonÖffnen
         'Deklaration

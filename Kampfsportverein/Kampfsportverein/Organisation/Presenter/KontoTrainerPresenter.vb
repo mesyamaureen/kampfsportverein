@@ -8,7 +8,11 @@
     Sub New(pTrainer As Trainer)
         mTrainer = pTrainer
         mView = New KontoTrainerView(Me)
-        anzeigenAusgewaehlterTrainer()
+        If BenutzerSitzung.Instanz.AktuellerBenutzer.GetType.Equals(GetType(Mitarbeiter)) Then
+            anzeigenAusgewaehlterTrainer()
+        Else anzeigenTrainerKonto()
+        End If
+
         mView.ShowDialog()
     End Sub
 
@@ -59,6 +63,15 @@
         mView.txtName.Text = mTrainer.Name
         mView.txtBenutzername.Text = mTrainer.Benutzername
         mView.txtPasswort.Text = mTrainer.Passwort
+    End Sub
+
+    Public Sub anzeigenTrainerKonto()
+        mView.leeren()
+        mView.anzeigenTrainer()
+        mView.txtTrainerID.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID
+        mView.txtVorname.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Vorname
+        mView.txtName.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Name
+        mView.txtBenutzername.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Benutzername
     End Sub
 
     Public Sub verarbeiteSpeichern()

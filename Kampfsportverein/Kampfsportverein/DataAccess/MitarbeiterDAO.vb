@@ -8,7 +8,7 @@ Public Class MitarbeiterDAO
     Private Const SQL_SELECT_BY_BENUTZERNAME_PASSWORT As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenBenutzerName = @benutzername AND BenPw = @passwort AND BenTyp = 'M';"
 
     'SQL-Anweisung, um einen Mitarbeiter anhand der ID zu ermitteln
-    Private Const SQL_SELECT_BY_ID As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer WHERE BenIdPk = @idPk;"
+    Private Const SQL_SELECT_BY_ID As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk;"
 
     'SQL-Anweisung, um alle Mitarbeiter zu ermitteln
     'Private Const SQL_SELECT_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer;"

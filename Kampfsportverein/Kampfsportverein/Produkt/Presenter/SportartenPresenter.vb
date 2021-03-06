@@ -10,23 +10,18 @@ Public Class SportartenPresenter
     Private mtraDAO As TrainerDAO
 
     Sub New(pSpor As Sportart)
-
         mSpor = pSpor
         mView = New SportartenEinzelView(Me)
         mView.anzeigenSportart(mSpor)
         verarbeiteKursUebersichtAnzeigen()
         anzeigeKursAlle()
         mView.ShowDialog()
-
     End Sub
 
     Sub New()
-
         mView = New SportartenEinzelView(Me)
         mSpor = New Sportart
         mView.ShowDialog()
-
-
     End Sub
 
     Public Property View As SportartenEinzelView
@@ -137,7 +132,7 @@ Public Class SportartenPresenter
         Dim ausgewaehlteTra As Trainer
         For Each kurs As Kurs In mlstKurse
             ausgewaehlteTra = mtraDAO.findenTrainerId(kurs.BenIdFk)
-            mView.hinzufuegenZeileKurs(mlstKurse.IndexOf(kurs), kurs.Zeitpunkt, kurs.Ort, ausgewaehlteTra.Name, kurs.Schwierigkeitsgrad)
+            mView.hinzufuegenZeileKurs(kurs.IdPk, kurs.Zeitpunkt, kurs.Ort, ausgewaehlteTra.Name, kurs.Schwierigkeitsgrad)
         Next
     End Sub
 

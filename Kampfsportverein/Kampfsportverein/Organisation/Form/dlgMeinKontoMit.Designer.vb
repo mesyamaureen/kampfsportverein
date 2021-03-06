@@ -29,13 +29,11 @@ Partial Class dlgMeinKontoMit
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblBenutzername = New System.Windows.Forms.Label()
         Me.lblNeuesPass = New System.Windows.Forms.Label()
-        Me.lblPassWiederh = New System.Windows.Forms.Label()
         Me.txtMitarbeiterID = New System.Windows.Forms.TextBox()
         Me.txtVorname = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.txtNeuesPass = New System.Windows.Forms.TextBox()
-        Me.txtPassWiederh = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -102,15 +100,6 @@ Partial Class dlgMeinKontoMit
         Me.lblNeuesPass.TabIndex = 7
         Me.lblNeuesPass.Text = "Neues Passwort"
         '
-        'lblPassWiederh
-        '
-        Me.lblPassWiederh.AutoSize = True
-        Me.lblPassWiederh.Location = New System.Drawing.Point(35, 415)
-        Me.lblPassWiederh.Name = "lblPassWiederh"
-        Me.lblPassWiederh.Size = New System.Drawing.Size(222, 25)
-        Me.lblPassWiederh.TabIndex = 8
-        Me.lblPassWiederh.Text = "Passwort wiederholen"
-        '
         'txtMitarbeiterID
         '
         Me.txtMitarbeiterID.Location = New System.Drawing.Point(304, 25)
@@ -152,14 +141,6 @@ Partial Class dlgMeinKontoMit
         Me.txtNeuesPass.Size = New System.Drawing.Size(919, 34)
         Me.txtNeuesPass.TabIndex = 14
         '
-        'txtPassWiederh
-        '
-        Me.txtPassWiederh.Location = New System.Drawing.Point(304, 412)
-        Me.txtPassWiederh.Multiline = True
-        Me.txtPassWiederh.Name = "txtPassWiederh"
-        Me.txtPassWiederh.Size = New System.Drawing.Size(919, 34)
-        Me.txtPassWiederh.TabIndex = 15
-        '
         'dlgMeinKontoMit
         '
         Me.AcceptButton = Me.btnSpeichern
@@ -167,13 +148,11 @@ Partial Class dlgMeinKontoMit
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1254, 629)
-        Me.Controls.Add(Me.txtPassWiederh)
         Me.Controls.Add(Me.txtNeuesPass)
         Me.Controls.Add(Me.txtBenutzername)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtVorname)
         Me.Controls.Add(Me.txtMitarbeiterID)
-        Me.Controls.Add(Me.lblPassWiederh)
         Me.Controls.Add(Me.lblNeuesPass)
         Me.Controls.Add(Me.lblBenutzername)
         Me.Controls.Add(Me.lblName)
@@ -195,11 +174,9 @@ Partial Class dlgMeinKontoMit
     Friend WithEvents lblName As Label
     Friend WithEvents lblBenutzername As Label
     Friend WithEvents lblNeuesPass As Label
-    Friend WithEvents lblPassWiederh As Label
     Friend WithEvents txtMitarbeiterID As TextBox
     Friend WithEvents txtVorname As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtBenutzername As TextBox
     Friend WithEvents txtNeuesPass As TextBox
-    Friend WithEvents txtPassWiederh As TextBox
 End Class

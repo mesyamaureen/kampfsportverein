@@ -27,10 +27,6 @@
         Me.lstSchueler.Visible = True
     End Sub
 
-    Public Sub anzeigenMeinKonto()
-        Me.Close()
-    End Sub
-
     Public Sub anzeigenKursUebersicht(plngKursID As Long, pdatKurs As Date, plngSaIdFk As Long,
                                 plngBenIdFk As Long)
         Dim kurszeile As ListViewItem

@@ -1,12 +1,11 @@
 ﻿Public Class MitarbeiterKontoPresenter
-    Private mMitEinzel As Mitarbeiter
+    Private mMitBenutzer As Benutzer
     Public mErgebnis As EPresenterErgebnis
     Private mSitzung As BenutzerSitzung
     Private mView As MitarbeiterKontoView
-    Sub New(pMitarbeiter As Mitarbeiter)
-        mMitEinzel = pMitarbeiter
+    Sub New(pBenutzer As Benutzer)
+        mMitBenutzer = pBenutzer
         mView = New MitarbeiterKontoView(Me)
-        mMitEinzel = New Mitarbeiter
 
         anzeigen()
         mView.ShowDialog()
@@ -14,7 +13,7 @@
 
     Sub New()
         mView = New MitarbeiterKontoView(Me)
-        mMitEinzel = New Mitarbeiter
+        mMitBenutzer = New Benutzer
         mView.ShowDialog(Me)
     End Sub
     Public Property View As MitarbeiterKontoView
@@ -25,17 +24,22 @@
         End Set
     End Property
 
-    Public Property MitEinzel As Mitarbeiter
+    Public Property MitBenutzer As Benutzer
         Get
-            Return mMitEinzel
+            Return mMitBenutzer
         End Get
-        Set(value As Mitarbeiter)
+        Set(value As Benutzer)
         End Set
     End Property
 
     Public Sub anzeigen()
         mView.leeren()
         mView.anzeigenKonto()
+        mView.txtMitarbeiterID.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID
+        mView.txtVorname.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Vorname
+        mView.txtName.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Name
+        mView.txtBenutzername.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Benutzername
+
     End Sub
 
     Public Sub verarbeiteSpeichern()

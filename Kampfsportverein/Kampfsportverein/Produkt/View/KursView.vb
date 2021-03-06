@@ -1,7 +1,6 @@
 ﻿Public Class KursView
     Inherits dlgKursEinzeln
 
-    Protected Shared mPresenter As KursPresenter
     'Konstruktor
     Sub New(pPresenter As KursPresenter)
         MyBase.New
