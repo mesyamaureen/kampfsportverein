@@ -1,6 +1,10 @@
 ﻿Public Class dlgNeuerKurs
     Public mPresenter As NeuerKursPresenter
 
+    Private Sub dlgNeuerKurs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        mPresenter.ladenSaName()
+    End Sub
+
     Private Sub btnErstellen_Click(sender As Object, e As EventArgs) Handles btnErstellen.Click
         mPresenter.verarbeiteErstellen()
     End Sub

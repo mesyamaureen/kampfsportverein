@@ -22,4 +22,10 @@
         Me.cmbSchwierigkeit.Items.Clear()
         Me.cmbTrainer.Items.Clear()
     End Sub
+
+    Public Sub befuellenSaName(strSaName As String)
+        Dim i As Integer = Me.cmbSportart.Items.Count
+        Me.cmbSportart.Items.Insert(i, strSaName)
+    End Sub
+
 End Class

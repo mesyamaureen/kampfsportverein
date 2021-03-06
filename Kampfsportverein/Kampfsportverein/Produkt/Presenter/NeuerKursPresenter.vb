@@ -8,6 +8,7 @@
     Sub New(pKurs As Kurs)
         mKurs = pKurs
         mView = New NeuerKursView(Me)
+        anzeigenNeuerKurs()
         mView.ShowDialog()
     End Sub
 
@@ -54,8 +55,23 @@
     Public Sub anzeigenNeuerKurs()
         mView.leeren()
         mView.anzeigenKurs()
+        'mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
+        'mtraDAO = DAOFactory.Instanz.TrainerDAO
+    End Sub
+
+    Public Sub ladenSaName()
+        Dim i As Integer
+        Dim strSaName As String
         mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
-        mtraDAO = DAOFactory.Instanz.TrainerDAO
+        Dim lstSportart As List(Of Sportart) = mmitDAO.findenAlleSportarten
+
+        mView.leeren()
+
+        For i = 0 To lstSportart.Count - 1
+            strSaName = lstSportart.Item(i).Name
+            mView.befuellenSaName(strSaName)
+        Next
+
     End Sub
 
     Public Sub verarbeiteErstellen()
