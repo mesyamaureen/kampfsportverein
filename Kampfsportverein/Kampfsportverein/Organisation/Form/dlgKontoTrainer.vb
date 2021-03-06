@@ -1,5 +1,5 @@
 ﻿Public Class dlgKontoTrainer
-    Private mPresenter As KontoTrainerPresenter
+    Public mPresenter As KontoTrainerPresenter
     Sub New()
 
         ' Dieser Aufruf ist für den Designer erforderlich.
@@ -8,14 +8,6 @@
         ' Fügen Sie Initialisierungen nach dem InitializeComponent()-Aufruf hinzu.
 
     End Sub
-
-    Public Property Presenter As KontoTrainerPresenter
-        Get
-            Return mPresenter
-        End Get
-        Set(value As KontoTrainerPresenter)
-        End Set
-    End Property
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
         mPresenter.verarbeiteSpeichern()

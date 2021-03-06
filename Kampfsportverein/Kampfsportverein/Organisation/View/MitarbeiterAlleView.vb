@@ -50,10 +50,6 @@
 
     'End Sub
 
-    Public Sub anzeigenMeinKonto()
-        Me.Close()
-    End Sub
-
     Public Sub hinzufuegenZeileSportart(plngSportartID As Long, pSportart As String)
         Dim sportZeile As ListViewItem
         sportZeile = Me.lstSportart.Items.Add(plngSportartID)

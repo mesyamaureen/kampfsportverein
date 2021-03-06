@@ -11,7 +11,7 @@
 
     Public Sub New()
         mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
-        'SOLLTE BIS ZEILE 18 GELÖSCHT WERDEN (AM ENDE)
+        'SOLLTE BIS ZEILE 18 GELÖSCHT WERDEN (AM ENDE) -04.03.2021
         'mlstSportartAlle = Kampfsportverein.mlstSportart
         'mlstKurseAlle = Kampfsportverein.mlstKurs
         'mlstSchuelerAlle = Kampfsportverein.mlstSchueler
@@ -21,14 +21,14 @@
         verarbeiteKursuebersichtAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
         verarbeiteTrainerUebersichtAnzeigen()
-        anzeigenMitarbeiterAlle()
-        anzeigenKursAlle()
-        anzeigenSchueleruebersichtAnzeigen()
-        anzeigenTrainerAlle()
+        'anzeigenMitarbeiterAlle()
+        'anzeigenKursAlle()
+        'anzeigenSchueleruebersichtAnzeigen()
+        'anzeigenTrainerAlle()
 
         'Daten an die Oberfläche übergeben
-        anzeigenKursAlle()
-        anzeigenMitarbeiterAlle()
+        'anzeigenKursAlle()
+        'anzeigenMitarbeiterAlle()
         'Anzeige der View als Oberfläche
         Application.Run(mView)
 
@@ -97,18 +97,6 @@
         For Each trainer As Trainer In mlstTrainerAlle
             mView.hinzufuegenZeileTrainer(trainer.BenutzerID, trainer.Name, trainer.Vorname)
         Next
-    End Sub
-
-    Public Sub verarbeiteMitarbeiterEinzeln(plngBenIdPk As Long) 'button Mein Konto
-        'mView.anzeigenMeinKonto()
-        'Dim mit As Mitarbeiter
-        'Dim mitKontoPresenter As MitarbeiterKontoPresenter
-        'mit = mMitarbeiterDAO.findenMitarbeiterId(plngBenIdPk)
-        ' Übergeben der Sportart zur Anzeige im Presenter
-        'mitKontoPresenter = New MitarbeiterKontoPresenter(mit)
-        'If MitarbeiterKontoPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
-        'verarbeiteKursuebersichtAnzeigen()
-        'End If
     End Sub
 
     Public Sub verarbeiteSportartUebersichtAnzeigen() 'button Sportarten
@@ -197,6 +185,17 @@
         If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteTrainerUebersichtAnzeigen()
         End If
+    End Sub
+
+    Public Sub verarbeiteMitarbeiterEinzeln(plngBenIdPk As Long) 'button Mein Konto
+        Dim mit As Mitarbeiter
+        Dim mitKontoPresenter As MitarbeiterKontoPresenter
+        mit = mMitarbeiterDAO.findenMitarbeiterId(plngBenIdPk)
+        ' Übergeben der Sportart zur Anzeige im Presenter
+        mitKontoPresenter = New MitarbeiterKontoPresenter(mit)
+        'If MitarbeiterKontoPresenter.mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        '    verarbeiteKursuebersichtAnzeigen()
+        'End If
     End Sub
 
     Public Sub verarbeiteNeu() 'button Neu

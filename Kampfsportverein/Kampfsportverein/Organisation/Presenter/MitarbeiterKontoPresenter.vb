@@ -3,8 +3,8 @@
     Public mErgebnis As EPresenterErgebnis
     Private mSitzung As BenutzerSitzung
     Private mView As MitarbeiterKontoView
-    Sub New()
-        MyBase.New
+    Sub New(pMitarbeiter As Mitarbeiter)
+        mMitEinzel = pMitarbeiter
         mView = New MitarbeiterKontoView(Me)
         mMitEinzel = New Mitarbeiter
 
@@ -12,6 +12,11 @@
         mView.ShowDialog()
     End Sub
 
+    Sub New()
+        mView = New MitarbeiterKontoView(Me)
+        mMitEinzel = New Mitarbeiter
+        mView.ShowDialog(Me)
+    End Sub
     Public Property View As MitarbeiterKontoView
         Get
             Return mView
@@ -28,18 +33,9 @@
         End Set
     End Property
 
-    Public Property Ergebnis As EPresenterErgebnis
-        Get
-            Return Nothing
-        End Get
-        Set(value As EPresenterErgebnis)
-        End Set
-    End Property
-
     Public Sub anzeigen()
         mView.leeren()
-        mView.anzeigen(mlstMitarbeiter(1).BenutzerID, mlstMitarbeiter(1).Benutzername, mlstMitarbeiter(1).Passwort,
-                       mlstMitarbeiter(1).Vorname, mlstMitarbeiter(1).Name)
+        mView.anzeigenKonto()
     End Sub
 
     Public Sub verarbeiteSpeichern()

@@ -63,7 +63,7 @@
         mView.anzeigenKurse()
         'anzeigen Kursliste
         For Each kurs As Kurs In mlstKursAlle
-            mView.anzeigenKursUebersicht(mlstKursAlle.IndexOf(kurs), kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
+            mView.anzeigenKursUebersicht(kurs.IdPk, kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
         Next
     End Sub
 
@@ -72,7 +72,7 @@
         mView.anzeigenSchueler()
         'anzeigen Schuelerliste
         For Each schueler As Schueler In mlstSchuelerAlle
-            mView.anzeigenSchuelerUebersicht(mlstSchuelerAlle.IndexOf(schueler), schueler.Name, schueler.Vorname)
+            mView.anzeigenSchuelerUebersicht(schueler.SchuelerIdPk, schueler.Name, schueler.Vorname)
         Next
     End Sub
     Public Sub verarbeiteKursuebersichtAnzeigen() 'button Kurse

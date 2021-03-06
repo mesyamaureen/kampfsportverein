@@ -1,7 +1,7 @@
 ﻿Public Class frmHauptfensterMit
 
     Public mPresenter As MitarbeiterAllePresenter
-
+    'Public mSitzung As BenutzerSitzung
     Public Property Presenter As MitarbeiterAllePresenter
         Get
             Return Nothing
@@ -11,7 +11,7 @@
     End Property
 
     Private Sub btnMeinKonto_Click(sender As Object, e As EventArgs) Handles btnMeinKonto.Click
-        'mPresenter.verarbeiteMitarbeiterEinzeln()
+        'mPresenter.verarbeiteMitarbeiterEinzeln() 'angemeldeter Benutzer
     End Sub
 
     Private Sub btnSportarten_Click(sender As Object, e As EventArgs) Handles btnSportarten.Click

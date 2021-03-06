@@ -1,7 +1,6 @@
 ﻿Public Class KontoTrainerView
     Inherits dlgKontoTrainer
 
-    Private mPresenter As KontoTrainerPresenter
     Private mView As KontoTrainerView
 
     Sub New(pPresenter As KontoTrainerPresenter)

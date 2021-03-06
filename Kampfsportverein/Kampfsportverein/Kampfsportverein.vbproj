@@ -179,10 +179,6 @@
     <Compile Include="Organisation\Form\dlgNeuerTrainer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Organisation\Form\dlgTrainerKonto.Designer.vb">
-      <DependentUpon>dlgTrainerKonto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Organisation\Form\dlgTrainerKonto.vb" />
     <Compile Include="Organisation\Form\frmHauptfensterMit.Designer.vb">
       <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
     </Compile>
@@ -270,9 +266,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Organisation\Form\dlgNeuerTrainer.resx">
       <DependentUpon>dlgNeuerTrainer.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Organisation\Form\dlgTrainerKonto.resx">
-      <DependentUpon>dlgTrainerKonto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Organisation\Form\frmHauptfensterMit.resx">
       <DependentUpon>frmHauptfensterMit.vb</DependentUpon>
