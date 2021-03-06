@@ -100,10 +100,6 @@
         Dim traKontoPresenter As KontoTrainerPresenter
         traBen = mtraDAO.findenTrainerId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
         traKontoPresenter = New KontoTrainerPresenter(traBen)
-        'If mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then
-        '    presenter.anzeigenAusgewaehlterTrainer()
-        'Else 'nichts tun
-        'End If
     End Sub
 
 
@@ -136,37 +132,45 @@
         End If
     End Sub
 
-    Public Sub verarbeiteLoeschen(plngIndex As Long) 'button Löschen
-        mlstKursAlle.RemoveAt(plngIndex)
-        mlstSchuelerAlle.RemoveAt(plngIndex)
-        anzeigenKursAlle()
-    End Sub
-
-    Public Sub verarbeiteNeu() 'button Neu
-        Dim kurs As Kurs
-        Dim kursPresenter As KursPresenter
+    Public Sub verarbeiteNeu()
         Dim schueler As Schueler
-        Dim schuelerPresenter As SchuelerAllePresenter
-
-        kurs = New Kurs
-        kursPresenter = New KursPresenter(kurs)
-        schueler = New Schueler
-        schuelerPresenter = New SchuelerAllePresenter(schueler)
-
-        If mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
-            mlstKursAlle.Add(kurs)
-            mlstSchuelerAlle.Add(schueler)
-        ElseIf mErgebnis = EPresenterErgebnis.ABBRECHEN Then
-            kurs = Nothing
-            schueler = Nothing
-        Else
-            'tun nichts
-        End If
 
     End Sub
 
     Public Sub verarbeiteBeenden()
         mView.Close()
     End Sub
+
+    'LÖSCHEN (Am Ende)
+    'Public Sub verarbeiteLoeschen(plngIndex As Long) 'button Löschen
+    '    mlstKursAlle.RemoveAt(plngIndex)
+    '    mlstSchuelerAlle.RemoveAt(plngIndex)
+    '    anzeigenKursAlle()
+    'End Sub
+
+    'Public Sub verarbeiteNeu() 'button Neu
+    '    Dim kurs As Kurs
+    '    Dim kursPresenter As KursPresenter
+    '    Dim schueler As Schueler
+    '    Dim schuelerPresenter As SchuelerAllePresenter
+
+    '    kurs = New Kurs
+    '    kursPresenter = New KursPresenter(kurs)
+    '    schueler = New Schueler
+    '    schuelerPresenter = New SchuelerAllePresenter(schueler)
+
+    '    If mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
+    '        mlstKursAlle.Add(kurs)
+    '        mlstSchuelerAlle.Add(schueler)
+    '    ElseIf mErgebnis = EPresenterErgebnis.ABBRECHEN Then
+    '        kurs = Nothing
+    '        schueler = Nothing
+    '    Else
+    '        'tun nichts
+    '    End If
+
+    'End Sub
+
+
 End Class
 

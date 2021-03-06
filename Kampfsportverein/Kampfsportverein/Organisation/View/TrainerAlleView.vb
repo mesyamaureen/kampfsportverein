@@ -20,11 +20,13 @@
     Public Sub anzeigenKurse()
         Me.lstSchueler.Visible = False
         Me.lstKurse.Visible = True
+        Me.btnNeueSchueler.Enabled = False
     End Sub
 
     Public Sub anzeigenSchueler()
         Me.lstKurse.Visible = False
         Me.lstSchueler.Visible = True
+        Me.btnNeueSchueler.Enabled = True
     End Sub
 
     Public Sub anzeigenKursUebersicht(plngKursID As Long, pdatKurs As Date, plngSaIdFk As Long,
@@ -54,12 +56,6 @@
         'Schüler leeren
         Me.lstSchueler.Items.Clear()
     End Sub
-
-    'Public Sub anzeigenKursuebersicht()
-    'End Sub
-
-    'Public Sub anzeigenSchueleruebersicht()
-    'End Sub
 
     Public Sub anzeigenNeueAnmeldung()
 

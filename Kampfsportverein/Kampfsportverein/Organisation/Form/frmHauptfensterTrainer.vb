@@ -14,12 +14,6 @@
         mPresenter.verarbeiteEigenesProfilAnzeigen()
     End Sub
 
-    'Private Sub btnBearbeiten_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
-    '    Dim lngAktuelleID As Long
-    '    lngAktuelleID = Me.lstKurse.SelectedItems(0).Text
-    '    mPresenter.verarbeiteKursuebersichtAnzeigen(lngAktuelleID)
-    'End Sub
-
     Private Sub btnKurse_Click(sender As Object, e As EventArgs) Handles btnKurse.Click
         mPresenter.verarbeiteKursuebersichtAnzeigen()
     End Sub
@@ -45,12 +39,7 @@
         mPresenter.verarbeiteBeenden()
     End Sub
 
-    Private Sub btnNeu_Click(sender As Object, e As EventArgs) Handles btnNeu.Click
+    Private Sub btnNeueSchueler_Click(sender As Object, e As EventArgs) Handles btnNeueSchueler.Click
         mPresenter.verarbeiteNeu()
-    End Sub
-
-    Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
-        Dim lngAktuelleID As Long
-        mPresenter.verarbeiteLoeschen(lngAktuelleID)
     End Sub
 End Class
