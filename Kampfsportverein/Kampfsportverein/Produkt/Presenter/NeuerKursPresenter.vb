@@ -5,7 +5,8 @@
     Private mmitDAO As MitarbeiterDAO
     Private mtraDAO As TrainerDAO
 
-    Sub New()
+    Sub New(pKurs As Kurs)
+        mKurs = pKurs
         mView = New NeuerKursView(Me)
         mView.ShowDialog()
     End Sub

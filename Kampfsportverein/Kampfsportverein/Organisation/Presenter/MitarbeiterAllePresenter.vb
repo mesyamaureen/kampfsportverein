@@ -203,13 +203,20 @@
         Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart
         sporPresenter = New SportartenPresenter()
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If sporPresenter.mErgebnis = EPresenterErgebnis.SPORTART_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPORTART_EINZELN Then
             verarbeiteSportartUebersichtAnzeigen()
         End If
     End Sub
 
-    Public Sub verarbeiteNeuKurs()
-        'Neu MVP für Hinzufügen-Seite
+    Public Sub verarbeiteNeuerKurs()
+        Dim kurs As Kurs
+        Dim neuerKursPresenter As NeuerKursPresenter
+        Dim lngKursIdPk As Long
+
+        kurs = New Kurs()
+        neuerKursPresenter = New NeuerKursPresenter(kurs)
+        lngKursIdPk = MitarbeiterDAO.hinzufuegenKurs(kurs)
+        anzeigenKursAlle()
     End Sub
 
     Public Sub verarbeiteNeuSchueler()

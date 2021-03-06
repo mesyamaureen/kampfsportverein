@@ -31,7 +31,16 @@
     End Sub
 
     Private Sub btnNeu_Click(sender As Object, e As EventArgs) Handles btnNeu.Click
-        mPresenter.verarbeiteNeu()
+        If Me.lstSportart.Visible = True Then
+            mPresenter.verarbeiteNeu()
+        ElseIf Me.lstKurseAlle.Visible = True Then
+            mPresenter.verarbeiteNeuerKurs()
+        ElseIf Me.lstSchuelerAlle.Visible = True Then
+            mPresenter.verarbeiteNeuSchueler()
+        ElseIf Me.lstTrainer.Visible = True Then
+            mPresenter.verarbeiteNeuTrainer()
+        End If
+        'mPresenter.verarbeiteNeu()
     End Sub
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click

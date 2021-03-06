@@ -617,14 +617,14 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    Public Function loeschenKurs(pKurs As Kurs) As Boolean 'Fix this please Mesya!
-        'Deklaration
-        Dim bolErfolgreich As Boolean
-        'Initialisierung: Funktionaufruf von loeschenKursTraId
-        bolErfolgreich = loeschenKursTraId(pKurs.IdPk, pKurs.Version)
-        'Rückgabe des Ergebnisses
-        Return bolErfolgreich
-    End Function
+    'Public Function loeschenKurs(pKurs As Kurs) As Boolean 'Fix this please Mesya!
+    '    'Deklaration
+    '    Dim bolErfolgreich As Boolean
+    '    'Initialisierung: Funktionaufruf von loeschenKursTraId
+    '    bolErfolgreich = loeschenKursTraId(pKurs.IdPk, pKurs.Version)
+    '    'Rückgabe des Ergebnisses
+    '    Return bolErfolgreich
+    'End Function
 
 
     'speichernKurs?
@@ -695,7 +695,7 @@ Public Class MitarbeiterDAO
     End Function
 
     'hinzufuegenKurs
-    Private Shared Function hinzufuegenKurs(pKurs As Kurs) As Long
+    Public Shared Function hinzufuegenKurs(pKurs As Kurs) As Long
 
         Dim lngAnzahlDatensaetze As Long
         Dim lngKursIdPk As Long
