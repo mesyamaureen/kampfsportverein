@@ -1,7 +1,6 @@
 ﻿Public Class KursPresenter
     Private mView As KursView
     Public mErgebnis As EPresenterErgebnis
-    Private mlstKurse As List(Of Kurs)
     Private mKurs As Kurs
     Private mmitDAO As MitarbeiterDAO
     Private mtraDAO As TrainerDAO
@@ -56,14 +55,6 @@
             Return mtraDAO
         End Get
         Set(value As TrainerDAO)
-        End Set
-    End Property
-
-    Public Property ListeKurse As List(Of Kurs)
-        Get
-            Return mlstKurse
-        End Get
-        Set(value As List(Of Kurs))
         End Set
     End Property
 

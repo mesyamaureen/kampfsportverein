@@ -27,13 +27,11 @@ Partial Class dlgSchueler
         Me.lblSchuelerID = New System.Windows.Forms.Label()
         Me.lblVorname = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.lblGebdat = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.txtSchuelerID = New System.Windows.Forms.TextBox()
         Me.txtVorname = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
-        Me.datGebdatSchueler = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -83,19 +81,10 @@ Partial Class dlgSchueler
         Me.lblName.TabIndex = 4
         Me.lblName.Text = "Name"
         '
-        'lblGebdat
-        '
-        Me.lblGebdat.AutoSize = True
-        Me.lblGebdat.Location = New System.Drawing.Point(26, 274)
-        Me.lblGebdat.Name = "lblGebdat"
-        Me.lblGebdat.Size = New System.Drawing.Size(147, 25)
-        Me.lblGebdat.TabIndex = 5
-        Me.lblGebdat.Text = "Geburtsdatum"
-        '
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(26, 355)
+        Me.lblEmail.Location = New System.Drawing.Point(26, 289)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(73, 25)
         Me.lblEmail.TabIndex = 6
@@ -103,6 +92,7 @@ Partial Class dlgSchueler
         '
         'txtSchuelerID
         '
+        Me.txtSchuelerID.Enabled = False
         Me.txtSchuelerID.Location = New System.Drawing.Point(191, 24)
         Me.txtSchuelerID.Multiline = True
         Me.txtSchuelerID.Name = "txtSchuelerID"
@@ -127,18 +117,11 @@ Partial Class dlgSchueler
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(191, 341)
+        Me.txtEmail.Location = New System.Drawing.Point(191, 275)
         Me.txtEmail.Multiline = True
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(571, 48)
         Me.txtEmail.TabIndex = 11
-        '
-        'datGebdatSchueler
-        '
-        Me.datGebdatSchueler.Location = New System.Drawing.Point(191, 273)
-        Me.datGebdatSchueler.Name = "datGebdatSchueler"
-        Me.datGebdatSchueler.Size = New System.Drawing.Size(571, 31)
-        Me.datGebdatSchueler.TabIndex = 12
         '
         'dlgSchueler
         '
@@ -147,13 +130,11 @@ Partial Class dlgSchueler
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
-        Me.Controls.Add(Me.datGebdatSchueler)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtVorname)
         Me.Controls.Add(Me.txtSchuelerID)
         Me.Controls.Add(Me.lblEmail)
-        Me.Controls.Add(Me.lblGebdat)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.lblSchuelerID)
@@ -171,11 +152,9 @@ Partial Class dlgSchueler
     Friend WithEvents lblSchuelerID As Label
     Friend WithEvents lblVorname As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents lblGebdat As Label
     Friend WithEvents lblEmail As Label
     Friend WithEvents txtSchuelerID As TextBox
     Friend WithEvents txtVorname As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtEmail As TextBox
-    Friend WithEvents datGebdatSchueler As DateTimePicker
 End Class

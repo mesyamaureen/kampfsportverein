@@ -1,10 +1,19 @@
 ﻿Public Class SchuelerAllePresenter
     Public mErgebnis As EPresenterErgebnis
     Private mView As AlleSchuelerView
-    Public mistSchuelerAlle As List(Of Schueler)
+    Private mSchueler As Schueler
+    Private mtraDAO As TrainerDAO
 
-    Sub New(schueler As Schueler)
+    Sub New(pSchueler As Schueler)
+        mSchueler = pSchueler
         mView = New AlleSchuelerView(Me)
+        anzeigenAusgewaehlteSchueler()
+        mView.ShowDialog()
+    End Sub
+
+    Sub New()
+        mView = New AlleSchuelerView(Me)
+        mSchueler = New Schueler
         mView.ShowDialog()
     End Sub
 
@@ -16,9 +25,9 @@
         End Set
     End Property
 
-    Public Property SchuelerAlle As Schueler
+    Public Property EinzelSchueler As Schueler
         Get
-            Return Nothing
+            Return mSchueler
         End Get
         Set(value As Schueler)
         End Set
@@ -32,15 +41,29 @@
         End Set
     End Property
 
-    Public Sub verarbeiteOeffnen()
+    Public Property TraDAO As TrainerDAO
+        Get
+            Return mtraDAO
+        End Get
+        Set(value As TrainerDAO)
+        End Set
+    End Property
+
+    Public Sub anzeigenAusgewaehlteSchueler()
+        mView.leeren()
+        mView.anzeigenSchueler()
+        mtraDAO = DAOFactory.Instanz.TrainerDAO
+        mView.txtSchuelerID.Text = mSchueler.SchuelerIdPk
+        mView.txtVorname.Text = mSchueler.Vorname
+        mView.txtName.Text = mSchueler.Name
+        mView.txtEmail.Text = mSchueler.EMailAdresse
+    End Sub
+    Public Sub verarbeiteSpeichern()
 
     End Sub
 
-    Public Sub verarbeiteNeu()
-
+    Public Sub verarbeiteAbbrechen()
+        mView.Close()
     End Sub
 
-    Public Sub verarbeiteLoeschen()
-
-    End Sub
 End Class

@@ -178,6 +178,7 @@
         Dim schuPresenter As SchuelerAllePresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
+        plngSchuelerId += 1
         schueler = mTrainerDAO.findenAlleMitSchuelerId(plngSchuelerId) ' Übergeben der Sportart zur Anzeige im Presenter
         schuPresenter = New SchuelerAllePresenter(schueler)
 
@@ -192,6 +193,7 @@
         Dim traPresenter As TrainerkontoPresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
+        plngTrainerId += 1
         tra = mTrainerDAO.findenTrainerId(plngTrainerId)
         ' Übergeben der Sportart zur Anzeige im Presenter
         traPresenter = New TrainerkontoPresenter()

@@ -15,24 +15,18 @@
         End Set
     End Property
 
-    Public Sub anzeigenEmailadresse()
-
+    Public Sub anzeigenSchueler()
+        Me.txtSchuelerID.Enabled = False
+        Me.txtVorname.Enabled = True
+        Me.txtName.Enabled = True
+        Me.txtEmail.Enabled = True
     End Sub
 
-    Public Sub anzeigenVorname()
-
-    End Sub
-
-    Public Sub anzeigenName()
-
-    End Sub
-
-    Public Sub anzeigenBelegteKurse()
-
-    End Sub
-
-    Public Sub anzeigenGeburtsdatum()
-
+    Public Sub leeren()
+        Me.txtSchuelerID.Clear()
+        Me.txtVorname.Clear()
+        Me.txtName.Clear()
+        Me.txtEmail.Clear()
     End Sub
 
     Private Sub InitializeComponent()
