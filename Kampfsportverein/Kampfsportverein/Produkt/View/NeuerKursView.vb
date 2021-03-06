@@ -10,7 +10,7 @@
         Me.txtOrt.Enabled = True
         Me.txtTeilnZahl.Enabled = True
         Me.cmbSportart.Enabled = True
-        Me.cmbSchwierigkeit.Enabled = True
+        Me.txtSchwierigkeit.Enabled = True
         Me.cmbTrainer.Enabled = True
         Me.datKurs.Enabled = True
     End Sub
@@ -19,7 +19,7 @@
         Me.txtOrt.Clear()
         Me.txtTeilnZahl.Clear()
         Me.cmbSportart.Items.Clear()
-        Me.cmbSchwierigkeit.Items.Clear()
+        Me.txtSchwierigkeit.Clear()
         Me.cmbTrainer.Items.Clear()
     End Sub
 
@@ -28,4 +28,8 @@
         Me.cmbSportart.Items.Insert(i, strSaName)
     End Sub
 
+    Public Sub befuellenTrainer(strTrainerName As String)
+        Dim i As Integer = Me.cmbTrainer.Items.Count
+        Me.cmbTrainer.Items.Insert(i, strTrainerName)
+    End Sub
 End Class

@@ -28,12 +28,10 @@ Partial Class dlgNeuerTrainer
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblBenutzername = New System.Windows.Forms.Label()
         Me.lblPasswort = New System.Windows.Forms.Label()
-        Me.lblPassWiederh = New System.Windows.Forms.Label()
         Me.txtVorname = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.txtPass = New System.Windows.Forms.TextBox()
-        Me.txtPassWiederh = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -91,15 +89,6 @@ Partial Class dlgNeuerTrainer
         Me.lblPasswort.TabIndex = 6
         Me.lblPasswort.Text = "Passwort"
         '
-        'lblPassWiederh
-        '
-        Me.lblPassWiederh.AutoSize = True
-        Me.lblPassWiederh.Location = New System.Drawing.Point(23, 342)
-        Me.lblPassWiederh.Name = "lblPassWiederh"
-        Me.lblPassWiederh.Size = New System.Drawing.Size(222, 25)
-        Me.lblPassWiederh.TabIndex = 7
-        Me.lblPassWiederh.Text = "Passwort wiederholen"
-        '
         'txtVorname
         '
         Me.txtVorname.Location = New System.Drawing.Point(253, 22)
@@ -132,14 +121,6 @@ Partial Class dlgNeuerTrainer
         Me.txtPass.Size = New System.Drawing.Size(509, 43)
         Me.txtPass.TabIndex = 12
         '
-        'txtPassWiederh
-        '
-        Me.txtPassWiederh.Location = New System.Drawing.Point(253, 334)
-        Me.txtPassWiederh.Multiline = True
-        Me.txtPassWiederh.Name = "txtPassWiederh"
-        Me.txtPassWiederh.Size = New System.Drawing.Size(509, 43)
-        Me.txtPassWiederh.TabIndex = 13
-        '
         'dlgNeuerTrainer
         '
         Me.AcceptButton = Me.btnErstellen
@@ -147,12 +128,10 @@ Partial Class dlgNeuerTrainer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
-        Me.Controls.Add(Me.txtPassWiederh)
         Me.Controls.Add(Me.txtPass)
         Me.Controls.Add(Me.txtBenutzername)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.txtVorname)
-        Me.Controls.Add(Me.lblPassWiederh)
         Me.Controls.Add(Me.lblPasswort)
         Me.Controls.Add(Me.lblBenutzername)
         Me.Controls.Add(Me.lblName)
@@ -172,10 +151,8 @@ Partial Class dlgNeuerTrainer
     Friend WithEvents lblName As Label
     Friend WithEvents lblBenutzername As Label
     Friend WithEvents lblPasswort As Label
-    Friend WithEvents lblPassWiederh As Label
     Friend WithEvents txtVorname As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtBenutzername As TextBox
     Friend WithEvents txtPass As TextBox
-    Friend WithEvents txtPassWiederh As TextBox
 End Class

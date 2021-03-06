@@ -3,6 +3,7 @@
 
     Private Sub dlgNeuerKurs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mPresenter.ladenSaName()
+        mPresenter.ladenTrainer()
     End Sub
 
     Private Sub btnErstellen_Click(sender As Object, e As EventArgs) Handles btnErstellen.Click

@@ -5,7 +5,7 @@
     Private mstrName As String
     Private mlngBenutzerID As Long
     Private mlngVersion As Long
-    'Private mcharTyp As Char
+    Private mcharTyp As Char
 
     Sub New()
 
@@ -15,17 +15,17 @@
         mstrName = String.Empty
         mlngBenutzerID = Nothing
         mlngVersion = Nothing
-        ' mcharTyp = Nothing
+        mcharTyp = Nothing
     End Sub
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer, plngVersion As Long) ', pcharTyp As Char)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer, plngVersion As Long, pcharTyp As Char)
         mstrBenutzername = pstrBenutzername
         mstrPasswort = pstrPasswort
         mstrVorname = pstrVorname
         mstrName = pstrName
         mlngBenutzerID = pintBenutzerID
         mlngVersion = plngVersion
-        'mcharTyp = pcharTyp
+        mcharTyp = pcharTyp
     End Sub
 
     Public Property Benutzername As String
@@ -76,13 +76,13 @@
         End Set
     End Property
 
-    'Public Property Typ As Char
-    'Get
-    'Return mcharTyp
-    'End Get
-    'Set(ByVal value As Char)
-    'End Set
-    'End Property
+    Public Property Typ As Char
+        Get
+            Return mcharTyp
+        End Get
+        Set(ByVal value As Char)
+        End Set
+    End Property
 
     Public Sub hinzufuegenKurs(pKurs As Kurs)
         If Not mlstKurs.Contains(pKurs) Then

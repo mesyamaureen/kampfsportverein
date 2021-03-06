@@ -64,14 +64,21 @@
         Dim strSaName As String
         mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
         Dim lstSportart As List(Of Sportart) = mmitDAO.findenAlleSportarten
-
-        mView.leeren()
-
         For i = 0 To lstSportart.Count - 1
             strSaName = lstSportart.Item(i).Name
             mView.befuellenSaName(strSaName)
         Next
+    End Sub
 
+    Public Sub ladenTrainer()
+        Dim i As Integer
+        Dim strTrainer As String
+        mtraDAO = DAOFactory.Instanz.TrainerDAO
+        Dim lstTrainer As List(Of Trainer) = mtraDAO.findeAlleTrainer
+        For i = 0 To lstTrainer.Count - 1
+            strTrainer = lstTrainer.Item(i).Name
+            mView.befuellenTrainer(strTrainer)
+        Next
     End Sub
 
     Public Sub verarbeiteErstellen()

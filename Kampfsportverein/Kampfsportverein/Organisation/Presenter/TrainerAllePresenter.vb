@@ -133,7 +133,7 @@
     End Sub
 
     Public Sub verarbeiteNeu()
-        Dim schueler As Schueler
+        'Dim schueler As Schueler
 
     End Sub
 

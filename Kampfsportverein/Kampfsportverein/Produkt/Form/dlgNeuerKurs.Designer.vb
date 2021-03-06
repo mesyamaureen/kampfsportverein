@@ -32,10 +32,10 @@ Partial Class dlgNeuerKurs
         Me.txtOrt = New System.Windows.Forms.TextBox()
         Me.txtTeilnZahl = New System.Windows.Forms.TextBox()
         Me.cmbTrainer = New System.Windows.Forms.ComboBox()
-        Me.cmbSchwierigkeit = New System.Windows.Forms.ComboBox()
         Me.cmbSportart = New System.Windows.Forms.ComboBox()
         Me.lblSportart = New System.Windows.Forms.Label()
         Me.datKurs = New System.Windows.Forms.DateTimePicker()
+        Me.txtSchwierigkeit = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -127,14 +127,6 @@ Partial Class dlgNeuerKurs
         Me.cmbTrainer.Size = New System.Drawing.Size(518, 33)
         Me.cmbTrainer.TabIndex = 13
         '
-        'cmbSchwierigkeit
-        '
-        Me.cmbSchwierigkeit.FormattingEnabled = True
-        Me.cmbSchwierigkeit.Location = New System.Drawing.Point(244, 323)
-        Me.cmbSchwierigkeit.Name = "cmbSchwierigkeit"
-        Me.cmbSchwierigkeit.Size = New System.Drawing.Size(518, 33)
-        Me.cmbSchwierigkeit.TabIndex = 14
-        '
         'cmbSportart
         '
         Me.cmbSportart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -161,6 +153,14 @@ Partial Class dlgNeuerKurs
         Me.datKurs.Size = New System.Drawing.Size(518, 31)
         Me.datKurs.TabIndex = 17
         '
+        'txtSchwierigkeit
+        '
+        Me.txtSchwierigkeit.Location = New System.Drawing.Point(244, 323)
+        Me.txtSchwierigkeit.Multiline = True
+        Me.txtSchwierigkeit.Name = "txtSchwierigkeit"
+        Me.txtSchwierigkeit.Size = New System.Drawing.Size(518, 42)
+        Me.txtSchwierigkeit.TabIndex = 18
+        '
         'dlgNeuerKurs
         '
         Me.AcceptButton = Me.btnErstellen
@@ -168,10 +168,10 @@ Partial Class dlgNeuerKurs
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
+        Me.Controls.Add(Me.txtSchwierigkeit)
         Me.Controls.Add(Me.datKurs)
         Me.Controls.Add(Me.cmbSportart)
         Me.Controls.Add(Me.lblSportart)
-        Me.Controls.Add(Me.cmbSchwierigkeit)
         Me.Controls.Add(Me.cmbTrainer)
         Me.Controls.Add(Me.txtTeilnZahl)
         Me.Controls.Add(Me.txtOrt)
@@ -199,8 +199,8 @@ Partial Class dlgNeuerKurs
     Friend WithEvents txtOrt As TextBox
     Friend WithEvents txtTeilnZahl As TextBox
     Friend WithEvents cmbTrainer As ComboBox
-    Friend WithEvents cmbSchwierigkeit As ComboBox
     Friend WithEvents cmbSportart As ComboBox
     Friend WithEvents lblSportart As Label
     Friend WithEvents datKurs As DateTimePicker
+    Friend WithEvents txtSchwierigkeit As TextBox
 End Class

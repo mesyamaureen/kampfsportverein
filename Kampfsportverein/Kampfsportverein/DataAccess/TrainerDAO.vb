@@ -13,6 +13,9 @@ Public Class TrainerDAO
     'SQL-Anweisung, um alle Trainer zu ermitteln
     Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenTyp = 'T'"
 
+    'SQL-Anweisung, um Trainer hinzuzufügen
+    Private Const SQL_INSERT_TRAINER As String = "INSERT INTO tblBenutzer/Mitarbeiter/Trainer(BenIdPk, BenBenutzerName, BenPw, BenVorname, BenName, BenTyp, BenVersion) VALUES (@idPk, @passwort, @vorname, @name, @typ, @version)"
+
     'SQL-Anweisung, um Trainer zu löschen
     Private Const SQL_DELETE_BY_VERSION_TRAINER As String = "DELETE FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk AND BenVersion = @benVersion AND BenTyp = 'T';"
 
@@ -39,7 +42,7 @@ Public Class TrainerDAO
         Dim strVorname As String
         Dim strName As String
         Dim lngVersion As Long
-        'Dim charTyp As Char
+        Dim charTyp As Char
 
         'Gesuchter Benutzer
         Dim tra As Trainer
@@ -68,9 +71,9 @@ Public Class TrainerDAO
             strVorname = dr("BenVorname")
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
-            'charTyp = Char.Parse(dr("BenTyp"))
+            charTyp = Char.Parse(dr("BenTyp"))
 
-            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion) ', charTyp)
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
         End If
         dr.Close()
         schliessenDatenbank()
@@ -86,6 +89,7 @@ Public Class TrainerDAO
         Dim strVorname As String
         Dim strName As String
         Dim lngVersion As Long
+        Dim charTyp As Char
 
         'Gelesener Trainer, die zurückgeben werden soll
         Dim tra As Trainer
@@ -117,8 +121,9 @@ Public Class TrainerDAO
             strVorname = dr("BenVorname")
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
+            charTyp = Char.Parse(dr("BenTyp"))
             'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
-            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion)
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
         End If
         dr.Close() 'DataReader schließen
         'Schließen der Datenbankverbindung
@@ -136,6 +141,7 @@ Public Class TrainerDAO
         Dim strVorname As String
         Dim strName As String
         Dim lngVersion As Long
+        Dim charTyp As Char
 
         'Aufgabe und Aufgabenliste
         Dim tra As Trainer
@@ -160,14 +166,37 @@ Public Class TrainerDAO
             strVorname = dr("BenVorname")
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
+            charTyp = Char.Parse(dr("BenTyp"))
             'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
-            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion)
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
 
             lstTrainer.Add(tra)
         Loop
         dr.Close()
         schliessenDatenbank()
         Return lstTrainer
+    End Function
+
+    Public Shared Function hinzufuegenTrainer(pTrainer As Trainer) As Long
+        Dim lngAnzahlDatensätze As Long
+        Dim lngIdPk As Long
+        Dim cmd As OleDbCommand
+
+        lngIdPk = -1
+        cmd = New OleDbCommand(SQL_INSERT_TRAINER, mConnection)
+        cmd.Parameters.AddWithValue("@BenBenutzerName", pTrainer.Benutzername)
+        cmd.Parameters.AddWithValue("@BenPw", pTrainer.Passwort)
+        cmd.Parameters.AddWithValue("@BenVorname", pTrainer.Vorname)
+        cmd.Parameters.AddWithValue("@BenName", pTrainer.Name)
+        cmd.Parameters.AddWithValue("@BenTyp", pTrainer.Typ)
+        cmd.Parameters.AddWithValue("@BenVersion", pTrainer.Version)
+
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensätze = 1 Then
+            lngAnzahlDatensätze = ermittleId()
+        End If
+        schliessenDatenbank()
+        Return lngIdPk
     End Function
 
     Public Shared Function loeschenTrainer(plngBenutzerIdPk As Long, plngVersion As Long) As Boolean

@@ -65,7 +65,7 @@ Public Class MitarbeiterDAO
         Dim strVorname As String
         Dim strName As String
         Dim lngVersion As Long
-        'Dim charTyp As Char
+        Dim charTyp As Char
 
         'Gesuchter Benutzer
         Dim mit As Mitarbeiter
@@ -94,9 +94,9 @@ Public Class MitarbeiterDAO
             strVorname = dr("BenVorname")
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
-            'charTyp = Char.Parse(dr("BenTyp"))
+            charTyp = Char.Parse(dr("BenTyp"))
 
-            mit = New Mitarbeiter(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion) ', charTyp)
+            mit = New Mitarbeiter(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
         End If
         dr.Close()
         schliessenDatenbank()
@@ -113,7 +113,7 @@ Public Class MitarbeiterDAO
         Dim strPasswort As String
         Dim strVorname As String
         Dim strName As String
-        'Dim charTyp As Char
+        Dim charTyp As Char
         Dim lngVersion As Long
 
         'Gesuchter Benutzer
@@ -145,9 +145,9 @@ Public Class MitarbeiterDAO
             strVorname = dr("BenVorname")
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
-            'charTyp = Char.Parse(dr("BenTyp"))
+            charTyp = Char.Parse(dr("BenTyp"))
 
-            ben = New Benutzer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion) ', charTyp)
+            ben = New Benutzer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
         End If
         dr.Close()
         schliessenDatenbank()

@@ -3,6 +3,7 @@
     Public mErgebnis As EPresenterErgebnis
     Private mSitzung As BenutzerSitzung
     Private mView As NeuerTrainerView
+
     Sub New()
         MyBase.New
         mView = New NeuerTrainerView(Me)
@@ -37,15 +38,33 @@
 
     Public Sub anzeigen()
         mView.leeren()
-        mView.anzeigen(mlstMitarbeiter(1).Vorname, mlstMitarbeiter(1).Name, mlstMitarbeiter(1).Benutzername,
-                       mlstMitarbeiter(1).Passwort)
+        mView.anzeigen()
+    End Sub
+
+    Public Sub verarbeiteErstellen(pTrainer As Trainer)
+        If String.IsNullOrEmpty(pTrainer.Vorname) Or String.IsNullOrEmpty(pTrainer.Name) Or
+String.IsNullOrEmpty(pTrainer.Benutzername) Or String.IsNullOrEmpty(pTrainer.Passwort) Then
+            MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
+        Else
+            mNeuerTrainer.Vorname = pTrainer.Vorname
+            mNeuerTrainer.Name = pTrainer.Name
+            mNeuerTrainer.Benutzername = pTrainer.Benutzername
+            mNeuerTrainer.Passwort = pTrainer.Passwort
+
+            mNeuerTrainer.Version = pTrainer.Version + 1
+
+            Dim Ergebnis As Long
+            Ergebnis = TrainerDAO.hinzufuegenTrainer(pTrainer)
+            If Ergebnis = mNeuerTrainer.BenutzerID Then
+                mErgebnis = EPresenterErgebnis.SPORTART_EINZELN
+                mView.Close()
+            Else
+                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            End If
+        End If
     End Sub
 
     Public Sub verarbeiteAbbrechen()
         mView.Close()
-    End Sub
-
-    Public Sub verarbeiteErstellen()
-
     End Sub
 End Class
