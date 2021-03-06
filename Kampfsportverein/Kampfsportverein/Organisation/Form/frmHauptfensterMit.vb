@@ -36,8 +36,24 @@
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click
         Dim lngSportartId As Long
-        lngSportartId = Me.lstSportart.SelectedItems(0).Text
-        mPresenter.verarbeiteLoeschen(lngSportartId)
+        Dim lngKursId As Long
+        Dim lngSchuelerId As Long
+        Dim lngTrainerId As Long
+
+        If Me.lstSportart.SelectedItems.Count > 0 Then
+            lngSportartId = Me.lstSportart.SelectedItems(0).Text
+            mPresenter.verarbeiteLoeschen(lngSportartId)
+        ElseIf Me.lstKurseAlle.SelectedItems.Count > 0 Then
+            lngKursId = Me.lstKurseAlle.SelectedItems(0).Text
+            mPresenter.verarbeiteLoeschenKurs(lngKursId)
+        ElseIf Me.lstSchuelerAlle.SelectedItems.Count > 0 Then
+            lngSchuelerId = Me.lstSchuelerAlle.SelectedItems(0).Text
+        ElseIf Me.lstTrainer.SelectedItems.Count > 0 Then
+            lngTrainerId = Me.lstTrainer.SelectedItems(0).Text
+            mPresenter.verarbeiteLoeschenTrainer(lngTrainerId)
+        End If
+        'lngSportartId = Me.lstSportart.SelectedItems(0).Text
+        'mPresenter.verarbeiteLoeschen(lngSportartId)
     End Sub
 
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click

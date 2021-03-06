@@ -372,7 +372,7 @@ Public Class MitarbeiterDAO
     End Function
 
     'KURS
-    'findenAlleKurse
+    'finden Alle Kurse nach zugeordneter Sportart
     Public Function findenAlleSaKurse(pSportart As Sportart) As List(Of Kurs)
 
         'Deklaration der Eigenschaften des Kurs
@@ -428,6 +428,7 @@ Public Class MitarbeiterDAO
         Return lstKurs
     End Function
 
+    'findenAlleKurse
     Public Function findeAlleKurse() As List(Of Kurs)
 
         'Deklaration der Eigenschaften des Kurs
@@ -533,7 +534,6 @@ Public Class MitarbeiterDAO
         Return lstKurs
     End Function
 
-
     'findenKurs
     Public Function findeKurs(plngKursIdPk As Long) As Kurs
 
@@ -592,56 +592,9 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    'finden Kurs nach Sportart
-    'Public Function findeKursSport(plngSportIdPk As Long) As List(Of Kurs)
-    'Deklaration der Eigenschaften
-    '    Dim lngKursIdPk As Long
-    '    Dim datKursZeitpunkt As Date
-    '    Dim strKursOrt As String
-    '    Dim intKursTeilnZahl As Integer
-    '    Dim strKursSchwierigkeit As String
-    '    Dim lngSaIdFk As Long
-    '    Dim lngBenIdFk As Long
-    '    Dim lngVersion As Long
-    '    'Kurs und Kursliste
-    '    Dim kurs As Kurs
-    '    Dim lstKurs As List(Of Kurs)
-    '    'Initialisierung Liste
-    '    kurs = Nothing
-    '    lstKurs = Nothing
-    '    'Kommando und Reader für DB Zugriff
-    '    Dim cmd As OleDbCommand
-    '    Dim dr As OleDbDataReader
-    '    'Öffnen DBVerbindung durch Methode
-    '    oeffnenDatenbank()
-
-    '    cmd = New OleDbCommand(SQL_SELECT_KURS_BY_SPORTART, mConnection)
-    '    cmd.Parameters.AddWithValue("@KuSaIdFk", lngSaIdFk)
-
-    '    dr = cmd.ExecuteReader
-    '    If dr.Read() Then
-    '        lngKursIdPk = Long.Parse(dr("KuIdPk"))
-    '        datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
-    '        strKursOrt = dr("KuOrt")
-    '        intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
-    '        strKursSchwierigkeit = dr("KuSchwierigkeit")
-    '        lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
-    '        lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
-    '        lngVersion = Long.Parse(dr("KuVersion"))
-
-    '        'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
-    '        kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
-    '                        strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
-
-    '        'Beziehung zur Sportart
-    '        kurs.Sportart = findenAlleSaKurse(lngBenIdFk)
-
-    '    End If
-    '    'Datenbank schließen
-    'End Function
 
     'loeschenKurs
-    Public Shared Function loeschenKursTraId(plngKursIdPk As Long, plngVersion As Long) As Boolean 'Verbindung zum Trainer
+    Public Shared Function loeschenKursTraId(plngKursIdPk As Long, plngVersion As Long) As Boolean
         'Deklaration
         Dim lngAnzahlDatensaetze As Long
         Dim cmd As OleDbCommand
@@ -656,10 +609,10 @@ Public Class MitarbeiterDAO
 
         schliessenDatenbank()
 
-        If lngAnzahlDatensaetze = 0 Then
-            Return False 'Nicht erfolgreich, deshalb False zurückgeben
+        If lngAnzahlDatensaetze = 1 Then
+            Return True 'Nicht erfolgreich, deshalb False zurückgeben
         Else
-            Return True 'erfolgreich, deshalb True
+            Return False 'erfolgreich, deshalb True
         End If
 
     End Function

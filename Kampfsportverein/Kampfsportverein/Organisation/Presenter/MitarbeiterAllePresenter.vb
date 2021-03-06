@@ -242,9 +242,10 @@
     Public Sub verarbeiteLoeschenKurs(plngKursId As Long)
         Dim kurs As Kurs
         Dim bolKursErgebnis As Boolean
-        kurs = mMitarbeiterDAO.findeKurs(plngKursId)
-        bolKursErgebnis = MitarbeiterDAO.loeschenKursTraId(plngKursId, kurs.Version)
-        If bolKursErgebnis Then
+        plngKursId -= 1
+        kurs = mlstKurseAlle.Item(plngKursId)
+        bolKursErgebnis = MitarbeiterDAO.loeschenKursTraId(kurs.IdPk, kurs.Version)
+        If bolKursErgebnis = True Then
             verarbeiteKursuebersichtAnzeigen()
         Else
             MsgBox("Es ist ein Fehler beim Löschen aufgetreten", vbOKOnly)
