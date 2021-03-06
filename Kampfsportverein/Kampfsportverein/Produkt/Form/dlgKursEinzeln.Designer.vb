@@ -31,13 +31,11 @@ Partial Class dlgKursEinzeln
         Me.txtZeitpunkt = New System.Windows.Forms.TextBox()
         Me.txtOrt = New System.Windows.Forms.TextBox()
         Me.txtTeilnZahl = New System.Windows.Forms.TextBox()
-        Me.rbtnAnfaenger = New System.Windows.Forms.RadioButton()
-        Me.rbtnFortgeschritten = New System.Windows.Forms.RadioButton()
-        Me.rbtnExperte = New System.Windows.Forms.RadioButton()
         Me.lblTrainer = New System.Windows.Forms.Label()
-        Me.cboxTrainer = New System.Windows.Forms.ComboBox()
         Me.lblSportart = New System.Windows.Forms.Label()
-        Me.cboxSportart = New System.Windows.Forms.ComboBox()
+        Me.txtSportart = New System.Windows.Forms.TextBox()
+        Me.txtTrainer = New System.Windows.Forms.TextBox()
+        Me.txtSchwierigkeit = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -119,39 +117,6 @@ Partial Class dlgKursEinzeln
         Me.txtTeilnZahl.Size = New System.Drawing.Size(530, 41)
         Me.txtTeilnZahl.TabIndex = 9
         '
-        'rbtnAnfaenger
-        '
-        Me.rbtnAnfaenger.AutoSize = True
-        Me.rbtnAnfaenger.Location = New System.Drawing.Point(232, 334)
-        Me.rbtnAnfaenger.Name = "rbtnAnfaenger"
-        Me.rbtnAnfaenger.Size = New System.Drawing.Size(130, 29)
-        Me.rbtnAnfaenger.TabIndex = 12
-        Me.rbtnAnfaenger.TabStop = True
-        Me.rbtnAnfaenger.Text = "Anfänger"
-        Me.rbtnAnfaenger.UseVisualStyleBackColor = True
-        '
-        'rbtnFortgeschritten
-        '
-        Me.rbtnFortgeschritten.AutoSize = True
-        Me.rbtnFortgeschritten.Location = New System.Drawing.Point(421, 332)
-        Me.rbtnFortgeschritten.Name = "rbtnFortgeschritten"
-        Me.rbtnFortgeschritten.Size = New System.Drawing.Size(187, 29)
-        Me.rbtnFortgeschritten.TabIndex = 13
-        Me.rbtnFortgeschritten.TabStop = True
-        Me.rbtnFortgeschritten.Text = "Fortgeschritten"
-        Me.rbtnFortgeschritten.UseVisualStyleBackColor = True
-        '
-        'rbtnExperte
-        '
-        Me.rbtnExperte.AutoSize = True
-        Me.rbtnExperte.Location = New System.Drawing.Point(645, 332)
-        Me.rbtnExperte.Name = "rbtnExperte"
-        Me.rbtnExperte.Size = New System.Drawing.Size(117, 29)
-        Me.rbtnExperte.TabIndex = 14
-        Me.rbtnExperte.TabStop = True
-        Me.rbtnExperte.Text = "Experte"
-        Me.rbtnExperte.UseVisualStyleBackColor = True
-        '
         'lblTrainer
         '
         Me.lblTrainer.AutoSize = True
@@ -160,14 +125,6 @@ Partial Class dlgKursEinzeln
         Me.lblTrainer.Size = New System.Drawing.Size(80, 25)
         Me.lblTrainer.TabIndex = 15
         Me.lblTrainer.Text = "Trainer"
-        '
-        'cboxTrainer
-        '
-        Me.cboxTrainer.FormattingEnabled = True
-        Me.cboxTrainer.Location = New System.Drawing.Point(232, 408)
-        Me.cboxTrainer.Name = "cboxTrainer"
-        Me.cboxTrainer.Size = New System.Drawing.Size(530, 33)
-        Me.cboxTrainer.TabIndex = 16
         '
         'lblSportart
         '
@@ -178,13 +135,32 @@ Partial Class dlgKursEinzeln
         Me.lblSportart.TabIndex = 17
         Me.lblSportart.Text = "Sportart"
         '
-        'cboxSportart
+        'txtSportart
         '
-        Me.cboxSportart.FormattingEnabled = True
-        Me.cboxSportart.Location = New System.Drawing.Point(232, 11)
-        Me.cboxSportart.Name = "cboxSportart"
-        Me.cboxSportart.Size = New System.Drawing.Size(530, 33)
-        Me.cboxSportart.TabIndex = 18
+        Me.txtSportart.Enabled = False
+        Me.txtSportart.Location = New System.Drawing.Point(232, 12)
+        Me.txtSportart.Multiline = True
+        Me.txtSportart.Name = "txtSportart"
+        Me.txtSportart.Size = New System.Drawing.Size(530, 41)
+        Me.txtSportart.TabIndex = 18
+        '
+        'txtTrainer
+        '
+        Me.txtTrainer.Enabled = False
+        Me.txtTrainer.Location = New System.Drawing.Point(232, 402)
+        Me.txtTrainer.Multiline = True
+        Me.txtTrainer.Name = "txtTrainer"
+        Me.txtTrainer.Size = New System.Drawing.Size(530, 41)
+        Me.txtTrainer.TabIndex = 19
+        '
+        'txtSchwierigkeit
+        '
+        Me.txtSchwierigkeit.Enabled = False
+        Me.txtSchwierigkeit.Location = New System.Drawing.Point(232, 328)
+        Me.txtSchwierigkeit.Multiline = True
+        Me.txtSchwierigkeit.Name = "txtSchwierigkeit"
+        Me.txtSchwierigkeit.Size = New System.Drawing.Size(530, 41)
+        Me.txtSchwierigkeit.TabIndex = 20
         '
         'dlgKursEinzeln
         '
@@ -193,13 +169,11 @@ Partial Class dlgKursEinzeln
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
-        Me.Controls.Add(Me.cboxSportart)
+        Me.Controls.Add(Me.txtSchwierigkeit)
+        Me.Controls.Add(Me.txtTrainer)
+        Me.Controls.Add(Me.txtSportart)
         Me.Controls.Add(Me.lblSportart)
-        Me.Controls.Add(Me.cboxTrainer)
         Me.Controls.Add(Me.lblTrainer)
-        Me.Controls.Add(Me.rbtnExperte)
-        Me.Controls.Add(Me.rbtnFortgeschritten)
-        Me.Controls.Add(Me.rbtnAnfaenger)
         Me.Controls.Add(Me.txtTeilnZahl)
         Me.Controls.Add(Me.txtOrt)
         Me.Controls.Add(Me.txtZeitpunkt)
@@ -225,11 +199,9 @@ Partial Class dlgKursEinzeln
     Friend WithEvents txtZeitpunkt As TextBox
     Friend WithEvents txtOrt As TextBox
     Friend WithEvents txtTeilnZahl As TextBox
-    Friend WithEvents rbtnAnfaenger As RadioButton
-    Friend WithEvents rbtnFortgeschritten As RadioButton
-    Friend WithEvents rbtnExperte As RadioButton
     Friend WithEvents lblTrainer As Label
-    Friend WithEvents cboxTrainer As ComboBox
     Friend WithEvents lblSportart As Label
-    Friend WithEvents cboxSportart As ComboBox
+    Friend WithEvents txtSportart As TextBox
+    Friend WithEvents txtTrainer As TextBox
+    Friend WithEvents txtSchwierigkeit As TextBox
 End Class

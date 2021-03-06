@@ -585,9 +585,8 @@ Public Class MitarbeiterDAO
             traDAO = DAOFactory.Instanz.TrainerDAO
             kurs.Benutzer = traDAO.findenTrainerId(lngBenIdFk)
 
-            'Beziehung zur Sportart
-
         End If
+        dr.Close()
         schliessenDatenbank()
         Return kurs
 

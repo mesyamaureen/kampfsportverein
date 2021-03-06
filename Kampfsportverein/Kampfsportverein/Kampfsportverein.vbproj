@@ -103,8 +103,8 @@
     <Compile Include="Organisation\View\MitarbeiterKontoView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produkt\Presenter\AlleKursePresenter.vb" />
-    <Compile Include="Produkt\View\AlleKurseView.vb">
+    <Compile Include="Produkt\Presenter\KursPresenter.vb" />
+    <Compile Include="Produkt\View\KursView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\Presenter\AlleSchuelerPresenter.vb" />

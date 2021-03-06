@@ -158,13 +158,14 @@
     End Sub
 
     Public Sub verarbeiteKursOeffnen(plngKursId As Long) 'button Öffnen für Kurs
-        Dim kurs As Kurs ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim ausgewaehlterKurs As Kurs ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
         Dim kursPresenter As KursPresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
-        kurs = mMitarbeiterDAO.findeKurs(plngKursId)
+        plngKursId += 1  'weil Index auf Datenbank von 1 anfängt
+        ausgewaehlterKurs = mMitarbeiterDAO.findeKurs(plngKursId)
         ' Übergeben der Sportart zur Anzeige im Presenter
-        kursPresenter = New KursPresenter(kurs)
+        kursPresenter = New KursPresenter(ausgewaehlterKurs)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
         If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31

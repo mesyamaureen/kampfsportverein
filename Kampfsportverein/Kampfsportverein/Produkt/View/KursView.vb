@@ -18,24 +18,22 @@
     End Property
     'Methoden
     'Initialisierungen 
-    Public Sub anzeigenOrt()
+
+    Public Sub anzeigenKurs()
+        Me.txtSportart.Enabled = False
         Me.txtOrt.Enabled = True
-    End Sub
-
-    Public Sub anzeigenSchwierigkeitsgrad()
-
-    End Sub
-
-    Public Sub anzeigenTeilnehmerzahl()
+        Me.txtSchwierigkeit.Enabled = True
         Me.txtTeilnZahl.Enabled = True
-    End Sub
-
-    Public Sub anzeigenTrainer()
-
-    End Sub
-
-    Public Sub anzeigenZeitpunkt()
+        Me.txtTrainer.Enabled = False
         Me.txtZeitpunkt.Enabled = True
     End Sub
 
+    Public Sub leeren()
+        Me.txtSportart.Clear()
+        Me.txtZeitpunkt.Clear()
+        Me.txtOrt.Clear()
+        Me.txtTeilnZahl.Clear()
+        Me.txtSchwierigkeit.Clear()
+        Me.txtTrainer.Clear()
+    End Sub
 End Class
