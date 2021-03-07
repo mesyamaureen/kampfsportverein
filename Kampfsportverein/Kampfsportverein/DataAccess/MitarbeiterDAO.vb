@@ -19,7 +19,7 @@ Public Class MitarbeiterDAO
     ' 'SQL-Anweisung, um eine Sportart nach ID zu filtern - benötigt?
     'Private Const SQL_SELECT_SPORTART_BY_SAID As String = "SELECT * FROM tblSportarten WHERE SaIdPk = @IdPk"
 
-    ' SQL-Anweisung, um eine Aufgabe zu aktualisieren
+    ' SQL-Anweisung, um eine Sportart zu aktualisieren
     Private Const SQL_UPDATE As String = "UPDATE tblSportarten SET SaName = @name, SaHerkunftsland = @herkunft, SaZielgruppe = @zielgruppe, SaMindestalter = @mindestalter, SaVersion = @version WHERE SaIdPk = @idPk "
 
     ' SQL-Anweisung, um eine Sportart neu hinzuzufügen
@@ -53,6 +53,13 @@ Public Class MitarbeiterDAO
     '  Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerzahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion) VALUES (#05/06/2020#, Ort, 8, l, 2, 1, 1)"
     'SQL-Anweisung, um einen Kurs zu löschen
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @KuIdPk AND KuVersion = @version;"
+
+    ' SQL-Anweisung, um einen Mitarbeiter zu aktualisieren
+    Private Const SQL_UPDATE_MITARBEITER As String = "UPDATE tblBenutzer/Mitarbeiter/Trainer SET BenVorname = @benVorname, BenPw = @BenPw, BenVersion = @BenVersion WHERE BenIdPk = @BenIdPk"
+
+    ' SQL-Anweisung, um einen Mitarbeiter neu hinzuzufügen
+    Private Const SQL_INSERT_MITARBEITER As String = "INSERT INTO tblBenutzer/Mitarbeiter/Trainer(BenVorname, BenName, BenBenutzername, BenPw, BenTyp, BenVersion) VALUES (@BenVorname, @BenName, @BenBenutzername, @BenPw, M, @BenVersion)"
+
 
     'finden Mitarbeiter zur Anmeldung
     Public Function findenMitBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String)
@@ -709,8 +716,6 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
         cmd.Parameters.AddWithValue("@version", pKurs.Version)
 
-        ' MsgBox(pKurs.Zeitpunkt & "       " & pKurs.Ort & "     " & pKurs.Teilnehmerzahl & "       " & pKurs.Schwierigkeitsgrad & "     " & pKurs.SaIdFk & "     " & pKurs.BenIdFk & "        " & pKurs.Version)
-
         lngAnzahlDatensaetze = cmd.ExecuteNonQuery
         If lngAnzahlDatensaetze = 1 Then
             lngKursIdPk = ermittleId()
@@ -718,4 +723,97 @@ Public Class MitarbeiterDAO
         schliessenDatenbank()
         Return lngKursIdPk
     End Function
+
+    Public Shared Function speichernMitarbeiter(pMit As Mitarbeiter)
+
+        ' Deklarationen
+        Dim lngIdPK As Long ' zurückzugebender Primärschlüsselwert der neu hinzugefügten oder aktualisierten Aufagbe
+
+        ' Wenn die Aufgabe bereits als Datensatz gespeichert ist (also ihr Primärschlüsselwert > 0 ist)
+        If pMit.ID > 0 Then
+            ' Muss die Aufgabe aktualisiert werden 
+            lngIdPK = aktualisierenMitarbeiter(pMit)
+        Else
+            ' Andernfalls muss die Aufgabe neu hinzugefügt werden
+            lngIdPK = hinzufuegenMitarbeiter(pMit)
+        End If
+
+        ' Primärschlüsselwert der neu hinzugefügten oder aktualisierten Aufgabe zurückliefern
+        Return lngIdPK
+
+
+    End Function
+
+
+    Private Shared Function aktualisierenMitarbeiter(pMit As Mitarbeiter) As Long
+        ' Deklarationen
+        Dim lngIdPk As Long ' Primärschlüssel des zu aktualisierenden Datensatzes
+        Dim lngAnzahlDatensätze As Long ' Anzahl der von der Operation betroffenen Datensätze
+        Dim cmd As OleDbCommand ' Kommando für den Datenbankzugriff
+
+        ' Initialisierung
+        lngIdPk = -1 ' Wert für Primärschlüssel, der erkennbar macht, dass Datensatz (noch) nicht aktualisierenden wurde
+
+
+        'Öffnen der Datenbankverbindung durch geerbte Methode der Oberklasse
+        oeffnenDatenbank()
+
+        ' Kommando für den Datenbankzugriff vorbereiten
+        ' SQL-Anweisung aus Konstante verwenden (Deklaration oben) und initialisierte Datenbankverbindung (aus Oberklasse geerbt)
+        cmd = New OleDbCommand(SQL_UPDATE_MITARBEITER, mConnection)
+
+
+        cmd.Parameters.AddWithValue("@BenName", pMit.Nachname)
+        cmd.Parameters.AddWithValue("@BenPw", pMit.Passwort)
+        cmd.Parameters.AddWithValue("@BenVersion", pMit.Version + 1)
+
+
+        ' Ausführen des Kommandos, als Ergebnis die Anzahl betroffener Datensätze merken
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery
+
+        ' Wenn ein Datensatz betroffen ist
+        If lngAnzahlDatensätze = 1 Then
+            ' Aktualisieren war erfolgreich, nun Primärschlüssel als Ergebnis zurückliefern
+            lngIdPk = pMit.ID
+        End If
+
+        'Schließen der Datenbankverbindung durch geerbte Methode der Oberklasse
+        schliessenDatenbank()
+
+        ' Rückgabe des Primärschlüssel-Wertes der aktualisierten Aufgabe
+        Return lngIdPk
+
+    End Function
+
+
+    Private Shared Function hinzufuegenMitarbeiter(pMit As Mitarbeiter) As Long
+
+        Dim lngAnzahlDatensätze As Long
+        Dim lngIdPk As Long
+        Dim cmd As OleDbCommand
+
+        lngIdPk = -1
+
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_INSERT_MITARBEITER, mConnection)
+
+        cmd.Parameters.AddWithValue("@BenVorname", pMit.Vorname)
+        cmd.Parameters.AddWithValue("@BenName", pMit.Nachname)
+        cmd.Parameters.AddWithValue("@BenBenutzername", pMit.Benutzername)
+        cmd.Parameters.AddWithValue("@BenPw", pMit.Passwort)
+        cmd.Parameters.AddWithValue("@BenTyp", pMit.Typ)
+        cmd.Parameters.AddWithValue("@BenVersion", pMit.Version)
+
+        lngAnzahlDatensätze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensätze = 1 Then
+            lngAnzahlDatensätze = ermittleId()
+        End If
+        schliessenDatenbank()
+        Return lngIdPk
+
+
+    End Function
+
+
 End Class
