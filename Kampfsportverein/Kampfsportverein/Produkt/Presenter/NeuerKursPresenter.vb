@@ -100,9 +100,9 @@
         lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
 
         If mKurs Is Nothing Then
-            mKurs = New Kurs(3, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
+            mKurs = New Kurs(0, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
         Else
-            mKurs.BenIdFk = 3  ' Ändere!
+            mKurs.BenIdFk = 0  ' Ändere!
 
             mKurs.Zeitpunkt = datKurs
             mKurs.Ort = strOrt
