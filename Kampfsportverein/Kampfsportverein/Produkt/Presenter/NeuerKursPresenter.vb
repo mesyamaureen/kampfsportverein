@@ -101,11 +101,7 @@
         lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
 
         If mKurs Is Nothing Then
-<<<<<<< HEAD
-            mKurs = New Kurs(3, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
-=======
-            mKurs = New Kurs(datKurs, strOrt, bytTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId)
->>>>>>> b72613de177cac3b86111ab735d58a626d379ea3
+            mKurs = New Kurs(datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId)
         Else
             'mKurs.BenIdFk = 0  ' Ändere!
 

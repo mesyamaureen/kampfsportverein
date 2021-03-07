@@ -21,12 +21,12 @@
         mlngVersion = 0
     End Sub
 
-    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
+    Sub New(pdatZeitpunkt As Date, pstrOrt As String, plngTeilnehmerzahl As Long, pstrSchwierigkeitsgrad As String,
             plngSaIdFk As Long, plngBenIdFk As Long) 'Konstruktor mit Parameter
         mlngIdPk -= 1
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
-        mlngTeilnehmerzahl = pbytTeilnehmerzahl
+        mlngTeilnehmerzahl = plngTeilnehmerzahl
         mstrSchwierigkeitsgrad = pstrSchwierigkeitsgrad
         mlngSaIdFk = plngSaIdFk
         mlngBenIdFk = plngBenIdFk
