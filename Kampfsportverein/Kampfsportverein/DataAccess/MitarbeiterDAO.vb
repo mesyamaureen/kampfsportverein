@@ -49,8 +49,8 @@ Public Class MitarbeiterDAO
                                                 KuVersion = @kVersion"
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
-    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion)" &
-                                           "VALUES (@kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kSaIdFk, @kBenIdFk, @kVersion)"
+    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk)" &
+                                           "VALUES (@kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kSaIdFk, @kBenIdFk)"
 
     'SQL-Anweisung, um einen Kurs zu löschen
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @kIdPk AND KuVersion = @kVersion;"
@@ -418,7 +418,7 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
-                            lngSportartIdFk, lngBenIdFK, lngVersion)
+                            lngSportartIdFk, lngBenIdFK)
             'kurs.Sportart = pSportart 'Kurs aus der Sportart zuordnen
             lstKurs.Add(kurs) 'Neuer Kurs zur Liste der Kursen hinzufügen
         Loop
@@ -469,7 +469,7 @@ Public Class MitarbeiterDAO
 
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
             kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
-                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk)
 
             lstKurs.Add(kurs)
         Loop
@@ -521,7 +521,7 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neue Aufgabe erstellen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk)
             'Aufgabe dem Benutzer zuordnen
             kurs.Benutzer = pBenutzer
             'Neue Aufgabe zur Liste der Aufgaben hinzufügen
@@ -579,7 +579,7 @@ Public Class MitarbeiterDAO
 
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
             kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
-                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk)
 
             'Beziehung zum Trainer
             traDAO = DAOFactory.Instanz.TrainerDAO
@@ -702,7 +702,7 @@ Public Class MitarbeiterDAO
         Dim cmd As OleDbCommand
 
         lngKursIdPk = -1
-        lngAnzahlDatensaetze = 0
+        'lngAnzahlDatensaetze = 0
 
         oeffnenDatenbank()
 
@@ -713,7 +713,6 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
         cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
         cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
-        cmd.Parameters.AddWithValue("@version", pKurs.Version)
 
         lngAnzahlDatensaetze = cmd.ExecuteNonQuery
         If lngAnzahlDatensaetze = 1 Then
