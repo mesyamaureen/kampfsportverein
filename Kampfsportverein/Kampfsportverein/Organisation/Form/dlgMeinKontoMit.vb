@@ -9,11 +9,11 @@
 
     End Sub
 
-    Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
 
-    End Sub
 
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
 
     End Sub
+
+
 End Class
