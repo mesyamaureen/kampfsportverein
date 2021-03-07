@@ -5,7 +5,7 @@
     Private mmitDAO As MitarbeiterDAO
     Private mtraDAO As TrainerDAO
 
-    Sub New(pKurs As Kurs)
+    Sub New() 'pKurs As Kurs)
         'mKurs = pKurs
         mKurs = Nothing
         mView = New NeuerKursView(Me)
@@ -100,9 +100,9 @@
         lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
 
         If mKurs Is Nothing Then
-            mKurs = New Kurs(3, datKurs, strOrt, bytTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
+            mKurs = New Kurs(datKurs, strOrt, bytTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
         Else
-            mKurs.BenIdFk = 3  ' Ändere!
+            'mKurs.BenIdFk = 0  ' Ändere!
 
             mKurs.Zeitpunkt = datKurs
             mKurs.Ort = strOrt

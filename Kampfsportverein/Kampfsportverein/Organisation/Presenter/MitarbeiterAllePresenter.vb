@@ -214,7 +214,7 @@
         Dim lngKursIdPk As Long
 
         kurs = New Kurs()
-        neuerKursPresenter = New NeuerKursPresenter(kurs)
+        neuerKursPresenter = New NeuerKursPresenter() 'kurs)
         lngKursIdPk = MitarbeiterDAO.hinzufuegenKurs(kurs)
         anzeigenKursAlle()
     End Sub

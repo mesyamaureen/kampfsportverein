@@ -49,8 +49,8 @@ Public Class MitarbeiterDAO
                                                 KuVersion = @kVersion"
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
-    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuIdPk, KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion)" &
-                                           "VALUES (@kIdPk, @kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kSaIdFk, @kBenIdFk, @kVersion)"
+    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion)" &
+                                           "VALUES (@kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kSaIdFk, @kBenIdFk, @kVersion)"
 
     'SQL-Anweisung, um einen Kurs zu löschen
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @kIdPk AND KuVersion = @kVersion;"
@@ -417,7 +417,7 @@ Public Class MitarbeiterDAO
             lngBenIdFK = Long.Parse(dr("KuBenIdFk"))
             lngVersion = Long.Parse(dr("KuVersion"))
 
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
                             lngSportartIdFk, lngBenIdFK, lngVersion)
             'kurs.Sportart = pSportart 'Kurs aus der Sportart zuordnen
             lstKurs.Add(kurs) 'Neuer Kurs zur Liste der Kursen hinzufügen
@@ -468,7 +468,7 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
                             strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
 
             lstKurs.Add(kurs)
@@ -521,7 +521,7 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neue Aufgabe erstellen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
             'Aufgabe dem Benutzer zuordnen
             kurs.Benutzer = pBenutzer
             'Neue Aufgabe zur Liste der Aufgaben hinzufügen
@@ -578,7 +578,7 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
                             strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
 
             'Beziehung zum Trainer
@@ -707,7 +707,6 @@ Public Class MitarbeiterDAO
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_INSERT_KURS, mConnection)
-        cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
         cmd.Parameters.AddWithValue("@KuTeilnehmerZahl", pKurs.Teilnehmerzahl)

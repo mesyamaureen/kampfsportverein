@@ -31,8 +31,8 @@
         sport1 = New Sportart(1, "Judo", "Japan", "Zielgruppe weiß jetzt noch nicht", 10, 1)
         sport2 = New Sportart(2, "Karate", "Japan", "Zielgruppe weiß jetzt noch nicht", 12, 1)
         sport3 = New Sportart(3, "Muay Thai", "Thailand", "Zielgruppe weiß jetzt noch nicht", 10, 1)
-        kurs1 = New Kurs(21, #12/11/2020#, "B101", 10, "Fortgeschritten", 1, 1, 1)
-        kurs2 = New Kurs(22, #12/18/2020#, "C101", 10, "Fortgeschritten", 2, 2, 1)
+        kurs1 = New Kurs(#12/11/2020#, "B101", 10, "Fortgeschritten", 1, 1, 1) '21,
+        kurs2 = New Kurs(#12/18/2020#, "C101", 10, "Fortgeschritten", 2, 2, 1) '22, 
         schueler1 = New Schueler("Anna", "Müller", "annamueler@gmail.com", 10, 1)
         schueler2 = New Schueler("Hans", "Klaus", "hansklaus@gmail.com", 11, 1)
         schueler3 = New Schueler("Andreas", "Zimmermann", "andreaszimmermann@gmail.com", 12, 1)
