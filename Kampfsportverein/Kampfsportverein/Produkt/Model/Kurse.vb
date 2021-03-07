@@ -2,7 +2,7 @@
     Private mlngIdPk As Long
     Private mdatZeitpunkt As Date
     Private mstrOrt As String
-    Private mintTeilnehmerzahl As Integer
+    Private mlngTeilnehmerzahl As Long
     Private mstrSchwierigkeitsgrad As String
     Private mlngSaIdFk As Long
     Private mlngBenIdFk As Long
@@ -14,7 +14,7 @@
         mlngIdPk = Nothing
         mdatZeitpunkt = Date.MinValue
         mstrOrt = String.Empty
-        mintTeilnehmerzahl = Nothing
+        mlngTeilnehmerzahl = Nothing
         mstrSchwierigkeitsgrad = String.Empty
         mlngSaIdFk = Nothing
         mlngBenIdFk = Nothing
@@ -26,7 +26,7 @@
         mlngIdPk = plngIdPk
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
-        mintTeilnehmerzahl = pbytTeilnehmerzahl
+        mlngTeilnehmerzahl = pbytTeilnehmerzahl
         mstrSchwierigkeitsgrad = pstrSchwierigkeitsgrad
         mlngSaIdFk = plngSaIdFk
         mlngBenIdFk = plngBenIdFk
@@ -61,11 +61,12 @@
         End Set
     End Property
 
-    Public Property Teilnehmerzahl As Byte
+    Public Property Teilnehmerzahl As Long
         Get
-            Return mintTeilnehmerzahl
+            Return mlngTeilnehmerzahl
         End Get
-        Set(ByVal value As Byte)
+        Set(ByVal value As Long)
+            mlngTeilnehmerzahl = value
         End Set
     End Property
 
@@ -74,6 +75,7 @@
             Return mdatZeitpunkt
         End Get
         Set(ByVal value As Date)
+            mdatZeitpunkt = value
         End Set
     End Property
 
@@ -82,6 +84,7 @@
             Return mstrOrt
         End Get
         Set(ByVal value As String)
+            mstrOrt = value
         End Set
     End Property
 
@@ -90,6 +93,8 @@
             Return mstrSchwierigkeitsgrad
         End Get
         Set(ByVal value As String)
+            mstrSchwierigkeitsgrad = value
+
         End Set
     End Property
 

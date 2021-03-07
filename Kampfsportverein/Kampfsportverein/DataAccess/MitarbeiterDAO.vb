@@ -49,11 +49,10 @@ Public Class MitarbeiterDAO
                                                 KuVersion = @kVersion"
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
-    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuIdPk, KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion)" &
-                                           "VALUES (@kIdPk, @kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kSaIdFk, @kBenIdFk, @kVersion)"
-
+    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerzahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion) VALUES (@KuZeitpunkt, @KuOrt, @KuTeilnehmerzahl, @KuSchwierigkeit, @KuSaIdFk, @KuBenIdFk, @version)"
+    '  Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerzahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion) VALUES (#05/06/2020#, Ort, 8, l, 2, 1, 1)"
     'SQL-Anweisung, um einen Kurs zu löschen
-    Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @kIdPk AND KuVersion = @kVersion;"
+    Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @KuIdPk AND KuVersion = @version;"
 
     'finden Mitarbeiter zur Anmeldung
     Public Function findenMitBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String)
@@ -337,13 +336,8 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    ''' <summary>
-    ''' Hinzufügen einer neuen Aufgabe, indem diese als Datenstaz in die Tabelle tblAufgaben eingefügt wird
-    ''' </summary>
-    ' <param name="pSpor">Zu speichernde neue Aufgabe</param>
-    ''' <returns>Liefert die ID der neu eingefügten Aufgabe zurück. Wenn das Einfügen fehlschlug, wird -1 zurückgeliefert.</returns>
-    ''' <remarks></remarks>
-    Private Shared Function hinzufuegen(pSportart As Sportart) As Long 'ID Verwaltung fehlt? -2021-01-30
+
+    Private Shared Function hinzufuegen(pSportart As Sportart) As Long
 
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long
@@ -461,7 +455,7 @@ Public Class MitarbeiterDAO
             lngKursIdPk = Long.Parse(dr("KuIdPk"))
             datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
             strKursOrt = dr("KuOrt")
-            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerzahl"))
             strKursSchwierigkeit = dr("KuSchwierigkeit")
             lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
             lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
@@ -514,7 +508,7 @@ Public Class MitarbeiterDAO
             lngKursIdPk = Long.Parse(dr("KuIdPk"))
             datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
             strKursOrt = dr("KuOrt")
-            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerzahl"))
             strKursSchwierigkeit = dr("KuSchwierigkeit")
             lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
             lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
@@ -571,7 +565,7 @@ Public Class MitarbeiterDAO
             lngKursIdPk = Long.Parse(dr("KuIdPk"))
             datKursZeitpunkt = Date.Parse(dr("KuZeitpunkt"))
             strKursOrt = dr("KuOrt")
-            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerZahl"))
+            intKursTeilnZahl = Integer.Parse(dr("KuTeilnehmerzahl"))
             strKursSchwierigkeit = dr("KuSchwierigkeit")
             lngSaIdFk = Long.Parse(dr("KuSaIdFk"))
             lngBenIdFk = Long.Parse(dr("KuBenIdFk"))
@@ -602,7 +596,7 @@ Public Class MitarbeiterDAO
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_DELETE_BY_VERSION_KURS, mConnection)
-        cmd.Parameters.AddWithValue("@IdPk", plngKursIdPk)
+        cmd.Parameters.AddWithValue("@KuIdPk", plngKursIdPk)
         cmd.Parameters.AddWithValue("@version", plngVersion)
 
         lngAnzahlDatensaetze = cmd.ExecuteNonQuery()
@@ -671,7 +665,7 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
-        cmd.Parameters.AddWithValue("@KuTeilnehmerZahl", pKurs.Teilnehmerzahl)
+        cmd.Parameters.AddWithValue("@KuTeilnehmerzahl", pKurs.Teilnehmerzahl)
         cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
         cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
         cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
@@ -707,18 +701,19 @@ Public Class MitarbeiterDAO
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_INSERT_KURS, mConnection)
-        cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
-        cmd.Parameters.AddWithValue("@KuTeilnehmerZahl", pKurs.Teilnehmerzahl)
+        cmd.Parameters.AddWithValue("@KuTeilnehmerzahl", pKurs.Teilnehmerzahl)
         cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
         cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
         cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
         cmd.Parameters.AddWithValue("@version", pKurs.Version)
 
+        ' MsgBox(pKurs.Zeitpunkt & "       " & pKurs.Ort & "     " & pKurs.Teilnehmerzahl & "       " & pKurs.Schwierigkeitsgrad & "     " & pKurs.SaIdFk & "     " & pKurs.BenIdFk & "        " & pKurs.Version)
+
         lngAnzahlDatensaetze = cmd.ExecuteNonQuery
         If lngAnzahlDatensaetze = 1 Then
-            lngAnzahlDatensaetze = ermittleId()
+            lngKursIdPk = ermittleId()
         End If
         schliessenDatenbank()
         Return lngKursIdPk

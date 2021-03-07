@@ -85,7 +85,7 @@
     Public Sub verarbeiteErstellen()
         Dim strOrt As String
         Dim strSchwierigkeit As String
-        Dim bytTeilnehmeranzahl As Byte
+        Dim lngTeilnehmeranzahl As Long
         Dim datKurs As Date
         Dim lngSaId As Long
         Dim lngTraId As Long
@@ -94,19 +94,19 @@
 
         strOrt = mView.txtOrt.Text
         strSchwierigkeit = mView.txtSchwierigkeit.Text
-        bytTeilnehmeranzahl = mView.txtTeilnZahl.Text
+        lngTeilnehmeranzahl = mView.txtTeilnZahl.Text
         datKurs = mView.datKurs.Value
         lngSaId = mmitDAO.findeSportart(lstAlleSa.Item(mView.cmbSportart.SelectedIndex).ID).ID
         lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
 
         If mKurs Is Nothing Then
-            mKurs = New Kurs(3, datKurs, strOrt, bytTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
+            mKurs = New Kurs(3, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
         Else
             mKurs.BenIdFk = 3  ' Ändere!
 
             mKurs.Zeitpunkt = datKurs
             mKurs.Ort = strOrt
-            mKurs.Teilnehmerzahl = bytTeilnehmeranzahl
+            mKurs.Teilnehmerzahl = lngTeilnehmeranzahl
             mKurs.Schwierigkeitsgrad = strSchwierigkeit
             mKurs.SaIdFk = lngSaId
             mKurs.BenIdFk = lngTraId
