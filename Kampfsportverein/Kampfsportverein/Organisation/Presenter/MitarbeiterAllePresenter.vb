@@ -214,13 +214,20 @@
         Dim lngKursIdPk As Long
 
         kurs = New Kurs()
-        neuerKursPresenter = New NeuerKursPresenter(kurs)
+        neuerKursPresenter = New NeuerKursPresenter() 'kurs)
         lngKursIdPk = MitarbeiterDAO.hinzufuegenKurs(kurs)
         anzeigenKursAlle()
     End Sub
 
     Public Sub verarbeiteNeuSchueler()
-        'Neu MVP für Hinzufügen-Seite
+        Dim schu As Schueler
+        Dim neueSchuPresenter As NeueSchuelerPresenter()
+        Dim lngSchuIdPk As Long
+
+        schu = New Schueler()
+        'neueSchuPresenter = New NeueSchuelerPresenter()
+        lngSchuIdPk = mTrainerDAO.hinzufuegen(schu)
+        anzeigenSchueleruebersichtAnzeigen()
     End Sub
 
     Public Sub verarbeiteNeuTrainer()

@@ -5,7 +5,7 @@
     Private mmitDAO As MitarbeiterDAO
     Private mtraDAO As TrainerDAO
 
-    Sub New(pKurs As Kurs)
+    Sub New() 'pKurs As Kurs)
         'mKurs = pKurs
         mKurs = Nothing
         mView = New NeuerKursView(Me)
@@ -91,6 +91,7 @@
         Dim lngTraId As Long
         Dim lstAlleSa As List(Of Sportart) = mmitDAO.findenAlleSportarten
         Dim lstAlleTrainer As List(Of Trainer) = mtraDAO.findeAlleTrainer
+        Dim lngKursId As Long
 
         strOrt = mView.txtOrt.Text
         strSchwierigkeit = mView.txtSchwierigkeit.Text
@@ -100,9 +101,13 @@
         lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
 
         If mKurs Is Nothing Then
+<<<<<<< HEAD
             mKurs = New Kurs(3, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
+=======
+            mKurs = New Kurs(datKurs, strOrt, bytTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId)
+>>>>>>> b72613de177cac3b86111ab735d58a626d379ea3
         Else
-            mKurs.BenIdFk = 3  ' Ändere!
+            'mKurs.BenIdFk = 0  ' Ändere!
 
             mKurs.Zeitpunkt = datKurs
             mKurs.Ort = strOrt
@@ -111,6 +116,18 @@
             mKurs.SaIdFk = lngSaId
             mKurs.BenIdFk = lngTraId
         End If
+        lngKursId = MitarbeiterDAO.hinzufuegenKurs(mKurs)
+
+        If lngKursId = -1 Then
+            MsgBox("Der Kurs konnte nicht gespeichert werden, weil zwischenzeitlich eine Änderung an dem Kurs vorgenommen wurde. Prüfen Sie, ob Sie die geänderten Kurs noch immer erledigen möchten.", vbOKOnly + vbExclamation)
+            mmitDAO.findeKurs(lngKursId)
+            anzeigenNeuerKurs()
+            mView.DialogResult = Nothing
+        Else
+            mErgebnis = EPresenterErgebnis.KURS_ERSTELLEN
+            mView.Close()
+        End If
+
         MitarbeiterDAO.hinzufuegenKurs(mKurs)
         mView.Close()
 

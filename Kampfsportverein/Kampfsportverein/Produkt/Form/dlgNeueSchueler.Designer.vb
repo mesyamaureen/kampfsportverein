@@ -26,12 +26,10 @@ Partial Class dlgNeueSchueler
         Me.btnErstellen = New System.Windows.Forms.Button()
         Me.lblVorname = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.lblGebDat = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtVorname = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'btnAbbrechen
@@ -72,55 +70,38 @@ Partial Class dlgNeueSchueler
         Me.lblName.TabIndex = 3
         Me.lblName.Text = "Name"
         '
-        'lblGebDat
-        '
-        Me.lblGebDat.AutoSize = True
-        Me.lblGebDat.Location = New System.Drawing.Point(29, 240)
-        Me.lblGebDat.Name = "lblGebDat"
-        Me.lblGebDat.Size = New System.Drawing.Size(147, 25)
-        Me.lblGebDat.TabIndex = 4
-        Me.lblGebDat.Text = "Geburtsdatum"
-        '
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(29, 352)
+        Me.lblEmail.Location = New System.Drawing.Point(29, 244)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(73, 25)
         Me.lblEmail.TabIndex = 5
         Me.lblEmail.Text = "E-Mail"
         '
-        'TextBox1
+        'txtVorname
         '
-        Me.TextBox1.Location = New System.Drawing.Point(190, 22)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(572, 47)
-        Me.TextBox1.TabIndex = 6
+        Me.txtVorname.Location = New System.Drawing.Point(190, 22)
+        Me.txtVorname.Multiline = True
+        Me.txtVorname.Name = "txtVorname"
+        Me.txtVorname.Size = New System.Drawing.Size(572, 47)
+        Me.txtVorname.TabIndex = 6
         '
-        'TextBox2
+        'txtName
         '
-        Me.TextBox2.Location = New System.Drawing.Point(190, 124)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(572, 47)
-        Me.TextBox2.TabIndex = 7
+        Me.txtName.Location = New System.Drawing.Point(190, 124)
+        Me.txtName.Multiline = True
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(572, 47)
+        Me.txtName.TabIndex = 7
         '
-        'TextBox3
+        'txtEmail
         '
-        Me.TextBox3.Location = New System.Drawing.Point(190, 228)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(572, 47)
-        Me.TextBox3.TabIndex = 8
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(190, 341)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(572, 47)
-        Me.TextBox4.TabIndex = 9
+        Me.txtEmail.Location = New System.Drawing.Point(190, 233)
+        Me.txtEmail.Multiline = True
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(572, 47)
+        Me.txtEmail.TabIndex = 9
         '
         'dlgNeueSchueler
         '
@@ -129,12 +110,10 @@ Partial Class dlgNeueSchueler
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(774, 529)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txtEmail)
+        Me.Controls.Add(Me.txtName)
+        Me.Controls.Add(Me.txtVorname)
         Me.Controls.Add(Me.lblEmail)
-        Me.Controls.Add(Me.lblGebDat)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.btnErstellen)
@@ -150,10 +129,8 @@ Partial Class dlgNeueSchueler
     Friend WithEvents btnErstellen As Button
     Friend WithEvents lblVorname As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents lblGebDat As Label
     Friend WithEvents lblEmail As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents txtVorname As TextBox
+    Friend WithEvents txtName As TextBox
+    Friend WithEvents txtEmail As TextBox
 End Class

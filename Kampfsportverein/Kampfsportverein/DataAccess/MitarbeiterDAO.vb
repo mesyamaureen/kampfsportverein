@@ -411,8 +411,8 @@ Public Class MitarbeiterDAO
             lngBenIdFK = Long.Parse(dr("KuBenIdFk"))
             lngVersion = Long.Parse(dr("KuVersion"))
 
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
-                            lngSportartIdFk, lngBenIdFK, lngVersion)
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
+                            lngSportartIdFk, lngBenIdFK)
             'kurs.Sportart = pSportart 'Kurs aus der Sportart zuordnen
             lstKurs.Add(kurs) 'Neuer Kurs zur Liste der Kursen hinzufügen
         Loop
@@ -462,8 +462,8 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
-                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk)
 
             lstKurs.Add(kurs)
         Loop
@@ -515,7 +515,7 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neue Aufgabe erstellen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit, lngSaIdFk, lngBenIdFk)
             'Aufgabe dem Benutzer zuordnen
             kurs.Benutzer = pBenutzer
             'Neue Aufgabe zur Liste der Aufgaben hinzufügen
@@ -572,8 +572,8 @@ Public Class MitarbeiterDAO
             lngVersion = Long.Parse(dr("KuVersion"))
 
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
-            kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
-                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
+            kurs = New Kurs(datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
+                            strKursSchwierigkeit, lngSaIdFk, lngBenIdFk)
 
             'Beziehung zum Trainer
             traDAO = DAOFactory.Instanz.TrainerDAO
@@ -696,7 +696,7 @@ Public Class MitarbeiterDAO
         Dim cmd As OleDbCommand
 
         lngKursIdPk = -1
-        lngAnzahlDatensaetze = 0
+        'lngAnzahlDatensaetze = 0
 
         oeffnenDatenbank()
 
@@ -707,7 +707,6 @@ Public Class MitarbeiterDAO
         cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
         cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
         cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
-        cmd.Parameters.AddWithValue("@version", pKurs.Version)
 
         ' MsgBox(pKurs.Zeitpunkt & "       " & pKurs.Ort & "     " & pKurs.Teilnehmerzahl & "       " & pKurs.Schwierigkeitsgrad & "     " & pKurs.SaIdFk & "     " & pKurs.BenIdFk & "        " & pKurs.Version)
 

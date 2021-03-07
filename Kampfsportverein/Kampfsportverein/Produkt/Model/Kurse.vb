@@ -11,26 +11,26 @@
     Private mSportart As Sportart
 
     Sub New() 'parameterloser Konstruktor
-        mlngIdPk = Nothing
+        mlngIdPk -= 1
         mdatZeitpunkt = Date.MinValue
         mstrOrt = String.Empty
         mlngTeilnehmerzahl = Nothing
         mstrSchwierigkeitsgrad = String.Empty
         mlngSaIdFk = Nothing
         mlngBenIdFk = Nothing
-        mlngVersion = Nothing
+        mlngVersion = 0
     End Sub
 
-    Sub New(plngIdPk As Long, pdatZeitpunkt As Date, pstrOrt As String, pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
-            plngSaIdFk As Long, plngBenIdFk As Long, plngVersion As Long) 'Konstruktor mit Parameter
-        mlngIdPk = plngIdPk
+    Sub New(pdatZeitpunkt As Date, pstrOrt As String, pbytTeilnehmerzahl As Byte, pstrSchwierigkeitsgrad As String,
+            plngSaIdFk As Long, plngBenIdFk As Long) 'Konstruktor mit Parameter
+        mlngIdPk -= 1
         mdatZeitpunkt = pdatZeitpunkt
         mstrOrt = pstrOrt
         mlngTeilnehmerzahl = pbytTeilnehmerzahl
         mstrSchwierigkeitsgrad = pstrSchwierigkeitsgrad
         mlngSaIdFk = plngSaIdFk
         mlngBenIdFk = plngBenIdFk
-        mlngVersion = plngVersion
+        mlngVersion = 0
     End Sub
 
     Public Property Benutzer As Benutzer
