@@ -105,6 +105,7 @@
     </Compile>
     <Compile Include="Produkt\Presenter\KursPresenter.vb" />
     <Compile Include="Produkt\Presenter\NeuerKursPresenter.vb" />
+    <Compile Include="Produkt\Presenter\NeueSchuelerPresenter.vb" />
     <Compile Include="Produkt\View\KursView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +117,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\View\NeuerKursView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Produkt\View\NeueSchuelerView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\View\SportartenEinzelView.vb">
