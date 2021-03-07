@@ -49,8 +49,8 @@ Public Class MitarbeiterDAO
                                                 KuVersion = @kVersion"
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
-    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuVersion)" &
-                                           "VALUES (@kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kVersion)"
+    Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuIdPk, KuZeitpunkt, KuOrt, KuTeilnehmerZahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion)" &
+                                           "VALUES (@kIdPk, @kZeitpunkt, @kOrt, @kTeilnehmer, @kSchwierigkeit, @kSaIdFk, @kBenIdFk, @kVersion)"
 
     'SQL-Anweisung, um einen Kurs zu löschen
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @kIdPk AND KuVersion = @kVersion;"
@@ -702,10 +702,12 @@ Public Class MitarbeiterDAO
         Dim cmd As OleDbCommand
 
         lngKursIdPk = -1
+        lngAnzahlDatensaetze = 0
 
         oeffnenDatenbank()
 
         cmd = New OleDbCommand(SQL_INSERT_KURS, mConnection)
+        cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
         cmd.Parameters.AddWithValue("@KuTeilnehmerZahl", pKurs.Teilnehmerzahl)

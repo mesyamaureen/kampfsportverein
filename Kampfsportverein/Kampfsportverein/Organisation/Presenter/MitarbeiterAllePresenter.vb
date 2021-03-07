@@ -249,7 +249,9 @@
     Public Sub verarbeiteLoeschenKurs(plngKursId As Long)
         Dim kurs As Kurs
         Dim bolKursErgebnis As Boolean
-        plngKursId -= 1
+        If plngKursId > 0 Then
+            plngKursId -= 1
+        End If
         kurs = mlstKurseAlle.Item(plngKursId)
         bolKursErgebnis = MitarbeiterDAO.loeschenKursTraId(kurs.IdPk, kurs.Version)
         If bolKursErgebnis = True Then
