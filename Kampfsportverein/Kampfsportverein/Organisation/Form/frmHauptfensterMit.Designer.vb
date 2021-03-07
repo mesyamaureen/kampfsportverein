@@ -49,6 +49,7 @@ Partial Class frmHauptfensterMit
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportartKurs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnNeuMitarbeiter = New System.Windows.Forms.Button()
         Me.grpboxMenu.SuspendLayout()
         Me.grpboxSportartliste.SuspendLayout()
         Me.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class frmHauptfensterMit
         '
         'grpboxMenu
         '
+        Me.grpboxMenu.Controls.Add(Me.btnNeuMitarbeiter)
         Me.grpboxMenu.Controls.Add(Me.btnTrainer)
         Me.grpboxMenu.Controls.Add(Me.btnSchueler)
         Me.grpboxMenu.Controls.Add(Me.btnKurs)
@@ -80,7 +82,7 @@ Partial Class frmHauptfensterMit
         '
         'btnTrainer
         '
-        Me.btnTrainer.Location = New System.Drawing.Point(42, 554)
+        Me.btnTrainer.Location = New System.Drawing.Point(51, 451)
         Me.btnTrainer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTrainer.Name = "btnTrainer"
         Me.btnTrainer.Size = New System.Drawing.Size(267, 95)
@@ -91,7 +93,7 @@ Partial Class frmHauptfensterMit
         '
         'btnSchueler
         '
-        Me.btnSchueler.Location = New System.Drawing.Point(42, 383)
+        Me.btnSchueler.Location = New System.Drawing.Point(51, 310)
         Me.btnSchueler.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSchueler.Name = "btnSchueler"
         Me.btnSchueler.Size = New System.Drawing.Size(267, 95)
@@ -102,7 +104,7 @@ Partial Class frmHauptfensterMit
         '
         'btnKurs
         '
-        Me.btnKurs.Location = New System.Drawing.Point(42, 221)
+        Me.btnKurs.Location = New System.Drawing.Point(51, 165)
         Me.btnKurs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnKurs.Name = "btnKurs"
         Me.btnKurs.Size = New System.Drawing.Size(267, 95)
@@ -113,7 +115,7 @@ Partial Class frmHauptfensterMit
         '
         'btnSportarten
         '
-        Me.btnSportarten.Location = New System.Drawing.Point(42, 55)
+        Me.btnSportarten.Location = New System.Drawing.Point(51, 28)
         Me.btnSportarten.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSportarten.Name = "btnSportarten"
         Me.btnSportarten.Size = New System.Drawing.Size(267, 95)
@@ -124,7 +126,7 @@ Partial Class frmHauptfensterMit
         '
         'btnMeinKonto
         '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 713)
+        Me.btnMeinKonto.Location = New System.Drawing.Point(51, 592)
         Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(267, 95)
@@ -311,6 +313,17 @@ Partial Class frmHauptfensterMit
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVerfuegbarkeit.Width = 161
         '
+        'btnNeuMitarbeiter
+        '
+        Me.btnNeuMitarbeiter.Location = New System.Drawing.Point(51, 733)
+        Me.btnNeuMitarbeiter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnNeuMitarbeiter.Name = "btnNeuMitarbeiter"
+        Me.btnNeuMitarbeiter.Size = New System.Drawing.Size(267, 95)
+        Me.btnNeuMitarbeiter.TabIndex = 10
+        Me.btnNeuMitarbeiter.Text = "Neuer Mitarbeiter"
+        Me.btnNeuMitarbeiter.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNeuMitarbeiter.UseVisualStyleBackColor = True
+        '
         'frmHauptfensterMit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -355,4 +368,5 @@ Partial Class frmHauptfensterMit
     Friend WithEvents colTrainerID As ColumnHeader
     Friend WithEvents colNameTrainer As ColumnHeader
     Friend WithEvents colVornameTrainer As ColumnHeader
+    Friend WithEvents btnNeuMitarbeiter As Button
 End Class
