@@ -1,6 +1,6 @@
 ﻿Public Class NeuerKursPresenter
     Private mView As NeuerKursView
-    Private mErgebnis As EPresenterErgebnis
+    Public mErgebnis As EPresenterErgebnis
     Private mKurs As Kurs
     Private mmitDAO As MitarbeiterDAO
     Private mtraDAO As TrainerDAO
@@ -18,14 +18,6 @@
             Return mView
         End Get
         Set(value As NeuerKursView)
-        End Set
-    End Property
-
-    Public Property Ergebnis As EPresenterErgebnis
-        Get
-            Return mErgebnis
-        End Get
-        Set(value As EPresenterErgebnis)
         End Set
     End Property
 
@@ -91,28 +83,34 @@
         Dim lngTraId As Long
         Dim lstAlleSa As List(Of Sportart) = mmitDAO.findenAlleSportarten
         Dim lstAlleTrainer As List(Of Trainer) = mtraDAO.findeAlleTrainer
-
-        strOrt = mView.txtOrt.Text
-        strSchwierigkeit = mView.txtSchwierigkeit.Text
-        lngTeilnehmeranzahl = mView.txtTeilnZahl.Text
-        datKurs = mView.datKurs.Value
-        lngSaId = mmitDAO.findeSportart(lstAlleSa.Item(mView.cmbSportart.SelectedIndex).ID).ID
-        lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
-
-        If mKurs Is Nothing Then
-            mKurs = New Kurs(0, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
+        If String.IsNullOrEmpty(mView.txtOrt.Text) Or String.IsNullOrEmpty(mView.txtSchwierigkeit.Text) Or String.IsNullOrEmpty(mView.txtTeilnZahl.Text) Or
+            String.IsNullOrEmpty(mView.datKurs.Value) Or String.IsNullOrEmpty(mmitDAO.findeSportart(lstAlleSa.Item(mView.cmbSportart.SelectedIndex).ID).ID) Or
+            String.IsNullOrEmpty(mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID) Then
+            MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
         Else
-            mKurs.BenIdFk = 0  ' Ändere!
+            strOrt = mView.txtOrt.Text
+            strSchwierigkeit = mView.txtSchwierigkeit.Text
+            lngTeilnehmeranzahl = mView.txtTeilnZahl.Text
+            datKurs = mView.datKurs.Value
+            lngSaId = mmitDAO.findeSportart(lstAlleSa.Item(mView.cmbSportart.SelectedIndex).ID).ID
+            lngTraId = mtraDAO.findenTrainerId(lstAlleTrainer.Item(mView.cmbTrainer.SelectedIndex).BenutzerID).BenutzerID
 
-            mKurs.Zeitpunkt = datKurs
-            mKurs.Ort = strOrt
-            mKurs.Teilnehmerzahl = lngTeilnehmeranzahl
-            mKurs.Schwierigkeitsgrad = strSchwierigkeit
-            mKurs.SaIdFk = lngSaId
-            mKurs.BenIdFk = lngTraId
+            If mKurs Is Nothing Then
+                mKurs = New Kurs(0, datKurs, strOrt, lngTeilnehmeranzahl, strSchwierigkeit, lngSaId, lngTraId, 0)
+            Else
+                mKurs.BenIdFk = 0  ' Ändere!
+
+                mKurs.Zeitpunkt = datKurs
+                mKurs.Ort = strOrt
+                mKurs.Teilnehmerzahl = lngTeilnehmeranzahl
+                mKurs.Schwierigkeitsgrad = strSchwierigkeit
+                mKurs.SaIdFk = lngSaId
+                mKurs.BenIdFk = lngTraId
+            End If
+            MitarbeiterDAO.hinzufuegenKurs(mKurs)
+            mErgebnis = EPresenterErgebnis.KURS_ERSTELLEN
+            mView.Close()
         End If
-        MitarbeiterDAO.hinzufuegenKurs(mKurs)
-        mView.Close()
 
     End Sub
 

@@ -211,12 +211,12 @@
     Public Sub verarbeiteNeuerKurs()
         Dim kurs As Kurs
         Dim neuerKursPresenter As NeuerKursPresenter
-        Dim lngKursIdPk As Long
 
         kurs = New Kurs()
         neuerKursPresenter = New NeuerKursPresenter(kurs)
-        lngKursIdPk = MitarbeiterDAO.hinzufuegenKurs(kurs)
-        anzeigenKursAlle()
+        If neuerKursPresenter.mErgebnis = EPresenterErgebnis.KURS_ERSTELLEN Then
+            verarbeiteKursuebersichtAnzeigen()
+        End If
     End Sub
 
     Public Sub verarbeiteNeuSchueler()
