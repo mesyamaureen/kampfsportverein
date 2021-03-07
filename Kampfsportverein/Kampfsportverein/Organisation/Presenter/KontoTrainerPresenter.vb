@@ -19,7 +19,7 @@
     Sub New()
         mView = New KontoTrainerView(Me)
         mTrainer = New Trainer
-        mView.ShowDialog()
+        mView.ShowDialog(Me)
     End Sub
 
     Public Property Ergebnis As EPresenterErgebnis
