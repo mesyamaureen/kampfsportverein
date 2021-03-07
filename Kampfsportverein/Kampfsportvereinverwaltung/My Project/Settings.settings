@@ -5,9 +5,15 @@
     <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+<<<<<<< HEAD
+  &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\mofri\OneDrive\Desktop\Nina DBS2\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_DB.accdb";Persist Security Info=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\mofri\OneDrive\Desktop\Nina DBS2\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_DB.accdb";Persist Security Info=True</Value>
+=======
   &lt;ConnectionString&gt;Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\lukas\OneDrive - beuthhs\vbaProject\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_DB.accdb";Persist Security Info=True&lt;/ConnectionString&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=Microsoft.ACE.OLEDB.12.0;Data Source="C:\Users\lukas\OneDrive - beuthhs\vbaProject\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_DB.accdb";Persist Security Info=True</Value>
+>>>>>>> b72613de177cac3b86111ab735d58a626d379ea3
     </Setting>
   </Settings>
 </SettingsFile>
