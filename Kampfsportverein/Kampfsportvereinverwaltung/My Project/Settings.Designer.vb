@@ -57,9 +57,9 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Mesya\Desktop\datenbanksys"& _ 
-            "tem02\kampfsportverein\Kampfsportverein\Kampfsportvereinverwaltung\Kampfsport_DB"& _ 
-            ".accdb;Persist Security Info=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""C:\Users\lukas\OneDrive - beuthhs\"& _ 
+            "vbaProject\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_DB.a"& _ 
+            "ccdb"";Persist Security Info=True")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)
