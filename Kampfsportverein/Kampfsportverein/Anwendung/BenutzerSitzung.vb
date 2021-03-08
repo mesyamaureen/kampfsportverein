@@ -76,9 +76,6 @@
                 presenter.verarbeiteSchueleruebersichtAnzeigen()
             Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN
                 presenter.verarbeiteEigenesProfilAnzeigen()
-            Case Else
-                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
-                       MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
     End Sub
 
@@ -97,9 +94,6 @@
                 presenter.verarbeiteTrainerUebersichtAnzeigen()
             Case EPresenterErgebnis.TRAINER_ERSTELLEN
                 presenter.verarbeiteNeu()
-            Case Else
-                MsgBox("Fehlerhafter Sitzungszustand. Die Anwendung muss beendet werden.",
-                       MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Fehler in der Sitzung")
         End Select
     End Sub
 
