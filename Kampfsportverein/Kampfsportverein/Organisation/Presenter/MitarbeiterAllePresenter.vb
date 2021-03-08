@@ -257,12 +257,24 @@
 
     Public Sub verarbeiteLoeschenKurs(plngKursId As Long)
         Dim kurs As Kurs
-        Dim bolKursErgebnis As Boolean
-        If plngKursId > 0 Then
-            plngKursId -= 1
+        Dim bolKursErgebnis As Boolean = False
+        'plngKursId -= 1
+        'If plngKursId > 0 Then
+        '    plngKursId -= 1
+        'End If
+
+        Dim i As Integer = 0  ' Für Iteration
+        Dim index As Integer = -1  ' Um Index zu speichern
+        For i = 0 To mlstKurseAlle.Count - 1  ' Iteriert durch die Liste
+            If mlstKurseAlle.Item(i).IdPk.Equals(plngKursId) Then  ' Überprüfe, ob das zu löschende Index gleich mit dem Index vom DB ist
+                index = i  ' Wenn dann, setzt das Element Index in der Liste als zu löschendes Index
+            End If
+        Next
+
+        If index >= 0 Then  ' Überprüfe, ob das Index gefunden wurde
+            kurs = mlstKurseAlle.Item(index)
+            bolKursErgebnis = MitarbeiterDAO.loeschenKursTraId(kurs.IdPk, kurs.Version)
         End If
-        kurs = mlstKurseAlle.Item(plngKursId)
-        bolKursErgebnis = MitarbeiterDAO.loeschenKursTraId(kurs.IdPk, kurs.Version)
         If bolKursErgebnis = True Then
             verarbeiteKursuebersichtAnzeigen()
         Else
@@ -273,9 +285,18 @@
     Public Sub verarbeiteLoeschenSchueler(plngSchuId As Long)
         Dim schu As Schueler
         Dim bolSchuErgebnis As Boolean
-        plngSchuId -= 1
-        schu = mlstSchuelerAlle.Item(plngSchuId)
-        bolSchuErgebnis = TrainerDAO.loeschenMitSchuelerId(schu.SchuelerIdPk, schu.Version)
+        'plngSchuId -= 1
+        Dim i As Integer = 0  ' Für Iteration
+        Dim index As Integer = -1  ' Um Index zu speichern
+        For i = 0 To mlstSchuelerAlle.Count - 1  ' Iteriert durch die Liste
+            If mlstSchuelerAlle.Item(i).SchuelerIdPk.Equals(plngSchuId) Then  ' Überprüfe, ob das zu löschende Index gleich mit dem Index vom DB ist
+                index = i  ' Wenn dann, setzt das Element Index in der Liste als zu löschendes Index
+            End If
+        Next
+        If index >= 0 Then  ' Überprüfe, ob das Index gefunden wurde
+            schu = mlstSchuelerAlle.Item(index)
+            bolSchuErgebnis = TrainerDAO.loeschenMitSchuelerId(schu.SchuelerIdPk, schu.Version)
+        End If
         If bolSchuErgebnis = True Then
             verarbeiteSchueleruebersichtAnzeigen()
         Else
@@ -287,8 +308,17 @@
         Dim tra As Trainer
         Dim bolTraErgebnis As Boolean
         'plngTraId -= 1
-        tra = mTrainerDAO.findenTrainerId(plngTraId)
-        bolTraErgebnis = TrainerDAO.loeschenTrainer(tra.BenutzerID, tra.Version)
+        Dim i As Integer = 0  ' Für Iteration
+        Dim index As Integer = -1  ' Um Index zu speichern
+        For i = 0 To mlstTrainerAlle.Count - 1  ' Iteriert durch die Liste
+            If mlstTrainerAlle.Item(i).BenutzerID.Equals(plngTraId) Then  ' Überprüfe, ob das zu löschende Index gleich mit dem Index vom DB ist
+                index = i  ' Wenn dann, setzt das Element Index in der Liste als zu löschendes Index
+            End If
+        Next
+        If index >= 0 Then  ' Überprüfe, ob das Index gefunden wurde
+            tra = mlstTrainerAlle.Item(index)
+            bolTraErgebnis = TrainerDAO.loeschenTrainer(tra.BenutzerID, tra.Version)
+        End If
         If bolTraErgebnis = True Then
             verarbeiteTrainerUebersichtAnzeigen()
         Else

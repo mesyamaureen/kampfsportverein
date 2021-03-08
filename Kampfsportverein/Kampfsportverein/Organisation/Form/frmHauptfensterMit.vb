@@ -57,6 +57,7 @@
             mPresenter.verarbeiteLoeschenKurs(lngKursId)
         ElseIf Me.lstSchuelerAlle.SelectedItems.Count > 0 Then
             lngSchuelerId = Me.lstSchuelerAlle.SelectedItems(0).Text
+            mPresenter.verarbeiteLoeschenSchueler(lngSchuelerId)
         ElseIf Me.lstTrainer.SelectedItems.Count > 0 Then
             lngTrainerId = Me.lstTrainer.SelectedItems(0).Text
             mPresenter.verarbeiteLoeschenTrainer(lngTrainerId)

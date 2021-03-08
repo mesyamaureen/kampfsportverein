@@ -316,7 +316,7 @@ Public Class TrainerDAO
     End Function
 
     Public Shared Function loeschenMitSchuelerId(plngIdPk As Long, plngVersion As Long) As Boolean
-        Return ElementLoeschen("tblSchueler", plngIdPk, plngVersion)
+        'Return ElementLoeschen("tblSchueler", plngIdPk, plngVersion)
         'Deklaration
         Dim lngAnzahlDatensätze As Long
         Dim cmd As OleDbCommand
