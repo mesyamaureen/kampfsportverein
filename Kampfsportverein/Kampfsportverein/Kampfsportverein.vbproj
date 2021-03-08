@@ -338,5 +338,26 @@
       <Name>Kampfsportvereinverwaltung_DataAcess</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kurse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kurse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kurse %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Kurse1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Schüler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeinKonto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeinKonto %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
