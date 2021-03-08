@@ -21,5 +21,4 @@
     Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
         mPresenter.verarbeitenAbbrechen()
     End Sub
-
 End Class

@@ -39,10 +39,10 @@ Partial Class dlgKontoTrainer
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1077, 561)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1060, 561)
         Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(165, 56)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(182, 56)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
@@ -142,9 +142,9 @@ Partial Class dlgKontoTrainer
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(905, 561)
+        Me.btnSpeichern.Location = New System.Drawing.Point(852, 561)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(166, 56)
+        Me.btnSpeichern.Size = New System.Drawing.Size(186, 56)
         Me.btnSpeichern.TabIndex = 13
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
@@ -168,8 +168,12 @@ Partial Class dlgKontoTrainer
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgKontoTrainer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Trainerkonto"
         Me.ResumeLayout(False)
         Me.PerformLayout()

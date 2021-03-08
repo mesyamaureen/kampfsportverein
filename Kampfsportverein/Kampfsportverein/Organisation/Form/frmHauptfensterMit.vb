@@ -1,7 +1,7 @@
 ﻿Public Class frmHauptfensterMit
 
     Public mPresenter As MitarbeiterAllePresenter
-    'Public mSitzung As BenutzerSitzung
+
     Public Property Presenter As MitarbeiterAllePresenter
         Get
             Return Nothing
@@ -62,8 +62,6 @@
             lngTrainerId = Me.lstTrainer.SelectedItems(0).Text
             mPresenter.verarbeiteLoeschenTrainer(lngTrainerId)
         End If
-        'lngSportartId = Me.lstSportart.SelectedItems(0).Text
-        'mPresenter.verarbeiteLoeschen(lngSportartId)
     End Sub
 
     Private Sub btnOeffnen_Click(sender As Object, e As EventArgs) Handles btnOeffnen.Click
@@ -85,9 +83,6 @@
             lngTrainer = Me.lstTrainer.SelectedItems(0).Text
             mPresenter.verarbeiteTrainerOeffnen(lngTrainer)
         End If
-
-        'mPresenter.verarbeiteSportartÖffnen(lngSportartId)
-        'mPresenter.verarbeiteKursuebersichtAnzeigen(lngKursId)
 
     End Sub
 
@@ -117,5 +112,14 @@
 
     Private Sub btnNeuerMitarbeiter_Click(sender As Object, e As EventArgs) Handles btnNeuerMitarbeiter.Click
         mPresenter.verarbeiteNeuerMitarbeiter()
+    End Sub
+
+    Private Sub frmHauptfensterMit_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim mbrResult As MsgBoxResult
+        mbrResult = MsgBox("Wirklich Beenden?", MsgBoxStyle.Question + vbYesNo, "Beenden")
+        If mbrResult = vbNo Then
+            Me.DialogResult = DialogResult.None
+            e.Cancel = True
+        End If
     End Sub
 End Class

@@ -37,9 +37,9 @@ Partial Class dlgSchueler
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(638, 477)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(615, 477)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(124, 40)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(147, 40)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
@@ -47,9 +47,9 @@ Partial Class dlgSchueler
         'btnSpeichern
         '
         Me.btnSpeichern.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnSpeichern.Location = New System.Drawing.Point(505, 477)
+        Me.btnSpeichern.Location = New System.Drawing.Point(445, 477)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(124, 40)
+        Me.btnSpeichern.Size = New System.Drawing.Size(154, 40)
         Me.btnSpeichern.TabIndex = 1
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
@@ -140,7 +140,11 @@ Partial Class dlgSchueler
         Me.Controls.Add(Me.lblSchuelerID)
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgSchueler"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Schüler"
         Me.ResumeLayout(False)
         Me.PerformLayout()

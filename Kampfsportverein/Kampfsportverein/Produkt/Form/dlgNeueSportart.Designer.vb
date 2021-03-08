@@ -36,18 +36,19 @@ Partial Class dlgNeueSportart
         '
         'btnAbbrechen
         '
-        Me.btnAbbrechen.Location = New System.Drawing.Point(634, 476)
+        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnAbbrechen.Location = New System.Drawing.Point(612, 476)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(128, 41)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(150, 41)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnErstellen
         '
-        Me.btnErstellen.Location = New System.Drawing.Point(492, 476)
+        Me.btnErstellen.Location = New System.Drawing.Point(450, 476)
         Me.btnErstellen.Name = "btnErstellen"
-        Me.btnErstellen.Size = New System.Drawing.Size(128, 41)
+        Me.btnErstellen.Size = New System.Drawing.Size(152, 41)
         Me.btnErstellen.TabIndex = 1
         Me.btnErstellen.Text = "Erstellen"
         Me.btnErstellen.UseVisualStyleBackColor = True
@@ -137,7 +138,11 @@ Partial Class dlgNeueSportart
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnErstellen)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgNeueSportart"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Neue Sportart"
         Me.ResumeLayout(False)
         Me.PerformLayout()

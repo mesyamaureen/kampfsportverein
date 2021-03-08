@@ -39,18 +39,18 @@ Partial Class dlgMeinKontoMit
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1094, 562)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1081, 562)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(130, 47)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(143, 47)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(952, 562)
+        Me.btnSpeichern.Location = New System.Drawing.Point(936, 562)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(123, 47)
+        Me.btnSpeichern.Size = New System.Drawing.Size(139, 47)
         Me.btnSpeichern.TabIndex = 1
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
@@ -162,7 +162,11 @@ Partial Class dlgMeinKontoMit
         Me.Controls.Add(Me.lblMitarbeiterID)
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgMeinKontoMit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Mein Mitarbeiterkonto"
         Me.ResumeLayout(False)
         Me.PerformLayout()

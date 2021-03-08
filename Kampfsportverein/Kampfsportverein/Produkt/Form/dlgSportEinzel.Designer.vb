@@ -51,17 +51,17 @@ Partial Class dlgSportEinzel
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1109, 571)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(1091, 569)
         Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(132, 46)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(143, 46)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(963, 571)
+        Me.btnSpeichern.Location = New System.Drawing.Point(944, 569)
         Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSpeichern.Name = "btnSpeichern"
         Me.btnSpeichern.Size = New System.Drawing.Size(132, 46)
@@ -233,7 +233,7 @@ Partial Class dlgSportEinzel
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(804, 569)
+        Me.btnClose.Location = New System.Drawing.Point(796, 569)
         Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(132, 46)
@@ -247,7 +247,7 @@ Partial Class dlgSportEinzel
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnAbbrechen
-        Me.ClientSize = New System.Drawing.Size(1253, 629)
+        Me.ClientSize = New System.Drawing.Size(1254, 629)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.txtVersion)
         Me.Controls.Add(Me.btnClose)
@@ -260,8 +260,12 @@ Partial Class dlgSportEinzel
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgSportEinzel"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Sportart"
         Me.tabSportart.ResumeLayout(False)
         Me.tabZielgruppe.ResumeLayout(False)

@@ -37,18 +37,18 @@ Partial Class dlgNeuerTrainer
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(637, 478)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(614, 478)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(125, 39)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(148, 39)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnErstellen
         '
-        Me.btnErstellen.Location = New System.Drawing.Point(506, 478)
+        Me.btnErstellen.Location = New System.Drawing.Point(449, 478)
         Me.btnErstellen.Name = "btnErstellen"
-        Me.btnErstellen.Size = New System.Drawing.Size(125, 39)
+        Me.btnErstellen.Size = New System.Drawing.Size(159, 39)
         Me.btnErstellen.TabIndex = 1
         Me.btnErstellen.Text = "Erstellen"
         Me.btnErstellen.UseVisualStyleBackColor = True
@@ -138,7 +138,11 @@ Partial Class dlgNeuerTrainer
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.btnErstellen)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgNeuerTrainer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Neuer Trainer"
         Me.ResumeLayout(False)
         Me.PerformLayout()

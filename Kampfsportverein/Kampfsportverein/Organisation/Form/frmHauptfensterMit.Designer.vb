@@ -31,12 +31,12 @@ Partial Class frmHauptfensterMit
         Me.btnSportarten = New System.Windows.Forms.Button()
         Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.grpboxSportartliste = New System.Windows.Forms.GroupBox()
-        Me.btnNeu = New System.Windows.Forms.Button()
-        Me.btnLoeschen = New System.Windows.Forms.Button()
-        Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstSportart = New System.Windows.Forms.ListView()
         Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.btnNeu = New System.Windows.Forms.Button()
+        Me.btnLoeschen = New System.Windows.Forms.Button()
+        Me.btnOeffnen = New System.Windows.Forms.Button()
         Me.lstTrainer = New System.Windows.Forms.ListView()
         Me.colTrainerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colNameTrainer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -56,7 +56,8 @@ Partial Class frmHauptfensterMit
         '
         'btnBeenden
         '
-        Me.btnBeenden.Location = New System.Drawing.Point(1107, 898)
+        Me.btnBeenden.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnBeenden.Location = New System.Drawing.Point(1091, 889)
         Me.btnBeenden.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBeenden.Name = "btnBeenden"
         Me.btnBeenden.Size = New System.Drawing.Size(127, 44)
@@ -88,18 +89,16 @@ Partial Class frmHauptfensterMit
         Me.btnNeuerMitarbeiter.Size = New System.Drawing.Size(267, 95)
         Me.btnNeuerMitarbeiter.TabIndex = 10
         Me.btnNeuerMitarbeiter.Text = "Neuer Mitarbeiter"
-        Me.btnNeuerMitarbeiter.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNeuerMitarbeiter.UseVisualStyleBackColor = True
         '
         'btnTrainer
         '
-        Me.btnTrainer.Location = New System.Drawing.Point(42, 466)
+        Me.btnTrainer.Location = New System.Drawing.Point(42, 450)
         Me.btnTrainer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTrainer.Name = "btnTrainer"
         Me.btnTrainer.Size = New System.Drawing.Size(267, 95)
         Me.btnTrainer.TabIndex = 9
         Me.btnTrainer.Text = "Trainer"
-        Me.btnTrainer.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnTrainer.UseVisualStyleBackColor = True
         '
         'btnSchueler
@@ -110,7 +109,6 @@ Partial Class frmHauptfensterMit
         Me.btnSchueler.Size = New System.Drawing.Size(267, 95)
         Me.btnSchueler.TabIndex = 8
         Me.btnSchueler.Text = "Schüler"
-        Me.btnSchueler.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSchueler.UseVisualStyleBackColor = True
         '
         'btnKurs
@@ -121,7 +119,6 @@ Partial Class frmHauptfensterMit
         Me.btnKurs.Size = New System.Drawing.Size(267, 95)
         Me.btnKurs.TabIndex = 5
         Me.btnKurs.Text = "Kurse"
-        Me.btnKurs.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnKurs.UseVisualStyleBackColor = True
         '
         'btnSportarten
@@ -132,26 +129,24 @@ Partial Class frmHauptfensterMit
         Me.btnSportarten.Size = New System.Drawing.Size(267, 95)
         Me.btnSportarten.TabIndex = 3
         Me.btnSportarten.Text = "Sportarten"
-        Me.btnSportarten.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSportarten.UseVisualStyleBackColor = True
         '
         'btnMeinKonto
         '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 599)
+        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 593)
         Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(267, 95)
         Me.btnMeinKonto.TabIndex = 2
         Me.btnMeinKonto.Text = "Mein Konto"
-        Me.btnMeinKonto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnMeinKonto.UseVisualStyleBackColor = True
         '
         'grpboxSportartliste
         '
+        Me.grpboxSportartliste.Controls.Add(Me.lstSportart)
         Me.grpboxSportartliste.Controls.Add(Me.btnNeu)
         Me.grpboxSportartliste.Controls.Add(Me.btnLoeschen)
         Me.grpboxSportartliste.Controls.Add(Me.btnOeffnen)
-        Me.grpboxSportartliste.Controls.Add(Me.lstSportart)
         Me.grpboxSportartliste.Controls.Add(Me.lstTrainer)
         Me.grpboxSportartliste.Controls.Add(Me.lstSchuelerAlle)
         Me.grpboxSportartliste.Controls.Add(Me.lstKurseAlle)
@@ -163,50 +158,17 @@ Partial Class frmHauptfensterMit
         Me.grpboxSportartliste.TabIndex = 2
         Me.grpboxSportartliste.TabStop = False
         '
-        'btnNeu
-        '
-        Me.btnNeu.Location = New System.Drawing.Point(422, 784)
-        Me.btnNeu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnNeu.Name = "btnNeu"
-        Me.btnNeu.Size = New System.Drawing.Size(127, 44)
-        Me.btnNeu.TabIndex = 6
-        Me.btnNeu.Text = "Neu"
-        Me.btnNeu.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnNeu.UseVisualStyleBackColor = True
-        '
-        'btnLoeschen
-        '
-        Me.btnLoeschen.Location = New System.Drawing.Point(567, 784)
-        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnLoeschen.Name = "btnLoeschen"
-        Me.btnLoeschen.Size = New System.Drawing.Size(140, 44)
-        Me.btnLoeschen.TabIndex = 5
-        Me.btnLoeschen.Text = "Löschen"
-        Me.btnLoeschen.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnLoeschen.UseVisualStyleBackColor = True
-        '
-        'btnOeffnen
-        '
-        Me.btnOeffnen.Location = New System.Drawing.Point(724, 784)
-        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnOeffnen.Name = "btnOeffnen"
-        Me.btnOeffnen.Size = New System.Drawing.Size(127, 44)
-        Me.btnOeffnen.TabIndex = 4
-        Me.btnOeffnen.Text = "Öffnen"
-        Me.btnOeffnen.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnOeffnen.UseVisualStyleBackColor = True
-        '
         'lstSportart
         '
         Me.lstSportart.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colSportart})
         Me.lstSportart.FullRowSelect = True
         Me.lstSportart.GridLines = True
         Me.lstSportart.HideSelection = False
-        Me.lstSportart.Location = New System.Drawing.Point(5, 9)
+        Me.lstSportart.Location = New System.Drawing.Point(6, 9)
         Me.lstSportart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstSportart.MultiSelect = False
         Me.lstSportart.Name = "lstSportart"
-        Me.lstSportart.Size = New System.Drawing.Size(853, 754)
+        Me.lstSportart.Size = New System.Drawing.Size(852, 754)
         Me.lstSportart.TabIndex = 0
         Me.lstSportart.UseCompatibleStateImageBehavior = False
         Me.lstSportart.View = System.Windows.Forms.View.Details
@@ -221,6 +183,36 @@ Partial Class frmHauptfensterMit
         Me.colSportart.Text = "Sportart"
         Me.colSportart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colSportart.Width = 300
+        '
+        'btnNeu
+        '
+        Me.btnNeu.Location = New System.Drawing.Point(375, 784)
+        Me.btnNeu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnNeu.Name = "btnNeu"
+        Me.btnNeu.Size = New System.Drawing.Size(147, 44)
+        Me.btnNeu.TabIndex = 6
+        Me.btnNeu.Text = "Neu"
+        Me.btnNeu.UseVisualStyleBackColor = True
+        '
+        'btnLoeschen
+        '
+        Me.btnLoeschen.Location = New System.Drawing.Point(538, 784)
+        Me.btnLoeschen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnLoeschen.Name = "btnLoeschen"
+        Me.btnLoeschen.Size = New System.Drawing.Size(147, 44)
+        Me.btnLoeschen.TabIndex = 5
+        Me.btnLoeschen.Text = "Löschen"
+        Me.btnLoeschen.UseVisualStyleBackColor = True
+        '
+        'btnOeffnen
+        '
+        Me.btnOeffnen.Location = New System.Drawing.Point(700, 784)
+        Me.btnOeffnen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnOeffnen.Name = "btnOeffnen"
+        Me.btnOeffnen.Size = New System.Drawing.Size(147, 44)
+        Me.btnOeffnen.TabIndex = 4
+        Me.btnOeffnen.Text = "Öffnen"
+        Me.btnOeffnen.UseVisualStyleBackColor = True
         '
         'lstTrainer
         '
@@ -328,12 +320,18 @@ Partial Class frmHauptfensterMit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnBeenden
         Me.ClientSize = New System.Drawing.Size(1253, 952)
         Me.Controls.Add(Me.grpboxSportartliste)
         Me.Controls.Add(Me.grpboxMenu)
         Me.Controls.Add(Me.btnBeenden)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmHauptfensterMit"
+        Me.ShowInTaskbar = False
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kampfsportverein"
         Me.grpboxMenu.ResumeLayout(False)
         Me.grpboxSportartliste.ResumeLayout(False)

@@ -41,16 +41,16 @@ Partial Class dlgKursEinzeln
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(634, 480)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(622, 480)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(128, 37)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(140, 37)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(496, 480)
+        Me.btnSpeichern.Location = New System.Drawing.Point(478, 480)
         Me.btnSpeichern.Name = "btnSpeichern"
         Me.btnSpeichern.Size = New System.Drawing.Size(128, 37)
         Me.btnSpeichern.TabIndex = 1
@@ -183,7 +183,11 @@ Partial Class dlgKursEinzeln
         Me.Controls.Add(Me.lblZeitpunkt)
         Me.Controls.Add(Me.btnSpeichern)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgKursEinzeln"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Kurs bearbeiten"
         Me.ResumeLayout(False)
         Me.PerformLayout()

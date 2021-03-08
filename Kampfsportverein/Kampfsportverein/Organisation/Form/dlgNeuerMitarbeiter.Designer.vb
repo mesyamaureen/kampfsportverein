@@ -37,18 +37,18 @@ Partial Class dlgNeuerMitarbeiter
         'btnAbbrechen
         '
         Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(624, 464)
+        Me.btnAbbrechen.Location = New System.Drawing.Point(605, 464)
         Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(138, 53)
+        Me.btnAbbrechen.Size = New System.Drawing.Size(157, 53)
         Me.btnAbbrechen.TabIndex = 0
         Me.btnAbbrechen.Text = "Abbrechen"
         Me.btnAbbrechen.UseVisualStyleBackColor = True
         '
         'btnErstellen
         '
-        Me.btnErstellen.Location = New System.Drawing.Point(469, 464)
+        Me.btnErstellen.Location = New System.Drawing.Point(434, 464)
         Me.btnErstellen.Name = "btnErstellen"
-        Me.btnErstellen.Size = New System.Drawing.Size(138, 53)
+        Me.btnErstellen.Size = New System.Drawing.Size(160, 53)
         Me.btnErstellen.TabIndex = 1
         Me.btnErstellen.Text = "Erstellen"
         Me.btnErstellen.UseVisualStyleBackColor = True
@@ -138,7 +138,11 @@ Partial Class dlgNeuerMitarbeiter
         Me.Controls.Add(Me.lblVorname)
         Me.Controls.Add(Me.btnErstellen)
         Me.Controls.Add(Me.btnAbbrechen)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "dlgNeuerMitarbeiter"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Neuer Mitarbeiter"
         Me.ResumeLayout(False)
         Me.PerformLayout()

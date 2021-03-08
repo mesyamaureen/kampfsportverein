@@ -71,7 +71,6 @@ Partial Class frmHauptfensterTrainer
         Me.btnSchueler.Size = New System.Drawing.Size(309, 222)
         Me.btnSchueler.TabIndex = 5
         Me.btnSchueler.Text = "Schüler"
-        Me.btnSchueler.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnSchueler.UseVisualStyleBackColor = True
         '
         'btnKurse
@@ -81,7 +80,6 @@ Partial Class frmHauptfensterTrainer
         Me.btnKurse.Size = New System.Drawing.Size(309, 222)
         Me.btnKurse.TabIndex = 4
         Me.btnKurse.Text = "Kurse"
-        Me.btnKurse.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnKurse.UseVisualStyleBackColor = True
         '
         'btnMeinKonto
@@ -91,7 +89,6 @@ Partial Class frmHauptfensterTrainer
         Me.btnMeinKonto.Size = New System.Drawing.Size(309, 222)
         Me.btnMeinKonto.TabIndex = 3
         Me.btnMeinKonto.Text = "Mein Konto"
-        Me.btnMeinKonto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnMeinKonto.UseVisualStyleBackColor = True
         '
         'grpboxKurs
@@ -108,22 +105,20 @@ Partial Class frmHauptfensterTrainer
         '
         'btnNeueSchueler
         '
-        Me.btnNeueSchueler.Location = New System.Drawing.Point(568, 802)
+        Me.btnNeueSchueler.Location = New System.Drawing.Point(553, 802)
         Me.btnNeueSchueler.Name = "btnNeueSchueler"
         Me.btnNeueSchueler.Size = New System.Drawing.Size(135, 40)
         Me.btnNeueSchueler.TabIndex = 7
         Me.btnNeueSchueler.Text = "Neu"
-        Me.btnNeueSchueler.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNeueSchueler.UseVisualStyleBackColor = True
         '
         'btnOeffnen
         '
-        Me.btnOeffnen.Location = New System.Drawing.Point(723, 802)
+        Me.btnOeffnen.Location = New System.Drawing.Point(715, 802)
         Me.btnOeffnen.Name = "btnOeffnen"
         Me.btnOeffnen.Size = New System.Drawing.Size(135, 40)
         Me.btnOeffnen.TabIndex = 3
         Me.btnOeffnen.Text = "Öffnen"
-        Me.btnOeffnen.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnOeffnen.UseVisualStyleBackColor = True
         '
         'lstSchueler
@@ -203,7 +198,9 @@ Partial Class frmHauptfensterTrainer
         Me.Controls.Add(Me.grpboxKurs)
         Me.Controls.Add(Me.grpboxMenu)
         Me.Controls.Add(Me.btnBeenden)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmHauptfensterTrainer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Kampfsportverein"
         Me.grpboxMenu.ResumeLayout(False)
         Me.grpboxKurs.ResumeLayout(False)

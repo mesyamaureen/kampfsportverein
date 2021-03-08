@@ -42,4 +42,13 @@
     Private Sub btnNeueSchueler_Click(sender As Object, e As EventArgs) Handles btnNeueSchueler.Click
         mPresenter.verarbeiteNeuSchueler()
     End Sub
+
+    Private Sub frmHauptfensterTrainer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim mbrResult As MsgBoxResult
+        mbrResult = MsgBox("Wirklich Beenden?", MsgBoxStyle.Question + vbYesNo, "Beenden")
+        If mbrResult = vbNo Then
+            Me.DialogResult = DialogResult.None
+            e.Cancel = True
+        End If
+    End Sub
 End Class

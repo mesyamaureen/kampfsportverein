@@ -11,24 +11,10 @@
 
     Public Sub New()
         mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
-        'SOLLTE BIS ZEILE 18 GELÖSCHT WERDEN (AM ENDE) -04.03.2021
-        'mlstSportartAlle = Kampfsportverein.mlstSportart
-        'mlstKurseAlle = Kampfsportverein.mlstKurs
-        'mlstSchuelerAlle = Kampfsportverein.mlstSchueler
-        'mlstTrainerAlle = Kampfsportverein.mlstTrainer
-        'verarbeiteMitarbeiterEinzeln()
         verarbeiteSportartUebersichtAnzeigen()
         verarbeiteKursuebersichtAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
         verarbeiteTrainerUebersichtAnzeigen()
-        'anzeigenMitarbeiterAlle()
-        'anzeigenKursAlle()
-        'anzeigenSchueleruebersichtAnzeigen()
-        'anzeigenTrainerAlle()
-
-        'Daten an die Oberfläche übergeben
-        'anzeigenKursAlle()
-        'anzeigenMitarbeiterAlle()
         'Anzeige der View als Oberfläche
         Application.Run(mView)
 
@@ -138,7 +124,7 @@
         sporPresenter = New SportartenPresenter(spor)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If sporPresenter.mErgebnis = EPresenterErgebnis.SPORTART_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If sporPresenter.mErgebnis = EPresenterErgebnis.SPORTART_EINZELN Then
             verarbeiteSportartUebersichtAnzeigen()
         End If
     End Sub
@@ -153,7 +139,7 @@
         kursPresenter = New KursPresenter(ausgewaehlterKurs)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Or kursPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Or kursPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
             verarbeiteKursuebersichtAnzeigen()
         End If
     End Sub
@@ -167,7 +153,7 @@
         schuPresenter = New SchuelerAllePresenter(schueler)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If schuPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_EINZELN Or schuPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If schuPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_EINZELN Or schuPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
             verarbeiteSchueleruebersichtAnzeigen()
         End If
     End Sub
@@ -182,8 +168,7 @@
         traPresenter = New KontoTrainerPresenter(tra)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Or traPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
-            verarbeiteTrainerUebersichtAnzeigen()
+        If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Or traPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
         End If
     End Sub
 
@@ -193,7 +178,7 @@
         mit = mMitarbeiterDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
         ' Übergeben der Sportart zur Anzeige im Presenter
         mitKontoPresenter = New MitarbeiterKontoPresenter(mit)
-        If mitKontoPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If mitKontoPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
             verarbeiteKursuebersichtAnzeigen()
         End If
     End Sub
@@ -228,16 +213,6 @@
             verarbeiteKursuebersichtAnzeigen()
         End If
     End Sub
-
-    'Public Sub verarbeiteNeuSchueler()
-    '    Dim schu As Schueler
-    '    Dim neueSchuelerPresenter As NeueSchuelerPresenter
-    '    schu = New Schueler()
-    '    neueSchuelerPresenter = New NeueSchuelerPresenter(schu)
-    '    If neueSchuelerPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
-    '        verarbeiteSchueleruebersichtAnzeigen()
-    '    End If
-    'End Sub
 
     Public Sub verarbeiteNeuTrainer()
         Dim tra As Trainer

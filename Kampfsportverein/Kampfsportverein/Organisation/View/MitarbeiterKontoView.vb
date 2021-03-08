@@ -31,22 +31,4 @@
         Me.txtNeuesPass.Text = String.Empty
     End Sub
 
-    'Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
-
-    '    Dim mMit As Mitarbeiter = New Mitarbeiter
-    '    Dim mNeuesPw As String = Me.txtNeuesPasswort.Text
-    '    Try
-    '        mMit.Nachname = Me.txtName.Text
-    '        mMit.Passwort = Me.txtAltPass.Text
-    '        Exit Try
-    '    Catch
-    '        MsgBox("Bitte Überprüfen Sie die Eingaben")
-    '        Exit Sub
-    '        Exit Try
-    '    End Try
-    '    mPresenter.verarbeiteSpeichern(mMit, mNeuesPw)
-
-
-    'End Sub
-
 End Class
