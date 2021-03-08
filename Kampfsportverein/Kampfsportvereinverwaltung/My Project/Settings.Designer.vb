@@ -58,8 +58,8 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""C:\Users\Mesya\Desktop\datenbanksy"& _ 
-            "stem02\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_DB.accdb"& _ 
-            """;Persist Security Info=True")>  _
+            "stem02 - Kopie\kampfsportverein\Kampfsportverein\Kampfsportverein_DB\Kampfsport_"& _ 
+            "DB.accdb"";Persist Security Info=True")>  _
         Public ReadOnly Property ConnectionString() As String
             Get
                 Return CType(Me("ConnectionString"),String)

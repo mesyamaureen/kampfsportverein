@@ -6,18 +6,17 @@
     Private mlngVersion As Long
 
     Sub New() 'parameterloser Konstruktor
-        mstrVorname = String.Empty
+        mlngSchuelerIdPk = Nothing
         mstrName = String.Empty
         mstrEMailAdresse = String.Empty
-        mlngSchuelerIdPk = 0
-        mlngVersion = 0
+        mlngVersion = Nothing
     End Sub
 
-    Sub New(pstrVorname As String, pstrName As String, pstrEMailAdresse As String, plngSchuelerId As Long, plngVersion As Long) 'Konstruktor mit Parameter
+    Sub New(plngSchuelerId As Long, pstrVorname As String, pstrName As String, pstrEMailAdresse As String, plngVersion As Long) 'Konstruktor mit Parameter
+        mlngSchuelerIdPk = plngSchuelerId
         mstrVorname = pstrVorname
         mstrName = pstrName
         mstrEMailAdresse = pstrEMailAdresse
-        mlngSchuelerIdPk = plngSchuelerId
         mlngVersion = plngVersion
     End Sub
 

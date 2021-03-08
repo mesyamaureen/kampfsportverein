@@ -26,8 +26,7 @@ Public Class TrainerDAO
     Private Const SQL_SELECT_SCHUELER_BY_SCHUID As String = "SELECT * FROM tblSchueler WHERE SchuIdPk = @IdPk"
 
     ' SQL-Anweisung, um einen Schueler neu hinzuzufügen
-    Private Const SQL_INSERT As String = "INSERT INTO tblSchueler(SchuIdPk, SchuVorname, SchuName, SchuEMail, SchuVersion)" &
-        "VALUES @vorname, @name, @email, @version"
+    Private Const SQL_INSERT_SCHUELER As String = "INSERT INTO tblSchueler(SchuVorname, SchuName, SchuEMail, SchuVersion) VALUES (@SchuVorname, @SchuName, @SchuEmail, @SchuVersion)"
 
     ' SQL-Anweisung, um eine Schueler zu löschen
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSchueler WHERE SchuIdPk = @IdPk And SchuVersion = @Version"
@@ -263,7 +262,7 @@ Public Class TrainerDAO
             strEmail = dr("SchuEMail")
             lngVersion = Long.Parse(dr("SchuVersion"))
 
-            schu = New Schueler(strVorname, strName, strEmail, lngIdPk, lngVersion)
+            schu = New Schueler(lngIdPk, strVorname, strName, strEmail, lngVersion)
 
         Loop
 
@@ -305,7 +304,7 @@ Public Class TrainerDAO
             strEmail = dr("SchuEMail")
             lngVersion = Long.Parse(dr("SchuVersion"))
 
-            schu = New Schueler(strVorname, strName, strEmail, lngIdPk, lngVersion)
+            schu = New Schueler(lngIdPk, strVorname, strName, strEmail, lngVersion)
             lstSchueler.Add(schu)
         Loop
 
@@ -350,15 +349,18 @@ Public Class TrainerDAO
         Dim cmd As OleDbCommand
 
         lngIdPk = -1
-        cmd = New OleDbCommand(SQL_INSERT, mConnection)
-        cmd.Parameters.AddWithValue("@SchuName", pSchu.Name)
+        lngAnzahlDatensätze = 0
+        oeffnenDatenbank()
+
+        cmd = New OleDbCommand(SQL_INSERT_SCHUELER, mConnection)
         cmd.Parameters.AddWithValue("@SchuVorname", pSchu.Vorname)
+        cmd.Parameters.AddWithValue("@SchuName", pSchu.Name)
         cmd.Parameters.AddWithValue("@SchuEmail", pSchu.EMailAdresse)
         cmd.Parameters.AddWithValue("@SchuVersion", pSchu.Version)
 
         lngAnzahlDatensätze = cmd.ExecuteNonQuery
         If lngAnzahlDatensätze = 1 Then
-            lngAnzahlDatensätze = ermittleId()
+            lngIdPk = ermittleId()
         End If
         schliessenDatenbank()
         Return lngIdPk

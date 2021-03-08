@@ -220,7 +220,13 @@
     End Sub
 
     Public Sub verarbeiteNeuSchueler()
-        'Neu MVP für Hinzufügen-Seite
+        Dim schu As Schueler
+        Dim neueSchuelerPresenter As NeueSchuelerPresenter
+        schu = New Schueler()
+        neueSchuelerPresenter = New NeueSchuelerPresenter(schu)
+        If neueSchuelerPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
+            verarbeiteSchueleruebersichtAnzeigen()
+        End If
     End Sub
 
     Public Sub verarbeiteNeuTrainer()
