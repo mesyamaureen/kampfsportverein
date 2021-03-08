@@ -198,6 +198,16 @@
         End If
     End Sub
 
+    Public Sub verarbeiteNeuerMitarbeiter()
+        Dim mit As Mitarbeiter
+        Dim neuerMitarbeiterPresenter As NeuerMitarbeiterPresenter
+        mit = New Mitarbeiter()
+        neuerMitarbeiterPresenter = New NeuerMitarbeiterPresenter(mit)
+        If neuerMitarbeiterPresenter.mErgebnis = EPresenterErgebnis.MITARBEITER_ERSTELLEN Then
+            verarbeiteKursuebersichtAnzeigen()
+        End If
+    End Sub
+
     Public Sub verarbeiteNeu() 'button Neu
 
         Dim sporPresenter As SportartenPresenter ' Presenter zum anzeigen der Sportart

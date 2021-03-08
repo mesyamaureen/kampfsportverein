@@ -24,6 +24,7 @@ Partial Class frmHauptfensterMit
     Private Sub InitializeComponent()
         Me.btnBeenden = New System.Windows.Forms.Button()
         Me.grpboxMenu = New System.Windows.Forms.GroupBox()
+        Me.btnNeuerMitarbeiter = New System.Windows.Forms.Button()
         Me.btnTrainer = New System.Windows.Forms.Button()
         Me.btnSchueler = New System.Windows.Forms.Button()
         Me.btnKurs = New System.Windows.Forms.Button()
@@ -65,6 +66,7 @@ Partial Class frmHauptfensterMit
         '
         'grpboxMenu
         '
+        Me.grpboxMenu.Controls.Add(Me.btnNeuerMitarbeiter)
         Me.grpboxMenu.Controls.Add(Me.btnTrainer)
         Me.grpboxMenu.Controls.Add(Me.btnSchueler)
         Me.grpboxMenu.Controls.Add(Me.btnKurs)
@@ -78,9 +80,20 @@ Partial Class frmHauptfensterMit
         Me.grpboxMenu.TabIndex = 1
         Me.grpboxMenu.TabStop = False
         '
+        'btnNeuerMitarbeiter
+        '
+        Me.btnNeuerMitarbeiter.Location = New System.Drawing.Point(42, 733)
+        Me.btnNeuerMitarbeiter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnNeuerMitarbeiter.Name = "btnNeuerMitarbeiter"
+        Me.btnNeuerMitarbeiter.Size = New System.Drawing.Size(267, 95)
+        Me.btnNeuerMitarbeiter.TabIndex = 10
+        Me.btnNeuerMitarbeiter.Text = "Neuer Mitarbeiter"
+        Me.btnNeuerMitarbeiter.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNeuerMitarbeiter.UseVisualStyleBackColor = True
+        '
         'btnTrainer
         '
-        Me.btnTrainer.Location = New System.Drawing.Point(42, 554)
+        Me.btnTrainer.Location = New System.Drawing.Point(42, 466)
         Me.btnTrainer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTrainer.Name = "btnTrainer"
         Me.btnTrainer.Size = New System.Drawing.Size(267, 95)
@@ -91,7 +104,7 @@ Partial Class frmHauptfensterMit
         '
         'btnSchueler
         '
-        Me.btnSchueler.Location = New System.Drawing.Point(42, 383)
+        Me.btnSchueler.Location = New System.Drawing.Point(42, 312)
         Me.btnSchueler.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSchueler.Name = "btnSchueler"
         Me.btnSchueler.Size = New System.Drawing.Size(267, 95)
@@ -102,7 +115,7 @@ Partial Class frmHauptfensterMit
         '
         'btnKurs
         '
-        Me.btnKurs.Location = New System.Drawing.Point(42, 221)
+        Me.btnKurs.Location = New System.Drawing.Point(42, 169)
         Me.btnKurs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnKurs.Name = "btnKurs"
         Me.btnKurs.Size = New System.Drawing.Size(267, 95)
@@ -113,7 +126,7 @@ Partial Class frmHauptfensterMit
         '
         'btnSportarten
         '
-        Me.btnSportarten.Location = New System.Drawing.Point(42, 55)
+        Me.btnSportarten.Location = New System.Drawing.Point(42, 28)
         Me.btnSportarten.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSportarten.Name = "btnSportarten"
         Me.btnSportarten.Size = New System.Drawing.Size(267, 95)
@@ -124,7 +137,7 @@ Partial Class frmHauptfensterMit
         '
         'btnMeinKonto
         '
-        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 713)
+        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 599)
         Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMeinKonto.Name = "btnMeinKonto"
         Me.btnMeinKonto.Size = New System.Drawing.Size(267, 95)
@@ -355,4 +368,5 @@ Partial Class frmHauptfensterMit
     Friend WithEvents colTrainerID As ColumnHeader
     Friend WithEvents colNameTrainer As ColumnHeader
     Friend WithEvents colVornameTrainer As ColumnHeader
+    Friend WithEvents btnNeuerMitarbeiter As Button
 End Class

@@ -115,5 +115,7 @@
 
     End Sub
 
-
+    Private Sub btnNeuerMitarbeiter_Click(sender As Object, e As EventArgs) Handles btnNeuerMitarbeiter.Click
+        mPresenter.verarbeiteNeuerMitarbeiter()
+    End Sub
 End Class

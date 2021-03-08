@@ -783,7 +783,7 @@ Public Class MitarbeiterDAO
     End Function
 
 
-    Private Shared Function hinzufuegenMitarbeiter(pMit As Mitarbeiter) As Long
+    Public Shared Function hinzufuegenMitarbeiter(pMit As Mitarbeiter) As Long
 
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long
