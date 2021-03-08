@@ -3,11 +3,11 @@
     Public mErgebnis As EPresenterErgebnis
     Private mSitzung As BenutzerSitzung
     Private mView As NeuerTrainerView
+    Private mtraDAO As TrainerDAO
 
-    Sub New()
-        MyBase.New
+    Sub New(pTrainer As Trainer)
+        mNeuerTrainer = Nothing
         mView = New NeuerTrainerView(Me)
-        mNeuerTrainer = New Trainer
         anzeigen()
         mView.ShowDialog()
     End Sub
@@ -36,31 +36,48 @@
         End Set
     End Property
 
+    Public Property TrainerDAO As TrainerDAO
+        Get
+            Return mtraDAO
+        End Get
+        Set(value As TrainerDAO)
+        End Set
+    End Property
+
     Public Sub anzeigen()
         mView.leeren()
         mView.anzeigen()
+        mtraDAO = DAOFactory.Instanz.TrainerDAO
     End Sub
 
-    Public Sub verarbeiteErstellen(pTrainer As Trainer)
-        If String.IsNullOrEmpty(pTrainer.Vorname) Or String.IsNullOrEmpty(pTrainer.Name) Or
-String.IsNullOrEmpty(pTrainer.Benutzername) Or String.IsNullOrEmpty(pTrainer.Passwort) Then
+    Public Sub verarbeiteErstellen()
+        Dim strVorname As String
+        Dim strName As String
+        Dim strBenutzername As String
+        Dim strPass As String
+
+        If String.IsNullOrEmpty(mView.txtVorname.Text) Or String.IsNullOrEmpty(mView.txtName.Text) Or
+            String.IsNullOrEmpty(mView.txtBenutzername.Text) Or String.IsNullOrEmpty(mView.txtPass.Text) Then
             MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
         Else
-            mNeuerTrainer.Vorname = pTrainer.Vorname
-            mNeuerTrainer.Name = pTrainer.Name
-            mNeuerTrainer.Benutzername = pTrainer.Benutzername
-            mNeuerTrainer.Passwort = pTrainer.Passwort
+            strVorname = mView.txtVorname.Text
+            strName = mView.txtName.Text
+            strBenutzername = mView.txtBenutzername.Text
+            strPass = mView.txtPass.Text
 
-            mNeuerTrainer.Version = pTrainer.Version + 1
-
-            Dim Ergebnis As Long
-            Ergebnis = TrainerDAO.hinzufuegenTrainer(pTrainer)
-            If Ergebnis = mNeuerTrainer.BenutzerID Then
-                mErgebnis = EPresenterErgebnis.SPORTART_EINZELN
-                mView.Close()
+            If mNeuerTrainer Is Nothing Then
+                mNeuerTrainer = New Trainer(strBenutzername, strPass, strVorname, strName, 0, 0, "T")
             Else
-                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+                mNeuerTrainer.BenutzerID = 0
+                mNeuerTrainer.Benutzername = strBenutzername
+                mNeuerTrainer.Passwort = strPass
+                mNeuerTrainer.Vorname = strVorname
+                mNeuerTrainer.Name = strName
+                mNeuerTrainer.Typ = "T"
             End If
+            TrainerDAO.hinzufuegenTrainer(mNeuerTrainer)
+            mErgebnis = EPresenterErgebnis.TRAINER_ERSTELLEN
+            mView.Close()
         End If
     End Sub
 

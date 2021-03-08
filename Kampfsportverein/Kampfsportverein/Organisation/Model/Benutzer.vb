@@ -18,12 +18,12 @@
         mcharTyp = Nothing
     End Sub
 
-    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, pintBenutzerID As Integer, plngVersion As Long, pcharTyp As Char)
+    Sub New(pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String, plngBenutzerID As Long, plngVersion As Long, pcharTyp As Char)
         mstrBenutzername = pstrBenutzername
         mstrPasswort = pstrPasswort
         mstrVorname = pstrVorname
         mstrName = pstrName
-        mlngBenutzerID = pintBenutzerID
+        mlngBenutzerID = plngBenutzerID
         mlngVersion = plngVersion
         mcharTyp = pcharTyp
     End Sub

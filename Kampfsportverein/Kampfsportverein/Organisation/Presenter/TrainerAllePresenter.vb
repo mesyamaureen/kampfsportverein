@@ -17,9 +17,9 @@
         'Daten an die Oberfläche übergeben
         verarbeiteKursuebersichtAnzeigen()
         verarbeiteSchueleruebersichtAnzeigen()
-        verarbeiteEigenesProfilAnzeigen()
-        anzeigenKursAlle()
-        anzeigenSchuelerAlle()
+        'verarbeiteEigenesProfilAnzeigen()
+        'anzeigenKursAlle()
+        'anzeigenSchuelerAlle()
 
         'Anzeige der View als Oberfläche (Formular)
         mView.ShowDialog()

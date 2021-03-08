@@ -230,11 +230,14 @@
     End Sub
 
     Public Sub verarbeiteNeuTrainer()
+        Dim tra As Trainer
         Dim neuerTrainerPresenter As NeuerTrainerPresenter
-        neuerTrainerPresenter = New NeuerTrainerPresenter()
+        tra = New Trainer()
+        neuerTrainerPresenter = New NeuerTrainerPresenter(tra)
         If neuerTrainerPresenter.mErgebnis = EPresenterErgebnis.TRAINER_ERSTELLEN Then
-            'mView. -- Wieeeee??
+            verarbeiteTrainerUebersichtAnzeigen()
         End If
+
     End Sub
 
     Public Sub verarbeiteLoeschen(plngSportartId As Long) 'button Löschen

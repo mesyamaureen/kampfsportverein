@@ -7,15 +7,10 @@
     End Sub
 
     Public Sub anzeigen() 'pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
-        Me.txtVorname.Text = Enabled
-        Me.txtName.Text = Enabled
-        Me.txtBenutzername.Text = Enabled
-        Me.txtPass.Text = Enabled
-
-        'Me.txtVorname.Text = pstrVorname
-        'Me.txtName.Text = pstrName
-        'Me.txtBenutzername.Text = pstrBenutzername
-        'Me.txtPass.Text = pstrPasswort
+        Me.txtVorname.Enabled = True
+        Me.txtName.Enabled = True
+        Me.txtBenutzername.Enabled = True
+        Me.txtPass.Enabled = True
     End Sub
 
     Public Sub leeren()

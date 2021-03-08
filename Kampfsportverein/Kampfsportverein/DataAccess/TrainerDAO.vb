@@ -14,7 +14,7 @@ Public Class TrainerDAO
     Private Const SQL_SELECT_TRAINER_ALL As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenTyp = 'T'"
 
     'SQL-Anweisung, um Trainer hinzuzufügen
-    Private Const SQL_INSERT_TRAINER As String = "INSERT INTO tblBenutzer/Mitarbeiter/Trainer(BenIdPk, BenBenutzerName, BenPw, BenVorname, BenName, BenTyp, BenVersion) VALUES (@idPk, @passwort, @vorname, @name, @typ, @version)"
+    Private Const SQL_INSERT_TRAINER As String = "INSERT INTO [tblBenutzer/Mitarbeiter/Trainer](BenBenutzerName, BenPw, BenVorname, BenName, BenTyp) VALUES (@benBenutzername, @benPass, @benVorname, @benName, @benTyp)"
 
     'SQL-Anweisung, um Trainer zu löschen
     Private Const SQL_DELETE_BY_VERSION_TRAINER As String = "DELETE FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk AND BenVersion = @benVersion AND BenTyp = 'T';"
@@ -182,17 +182,18 @@ Public Class TrainerDAO
         Dim cmd As OleDbCommand
 
         lngIdPk = -1
+        lngAnzahlDatensätze = 0
+        oeffnenDatenbank()
         cmd = New OleDbCommand(SQL_INSERT_TRAINER, mConnection)
         cmd.Parameters.AddWithValue("@BenBenutzerName", pTrainer.Benutzername)
         cmd.Parameters.AddWithValue("@BenPw", pTrainer.Passwort)
         cmd.Parameters.AddWithValue("@BenVorname", pTrainer.Vorname)
         cmd.Parameters.AddWithValue("@BenName", pTrainer.Name)
         cmd.Parameters.AddWithValue("@BenTyp", pTrainer.Typ)
-        cmd.Parameters.AddWithValue("@BenVersion", pTrainer.Version)
 
         lngAnzahlDatensätze = cmd.ExecuteNonQuery
         If lngAnzahlDatensätze = 1 Then
-            lngAnzahlDatensätze = ermittleId()
+            lngIdPk = ermittleId()
         End If
         schliessenDatenbank()
         Return lngIdPk
