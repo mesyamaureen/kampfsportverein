@@ -32,7 +32,8 @@
         Get
             Return mstrBenutzername
         End Get
-        Set(ByVal value As String)
+        Set(value As String)
+            mstrBenutzername = value
         End Set
     End Property
 
@@ -40,7 +41,8 @@
         Get
             Return mstrName
         End Get
-        Set(ByVal value As String)
+        Set(value As String)
+            mstrName = value
         End Set
     End Property
 
@@ -48,7 +50,8 @@
         Get
             Return mstrPasswort
         End Get
-        Set(ByVal value As String)
+        Set(value As String)
+            mstrPasswort = value
         End Set
     End Property
 
@@ -56,7 +59,8 @@
         Get
             Return mstrVorname
         End Get
-        Set(ByVal value As String)
+        Set(value As String)
+            mstrVorname = value
         End Set
     End Property
 
@@ -64,7 +68,8 @@
         Get
             Return mlngBenutzerID
         End Get
-        Set(ByVal value As Long)
+        Set(value As Long)
+            mlngBenutzerID = value
         End Set
     End Property
 
@@ -72,7 +77,8 @@
         Get
             Return mlngVersion
         End Get
-        Set(ByVal value As Long)
+        Set(value As Long)
+            mlngVersion = value
         End Set
     End Property
 
@@ -80,7 +86,8 @@
         Get
             Return mcharTyp
         End Get
-        Set(ByVal value As Char)
+        Set(value As Char)
+            mcharTyp = value
         End Set
     End Property
 

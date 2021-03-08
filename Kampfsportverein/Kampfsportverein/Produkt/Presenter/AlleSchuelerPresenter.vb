@@ -50,7 +50,25 @@
         mView.txtName.Text = mSchueler.Name
         mView.txtEmail.Text = mSchueler.EMailAdresse
     End Sub
-    Public Sub verarbeiteSpeichern()
+    Public Sub verarbeiteSpeichern(pSchu As Schueler)
+        If String.IsNullOrEmpty(mView.txtVorname.Text) Or String.IsNullOrEmpty(mView.txtName.Text) Or String.IsNullOrEmpty(mView.txtEmail.Text) Then
+            MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
+        Else
+            mSchueler.Vorname = mView.txtVorname.Text
+            mSchueler.Name = mView.txtName.Text
+            mSchueler.EMailAdresse = mView.txtEmail.Text
+            mSchueler.Version = pSchu.Version + 1
+
+            Dim lngErgebnis As Long
+            lngErgebnis = TrainerDAO.speichernSchueler(mSchueler)
+            If lngErgebnis = mSchueler.SchuelerIdPk Then
+                mErgebnis = EPresenterErgebnis.SPEICHERN
+                MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+                mView.Close()
+            Else
+                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            End If
+        End If
 
     End Sub
 

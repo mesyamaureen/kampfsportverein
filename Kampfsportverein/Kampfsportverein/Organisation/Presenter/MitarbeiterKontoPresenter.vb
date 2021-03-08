@@ -65,17 +65,29 @@ Public Class MitarbeiterKontoPresenter
                 mMitarbeiter.Passwort = pNeuesPw
                 mMitarbeiter.Nachname = pMit.Nachname
 
+                'Dim lngErgebnis As Long
                 MitarbeiterDAO.speichernMitarbeiter(mMitarbeiter)
+                'If lngErgebnis = mMitarbeiter.BenutzerID Then
+                '    mErgebnis = EPresenterErgebnis.SPEICHERN
+                '    MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+                '    mView.Close()
+                'Else
+                '    MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+                'End If
             End If
         Else
             mMitarbeiter.Nachname = pMit.Nachname
             'MsgBox(mMitarbeiter.ID & "     " & mMitarbeiter.Nachname)
+            'Dim lngErgebnis As Long
             MitarbeiterDAO.speichernMitarbeiter(mMitarbeiter)
+            'If lngErgebnis = mMitarbeiter.BenutzerID Then
+            '    mErgebnis = EPresenterErgebnis.SPEICHERN
+            '    MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+            '    mView.Close()
+            'Else
+            '    MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            'End If
         End If
-
-
-
-
     End Sub
 
     Public Sub verarbeiteAbbrechen()

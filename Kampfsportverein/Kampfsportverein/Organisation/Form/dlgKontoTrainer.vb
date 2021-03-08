@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
-        mPresenter.verarbeiteSpeichern()
+        mPresenter.verarbeiteSpeichern(mPresenter.EinzelTrainer)
     End Sub
 
     'Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click

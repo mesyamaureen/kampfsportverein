@@ -74,8 +74,26 @@
         mView.txtBenutzername.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Benutzername
     End Sub
 
-    Public Sub verarbeiteSpeichern()
+    Public Sub verarbeiteSpeichern(pTrainer As Trainer)
+        If String.IsNullOrEmpty(mView.txtVorname.Text) Or String.IsNullOrEmpty(mView.txtName.Text) Or String.IsNullOrEmpty(mView.txtBenutzername.Text) Or String.IsNullOrEmpty(mView.txtPasswort.Text) Then
+            MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
+        Else
+            mTrainer.Vorname = mView.txtVorname.Text
+            mTrainer.Name = mView.txtName.Text
+            mTrainer.Benutzername = mView.txtBenutzername.Text
+            mTrainer.Passwort = mView.txtPasswort.Text
+            mTrainer.Version = pTrainer.Version + 1
 
+            Dim lngErgebnis As Long
+            lngErgebnis = TrainerDAO.speichernTrainer(mTrainer)
+            If lngErgebnis = mTrainer.BenutzerID Then
+                mErgebnis = EPresenterErgebnis.SPEICHERN
+                MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+                mView.Close()
+            Else
+                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            End If
+        End If
     End Sub
 
     Public Sub verarbeiteAbbrechen()

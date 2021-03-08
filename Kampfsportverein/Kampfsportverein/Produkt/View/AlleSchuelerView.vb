@@ -1,7 +1,6 @@
 ﻿Public Class AlleSchuelerView
     Inherits dlgSchueler
 
-    Protected Shared mPresenter As SchuelerAllePresenter
     Sub New(pPresenter As SchuelerAllePresenter)
         MyBase.New
         mPresenter = pPresenter

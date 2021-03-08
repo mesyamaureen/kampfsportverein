@@ -74,11 +74,30 @@
         mView.txtSchwierigkeit.Text = mKurs.Schwierigkeitsgrad
         mView.txtTrainer.Text = mKurs.Benutzer.Name
     End Sub
-    Public Sub verarbeiteSpeichern()
+    Public Sub verarbeiteSpeichern(pKurs As Kurs)
+        If String.IsNullOrEmpty(mView.txtZeitpunkt.Text) Or String.IsNullOrEmpty(mView.txtOrt.Text) Or String.IsNullOrEmpty(mView.txtTeilnZahl.Text) Or String.IsNullOrEmpty(mView.txtSchwierigkeit.Text) Then
+            MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
+        Else
+            mKurs.Zeitpunkt = mView.txtZeitpunkt.Text
+            mKurs.Ort = mView.txtOrt.Text
+            mKurs.Teilnehmerzahl = mView.txtTeilnZahl.Text
+            mKurs.Schwierigkeitsgrad = mView.txtSchwierigkeit.Text
+            mKurs.Version = pKurs.Version + 1
 
+            Dim lngErgebnis As Long
+            lngErgebnis = MitarbeiterDAO.speichernKurs(mKurs)
+            If lngErgebnis = mKurs.IdPk Then
+                mErgebnis = EPresenterErgebnis.SPEICHERN
+                MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+                mView.Close()
+            Else
+                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            End If
+        End If
     End Sub
 
     Public Sub verarbeiteAbbrechen()
+        mErgebnis = EPresenterErgebnis.ABBRECHEN
         mView.Close()
     End Sub
 End Class

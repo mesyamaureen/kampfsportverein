@@ -153,7 +153,7 @@
         kursPresenter = New KursPresenter(ausgewaehlterKurs)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Or kursPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteKursuebersichtAnzeigen()
         End If
     End Sub
@@ -167,7 +167,7 @@
         schuPresenter = New SchuelerAllePresenter(schueler)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If schuPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If schuPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_EINZELN Or schuPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteSchueleruebersichtAnzeigen()
         End If
     End Sub
@@ -182,7 +182,7 @@
         traPresenter = New KontoTrainerPresenter(tra)
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+        If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Or traPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteTrainerUebersichtAnzeigen()
         End If
     End Sub

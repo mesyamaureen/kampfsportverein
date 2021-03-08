@@ -1,20 +1,10 @@
 ﻿Public Class KontoTrainerView
     Inherits dlgKontoTrainer
 
-    Private mView As KontoTrainerView
-
     Sub New(pPresenter As KontoTrainerPresenter)
         MyBase.New
         mPresenter = pPresenter
     End Sub
-
-    Public Property IstTrainer As KontoTrainerView
-        Get
-            Return mView
-        End Get
-        Set(value As KontoTrainerView)
-        End Set
-    End Property
 
     Public Sub anzeigenTrainer() 'plngBenutzerID As Long, pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
         Me.txtTrainerID.Enabled = False

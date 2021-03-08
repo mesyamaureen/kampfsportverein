@@ -45,8 +45,7 @@ Public Class MitarbeiterDAO
     Private Const SQL_SELECT_KURS_BY_SPORTART As String = "SELECT * FROM tblKurse WHERE KuSaIdFk = @kSaIdFk"
 
     'SQL-Anweisung, um Kurse zu aktualisieren
-    Private Const SQL_UPDATE_KURS As String = "UPDATE tblKurse SET KuZeitpunkt = @kZeitpunkt, KuOrt = @kOrt, KuTeilnehmerZahl = @kTeilnehmer, KuSchwierigkeit = @kSchwierigkeit,
-                                                KuVersion = @kVersion"
+    Private Const SQL_UPDATE_KURS As String = "UPDATE tblKurse SET KuZeitpunkt = @kZeitpunkt, KuOrt = @kOrt, KuTeilnehmerZahl = @kTeilnehmer, KuSchwierigkeit = @kSchwierigkeit, KuVersion = @kVersion WHERE KuIdPk = @kIdPk;"
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
     Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerzahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion) VALUES (@KuZeitpunkt, @KuOrt, @KuTeilnehmerzahl, @KuSchwierigkeit, @KuSaIdFk, @KuBenIdFk, @version)"
@@ -55,10 +54,10 @@ Public Class MitarbeiterDAO
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @KuIdPk AND KuVersion = @version;"
 
     ' SQL-Anweisung, um einen Mitarbeiter zu aktualisieren
-    Private Const SQL_UPDATE_MITARBEITER As String = "UPDATE tblBenutzer/Mitarbeiter/Trainer SET BenVorname = @benVorname, BenPw = @BenPw, BenVersion = @BenVersion WHERE BenIdPk = @BenIdPk"
+    Private Const SQL_UPDATE_MITARBEITER As String = "UPDATE [tblBenutzer/Mitarbeiter/Trainer] SET BenName = @BenName, BenPw = @BenPw, BenVersion = @BenVersion WHERE BenIdPk = @BenIdPk"
 
     ' SQL-Anweisung, um einen Mitarbeiter neu hinzuzufügen
-    Private Const SQL_INSERT_MITARBEITER As String = "INSERT INTO tblBenutzer/Mitarbeiter/Trainer(BenVorname, BenName, BenBenutzername, BenPw, BenTyp, BenVersion) VALUES (@BenVorname, @BenName, @BenBenutzername, @BenPw, M, @BenVersion)"
+    Private Const SQL_INSERT_MITARBEITER As String = "INSERT INTO [tblBenutzer/Mitarbeiter/Trainer] (BenVorname, BenName, BenBenutzername, BenPw, BenTyp, BenVersion) VALUES (@BenVorname, @BenName, @BenBenutzername, @BenPw, M, @BenVersion)"
 
 
     'finden Mitarbeiter zur Anmeldung
@@ -669,14 +668,12 @@ Public Class MitarbeiterDAO
         ' Platzhalter in der SQL-Anweisung durch Eigenschaften der als Parameter übergebenen Aufgabe ersetzen
         ' Wichtig: Bei Zugriff auf MS Access-Datenbank müssen die Parameter in der Reihenfolge befüllt werden,
         ' in der sie in der SQL-Anweisung vorkommen (z.B. erst Titel und dann Beschreibung)!
-        cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
         cmd.Parameters.AddWithValue("@KuTeilnehmerzahl", pKurs.Teilnehmerzahl)
         cmd.Parameters.AddWithValue("@KuSchwierigkeit", pKurs.Schwierigkeitsgrad)
-        cmd.Parameters.AddWithValue("@KuSaIdFk", pKurs.SaIdFk)
-        cmd.Parameters.AddWithValue("@KuBenIdFk", pKurs.BenIdFk)
-        cmd.Parameters.AddWithValue("@Version", pKurs.Version)
+        cmd.Parameters.AddWithValue("@KuVersion", pKurs.Version)
+        cmd.Parameters.AddWithValue("@KuIdPk", pKurs.IdPk)
 
         ' Ausführen des Kommandos, als Ergebnis die Anzahl betroffener Datensätze merken
         lngAnzahlDatensätze = cmd.ExecuteNonQuery
@@ -762,11 +759,10 @@ Public Class MitarbeiterDAO
         ' SQL-Anweisung aus Konstante verwenden (Deklaration oben) und initialisierte Datenbankverbindung (aus Oberklasse geerbt)
         cmd = New OleDbCommand(SQL_UPDATE_MITARBEITER, mConnection)
 
-
         cmd.Parameters.AddWithValue("@BenName", pMit.Nachname)
         cmd.Parameters.AddWithValue("@BenPw", pMit.Passwort)
         cmd.Parameters.AddWithValue("@BenVersion", pMit.Version + 1)
-
+        cmd.Parameters.AddWithValue("@BenIdPk", pMit.BenutzerID)
 
         ' Ausführen des Kommandos, als Ergebnis die Anzahl betroffener Datensätze merken
         lngAnzahlDatensätze = cmd.ExecuteNonQuery

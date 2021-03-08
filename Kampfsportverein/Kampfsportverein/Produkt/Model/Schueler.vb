@@ -25,6 +25,7 @@
             Return mstrEMailAdresse
         End Get
         Set(value As String)
+            mstrEMailAdresse = value
         End Set
     End Property
 
@@ -33,6 +34,7 @@
             Return mstrName
         End Get
         Set(value As String)
+            mstrName = value
         End Set
     End Property
 
@@ -41,6 +43,7 @@
             Return mstrVorname
         End Get
         Set(value As String)
+            mstrVorname = value
         End Set
     End Property
 
@@ -49,6 +52,7 @@
             Return mlngSchuelerIdPk
         End Get
         Set(value As Long)
+            mlngSchuelerIdPk = value
         End Set
     End Property
 
@@ -57,6 +61,7 @@
             Return mlngVersion
         End Get
         Set(value As Long)
+            mlngVersion = value
         End Set
     End Property
 

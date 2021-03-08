@@ -47,7 +47,6 @@
         Try
             mMit.Nachname = Me.txtName.Text
             mMit.Passwort = Me.txtAltPass.Text
-
             Exit Try
         Catch
             MsgBox("Bitte Überprüfen Sie die Eingaben")

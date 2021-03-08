@@ -126,9 +126,9 @@ Partial Class dlgKontoTrainer
         Me.lblPasswort.Location = New System.Drawing.Point(36, 416)
         Me.lblPasswort.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPasswort.Name = "lblPasswort"
-        Me.lblPasswort.Size = New System.Drawing.Size(164, 25)
+        Me.lblPasswort.Size = New System.Drawing.Size(100, 25)
         Me.lblPasswort.TabIndex = 11
-        Me.lblPasswort.Text = "Neuer Passwort"
+        Me.lblPasswort.Text = "Passwort"
         '
         'txtPasswort
         '

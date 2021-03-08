@@ -19,6 +19,9 @@ Public Class TrainerDAO
     'SQL-Anweisung, um Trainer zu löschen
     Private Const SQL_DELETE_BY_VERSION_TRAINER As String = "DELETE FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk AND BenVersion = @benVersion AND BenTyp = 'T';"
 
+    'SQL-Anweisung, um Trainer zu löschen
+    Private Const SQL_UPDATE_TRAINER As String = "UPDATE [tblBenutzer/Mitarbeiter/Trainer] SET BenBenutzername = @benBenutzername, BenPw = @benPw, BenVorname = @benVorname, BenName = @benName, BenTyp = @benTyp, BenVersion = @benVersion WHERE BenIdPk = @benIdPk;"
+
     'SQL-Anweisung, um alle Schüler zu ermitteln
     Private Const SQL_SELECT_SCHUELER As String = "SELECT * FROM tblSchueler"
 
@@ -31,6 +34,8 @@ Public Class TrainerDAO
     ' SQL-Anweisung, um eine Schueler zu löschen
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSchueler WHERE SchuIdPk = @IdPk And SchuVersion = @Version"
 
+    'SQL-Anweisung, um eine Schueler zu aktualisieren
+    Private Const SQL_UPDATE_SCHUELER As String = "UPDATE tblSchueler SET SchuVorname = @schuVorname, SchuName = @schuName, SchuEMail = @schuEmail, SchuVersion = @schuVersion WHERE SchuIdPk = @schuIdPk;"
     'finden Trainer zur Anmeldung
     Public Function findenTraBenutzernamePasswort(pstrBenutzername As String, pstrPasswort As String) As Trainer
         'Deklaration
@@ -176,6 +181,39 @@ Public Class TrainerDAO
         Return lstTrainer
     End Function
 
+    Public Shared Function speichernTrainer(pTrainer As Trainer) As Long
+        Dim lngIdPk As Long
+        If pTrainer.BenutzerID > 0 Then
+            lngIdPk = aktualisierenTrainer(pTrainer)
+        Else
+            lngIdPk = hinzufuegenTrainer(pTrainer)
+        End If
+        Return lngIdPk
+    End Function
+
+    Private Shared Function aktualisierenTrainer(pTrainer As Trainer) As Long
+        Dim lngIdPk As Long
+        Dim lngAnzahlDatensaetze As Long
+        Dim cmd As OleDbCommand
+        lngIdPk = -1
+        oeffnenDatenbank()
+        cmd = New OleDbCommand(SQL_UPDATE_TRAINER, mConnection)
+
+        cmd.Parameters.AddWithValue("@BenBenutzername", pTrainer.Benutzername)
+        cmd.Parameters.AddWithValue("@BenPw", pTrainer.Passwort)
+        cmd.Parameters.AddWithValue("@BenVorname", pTrainer.Vorname)
+        cmd.Parameters.AddWithValue("@BenName", pTrainer.Name)
+        cmd.Parameters.AddWithValue("@BenTyp", pTrainer.Typ)
+        cmd.Parameters.AddWithValue("@BenVersion", pTrainer.Version)
+        cmd.Parameters.AddWithValue("@BenIdPk", pTrainer.BenutzerID)
+
+        lngAnzahlDatensaetze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensaetze = 1 Then
+            lngIdPk = pTrainer.BenutzerID
+        End If
+        schliessenDatenbank()
+        Return lngIdPk
+    End Function
     Public Shared Function hinzufuegenTrainer(pTrainer As Trainer) As Long
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long
@@ -338,12 +376,39 @@ Public Class TrainerDAO
         End If
 
     End Function
-    'Public Function Speichern() As Integer
 
-    'Return 0
-    'End Function
+    Public Shared Function speichernSchueler(pSchueler As Schueler) As Long
+        Dim lngSchuIdPk As Long
+        If pSchueler.SchuelerIdPk > 0 Then
+            lngSchuIdPk = aktualisierenSchueler(pSchueler)
+        Else
+            lngSchuIdPk = hinzufuegen(pSchueler)
+        End If
+        Return lngSchuIdPk
+    End Function
 
-    Public Function hinzufuegen(pSchu As Schueler) As Long
+    Private Shared Function aktualisierenSchueler(pSchueler As Schueler) As Long
+        Dim lngSchuIdPk As Long
+        Dim lngAnzahlDatensaetze As Long
+        Dim cmd As OleDbCommand
+        lngSchuIdPk = -1
+        oeffnenDatenbank()
+        cmd = New OleDbCommand(SQL_UPDATE_SCHUELER, mConnection)
+
+        cmd.Parameters.AddWithValue("@SchuVorname", pSchueler.Vorname)
+        cmd.Parameters.AddWithValue("@SchuName", pSchueler.Name)
+        cmd.Parameters.AddWithValue("@SchuEMail", pSchueler.EMailAdresse)
+        cmd.Parameters.AddWithValue("@SchuVersion", pSchueler.Version)
+        cmd.Parameters.AddWithValue("@SchuIdPk", pSchueler.SchuelerIdPk)
+
+        lngAnzahlDatensaetze = cmd.ExecuteNonQuery
+        If lngAnzahlDatensaetze = 1 Then
+            lngSchuIdPk = pSchueler.SchuelerIdPk
+        End If
+        schliessenDatenbank()
+        Return lngSchuIdPk
+    End Function
+    Public Shared Function hinzufuegen(pSchu As Schueler) As Long
 
         Dim lngAnzahlDatensätze As Long
         Dim lngIdPk As Long
@@ -368,6 +433,5 @@ Public Class TrainerDAO
 
 
     End Function
-
 End Class
 
