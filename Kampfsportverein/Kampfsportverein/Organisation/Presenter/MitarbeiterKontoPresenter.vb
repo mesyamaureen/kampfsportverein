@@ -5,6 +5,7 @@ Public Class MitarbeiterKontoPresenter
     Private mSitzung As BenutzerSitzung
     Private mView As MitarbeiterKontoView
     Private mMitarbeiter As Mitarbeiter
+    Private mmitDAO As MitarbeiterDAO
     Sub New(pBenutzer As Benutzer)
         mMitBenutzer = pBenutzer
 
@@ -43,13 +44,23 @@ Public Class MitarbeiterKontoPresenter
         End Set
     End Property
 
+    Public Property MitDAO As MitarbeiterDAO
+        Get
+            Return mmitDAO
+        End Get
+        Set(value As MitarbeiterDAO)
+        End Set
+    End Property
+
+
     Public Sub anzeigen()
         mView.leeren()
         mView.anzeigenKonto()
+        mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
         mView.txtMitarbeiterID.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID
-        mView.txtVorname.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Vorname
-        mView.txtName.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Name
-        mView.txtBenutzername.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Benutzername
+        mView.txtVorname.Text = mmitDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID).Vorname
+        mView.txtName.Text = mmitDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID).Name
+        mView.txtBenutzername.Text = mmitDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID).Benutzername
 
     End Sub
 
@@ -65,28 +76,28 @@ Public Class MitarbeiterKontoPresenter
                 mMitarbeiter.Passwort = pNeuesPw
                 mMitarbeiter.Nachname = pMit.Nachname
 
-                'Dim lngErgebnis As Long
+                Dim lngErgebnis As Long
                 MitarbeiterDAO.speichernMitarbeiter(mMitarbeiter)
-                'If lngErgebnis = mMitarbeiter.BenutzerID Then
-                '    mErgebnis = EPresenterErgebnis.SPEICHERN
-                '    MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
-                '    mView.Close()
-                'Else
-                '    MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
-                'End If
+                If lngErgebnis = mMitarbeiter.BenutzerID Then
+                    mErgebnis = EPresenterErgebnis.SPEICHERN
+                    MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+                    mView.Close()
+                Else
+                    MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+                End If
             End If
-        Else
+                Else
             mMitarbeiter.Nachname = pMit.Nachname
             'MsgBox(mMitarbeiter.ID & "     " & mMitarbeiter.Nachname)
-            'Dim lngErgebnis As Long
+            Dim lngErgebnis As Long
             MitarbeiterDAO.speichernMitarbeiter(mMitarbeiter)
-            'If lngErgebnis = mMitarbeiter.BenutzerID Then
-            '    mErgebnis = EPresenterErgebnis.SPEICHERN
-            '    MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
-            '    mView.Close()
-            'Else
-            '    MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
-            'End If
+            If lngErgebnis = mMitarbeiter.BenutzerID Then
+                mErgebnis = EPresenterErgebnis.SPEICHERN
+                MsgBox("Ihre Änderungen werden erfolgreich gespeichert", vbOKOnly)
+                mView.Close()
+            Else
+                MsgBox("Es ist ein Fehler beim Speichern aufgetreten", vbOKOnly)
+            End If
         End If
     End Sub
 

@@ -100,6 +100,9 @@
         Dim traKontoPresenter As KontoTrainerPresenter
         traBen = mtraDAO.findenTrainerId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
         traKontoPresenter = New KontoTrainerPresenter(traBen)
+        If mErgebnis = EPresenterErgebnis.SPEICHERN Then
+            anzeigenKursAlle()
+        End If
     End Sub
 
 
@@ -132,9 +135,15 @@
         End If
     End Sub
 
-    Public Sub verarbeiteNeu()
+    Public Sub verarbeiteNeuSchueler()
         'Dim schueler As Schueler
-
+        Dim schu As Schueler
+        Dim neueSchuelerPresenter As NeueSchuelerPresenter
+        schu = New Schueler()
+        neueSchuelerPresenter = New NeueSchuelerPresenter(schu)
+        If neueSchuelerPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
+            verarbeiteSchueleruebersichtAnzeigen()
+        End If
     End Sub
 
     Public Sub verarbeiteBeenden()

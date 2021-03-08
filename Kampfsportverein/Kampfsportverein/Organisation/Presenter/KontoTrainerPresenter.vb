@@ -68,10 +68,11 @@
     Public Sub anzeigenTrainerKonto()
         mView.leeren()
         mView.anzeigenTrainer()
+        mtraDAO = DAOFactory.Instanz.TrainerDAO
         mView.txtTrainerID.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID
-        mView.txtVorname.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Vorname
-        mView.txtName.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Name
-        mView.txtBenutzername.Text = BenutzerSitzung.Instanz.AktuellerBenutzer.Benutzername
+        mView.txtVorname.Text = mtraDAO.findenTrainerId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID).Vorname
+        mView.txtName.Text = mtraDAO.findenTrainerId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID).Name
+        mView.txtBenutzername.Text = mtraDAO.findenTrainerId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID).Benutzername
     End Sub
 
     Public Sub verarbeiteSpeichern(pTrainer As Trainer)

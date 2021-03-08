@@ -18,12 +18,23 @@
     'Initialisierungen 
 
     Public Sub anzeigenKurs()
-        Me.txtSportart.Enabled = False
-        Me.txtOrt.Enabled = True
-        Me.txtSchwierigkeit.Enabled = True
-        Me.txtTeilnZahl.Enabled = True
-        Me.txtTrainer.Enabled = False
-        Me.txtZeitpunkt.Enabled = True
+        If BenutzerSitzung.Instanz.AktuellerBenutzer.Typ = "T" Then
+            Me.txtSportart.Enabled = False
+            Me.txtOrt.Enabled = False
+            Me.txtSchwierigkeit.Enabled = False
+            Me.txtTeilnZahl.Enabled = False
+            Me.txtTrainer.Enabled = False
+            Me.txtZeitpunkt.Enabled = False
+            Me.btnSpeichern.Enabled = False
+        Else
+            Me.txtSportart.Enabled = False
+            Me.txtOrt.Enabled = True
+            Me.txtSchwierigkeit.Enabled = True
+            Me.txtTeilnZahl.Enabled = True
+            Me.txtTrainer.Enabled = False
+            Me.txtZeitpunkt.Enabled = True
+        End If
+
     End Sub
 
     Public Sub leeren()

@@ -23,6 +23,7 @@
         Me.lstKurseAlle.Visible = False
         Me.lstSchuelerAlle.Visible = False
         Me.lstTrainer.Visible = False
+        Me.btnNeu.Enabled = True
     End Sub
 
     Public Sub anzeigenKursuebersicht()
@@ -30,6 +31,7 @@
         Me.lstKurseAlle.Visible = True
         Me.lstSchuelerAlle.Visible = False
         Me.lstTrainer.Visible = False
+        Me.btnNeu.Enabled = True
     End Sub
 
     Public Sub anzeigenSchueleruebersicht()
@@ -37,6 +39,7 @@
         Me.lstKurseAlle.Visible = False
         Me.lstSchuelerAlle.Visible = True
         Me.lstTrainer.Visible = False
+        Me.btnNeu.Enabled = False
     End Sub
 
     Public Sub anzeigenTraineruebersicht()
@@ -44,6 +47,7 @@
         Me.lstKurseAlle.Visible = False
         Me.lstSchuelerAlle.Visible = False
         Me.lstTrainer.Visible = True
+        Me.btnNeu.Enabled = True
     End Sub
 
     'Public Sub anzeigenMitarbeiteruebersicht()
@@ -69,7 +73,7 @@
         End With
     End Sub
     Public Sub hinzufuegenZeileSchueler(plngSchuelerID As Long,
-                                        pstrNameSchueler As String,
+                                       pstrNameSchueler As String,
                                         pstrVornameSchueler As String)
         Dim schuelerZeile As ListViewItem
         schuelerZeile = Me.lstSchuelerAlle.Items.Add(plngSchuelerID)

@@ -15,10 +15,18 @@
     End Property
 
     Public Sub anzeigenSchueler()
-        Me.txtSchuelerID.Enabled = False
-        Me.txtVorname.Enabled = True
-        Me.txtName.Enabled = True
-        Me.txtEmail.Enabled = True
+        If BenutzerSitzung.Instanz.AktuellerBenutzer.Typ = "T" Then
+            Me.txtSchuelerID.Enabled = False
+            Me.txtVorname.Enabled = False
+            Me.txtName.Enabled = False
+            Me.txtEmail.Enabled = False
+            Me.btnSpeichern.Enabled = False
+        Else
+            Me.txtSchuelerID.Enabled = False
+            Me.txtVorname.Enabled = True
+            Me.txtName.Enabled = True
+            Me.txtEmail.Enabled = True
+        End If
     End Sub
 
     Public Sub leeren()

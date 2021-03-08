@@ -193,9 +193,9 @@
         mitBen = mMitarbeiterDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
         ' Übergeben der Sportart zur Anzeige im Presenter
         mitKontoPresenter = New MitarbeiterKontoPresenter(mitBen)
-        'If MitarbeiterKontoPresenter.mErgebnis = EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
-        '    verarbeiteKursuebersichtAnzeigen()
-        'End If
+        If mitKontoPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
+            verarbeiteKursuebersichtAnzeigen()
+        End If
     End Sub
 
     Public Sub verarbeiteNeu() 'button Neu
@@ -219,15 +219,15 @@
         End If
     End Sub
 
-    Public Sub verarbeiteNeuSchueler()
-        Dim schu As Schueler
-        Dim neueSchuelerPresenter As NeueSchuelerPresenter
-        schu = New Schueler()
-        neueSchuelerPresenter = New NeueSchuelerPresenter(schu)
-        If neueSchuelerPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
-            verarbeiteSchueleruebersichtAnzeigen()
-        End If
-    End Sub
+    'Public Sub verarbeiteNeuSchueler()
+    '    Dim schu As Schueler
+    '    Dim neueSchuelerPresenter As NeueSchuelerPresenter
+    '    schu = New Schueler()
+    '    neueSchuelerPresenter = New NeueSchuelerPresenter(schu)
+    '    If neueSchuelerPresenter.mErgebnis = EPresenterErgebnis.MITGLIEDER_ERSTELLEN Then
+    '        verarbeiteSchueleruebersichtAnzeigen()
+    '    End If
+    'End Sub
 
     Public Sub verarbeiteNeuTrainer()
         Dim tra As Trainer

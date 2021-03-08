@@ -40,6 +40,6 @@
     End Sub
 
     Private Sub btnNeueSchueler_Click(sender As Object, e As EventArgs) Handles btnNeueSchueler.Click
-        mPresenter.verarbeiteNeu()
+        mPresenter.verarbeiteNeuSchueler()
     End Sub
 End Class

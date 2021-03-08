@@ -35,8 +35,8 @@
             mPresenter.verarbeiteNeu()
         ElseIf Me.lstKurseAlle.Visible = True Then
             mPresenter.verarbeiteNeuerKurs()
-        ElseIf Me.lstSchuelerAlle.Visible = True Then
-            mPresenter.verarbeiteNeuSchueler()
+            'ElseIf Me.lstSchuelerAlle.Visible = False Then
+            '    mPresenter.verarbeiteNeuSchueler()
         ElseIf Me.lstTrainer.Visible = True Then
             mPresenter.verarbeiteNeuTrainer()
         End If
