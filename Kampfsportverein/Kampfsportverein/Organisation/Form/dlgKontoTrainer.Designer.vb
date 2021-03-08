@@ -136,8 +136,9 @@ Partial Class dlgKontoTrainer
         Me.txtPasswort.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPasswort.Multiline = True
         Me.txtPasswort.Name = "txtPasswort"
+        Me.txtPasswort.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswort.Size = New System.Drawing.Size(977, 44)
-        Me.txtPasswort.TabIndex = 12
+        Me.txtPasswort.TabIndex = 14
         '
         'btnSpeichern
         '

@@ -54,7 +54,7 @@ Public Class MitarbeiterDAO
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @KuIdPk AND KuVersion = @version;"
 
     ' SQL-Anweisung, um einen Mitarbeiter zu aktualisieren
-    Private Const SQL_UPDATE_MITARBEITER As String = "UPDATE [tblBenutzer/Mitarbeiter/Trainer] SET BenName = @BenName, BenPw = @BenPw, BenVersion = @BenVersion WHERE BenIdPk = @BenIdPk"
+    Private Const SQL_UPDATE_MITARBEITER As String = "UPDATE [tblBenutzer/Mitarbeiter/Trainer] SET BenName = @BenName, BenBenutzername = @BenBenutzername, BenPw = @BenPw, BenVersion = @BenVersion WHERE BenIdPk = @BenIdPk"
 
     ' SQL-Anweisung, um einen Mitarbeiter neu hinzuzufügen
     Private Const SQL_INSERT_MITARBEITER As String = "INSERT INTO [tblBenutzer/Mitarbeiter/Trainer] (BenVorname, BenName, BenBenutzername, BenPw, BenTyp, BenVersion) VALUES (@BenVorname, @BenName, @BenBenutzername, @BenPw, M, @BenVersion)"
@@ -110,7 +110,7 @@ Public Class MitarbeiterDAO
     End Function
 
     'Mitarbeiter auswählen anhand Benutzer ID
-    Public Function findenMitarbeiterId(plngBenIdPk As Long) As Benutzer
+    Public Function findenMitarbeiterId(plngBenIdPk As Long) As Mitarbeiter
         'Deklaration
         'Alle Eigenschaften eines Benutzers
         Dim lngBenutzerIdPk As Long
@@ -122,14 +122,14 @@ Public Class MitarbeiterDAO
         Dim lngVersion As Long
 
         'Gesuchter Benutzer
-        Dim ben As Benutzer
+        Dim mit As Mitarbeiter
 
         'Alles für den Datenbankzugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader
 
         'Initialisierung
-        ben = Nothing
+        mit = Nothing
 
         'Datenbank oeffnen
         oeffnenDatenbank()
@@ -149,15 +149,15 @@ Public Class MitarbeiterDAO
             strPasswort = dr("BenPw")
             strVorname = dr("BenVorname")
             strName = dr("BenName")
-            lngVersion = Long.Parse(dr("BenVersion"))
             charTyp = Char.Parse(dr("BenTyp"))
+            lngVersion = Long.Parse(dr("BenVersion"))
 
-            ben = New Benutzer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
+            mit = New Mitarbeiter(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
         End If
         dr.Close()
         schliessenDatenbank()
         'Rückgabe des Benutzers
-        Return ben
+        Return mit
 
     End Function
 
@@ -727,7 +727,7 @@ Public Class MitarbeiterDAO
         Dim lngIdPK As Long ' zurückzugebender Primärschlüsselwert der neu hinzugefügten oder aktualisierten Aufagbe
 
         ' Wenn die Aufgabe bereits als Datensatz gespeichert ist (also ihr Primärschlüsselwert > 0 ist)
-        If pMit.ID > 0 Then
+        If pMit.BenutzerID > 0 Then
             ' Muss die Aufgabe aktualisiert werden 
             lngIdPK = aktualisierenMitarbeiter(pMit)
         Else
@@ -759,7 +759,8 @@ Public Class MitarbeiterDAO
         ' SQL-Anweisung aus Konstante verwenden (Deklaration oben) und initialisierte Datenbankverbindung (aus Oberklasse geerbt)
         cmd = New OleDbCommand(SQL_UPDATE_MITARBEITER, mConnection)
 
-        cmd.Parameters.AddWithValue("@BenName", pMit.Nachname)
+        cmd.Parameters.AddWithValue("@BenName", pMit.Name)
+        cmd.Parameters.AddWithValue("@BenBenutzername", pMit.Benutzername)
         cmd.Parameters.AddWithValue("@BenPw", pMit.Passwort)
         cmd.Parameters.AddWithValue("@BenVersion", pMit.Version + 1)
         cmd.Parameters.AddWithValue("@BenIdPk", pMit.BenutzerID)
@@ -770,7 +771,7 @@ Public Class MitarbeiterDAO
         ' Wenn ein Datensatz betroffen ist
         If lngAnzahlDatensätze = 1 Then
             ' Aktualisieren war erfolgreich, nun Primärschlüssel als Ergebnis zurückliefern
-            lngIdPk = pMit.ID
+            lngIdPk = pMit.BenutzerID
         End If
 
         'Schließen der Datenbankverbindung durch geerbte Methode der Oberklasse
@@ -795,7 +796,7 @@ Public Class MitarbeiterDAO
         cmd = New OleDbCommand(SQL_INSERT_MITARBEITER, mConnection)
 
         cmd.Parameters.AddWithValue("@BenVorname", pMit.Vorname)
-        cmd.Parameters.AddWithValue("@BenName", pMit.Nachname)
+        cmd.Parameters.AddWithValue("@BenName", pMit.Name)
         cmd.Parameters.AddWithValue("@BenBenutzername", pMit.Benutzername)
         cmd.Parameters.AddWithValue("@BenPw", pMit.Passwort)
         cmd.Parameters.AddWithValue("@BenTyp", pMit.Typ)

@@ -188,11 +188,11 @@
     End Sub
 
     Public Sub verarbeiteMitarbeiterEinzeln() 'button Mein Konto
-        Dim mitBen As Benutzer
+        Dim mit As Mitarbeiter
         Dim mitKontoPresenter As MitarbeiterKontoPresenter
-        mitBen = mMitarbeiterDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
+        mit = mMitarbeiterDAO.findenMitarbeiterId(BenutzerSitzung.Instanz.AktuellerBenutzer.BenutzerID)
         ' Übergeben der Sportart zur Anzeige im Presenter
-        mitKontoPresenter = New MitarbeiterKontoPresenter(mitBen)
+        mitKontoPresenter = New MitarbeiterKontoPresenter(mit)
         If mitKontoPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then 'Presenterergebnis noch nicht voirhanden -2021-01-27 -> Erledigt -2021-01-31
             verarbeiteKursuebersichtAnzeigen()
         End If

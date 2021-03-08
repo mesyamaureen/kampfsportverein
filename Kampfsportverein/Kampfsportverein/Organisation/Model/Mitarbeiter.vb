@@ -24,50 +24,50 @@
     End Sub
 
 
-    Public Property Vorname As String
-        Get
-            Return mVorname
-        End Get
-        Set(value As String)
-            mVorname = value
-        End Set
-    End Property
+    'Public Property Vorname As String
+    '    Get
+    '        Return mVorname
+    '    End Get
+    '    Set(value As String)
+    '        mVorname = value
+    '    End Set
+    'End Property
 
-    Public Property Nachname As String
-        Get
-            Return mName
-        End Get
-        Set(value As String)
-            mName = value
-        End Set
-    End Property
+    'Public Property Nachname As String
+    '    Get
+    '        Return mName
+    '    End Get
+    '    Set(value As String)
+    '        mName = value
+    '    End Set
+    'End Property
 
-    Public Property Benutzername As String
-        Get
-            Return mBenutzername
-        End Get
-        Set(value As String)
-            mBenutzername = value
-        End Set
-    End Property
+    'Public Property Benutzername As String
+    '    Get
+    '        Return mBenutzername
+    '    End Get
+    '    Set(value As String)
+    '        mBenutzername = value
+    '    End Set
+    'End Property
 
-    Public Property Passwort As String
-        Get
-            Return mPasswort
-        End Get
-        Set(value As String)
-            mPasswort = value
-        End Set
-    End Property
+    'Public Property Passwort As String
+    '    Get
+    '        Return mPasswort
+    '    End Get
+    '    Set(value As String)
+    '        mPasswort = value
+    '    End Set
+    'End Property
 
-    Public Property ID As Long
-        Get
-            Return mBenutzerId
-        End Get
-        Set(value As Long)
-            mBenutzerId = value
-        End Set
-    End Property
+    'Public Property ID As Long
+    '    Get
+    '        Return mBenutzerId
+    '    End Get
+    '    Set(value As Long)
+    '        mBenutzerId = value
+    '    End Set
+    'End Property
 
 
 End Class

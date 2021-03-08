@@ -76,7 +76,7 @@
     End Sub
 
     Public Sub verarbeiteSpeichern(pTrainer As Trainer)
-        If String.IsNullOrEmpty(mView.txtVorname.Text) Or String.IsNullOrEmpty(mView.txtName.Text) Or String.IsNullOrEmpty(mView.txtBenutzername.Text) Or String.IsNullOrEmpty(mView.txtPasswort.Text) Then
+        If String.IsNullOrEmpty(mView.txtVorname.Text) Or String.IsNullOrEmpty(mView.txtName.Text) Or String.IsNullOrEmpty(mView.txtBenutzername.Text) Then
             MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
         Else
             mTrainer.Vorname = mView.txtVorname.Text
