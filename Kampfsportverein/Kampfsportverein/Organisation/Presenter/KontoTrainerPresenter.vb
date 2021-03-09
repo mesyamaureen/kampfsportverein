@@ -81,7 +81,10 @@
             mTrainer.Vorname = mView.txtVorname.Text
             mTrainer.Name = mView.txtName.Text
             mTrainer.Benutzername = mView.txtBenutzername.Text
-            mTrainer.Passwort = mView.txtNeuesPasswort.Text
+            If mView.txtNeuesPasswort.Text IsNot "" Then
+                mTrainer.Passwort = mView.txtNeuesPasswort.Text
+                Exit Sub
+            End If
             mTrainer.Version = pTrainer.Version + 1
 
             Dim lngErgebnis As Long

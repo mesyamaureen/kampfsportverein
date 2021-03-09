@@ -76,7 +76,7 @@
             End If
             MitarbeiterDAO.hinzufuegenMitarbeiter(mNeuerMitarbeiter)
             mErgebnis = EPresenterErgebnis.MITARBEITER_ERSTELLEN
-            MsgBox("Ein neuer Trainer wird mit diesen Login-Daten erstellt. BENUTZERNAME: " & strBenutzername & " PASSWORT: " & strPasswort & " .", vbOKOnly)
+            MsgBox("Ein neuer Mitarbeiter wird mit diesen Login-Daten erstellt. BENUTZERNAME: " & strBenutzername & " PASSWORT: " & strPasswort & " .", vbOKOnly)
             mView.Close()
         End If
     End Sub

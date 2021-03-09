@@ -12,6 +12,7 @@
         Me.txtName.Enabled = True
         Me.txtBenutzername.Enabled = True
         Me.txtNeuesPass.Enabled = True
+        Me.btnSpeichern.Enabled = True
     End Sub
 
     Public Sub leeren()

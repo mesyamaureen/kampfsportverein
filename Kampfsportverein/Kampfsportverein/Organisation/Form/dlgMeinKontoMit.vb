@@ -25,5 +25,4 @@
         mPresenter.verarbeiteAbbrechen()
     End Sub
 
-
 End Class

@@ -170,6 +170,7 @@
 
         ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
         If traPresenter.mErgebnis = EPresenterErgebnis.TRAINER_EINZELN Or traPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
+            verarbeiteTrainerUebersichtAnzeigen()
         End If
     End Sub
 
