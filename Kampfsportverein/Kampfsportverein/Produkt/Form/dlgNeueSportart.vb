@@ -1,4 +1,5 @@
 ﻿Public Class dlgNeueSportart
+
     Public Property Presenter As SportartenPresenter
         Get
             Return Nothing

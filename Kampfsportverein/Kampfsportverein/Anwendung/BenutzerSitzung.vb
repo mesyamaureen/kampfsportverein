@@ -71,7 +71,7 @@
             Case EPresenterErgebnis.BEENDEN
                 beenden()
             Case EPresenterErgebnis.EIGENEKURSE_ANZEIGEN
-                presenter.verarbeiteKursuebersichtAnzeigen() '(i)
+                presenter.verarbeiteKursuebersichtAnzeigen()
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
                 presenter.verarbeiteSchueleruebersichtAnzeigen()
             Case EPresenterErgebnis.EIGENESPROFIL_ANZEIGEN

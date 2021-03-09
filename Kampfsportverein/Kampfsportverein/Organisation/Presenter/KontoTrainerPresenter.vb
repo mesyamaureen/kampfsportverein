@@ -62,7 +62,6 @@
         mView.txtVorname.Text = mTrainer.Vorname
         mView.txtName.Text = mTrainer.Name
         mView.txtBenutzername.Text = mTrainer.Benutzername
-        mView.txtPasswort.Text = mTrainer.Passwort
     End Sub
 
     Public Sub anzeigenTrainerKonto()
@@ -82,7 +81,7 @@
             mTrainer.Vorname = mView.txtVorname.Text
             mTrainer.Name = mView.txtName.Text
             mTrainer.Benutzername = mView.txtBenutzername.Text
-            mTrainer.Passwort = mView.txtPasswort.Text
+            mTrainer.Passwort = mView.txtNeuesPasswort.Text
             mTrainer.Version = pTrainer.Version + 1
 
             Dim lngErgebnis As Long

@@ -9,6 +9,14 @@
 
     End Sub
 
+    Public Property Presenter As MitarbeiterKontoPresenter
+        Get
+            Return mPresenter
+        End Get
+        Set(value As MitarbeiterKontoPresenter)
+        End Set
+    End Property
+
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click
         mPresenter.verarbeiteSpeichern(mPresenter.EinzelMitarbeiter)
     End Sub

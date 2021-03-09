@@ -1,6 +1,13 @@
 ﻿Public Class dlgNeuerKurs
     Public mPresenter As NeuerKursPresenter
 
+    Public Property Presenter As NeuerKursPresenter
+        Get
+            Return mPresenter
+        End Get
+        Set(value As NeuerKursPresenter)
+        End Set
+    End Property
     Private Sub dlgNeuerKurs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mPresenter.ladenSaName()
         mPresenter.ladenTrainer()

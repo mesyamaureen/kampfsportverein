@@ -32,7 +32,7 @@ Partial Class dlgKontoTrainer
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.txtBenutzername = New System.Windows.Forms.TextBox()
         Me.lblPasswort = New System.Windows.Forms.Label()
-        Me.txtPasswort = New System.Windows.Forms.TextBox()
+        Me.txtNeuesPasswort = New System.Windows.Forms.TextBox()
         Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -126,19 +126,19 @@ Partial Class dlgKontoTrainer
         Me.lblPasswort.Location = New System.Drawing.Point(36, 416)
         Me.lblPasswort.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPasswort.Name = "lblPasswort"
-        Me.lblPasswort.Size = New System.Drawing.Size(100, 25)
+        Me.lblPasswort.Size = New System.Drawing.Size(168, 25)
         Me.lblPasswort.TabIndex = 11
-        Me.lblPasswort.Text = "Passwort"
+        Me.lblPasswort.Text = "Neues Passwort"
         '
-        'txtPasswort
+        'txtNeuesPasswort
         '
-        Me.txtPasswort.Location = New System.Drawing.Point(266, 409)
-        Me.txtPasswort.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtPasswort.Multiline = True
-        Me.txtPasswort.Name = "txtPasswort"
-        Me.txtPasswort.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPasswort.Size = New System.Drawing.Size(977, 44)
-        Me.txtPasswort.TabIndex = 14
+        Me.txtNeuesPasswort.Location = New System.Drawing.Point(266, 409)
+        Me.txtNeuesPasswort.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNeuesPasswort.Multiline = True
+        Me.txtNeuesPasswort.Name = "txtNeuesPasswort"
+        Me.txtNeuesPasswort.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtNeuesPasswort.Size = New System.Drawing.Size(977, 44)
+        Me.txtNeuesPasswort.TabIndex = 14
         '
         'btnSpeichern
         '
@@ -157,7 +157,7 @@ Partial Class dlgKontoTrainer
         Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1253, 629)
         Me.Controls.Add(Me.btnSpeichern)
-        Me.Controls.Add(Me.txtPasswort)
+        Me.Controls.Add(Me.txtNeuesPasswort)
         Me.Controls.Add(Me.lblPasswort)
         Me.Controls.Add(Me.txtBenutzername)
         Me.Controls.Add(Me.txtName)
@@ -190,6 +190,6 @@ Partial Class dlgKontoTrainer
     Friend WithEvents txtName As TextBox
     Friend WithEvents txtBenutzername As TextBox
     Friend WithEvents lblPasswort As Label
-    Friend WithEvents txtPasswort As TextBox
+    Friend WithEvents txtNeuesPasswort As TextBox
     Friend WithEvents btnSpeichern As Button
 End Class

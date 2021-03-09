@@ -11,7 +11,7 @@
         Me.txtVorname.Enabled = True
         Me.txtName.Enabled = True
         Me.txtBenutzername.Enabled = True
-        Me.txtPasswort.Enabled = True
+        Me.txtNeuesPasswort.Enabled = True
 
         'Me.txtTrainerID.Text = plngBenutzerID
         'Me.txtVorname.Text = pstrVorname
@@ -24,7 +24,7 @@
         Me.txtVorname.Text = String.Empty
         Me.txtName.Text = String.Empty
         Me.txtBenutzername.Text = String.Empty
-        Me.txtPasswort.Text = String.Empty
+        Me.txtNeuesPasswort.Text = String.Empty
     End Sub
 
 End Class

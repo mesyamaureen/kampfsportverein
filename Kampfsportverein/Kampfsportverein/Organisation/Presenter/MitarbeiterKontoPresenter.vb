@@ -1,6 +1,6 @@
 ﻿Imports Kampfsportvereinverwaltung
 Public Class MitarbeiterKontoPresenter
-    Private mMitarbeiter As Mitarbeiter
+    Private Shared mMitarbeiter As Mitarbeiter
     Public mErgebnis As EPresenterErgebnis
     Private mSitzung As BenutzerSitzung
     Private mView As MitarbeiterKontoView
