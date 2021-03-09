@@ -1,6 +1,5 @@
 ﻿Imports Kampfsportvereinverwaltung
 Public Class SportartenPresenter
-    Inherits frmHauptfensterMit
 
     Public mErgebnis As EPresenterErgebnis
     Public Shared mSpor As Sportart
