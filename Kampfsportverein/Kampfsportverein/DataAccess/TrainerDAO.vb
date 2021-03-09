@@ -95,29 +95,15 @@ Public Class TrainerDAO
         Dim lngVersion As Long
         Dim charTyp As Char
 
-        'Gelesener Trainer, die zurückgeben werden soll
         Dim tra As Trainer
-
-        'Kommando und Reader für Datenbankzugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader
-
-        'Initialisierung
         tra = Nothing
-
-        'Oeffnen der Dbverbindung
         oeffnenDatenbank()
-
-        'Kommando vorbereiten und SQL-Anweisung
         cmd = New OleDbCommand(SQL_SELECT_TRAINER_BY_BENUTZERID, mConnection)
-
-        'Platzhalter in SQL-Anweisung für die ID
         cmd.Parameters.AddWithValue("@BenIdPk", plngBenutzerIdPk)
-
-        'Ausführen des Kommandos, als Ergebnis einen DataReader erhalten, mit dem auf die einzelnen Datensätze zugegriffen werden kann
         dr = cmd.ExecuteReader()
 
-        'Ob es etwas im DataReader zu lesen gibt
         If dr.Read() Then
             lngBenutzerIdPk = Long.Parse(dr("BenIdPk"))
             strBenutzername = dr("BenBenutzerName")
@@ -126,19 +112,16 @@ Public Class TrainerDAO
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
             charTyp = Char.Parse(dr("BenTyp"))
-            'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
-            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
+
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName,
+                              lngBenutzerIdPk, lngVersion, charTyp)
         End If
-        dr.Close() 'DataReader schließen
-        'Schließen der Datenbankverbindung
+        dr.Close()
         schliessenDatenbank()
-        'Rückgabe 
         Return tra
     End Function
 
     Public Function findeAlleTrainer() As List(Of Trainer)
-
-        'Deklaration der Eigenschaften des Kurs
         Dim lngBenutzerIdPk As Long
         Dim strBenutzername As String
         Dim strPasswort As String
@@ -147,20 +130,14 @@ Public Class TrainerDAO
         Dim lngVersion As Long
         Dim charTyp As Char
 
-        'Aufgabe und Aufgabenliste
         Dim tra As Trainer
         Dim lstTrainer As List(Of Trainer)
 
-        'Kommando und Reader für DB Zugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader
-        'Initialisierung Liste
         tra = Nothing
         lstTrainer = New List(Of Trainer)
-
-        'Öffnen DBVerbindung durch Methode
         oeffnenDatenbank()
-
         cmd = New OleDbCommand(SQL_SELECT_TRAINER_ALL, mConnection)
         dr = cmd.ExecuteReader
         Do While dr.Read()
@@ -171,9 +148,8 @@ Public Class TrainerDAO
             strName = dr("BenName")
             lngVersion = Long.Parse(dr("BenVersion"))
             charTyp = Char.Parse(dr("BenTyp"))
-            'Neuer Trainer erzeugen und mit den gelesenen Werten initialisieren
-            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
-
+            tra = New Trainer(strBenutzername, strPasswort, strVorname, strName,
+                              lngBenutzerIdPk, lngVersion, charTyp)
             lstTrainer.Add(tra)
         Loop
         dr.Close()

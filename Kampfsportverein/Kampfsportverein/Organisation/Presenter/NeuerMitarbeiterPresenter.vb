@@ -2,7 +2,6 @@
 
     Private mNeuerMitarbeiter As Mitarbeiter
     Public mErgebnis As EPresenterErgebnis
-    Private mSitzung As BenutzerSitzung
     Private mView As NeuerMitarbeiterView
     Private mmitDAO As MitarbeiterDAO
 
@@ -21,14 +20,6 @@
         End Set
     End Property
 
-    Public Property BenSitzung As BenutzerSitzung
-        Get
-            Return mSitzung
-        End Get
-        Set(value As BenutzerSitzung)
-        End Set
-    End Property
-
     Public Property Mitarbeiter As Mitarbeiter
         Get
             Return mNeuerMitarbeiter
@@ -42,6 +33,14 @@
             Return mmitDAO
         End Get
         Set(value As MitarbeiterDAO)
+        End Set
+    End Property
+
+    Public Property Ergebnis As EPresenterErgebnis
+        Get
+            Return mErgebnis
+        End Get
+        Set(value As EPresenterErgebnis)
         End Set
     End Property
 

@@ -45,17 +45,17 @@
       <FileName>Organisation\View\AnmeldungView.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.Benutzer" Collapsed="true">
+  <Class Name="Kampfsportverein.Benutzer">
     <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAABAAAAAAAAAAAAQAAAAAAAgACAACQQACgAA=</HashCode>
+      <HashCode>IAACAAAAABAYAAAAAAAAAAQAAAAAIAgQAAAOQQACgAA=</HashCode>
       <FileName>Organisation\Model\Benutzer.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="Kampfsportverein.EPresenterErgebnis">
-    <Position X="7.5" Y="3" Width="2" />
+    <Position X="5.75" Y="4.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AgAAAACAAAAQAAAAAARACAAAAAgIAAIAAAAAAABIACA=</HashCode>
+      <HashCode>AgAAAECAABAQAAAQAARCCIAAAAgIQAIAAAAAAABIICA=</HashCode>
       <FileName>Common\Presenter\EPresenterErgebnis.vb</FileName>
     </TypeIdentifier>
   </Enum>

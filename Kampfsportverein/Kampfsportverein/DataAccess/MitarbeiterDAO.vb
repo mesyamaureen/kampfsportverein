@@ -111,8 +111,6 @@ Public Class MitarbeiterDAO
 
     'Mitarbeiter auswählen anhand Benutzer ID
     Public Function findenMitarbeiterId(plngBenIdPk As Long) As Mitarbeiter
-        'Deklaration
-        'Alle Eigenschaften eines Benutzers
         Dim lngBenutzerIdPk As Long
         Dim strBenutzername As String
         Dim strPasswort As String
@@ -124,25 +122,13 @@ Public Class MitarbeiterDAO
         'Gesuchter Benutzer
         Dim mit As Mitarbeiter
 
-        'Alles für den Datenbankzugriff
         Dim cmd As OleDbCommand
         Dim dr As OleDbDataReader
-
-        'Initialisierung
         mit = Nothing
-
-        'Datenbank oeffnen
         oeffnenDatenbank()
-
-        'Kommando für Datenbankzugriff
         cmd = New OleDbCommand(SQL_SELECT_BY_ID, mConnection)
-
-        'Platzhalter ersetzen
         cmd.Parameters.AddWithValue("@BenIdPk", plngBenIdPk)
-
-        'Ausführen der Anweisung
         dr = cmd.ExecuteReader()
-        'Wenn etwas gefunden wurde - vergleich mit diesen Angaben
         If dr.Read Then
             lngBenutzerIdPk = Long.Parse(dr("BenIdPk"))
             strBenutzername = dr("BenBenutzerName")
@@ -151,14 +137,13 @@ Public Class MitarbeiterDAO
             strName = dr("BenName")
             charTyp = Char.Parse(dr("BenTyp"))
             lngVersion = Long.Parse(dr("BenVersion"))
-
-            mit = New Mitarbeiter(strBenutzername, strPasswort, strVorname, strName, lngBenutzerIdPk, lngVersion, charTyp)
+            mit = New Mitarbeiter(strBenutzername, strPasswort,
+                                  strVorname, strName, lngBenutzerIdPk,
+                                  lngVersion, charTyp)
         End If
         dr.Close()
         schliessenDatenbank()
-        'Rückgabe des Benutzers
         Return mit
-
     End Function
 
     Public Function findenAlleSportarten() As List(Of Sportart)
@@ -199,7 +184,8 @@ Public Class MitarbeiterDAO
             bytMindestalter = Byte.Parse(dr("SaMindestalter"))
             lngVersion = Long.Parse(dr("SaVersion"))
 
-            spor = New Sportart(lngIdPk, strName, strHerkunft, strZielgruppe, bytMindestalter, lngVersion)
+            spor = New Sportart(lngIdPk, strName, strHerkunft,
+                                strZielgruppe, bytMindestalter, lngVersion)
             lstSport.Add(spor)
         Loop
 
@@ -547,9 +533,6 @@ Public Class MitarbeiterDAO
         Dim lngBenIdFk As Long
         Dim lngVersion As Long
 
-        'Trainer, zu dem den Kurs gehört, muss geladen werden
-        Dim traDAO As TrainerDAO
-
         'Aufgabe und Aufgabenliste
         Dim kurs As Kurs
 
@@ -580,10 +563,6 @@ Public Class MitarbeiterDAO
             'Neuer Kurs erzeugen und mit den gelesenen Werten initialisieren
             kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl,
                             strKursSchwierigkeit, lngSaIdFk, lngBenIdFk, lngVersion)
-
-            'Beziehung zum Trainer
-            traDAO = DAOFactory.Instanz.TrainerDAO
-            kurs.Benutzer = traDAO.findenTrainerId(lngBenIdFk)
 
         End If
         dr.Close()
@@ -743,43 +722,25 @@ Public Class MitarbeiterDAO
 
 
     Private Shared Function aktualisierenMitarbeiter(pMit As Mitarbeiter) As Long
-        ' Deklarationen
-        Dim lngIdPk As Long ' Primärschlüssel des zu aktualisierenden Datensatzes
-        Dim lngAnzahlDatensätze As Long ' Anzahl der von der Operation betroffenen Datensätze
-        Dim cmd As OleDbCommand ' Kommando für den Datenbankzugriff
-
-        ' Initialisierung
+        Dim lngIdPk As Long '
+        Dim lngAnzahlDatensätze As Long
+        Dim cmd As OleDbCommand
         lngIdPk = -1 ' Wert für Primärschlüssel, der erkennbar macht, dass Datensatz (noch) nicht aktualisierenden wurde
-
-
-        'Öffnen der Datenbankverbindung durch geerbte Methode der Oberklasse
         oeffnenDatenbank()
-
-        ' Kommando für den Datenbankzugriff vorbereiten
-        ' SQL-Anweisung aus Konstante verwenden (Deklaration oben) und initialisierte Datenbankverbindung (aus Oberklasse geerbt)
         cmd = New OleDbCommand(SQL_UPDATE_MITARBEITER, mConnection)
-
         cmd.Parameters.AddWithValue("@BenName", pMit.Name)
         cmd.Parameters.AddWithValue("@BenBenutzername", pMit.Benutzername)
         cmd.Parameters.AddWithValue("@BenPw", pMit.Passwort)
         cmd.Parameters.AddWithValue("@BenVersion", pMit.Version + 1)
         cmd.Parameters.AddWithValue("@BenIdPk", pMit.BenutzerID)
-
-        ' Ausführen des Kommandos, als Ergebnis die Anzahl betroffener Datensätze merken
         lngAnzahlDatensätze = cmd.ExecuteNonQuery
-
         ' Wenn ein Datensatz betroffen ist
         If lngAnzahlDatensätze = 1 Then
             ' Aktualisieren war erfolgreich, nun Primärschlüssel als Ergebnis zurückliefern
             lngIdPk = pMit.BenutzerID
         End If
-
-        'Schließen der Datenbankverbindung durch geerbte Methode der Oberklasse
         schliessenDatenbank()
-
-        ' Rückgabe des Primärschlüssel-Wertes der aktualisierten Aufgabe
         Return lngIdPk
-
     End Function
 
 

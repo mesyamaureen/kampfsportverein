@@ -1,22 +1,12 @@
 ﻿Public Class MitarbeiterKontoView
     Inherits dlgMeinKontoMit
 
-    Private mView As MitarbeiterKontoView
-
     Sub New(pPresenter As MitarbeiterKontoPresenter)
         MyBase.New
         mPresenter = pPresenter
     End Sub
 
-    Public Property IstMitarbeiter As MitarbeiterKontoView
-        Get
-            Return mView
-        End Get
-        Set(value As MitarbeiterKontoView)
-        End Set
-    End Property
-
-    Public Sub anzeigenKonto() 'plngBenutzerId As Long, pstrBenutzername As String, pstrPasswort As String, pstrVorname As String, pstrName As String)
+    Public Sub anzeigenKonto()
         Me.txtMitarbeiterID.Enabled = False
         Me.txtVorname.Enabled = False
         Me.txtName.Enabled = True

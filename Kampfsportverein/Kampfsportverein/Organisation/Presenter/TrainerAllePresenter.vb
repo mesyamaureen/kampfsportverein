@@ -10,20 +10,9 @@
     'Parameterloser Konstruktor
     Public Sub New()
         mView = New TrainerAlleView(Me)
-        'mlstKursAlle = Kampfsportverein.mlstKurs
-        'mlstSchuelerAlle = Kampfsportverein.mlstSchueler SOLLTE BIS HIER GELÖSCHT WERDEN (AM ENDE)
         mTrainerAlle = New Trainer
-
-        'Daten an die Oberfläche übergeben
         verarbeiteKursuebersichtAnzeigen()
-        verarbeiteSchueleruebersichtAnzeigen()
-        'verarbeiteEigenesProfilAnzeigen()
-        'anzeigenKursAlle()
-        'anzeigenSchuelerAlle()
-
-        'Anzeige der View als Oberfläche (Formular)
         mView.ShowDialog()
-        'Application.Run(mView)
     End Sub
 
     Public Property Ergebnis As EPresenterErgebnis
@@ -35,7 +24,7 @@
         End Set
     End Property
 
-    Private ReadOnly Property TrainerAlle As Trainer 'brauchen wir hier Property:TrainerAlle oder Liste Kurse?
+    Private ReadOnly Property TrainerAlle As Trainer
         Get
             Return mTrainerAlle
         End Get
@@ -55,6 +44,22 @@
             Return Nothing
         End Get
         Set(value As Trainer)
+        End Set
+    End Property
+
+    Public Property MitarbeiterDAO As MitarbeiterDAO
+        Get
+            Return mmitDAO
+        End Get
+        Set(value As MitarbeiterDAO)
+        End Set
+    End Property
+
+    Public Property TrainerDAO As TrainerDAO
+        Get
+            Return mtraDAO
+        End Get
+        Set(value As TrainerDAO)
         End Set
     End Property
 

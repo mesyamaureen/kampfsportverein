@@ -42,7 +42,8 @@
         Me.btnNeu.Enabled = True
     End Sub
 
-    Public Sub hinzufuegenZeileSportart(plngSportartID As Long, pSportart As String)
+    Public Sub hinzufuegenZeileSportart(plngSportartID As Long,
+                                        pSportart As String)
         Dim sportZeile As ListViewItem
         sportZeile = Me.lstSportart.Items.Add(plngSportartID)
         With sportZeile.SubItems
@@ -71,7 +72,8 @@
         End With
     End Sub
     Public Sub hinzufuegenZeileTrainer(plngTrainerID As Long,
-                                       pstrNameTrainer As String, pstrVornameTrainer As String)
+                                       pstrNameTrainer As String,
+                                       pstrVornameTrainer As String)
         Dim trainerZeile As ListViewItem
         trainerZeile = Me.lstTrainer.Items.Add(plngTrainerID)
         With trainerZeile.SubItems

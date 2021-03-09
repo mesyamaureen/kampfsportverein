@@ -88,11 +88,13 @@
                 beenden()
             Case EPresenterErgebnis.SPORTART_ANZEIGEN
                 presenter.verarbeiteSportartUebersichtAnzeigen()
+            Case EPresenterErgebnis.KURS_ANZEIGEN
+                presenter.verarbeiteKursuebersichtAnzeigen()
             Case EPresenterErgebnis.MITGLIEDER_ANZEIGEN
                 presenter.verarbeiteSchueleruebersichtAnzeigen()
             Case EPresenterErgebnis.TRAINER_ANZEIGEN
                 presenter.verarbeiteTrainerUebersichtAnzeigen()
-            Case EPresenterErgebnis.TRAINER_ERSTELLEN
+            Case EPresenterErgebnis.MITARBEITER_ERSTELLEN
                 presenter.verarbeiteNeu()
         End Select
     End Sub

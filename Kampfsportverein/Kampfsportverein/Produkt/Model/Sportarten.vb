@@ -5,6 +5,7 @@
     Private mstrZielgruppe As String
     Private mbyteMindestalter As Byte
     Private mlngVersion As Long
+    Private mKurs As Kurs
 
     Sub New() 'Parameterloser Konstruktor
         mlngIdPk = -1
@@ -15,7 +16,9 @@
         mlngVersion = 0
     End Sub
 
-    Sub New(plngIdPk As Long, pstrName As String, pstrHerkunftsland As String, pstrZielgruppe As String, pbyteMindestalter As Byte, plngVersion As Long) 'Konstruktor mit Parameter
+    Sub New(plngIdPk As Long, pstrName As String, pstrHerkunftsland As String,
+            pstrZielgruppe As String, pbyteMindestalter As Byte,
+            plngVersion As Long) 'Konstruktor mit Parameter
         mlngIdPk = plngIdPk
         mstrName = pstrName
         mstrHerkunftsland = pstrHerkunftsland

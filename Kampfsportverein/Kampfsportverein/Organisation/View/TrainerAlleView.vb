@@ -9,14 +9,6 @@
 
     End Sub
 
-    Public Property lstTrainer As TrainerAlleView
-        Get
-            Return Nothing
-        End Get
-        Set(value As TrainerAlleView)
-        End Set
-    End Property
-
     Public Sub anzeigenKurse()
         Me.lstSchueler.Visible = False
         Me.lstKurse.Visible = True

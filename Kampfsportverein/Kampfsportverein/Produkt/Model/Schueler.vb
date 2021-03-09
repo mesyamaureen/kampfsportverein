@@ -4,6 +4,7 @@
     Private mstrEMailAdresse As String
     Private mlngSchuelerIdPk As Long
     Private mlngVersion As Long
+    Private mTrainer As Trainer
 
     Sub New() 'parameterloser Konstruktor
         mlngSchuelerIdPk = Nothing
@@ -26,6 +27,15 @@
         End Get
         Set(value As String)
             mstrEMailAdresse = value
+        End Set
+    End Property
+
+    Public Property Trainer As Trainer
+        Get
+            Return mTrainer
+        End Get
+        Set(value As Trainer)
+            mTrainer = value
         End Set
     End Property
 

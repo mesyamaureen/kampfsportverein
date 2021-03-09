@@ -12,9 +12,6 @@
     Public Sub New()
         mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
         verarbeiteSportartUebersichtAnzeigen()
-        verarbeiteKursuebersichtAnzeigen()
-        verarbeiteSchueleruebersichtAnzeigen()
-        verarbeiteTrainerUebersichtAnzeigen()
         'Anzeige der View als Oberfläche
         Application.Run(mView)
 
@@ -81,7 +78,8 @@
         mView.leeren()
         mView.anzeigenTraineruebersicht()
         For Each trainer As Trainer In mlstTrainerAlle
-            mView.hinzufuegenZeileTrainer(trainer.BenutzerID, trainer.Name, trainer.Vorname)
+            mView.hinzufuegenZeileTrainer(trainer.BenutzerID,
+                                          trainer.Name, trainer.Vorname)
         Next
     End Sub
 
@@ -130,7 +128,8 @@
     End Sub
 
     Public Sub verarbeiteKursOeffnen(plngKursId As Long) 'button Öffnen für Kurs
-        Dim ausgewaehlterKurs As Kurs ' Sportart, deren Details in einem neuen Fenster geöffnet werden sollen
+        Dim ausgewaehlterKurs As Kurs ' Sportart, deren Details in einem 
+        'neuen Fenster geöffnet werden sollen
         Dim kursPresenter As KursPresenter ' Presenter zum anzeigen der Sportart
 
         ' Ermitteln der Sportart anhand der ID aus der DB
@@ -138,8 +137,10 @@
         ' Übergeben der Sportart zur Anzeige im Presenter
         kursPresenter = New KursPresenter(ausgewaehlterKurs)
 
-        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter gespeichert wurden 
-        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Or kursPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
+        ' Liste muss nur aktualisiert werden, wenn Änderungen im SportartPresenter 
+        'gespeichert wurden 
+        If kursPresenter.mErgebnis = EPresenterErgebnis.EIGENEKURSE_ANZEIGEN Or
+            kursPresenter.mErgebnis = EPresenterErgebnis.SPEICHERN Then
             verarbeiteKursuebersichtAnzeigen()
         End If
     End Sub
@@ -292,12 +293,13 @@
     Public Sub verarbeiteLoeschenTrainer(plngTraId As Long)
         Dim tra As Trainer
         Dim bolTraErgebnis As Boolean
-        'plngTraId -= 1
         Dim i As Integer = 0  ' Für Iteration
         Dim index As Integer = -1  ' Um Index zu speichern
         For i = 0 To mlstTrainerAlle.Count - 1  ' Iteriert durch die Liste
-            If mlstTrainerAlle.Item(i).BenutzerID.Equals(plngTraId) Then  ' Überprüfe, ob das zu löschende Index gleich mit dem Index vom DB ist
-                index = i  ' Wenn dann, setzt das Element Index in der Liste als zu löschendes Index
+            If mlstTrainerAlle.Item(i).BenutzerID.Equals(plngTraId) Then  ' Überprüfe, 
+                'ob das zu löschende Index gleich mit dem Index vom DB ist
+                index = i  ' Wenn dann, setzt das Element Index in der Liste als zu 
+                'löschendes Index
             End If
         Next
         If index >= 0 Then  ' Überprüfe, ob das Index gefunden wurde

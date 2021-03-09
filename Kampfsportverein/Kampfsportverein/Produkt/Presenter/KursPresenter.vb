@@ -63,7 +63,8 @@
         mView.anzeigenKurs()
         mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
         mtraDAO = DAOFactory.Instanz.TrainerDAO
-        'Verbindung zwischen zugeordneter Sportart, zugeordnetem Trainer und Kurs
+        'Verbindung zwischen zugeordneter Sportart, zugeordnetem
+        'Trainer und Kurs
         mKurs.Sportart = mmitDAO.findeSportart(mKurs.SaIdFk)
         mKurs.Benutzer = mtraDAO.findenTrainerId(mKurs.BenIdFk)
         'Kurs Eigenschaften zur View Klasse zugewiesen
@@ -74,8 +75,12 @@
         mView.txtSchwierigkeit.Text = mKurs.Schwierigkeitsgrad
         mView.txtTrainer.Text = mKurs.Benutzer.Name
     End Sub
+
     Public Sub verarbeiteSpeichern(pKurs As Kurs)
-        If String.IsNullOrEmpty(mView.txtZeitpunkt.Text) Or String.IsNullOrEmpty(mView.txtOrt.Text) Or String.IsNullOrEmpty(mView.txtTeilnZahl.Text) Or String.IsNullOrEmpty(mView.txtSchwierigkeit.Text) Then
+        If String.IsNullOrEmpty(mView.txtZeitpunkt.Text) _
+            Or String.IsNullOrEmpty(mView.txtOrt.Text) _
+            Or String.IsNullOrEmpty(mView.txtTeilnZahl.Text) _
+            Or String.IsNullOrEmpty(mView.txtSchwierigkeit.Text) Then
             MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)
         Else
             mKurs.Zeitpunkt = mView.txtZeitpunkt.Text

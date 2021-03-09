@@ -6,16 +6,6 @@
         MyBase.New
         mPresenter = pPresenter
     End Sub
-    'Eigenschaften
-    Public Property IstKurs As KursView
-        Get
-            Return Nothing
-        End Get
-        Set(value As KursView)
-        End Set
-    End Property
-    'Methoden
-    'Initialisierungen 
 
     Public Sub anzeigenKurs()
         If BenutzerSitzung.Instanz.AktuellerBenutzer.Typ = "T" Then
