@@ -72,7 +72,7 @@ Public Class SportartenPresenter
     End Property
 
 
-    Public Sub verarbeiteClose(pSpor As Sportart)
+    Public Sub verarbeiteAbbrechen(pSpor As Sportart)
         'Prüfschleife ob Dinge gespeichert werden sollen
 
         If mSpor.Name = pSpor.Name And mSpor.Herkunftsland = pSpor.Herkunftsland And
@@ -89,15 +89,15 @@ Public Class SportartenPresenter
         End If
     End Sub
 
-    Public Sub verarbeiteAbbrechen()
-        'Prüfschleife ob abgebrochen werde soll - Yes No
+    'Public Sub verarbeiteAbbrechen()
+    '    'Prüfschleife ob abgebrochen werde soll - Yes No
 
-        If MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel) _
-        = Windows.Forms.DialogResult.OK Then
-            mView.Close()
-        End If
+    '    If MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel) _
+    '    = Windows.Forms.DialogResult.OK Then
+    '        mView.Close()
+    '    End If
 
-    End Sub
+    'End Sub
 
     Public Sub verarbeiteSpeichern(pSpor As Sportart)
 

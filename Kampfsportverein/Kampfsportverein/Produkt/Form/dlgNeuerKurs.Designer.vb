@@ -152,6 +152,7 @@ Partial Class dlgNeuerKurs
         Me.datKurs.Name = "datKurs"
         Me.datKurs.Size = New System.Drawing.Size(518, 31)
         Me.datKurs.TabIndex = 17
+        Me.datKurs.Value = New Date(2021, 3, 11, 0, 0, 0, 0)
         '
         'txtSchwierigkeit
         '

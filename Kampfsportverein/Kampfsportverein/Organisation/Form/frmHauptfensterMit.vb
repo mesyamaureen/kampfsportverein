@@ -94,11 +94,45 @@
         geaenderteAuswahl()
     End Sub
 
+    Private Sub lstTrainer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstTrainer.SelectedIndexChanged
+        If Me.lstTrainer.SelectedItems.Count = 0 Then
+            Me.btnNeu.Enabled = True
+            Me.btnLoeschen.Enabled = False
+            Me.btnOeffnen.Enabled = False
+        ElseIf Me.lstTrainer.SelectedItems.Count = 1 Then
+            Me.btnNeu.Enabled = False
+            Me.btnLoeschen.Enabled = True
+            Me.btnOeffnen.Enabled = True
+        End If
+    End Sub
+
+    Private Sub lstSchuelerAlle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstSchuelerAlle.SelectedIndexChanged
+        If Me.lstSchuelerAlle.SelectedItems.Count = 0 Then
+            Me.btnLoeschen.Enabled = False
+            Me.btnOeffnen.Enabled = False
+        ElseIf Me.lstSchuelerAlle.SelectedItems.Count = 1 Then
+            Me.btnLoeschen.Enabled = True
+            Me.btnOeffnen.Enabled = True
+        End If
+    End Sub
+
+    Private Sub lstKurseAlle_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstKurseAlle.SelectedIndexChanged
+        If Me.lstKurseAlle.SelectedItems.Count = 0 Then
+            Me.btnNeu.Enabled = True
+            Me.btnLoeschen.Enabled = False
+            Me.btnOeffnen.Enabled = False
+        ElseIf Me.lstKurseAlle.SelectedItems.Count = 1 Then
+            Me.btnNeu.Enabled = False
+            Me.btnLoeschen.Enabled = True
+            Me.btnOeffnen.Enabled = True
+        End If
+    End Sub
+
     Private Sub geaenderteAuswahl()
         ' Registerkarte Offene Aufgaben
         If Me.lstSportart.SelectedItems.Count > 0 Then
             Me.btnBeenden.Enabled = True
-            Me.btnNeu.Enabled = True
+            Me.btnNeu.Enabled = False
             Me.btnOeffnen.Enabled = True
             Me.btnLoeschen.Enabled = True
         Else
@@ -122,4 +156,6 @@
             e.Cancel = True
         End If
     End Sub
+
+
 End Class

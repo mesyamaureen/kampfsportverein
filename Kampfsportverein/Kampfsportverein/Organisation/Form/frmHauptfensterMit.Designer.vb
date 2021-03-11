@@ -26,7 +26,10 @@ Partial Class frmHauptfensterMit
         Me.grpboxMenu = New System.Windows.Forms.GroupBox()
         Me.btnNeuerMitarbeiter = New System.Windows.Forms.Button()
         Me.btnTrainer = New System.Windows.Forms.Button()
+        Me.btnSchueler = New System.Windows.Forms.Button()
+        Me.btnKurs = New System.Windows.Forms.Button()
         Me.btnSportarten = New System.Windows.Forms.Button()
+        Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.grpboxSportartliste = New System.Windows.Forms.GroupBox()
         Me.lstSportart = New System.Windows.Forms.ListView()
         Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -47,9 +50,6 @@ Partial Class frmHauptfensterMit
         Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colSportartKurs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnSchueler = New System.Windows.Forms.Button()
-        Me.btnKurs = New System.Windows.Forms.Button()
-        Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.grpboxMenu.SuspendLayout()
         Me.grpboxSportartliste.SuspendLayout()
         Me.SuspendLayout()
@@ -103,6 +103,32 @@ Partial Class frmHauptfensterMit
         Me.btnTrainer.Text = "Trainer"
         Me.btnTrainer.UseVisualStyleBackColor = True
         '
+        'btnSchueler
+        '
+        Me.btnSchueler.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSchueler.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSchueler.Location = New System.Drawing.Point(42, 312)
+        Me.btnSchueler.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSchueler.Name = "btnSchueler"
+        Me.btnSchueler.Size = New System.Drawing.Size(267, 95)
+        Me.btnSchueler.TabIndex = 8
+        Me.btnSchueler.Text = "Schüler"
+        Me.btnSchueler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSchueler.UseVisualStyleBackColor = True
+        '
+        'btnKurs
+        '
+        Me.btnKurs.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnKurs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnKurs.Location = New System.Drawing.Point(42, 171)
+        Me.btnKurs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKurs.Name = "btnKurs"
+        Me.btnKurs.Size = New System.Drawing.Size(267, 95)
+        Me.btnKurs.TabIndex = 5
+        Me.btnKurs.Text = "Kurse"
+        Me.btnKurs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnKurs.UseVisualStyleBackColor = True
+        '
         'btnSportarten
         '
         Me.btnSportarten.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -113,6 +139,18 @@ Partial Class frmHauptfensterMit
         Me.btnSportarten.TabIndex = 3
         Me.btnSportarten.Text = "Sportarten"
         Me.btnSportarten.UseVisualStyleBackColor = True
+        '
+        'btnMeinKonto
+        '
+        Me.btnMeinKonto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 593)
+        Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMeinKonto.Name = "btnMeinKonto"
+        Me.btnMeinKonto.Size = New System.Drawing.Size(267, 95)
+        Me.btnMeinKonto.TabIndex = 2
+        Me.btnMeinKonto.Text = "Mein Konto"
+        Me.btnMeinKonto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnMeinKonto.UseVisualStyleBackColor = True
         '
         'grpboxSportartliste
         '
@@ -137,7 +175,7 @@ Partial Class frmHauptfensterMit
         Me.lstSportart.FullRowSelect = True
         Me.lstSportart.GridLines = True
         Me.lstSportart.HideSelection = False
-        Me.lstSportart.Location = New System.Drawing.Point(6, 9)
+        Me.lstSportart.Location = New System.Drawing.Point(0, 12)
         Me.lstSportart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstSportart.MultiSelect = False
         Me.lstSportart.Name = "lstSportart"
@@ -193,7 +231,7 @@ Partial Class frmHauptfensterMit
         Me.lstTrainer.FullRowSelect = True
         Me.lstTrainer.GridLines = True
         Me.lstTrainer.HideSelection = False
-        Me.lstTrainer.Location = New System.Drawing.Point(5, 9)
+        Me.lstTrainer.Location = New System.Drawing.Point(1, 12)
         Me.lstTrainer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstTrainer.MultiSelect = False
         Me.lstTrainer.Name = "lstTrainer"
@@ -225,7 +263,7 @@ Partial Class frmHauptfensterMit
         Me.lstSchuelerAlle.FullRowSelect = True
         Me.lstSchuelerAlle.GridLines = True
         Me.lstSchuelerAlle.HideSelection = False
-        Me.lstSchuelerAlle.Location = New System.Drawing.Point(5, 9)
+        Me.lstSchuelerAlle.Location = New System.Drawing.Point(1, 12)
         Me.lstSchuelerAlle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstSchuelerAlle.MultiSelect = False
         Me.lstSchuelerAlle.Name = "lstSchuelerAlle"
@@ -257,7 +295,7 @@ Partial Class frmHauptfensterMit
         Me.lstKurseAlle.FullRowSelect = True
         Me.lstKurseAlle.GridLines = True
         Me.lstKurseAlle.HideSelection = False
-        Me.lstKurseAlle.Location = New System.Drawing.Point(5, 9)
+        Me.lstKurseAlle.Location = New System.Drawing.Point(0, 12)
         Me.lstKurseAlle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstKurseAlle.MultiSelect = False
         Me.lstKurseAlle.Name = "lstKurseAlle"
@@ -288,44 +326,6 @@ Partial Class frmHauptfensterMit
         Me.colVerfuegbarkeit.Text = "Verfügbarkeit"
         Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVerfuegbarkeit.Width = 161
-        '
-        'btnSchueler
-        '
-        Me.btnSchueler.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSchueler.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSchueler.Location = New System.Drawing.Point(42, 312)
-        Me.btnSchueler.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnSchueler.Name = "btnSchueler"
-        Me.btnSchueler.Size = New System.Drawing.Size(267, 95)
-        Me.btnSchueler.TabIndex = 8
-        Me.btnSchueler.Text = "Schüler"
-        Me.btnSchueler.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnSchueler.UseVisualStyleBackColor = True
-        '
-        'btnKurs
-        '
-        Me.btnKurs.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKurs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnKurs.Location = New System.Drawing.Point(42, 171)
-        Me.btnKurs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnKurs.Name = "btnKurs"
-        Me.btnKurs.Size = New System.Drawing.Size(267, 95)
-        Me.btnKurs.TabIndex = 5
-        Me.btnKurs.Text = "Kurse"
-        Me.btnKurs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnKurs.UseVisualStyleBackColor = True
-        '
-        'btnMeinKonto
-        '
-        Me.btnMeinKonto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMeinKonto.Location = New System.Drawing.Point(42, 593)
-        Me.btnMeinKonto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMeinKonto.Name = "btnMeinKonto"
-        Me.btnMeinKonto.Size = New System.Drawing.Size(267, 95)
-        Me.btnMeinKonto.TabIndex = 2
-        Me.btnMeinKonto.Text = "Mein Konto"
-        Me.btnMeinKonto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnMeinKonto.UseVisualStyleBackColor = True
         '
         'frmHauptfensterMit
         '

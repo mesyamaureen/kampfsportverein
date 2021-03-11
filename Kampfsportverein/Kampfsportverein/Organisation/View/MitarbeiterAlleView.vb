@@ -16,6 +16,9 @@
         Me.lstSchuelerAlle.Visible = False
         Me.lstTrainer.Visible = False
         Me.btnNeu.Enabled = True
+        Me.btnLoeschen.Enabled = False
+        Me.btnOeffnen.Enabled = False
+        Me.btnBeenden.Enabled = True
     End Sub
 
     Public Sub anzeigenKursuebersicht()
@@ -24,6 +27,9 @@
         Me.lstSchuelerAlle.Visible = False
         Me.lstTrainer.Visible = False
         Me.btnNeu.Enabled = True
+        Me.btnLoeschen.Enabled = False
+        Me.btnOeffnen.Enabled = False
+        Me.btnBeenden.Enabled = True
     End Sub
 
     Public Sub anzeigenSchueleruebersicht()
@@ -32,6 +38,9 @@
         Me.lstSchuelerAlle.Visible = True
         Me.lstTrainer.Visible = False
         Me.btnNeu.Enabled = False
+        Me.btnLoeschen.Enabled = False
+        Me.btnOeffnen.Enabled = False
+        Me.btnBeenden.Enabled = True
     End Sub
 
     Public Sub anzeigenTraineruebersicht()
@@ -40,6 +49,9 @@
         Me.lstSchuelerAlle.Visible = False
         Me.lstTrainer.Visible = True
         Me.btnNeu.Enabled = True
+        Me.btnLoeschen.Enabled = False
+        Me.btnOeffnen.Enabled = False
+        Me.btnBeenden.Enabled = True
     End Sub
 
     Public Sub hinzufuegenZeileSportart(plngSportartID As Long,
@@ -87,5 +99,4 @@
         Me.lstSchuelerAlle.Items.Clear()
         Me.lstTrainer.Items.Clear()
     End Sub
-
 End Class

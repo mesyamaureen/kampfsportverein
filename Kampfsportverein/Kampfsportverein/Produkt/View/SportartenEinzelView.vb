@@ -16,17 +16,17 @@
 
 
 
-    Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-        'Dim mbrResult As MsgBoxResult
+    'Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
+    '    'Dim mbrResult As MsgBoxResult
 
-        'mbrResult = MsgBox("Möchten Sie wirklich abbrechen?", MsgBoxStyle.Question + vbYesNo, "Abbrechen")
-        'If mbrResult = vbNo Then
-        'DialogResult = Nothing
-        'Else
-        'mPresenter.verarbeiteAbbrechen()
-        MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel)
-        'End If
-    End Sub
+    '    'mbrResult = MsgBox("Möchten Sie wirklich abbrechen?", MsgBoxStyle.Question + vbYesNo, "Abbrechen")
+    '    'If mbrResult = vbNo Then
+    '    'DialogResult = Nothing
+    '    'Else
+    '    'mPresenter.verarbeiteAbbrechen()
+    '    MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel)
+    '    'End If
+    'End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Dim mSpor As Sportart = New Sportart
@@ -36,7 +36,7 @@
         mSpor.Zielgruppe = Me.rtxtZielgruppe.Text
         mSpor.Version = Me.txtVersion.Text
 
-        mPresenter.verarbeiteClose(mSpor)
+        mPresenter.verarbeiteAbbrechen(mSpor)
     End Sub
 
     Private Sub btnSpeichern_Click(sender As Object, e As EventArgs) Handles btnSpeichern.Click

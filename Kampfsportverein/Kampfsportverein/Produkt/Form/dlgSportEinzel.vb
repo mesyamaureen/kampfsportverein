@@ -8,4 +8,5 @@
         Set(value As SportartenPresenter)
         End Set
     End Property
+
 End Class

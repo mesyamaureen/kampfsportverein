@@ -22,7 +22,6 @@ Partial Class dlgSportEinzel
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnAbbrechen = New System.Windows.Forms.Button()
         Me.btnSpeichern = New System.Windows.Forms.Button()
         Me.lblName = New System.Windows.Forms.Label()
         Me.lblHerkunftsland = New System.Windows.Forms.Label()
@@ -48,23 +47,12 @@ Partial Class dlgSportEinzel
         Me.tabKurs.SuspendLayout()
         Me.SuspendLayout()
         '
-        'btnAbbrechen
-        '
-        Me.btnAbbrechen.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAbbrechen.Location = New System.Drawing.Point(1091, 569)
-        Me.btnAbbrechen.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnAbbrechen.Name = "btnAbbrechen"
-        Me.btnAbbrechen.Size = New System.Drawing.Size(143, 46)
-        Me.btnAbbrechen.TabIndex = 0
-        Me.btnAbbrechen.Text = "Abbrechen"
-        Me.btnAbbrechen.UseVisualStyleBackColor = True
-        '
         'btnSpeichern
         '
-        Me.btnSpeichern.Location = New System.Drawing.Point(944, 569)
+        Me.btnSpeichern.Location = New System.Drawing.Point(935, 569)
         Me.btnSpeichern.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSpeichern.Name = "btnSpeichern"
-        Me.btnSpeichern.Size = New System.Drawing.Size(132, 46)
+        Me.btnSpeichern.Size = New System.Drawing.Size(141, 46)
         Me.btnSpeichern.TabIndex = 1
         Me.btnSpeichern.Text = "Speichern"
         Me.btnSpeichern.UseVisualStyleBackColor = True
@@ -233,12 +221,12 @@ Partial Class dlgSportEinzel
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(796, 569)
+        Me.btnClose.Location = New System.Drawing.Point(1082, 569)
         Me.btnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(132, 46)
+        Me.btnClose.Size = New System.Drawing.Size(149, 46)
         Me.btnClose.TabIndex = 9
-        Me.btnClose.Text = "Schließen"
+        Me.btnClose.Text = "Abbrechen"
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'dlgSportEinzel
@@ -246,7 +234,6 @@ Partial Class dlgSportEinzel
         Me.AcceptButton = Me.btnSpeichern
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.btnAbbrechen
         Me.ClientSize = New System.Drawing.Size(1254, 629)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.txtVersion)
@@ -259,7 +246,6 @@ Partial Class dlgSportEinzel
         Me.Controls.Add(Me.lblHerkunftsland)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnSpeichern)
-        Me.Controls.Add(Me.btnAbbrechen)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
@@ -274,8 +260,6 @@ Partial Class dlgSportEinzel
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents btnAbbrechen As Button
     Friend WithEvents btnSpeichern As Button
     Friend WithEvents lblName As Label
     Friend WithEvents lblHerkunftsland As Label
