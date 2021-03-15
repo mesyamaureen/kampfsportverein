@@ -6,7 +6,6 @@
     Private mtraDAO As TrainerDAO
 
     Sub New(pKurs As Kurs)
-        'mKurs = pKurs
         mKurs = Nothing
         mView = New NeuerKursView(Me)
         anzeigenNeuerKurs()
@@ -55,7 +54,6 @@
     Public Sub ladenSaName()
         Dim i As Integer
         Dim strSaName As String
-        'mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
         Dim lstSportart As List(Of Sportart) = mmitDAO.findenAlleSportarten
         For i = 0 To lstSportart.Count - 1
             strSaName = lstSportart.Item(i).Name
@@ -66,7 +64,6 @@
     Public Sub ladenTrainer()
         Dim i As Integer
         Dim strTrainer As String
-        'mtraDAO = DAOFactory.Instanz.TrainerDAO
         Dim lstTrainer As List(Of Trainer) = mtraDAO.findeAlleTrainer
         For i = 0 To lstTrainer.Count - 1
             strTrainer = lstTrainer.Item(i).Name

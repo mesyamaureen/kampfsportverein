@@ -1,11 +1,5 @@
 Imports System.Data.OleDb
 
-'Module Program
-'Sub Main(args As String())
-'Console.WriteLine("Hello World!")
-'End Sub
-'End Module
-
 Public Module Datenbank
     'auf die Datenbank zugreifen
     Dim conn As OleDbConnection

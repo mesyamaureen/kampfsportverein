@@ -4,7 +4,6 @@ Imports System.Data.OleDb
 
 Public Class DAO
 
-    'Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM @table WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
     Private Const SQL_DELETE_BY_VERSION As String = "DELETE FROM tblSportarten WHERE SaIdPk = @IdPk AND SaVersion = @Version"
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM @table WHERE @Suchfeld = @Suchbegriff"
     'Eintrag Löschen
@@ -17,7 +16,6 @@ Public Class DAO
         'Optional: Prüfung ob Datensatz vorhanden ist
         'Platzhalter ersetzen
         cmd.Parameters.AddWithValue("@IdPk", plngIdPk)
-        'cmd.Parameters.AddWithValue("@table", pstrTable)
         cmd.Parameters.AddWithValue("@Version", plngVersion)
 
         bytresult = cmd.ExecuteNonQuery()

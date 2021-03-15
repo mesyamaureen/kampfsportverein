@@ -31,17 +31,17 @@ Public Class SportartenPresenter
         End Set
     End Property
 
-    Public Property Ergebnis As SportartenPresenter
+    Public Property Ergebnis As EPresenterErgebnis
         Get
-            Return Nothing
+            Return mErgebnis
         End Get
-        Set(value As SportartenPresenter)
+        Set(value As EPresenterErgebnis)
         End Set
     End Property
 
     Public Property SportartenAlle As Sportart
         Get
-            Return Nothing
+            Return mSpor
         End Get
         Set(value As Sportart)
         End Set
@@ -89,16 +89,6 @@ Public Class SportartenPresenter
         End If
     End Sub
 
-    'Public Sub verarbeiteAbbrechen()
-    '    'Prüfschleife ob abgebrochen werde soll - Yes No
-
-    '    If MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel) _
-    '    = Windows.Forms.DialogResult.OK Then
-    '        mView.Close()
-    '    End If
-
-    'End Sub
-
     Public Sub verarbeiteSpeichern(pSpor As Sportart)
 
         If String.IsNullOrEmpty(pSpor.Name) Or String.IsNullOrEmpty(pSpor.Herkunftsland) Or
@@ -136,11 +126,9 @@ Public Class SportartenPresenter
     End Sub
 
 
-    Public Sub verarbeiteKursUebersichtAnzeigen() 'plngSportartIdPk As Long)
+    Public Sub verarbeiteKursUebersichtAnzeigen()
         mErgebnis = EPresenterErgebnis.KURS_ANZEIGEN
         mmitDAO = DAOFactory.Instanz.MitarbeiterDAO
-        'Dim ausgewaehlteSA As Sportart
-        'ausgewaehlteSA = mmitDAO.findeSportart(plngSportartIdPk)
         mlstKurse = mmitDAO.findenAlleSaKurse(mSpor)
         anzeigeKursAlle()
     End Sub

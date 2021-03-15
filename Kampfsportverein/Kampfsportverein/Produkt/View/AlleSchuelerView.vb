@@ -6,14 +6,6 @@
         mPresenter = pPresenter
     End Sub
 
-    Public Property IstSchueler As AlleSchuelerView
-        Get
-            Return Nothing
-        End Get
-        Set(value As AlleSchuelerView)
-        End Set
-    End Property
-
     Public Sub anzeigenSchueler()
         If BenutzerSitzung.Instanz.AktuellerBenutzer.Typ = "T" Then
             Me.txtSchuelerID.Enabled = False
@@ -38,9 +30,7 @@
 
     Private Sub InitializeComponent()
         Me.SuspendLayout()
-        '
-        'AlleSchuelerView
-        '
+
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.ClientSize = New System.Drawing.Size(580, 423)
         Me.Name = "AlleSchuelerView"

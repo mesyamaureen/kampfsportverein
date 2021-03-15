@@ -1,5 +1,5 @@
 ﻿Public Class TrainerAllePresenter
-    Public mErgebnis As EPresenterErgebnis
+    Private mErgebnis As EPresenterErgebnis
     Private mlstKursAlle As List(Of Kurs)
     Private mlstSchuelerAlle As List(Of Schueler)
     Private mView As TrainerAlleView
@@ -14,6 +14,23 @@
         verarbeiteKursuebersichtAnzeigen()
         mView.ShowDialog()
     End Sub
+
+    Public Property ListeKurs As List(Of Kurs)
+        Get
+            Return mlstKurs
+        End Get
+        Set(value As List(Of Kurs))
+        End Set
+    End Property
+
+    Public Property ListeSchueler As List(Of Schueler)
+        Get
+            Return mlstSchuelerAlle
+        End Get
+        Set(value As List(Of Schueler))
+        End Set
+    End Property
+
 
     Public Property Ergebnis As EPresenterErgebnis
         Get
@@ -36,14 +53,6 @@
         End Get
         Set(value As TrainerAlleView)
             mView = value
-        End Set
-    End Property
-
-    Public Property Trainer As Trainer
-        Get
-            Return Nothing
-        End Get
-        Set(value As Trainer)
         End Set
     End Property
 

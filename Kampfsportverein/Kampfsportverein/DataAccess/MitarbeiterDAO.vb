@@ -10,21 +10,14 @@ Public Class MitarbeiterDAO
     'SQL-Anweisung, um einen Mitarbeiter anhand der ID zu ermitteln
     Private Const SQL_SELECT_BY_ID As String = "SELECT * FROM [tblBenutzer/Mitarbeiter/Trainer] WHERE BenIdPk = @idPk;"
 
-    'SQL-Anweisung, um alle Mitarbeiter zu ermitteln
-    'Private Const SQL_SELECT_ALL As String = "SELECT * FROM tblBenutzer/Mitarbeiter/Trainer;"
-
     'SQL-Anweisung, um alle Sportarten zu ermitteln
     Private Const SQL_SELECT_SPORTART As String = "SELECT * FROM tblSportarten"
-
-    ' 'SQL-Anweisung, um eine Sportart nach ID zu filtern - benötigt?
-    'Private Const SQL_SELECT_SPORTART_BY_SAID As String = "SELECT * FROM tblSportarten WHERE SaIdPk = @IdPk"
 
     ' SQL-Anweisung, um eine Sportart zu aktualisieren
     Private Const SQL_UPDATE As String = "UPDATE tblSportarten SET SaName = @name, SaHerkunftsland = @herkunft, SaZielgruppe = @zielgruppe, SaMindestalter = @mindestalter, SaVersion = @version WHERE SaIdPk = @idPk "
 
     ' SQL-Anweisung, um eine Sportart neu hinzuzufügen
     Private Const SQL_INSERT As String = "INSERT INTO tblSportarten(SaName, SaHerkunftsland, SaZielgruppe, SaMindestalter, SaVersion) VALUES (@name, @herkunft, @zielgruppe, @mindestalter, @version)"
-
 
     ' SQL-Anweisung, um eine Sportart zu löschen
     Private Const SQL_DELETE_SA_BY_VERSION As String = "DELETE FROM tblSportarten WHERE SaIdPk = @IdPk AND SaVersion = @Version;"
@@ -49,7 +42,7 @@ Public Class MitarbeiterDAO
 
     'SQL-Anweisung, um neuer Kurs hinzufügen
     Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerzahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion) VALUES (@KuZeitpunkt, @KuOrt, @KuTeilnehmerzahl, @KuSchwierigkeit, @KuSaIdFk, @KuBenIdFk, @version)"
-    '  Private Const SQL_INSERT_KURS As String = "INSERT INTO tblKurse(KuZeitpunkt, KuOrt, KuTeilnehmerzahl, KuSchwierigkeit, KuSaIdFk, KuBenIdFk, KuVersion) VALUES (#05/06/2020#, Ort, 8, l, 2, 1, 1)"
+
     'SQL-Anweisung, um einen Kurs zu löschen
     Private Const SQL_DELETE_BY_VERSION_KURS As String = "DELETE FROM tblKurse WHERE KuIdPk = @KuIdPk AND KuVersion = @version;"
 
@@ -241,7 +234,6 @@ Public Class MitarbeiterDAO
 
 
     Public Shared Function loeschenMitSportartId(plngIdPk As Long, plngVersion As Long) As Boolean
-        'Return ElementLoeschen("tblSportarten", plngIdPk, plngVersion)
         'Deklaration
         Dim lngAnzahlDatensätze As Long
         Dim cmd As OleDbCommand
@@ -357,7 +349,6 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    'KURS
     'finden Alle Kurse nach zugeordneter Sportart
     Public Function findenAlleSaKurse(pSportart As Sportart) As List(Of Kurs)
 
@@ -405,7 +396,7 @@ Public Class MitarbeiterDAO
 
             kurs = New Kurs(lngKursIdPk, datKursZeitpunkt, strKursOrt, intKursTeilnZahl, strKursSchwierigkeit,
                             lngSportartIdFk, lngBenIdFK, lngVersion)
-            'kurs.Sportart = pSportart 'Kurs aus der Sportart zuordnen
+
             lstKurs.Add(kurs) 'Neuer Kurs zur Liste der Kursen hinzufügen
         Loop
 
@@ -596,17 +587,6 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    'Public Function loeschenKurs(pKurs As Kurs) As Boolean 'Fix this please Mesya!
-    '    'Deklaration
-    '    Dim bolErfolgreich As Boolean
-    '    'Initialisierung: Funktionaufruf von loeschenKursTraId
-    '    bolErfolgreich = loeschenKursTraId(pKurs.IdPk, pKurs.Version)
-    '    'Rückgabe des Ergebnisses
-    '    Return bolErfolgreich
-    'End Function
-
-
-    'speichernKurs?
     Public Shared Function speichernKurs(pKurs As Kurs) As Long
 
         ' Deklarationen
@@ -626,7 +606,7 @@ Public Class MitarbeiterDAO
 
     End Function
 
-    'aktualisierenKurs?
+    'aktualisierenKurs
     Private Shared Function aktualisierenKurs(pKurs As Kurs) As Long
         ' Deklarationen
         Dim lngKursIdPk As Long ' Primärschlüssel des zu aktualisierenden Datensatzes
@@ -644,9 +624,6 @@ Public Class MitarbeiterDAO
         ' SQL-Anweisung aus Konstante verwenden (Deklaration oben) und initialisierte Datenbankverbindung (aus Oberklasse geerbt)
         cmd = New OleDbCommand(SQL_UPDATE_KURS, mConnection)
 
-        ' Platzhalter in der SQL-Anweisung durch Eigenschaften der als Parameter übergebenen Aufgabe ersetzen
-        ' Wichtig: Bei Zugriff auf MS Access-Datenbank müssen die Parameter in der Reihenfolge befüllt werden,
-        ' in der sie in der SQL-Anweisung vorkommen (z.B. erst Titel und dann Beschreibung)!
         cmd.Parameters.AddWithValue("@KuZeitpunkt", pKurs.Zeitpunkt)
         cmd.Parameters.AddWithValue("@KuOrt", pKurs.Ort)
         cmd.Parameters.AddWithValue("@KuTeilnehmerzahl", pKurs.Teilnehmerzahl)

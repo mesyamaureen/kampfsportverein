@@ -1,7 +1,6 @@
 ﻿Public Class TrainerAlleView
     Inherits frmHauptfensterTrainer
 
-    Private mbolTrainer As Boolean
     Sub New(pPresenter As TrainerAllePresenter)
 
         MyBase.New
@@ -47,18 +46,6 @@
         Me.lstKurse.Items.Clear()
         'Schüler leeren
         Me.lstSchueler.Items.Clear()
-    End Sub
-
-    Public Sub anzeigenNeueAnmeldung()
-
-    End Sub
-
-    Public Sub anzeigenBearbeiten()
-
-    End Sub
-
-    Public Sub anzeigenBeenden()
-
     End Sub
 
 

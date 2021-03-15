@@ -67,7 +67,7 @@
         traDAO = DAOFactory.Instanz.TrainerDAO
 
         'Nutzen des DAOs, um den angemeldeten Benutzer zu finden anhand 
-        'Benutzername und Passwort 'If ben=mitarbeiter then ben = mitDAO.findenMitBenutzernamePasswort(..)
+        'Benutzername und Passwort 
         mitarb = mitDAO.findenMitBenutzernamePasswort(pstrBenutzername, pstrPasswort)
         'Formulierung einer Verzweigung, 
         If mitarb Is Nothing Then
@@ -78,7 +78,6 @@
         ElseIf mitarb IsNot Nothing Then
             Return mitarb
         End If
-        'falls sinnlos dann neues Diagramm
 
         'Rückgabe des angemeldeten Benutzers
         Return Nothing

@@ -35,12 +35,9 @@
             mPresenter.verarbeiteNeu()
         ElseIf Me.lstKurseAlle.Visible = True Then
             mPresenter.verarbeiteNeuerKurs()
-            'ElseIf Me.lstSchuelerAlle.Visible = False Then
-            '    mPresenter.verarbeiteNeuSchueler()
         ElseIf Me.lstTrainer.Visible = True Then
             mPresenter.verarbeiteNeuTrainer()
         End If
-        'mPresenter.verarbeiteNeu()
     End Sub
 
     Private Sub btnLoeschen_Click(sender As Object, e As EventArgs) Handles btnLoeschen.Click

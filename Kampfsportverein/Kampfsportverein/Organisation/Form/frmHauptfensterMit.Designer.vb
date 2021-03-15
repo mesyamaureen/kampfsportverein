@@ -31,12 +31,17 @@ Partial Class frmHauptfensterMit
         Me.btnSportarten = New System.Windows.Forms.Button()
         Me.btnMeinKonto = New System.Windows.Forms.Button()
         Me.grpboxSportartliste = New System.Windows.Forms.GroupBox()
-        Me.lstSportart = New System.Windows.Forms.ListView()
-        Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnNeu = New System.Windows.Forms.Button()
         Me.btnLoeschen = New System.Windows.Forms.Button()
         Me.btnOeffnen = New System.Windows.Forms.Button()
+        Me.lstKurseAlle = New System.Windows.Forms.ListView()
+        Me.colKursId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colSportartKurs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colTrainer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.lstSportart = New System.Windows.Forms.ListView()
+        Me.colID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.colSportart = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lstTrainer = New System.Windows.Forms.ListView()
         Me.colTrainerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colNameTrainer = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -45,11 +50,6 @@ Partial Class frmHauptfensterMit
         Me.colSchuelerID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colName = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colVorname = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.lstKurseAlle = New System.Windows.Forms.ListView()
-        Me.colKursId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colDatum = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colSportartKurs = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.colVerfuegbarkeit = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.grpboxMenu.SuspendLayout()
         Me.grpboxSportartliste.SuspendLayout()
         Me.SuspendLayout()
@@ -154,13 +154,13 @@ Partial Class frmHauptfensterMit
         '
         'grpboxSportartliste
         '
-        Me.grpboxSportartliste.Controls.Add(Me.lstSportart)
         Me.grpboxSportartliste.Controls.Add(Me.btnNeu)
         Me.grpboxSportartliste.Controls.Add(Me.btnLoeschen)
         Me.grpboxSportartliste.Controls.Add(Me.btnOeffnen)
+        Me.grpboxSportartliste.Controls.Add(Me.lstKurseAlle)
+        Me.grpboxSportartliste.Controls.Add(Me.lstSportart)
         Me.grpboxSportartliste.Controls.Add(Me.lstTrainer)
         Me.grpboxSportartliste.Controls.Add(Me.lstSchuelerAlle)
-        Me.grpboxSportartliste.Controls.Add(Me.lstKurseAlle)
         Me.grpboxSportartliste.Location = New System.Drawing.Point(376, 12)
         Me.grpboxSportartliste.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.grpboxSportartliste.Name = "grpboxSportartliste"
@@ -168,32 +168,6 @@ Partial Class frmHauptfensterMit
         Me.grpboxSportartliste.Size = New System.Drawing.Size(857, 848)
         Me.grpboxSportartliste.TabIndex = 2
         Me.grpboxSportartliste.TabStop = False
-        '
-        'lstSportart
-        '
-        Me.lstSportart.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colSportart})
-        Me.lstSportart.FullRowSelect = True
-        Me.lstSportart.GridLines = True
-        Me.lstSportart.HideSelection = False
-        Me.lstSportart.Location = New System.Drawing.Point(0, 12)
-        Me.lstSportart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.lstSportart.MultiSelect = False
-        Me.lstSportart.Name = "lstSportart"
-        Me.lstSportart.Size = New System.Drawing.Size(852, 754)
-        Me.lstSportart.TabIndex = 0
-        Me.lstSportart.UseCompatibleStateImageBehavior = False
-        Me.lstSportart.View = System.Windows.Forms.View.Details
-        '
-        'colID
-        '
-        Me.colID.Text = "ID"
-        Me.colID.Width = 100
-        '
-        'colSportart
-        '
-        Me.colSportart.Text = "Sportart"
-        Me.colSportart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colSportart.Width = 300
         '
         'btnNeu
         '
@@ -224,6 +198,70 @@ Partial Class frmHauptfensterMit
         Me.btnOeffnen.TabIndex = 4
         Me.btnOeffnen.Text = "Öffnen"
         Me.btnOeffnen.UseVisualStyleBackColor = True
+        '
+        'lstKurseAlle
+        '
+        Me.lstKurseAlle.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursId, Me.colDatum, Me.colSportartKurs, Me.colTrainer})
+        Me.lstKurseAlle.FullRowSelect = True
+        Me.lstKurseAlle.GridLines = True
+        Me.lstKurseAlle.HideSelection = False
+        Me.lstKurseAlle.Location = New System.Drawing.Point(0, 12)
+        Me.lstKurseAlle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstKurseAlle.MultiSelect = False
+        Me.lstKurseAlle.Name = "lstKurseAlle"
+        Me.lstKurseAlle.Size = New System.Drawing.Size(853, 754)
+        Me.lstKurseAlle.TabIndex = 7
+        Me.lstKurseAlle.UseCompatibleStateImageBehavior = False
+        Me.lstKurseAlle.View = System.Windows.Forms.View.Details
+        '
+        'colKursId
+        '
+        Me.colKursId.Text = "Kurs ID"
+        Me.colKursId.Width = 93
+        '
+        'colDatum
+        '
+        Me.colDatum.Text = "Datum"
+        Me.colDatum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colDatum.Width = 380
+        '
+        'colSportartKurs
+        '
+        Me.colSportartKurs.Text = "Sportart"
+        Me.colSportartKurs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colSportartKurs.Width = 219
+        '
+        'colTrainer
+        '
+        Me.colTrainer.Text = "Trainer"
+        Me.colTrainer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colTrainer.Width = 161
+        '
+        'lstSportart
+        '
+        Me.lstSportart.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colID, Me.colSportart})
+        Me.lstSportart.FullRowSelect = True
+        Me.lstSportart.GridLines = True
+        Me.lstSportart.HideSelection = False
+        Me.lstSportart.Location = New System.Drawing.Point(-1, 12)
+        Me.lstSportart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstSportart.MultiSelect = False
+        Me.lstSportart.Name = "lstSportart"
+        Me.lstSportart.Size = New System.Drawing.Size(852, 754)
+        Me.lstSportart.TabIndex = 0
+        Me.lstSportart.UseCompatibleStateImageBehavior = False
+        Me.lstSportart.View = System.Windows.Forms.View.Details
+        '
+        'colID
+        '
+        Me.colID.Text = "ID"
+        Me.colID.Width = 100
+        '
+        'colSportart
+        '
+        Me.colSportart.Text = "Sportart"
+        Me.colSportart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.colSportart.Width = 300
         '
         'lstTrainer
         '
@@ -289,44 +327,6 @@ Partial Class frmHauptfensterMit
         Me.colVorname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.colVorname.Width = 369
         '
-        'lstKurseAlle
-        '
-        Me.lstKurseAlle.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colKursId, Me.colDatum, Me.colSportartKurs, Me.colVerfuegbarkeit})
-        Me.lstKurseAlle.FullRowSelect = True
-        Me.lstKurseAlle.GridLines = True
-        Me.lstKurseAlle.HideSelection = False
-        Me.lstKurseAlle.Location = New System.Drawing.Point(0, 12)
-        Me.lstKurseAlle.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.lstKurseAlle.MultiSelect = False
-        Me.lstKurseAlle.Name = "lstKurseAlle"
-        Me.lstKurseAlle.Size = New System.Drawing.Size(853, 754)
-        Me.lstKurseAlle.TabIndex = 7
-        Me.lstKurseAlle.UseCompatibleStateImageBehavior = False
-        Me.lstKurseAlle.View = System.Windows.Forms.View.Details
-        '
-        'colKursId
-        '
-        Me.colKursId.Text = "Kurs ID"
-        Me.colKursId.Width = 93
-        '
-        'colDatum
-        '
-        Me.colDatum.Text = "Datum"
-        Me.colDatum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colDatum.Width = 380
-        '
-        'colSportartKurs
-        '
-        Me.colSportartKurs.Text = "Sportart"
-        Me.colSportartKurs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colSportartKurs.Width = 219
-        '
-        'colVerfuegbarkeit
-        '
-        Me.colVerfuegbarkeit.Text = "Verfügbarkeit"
-        Me.colVerfuegbarkeit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.colVerfuegbarkeit.Width = 161
-        '
         'frmHauptfensterMit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -368,7 +368,7 @@ Partial Class frmHauptfensterMit
     Friend WithEvents colKursId As ColumnHeader
     Friend WithEvents colDatum As ColumnHeader
     Friend WithEvents colSportartKurs As ColumnHeader
-    Friend WithEvents colVerfuegbarkeit As ColumnHeader
+    Friend WithEvents colTrainer As ColumnHeader
     Friend WithEvents lstSchuelerAlle As ListView
     Friend WithEvents colSchuelerID As ColumnHeader
     Friend WithEvents colName As ColumnHeader

@@ -6,7 +6,7 @@
         mPresenter = pPresenter
     End Sub
 
-    Public Sub anzeigen() 'pstrVorname As String, pstrName As String, pstrBenutzername As String, pstrPasswort As String)
+    Public Sub anzeigen()
         Me.txtVorname.Enabled = True
         Me.txtName.Enabled = True
         Me.txtBenutzername.Enabled = True

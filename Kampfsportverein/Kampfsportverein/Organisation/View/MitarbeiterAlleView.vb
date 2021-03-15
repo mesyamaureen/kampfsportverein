@@ -1,8 +1,6 @@
 ﻿Public Class MitarbeiterAlleView
     Inherits frmHauptfensterMit
 
-    Private mbolMitarbeiter As Boolean
-
     Sub New(pPresenter As MitarbeiterAllePresenter)
 
         MyBase.New
@@ -64,13 +62,13 @@
     End Sub
 
     Public Sub hinzufuegenZeileKurse(plngKursIdPk As Long, pdatKursZeitpunkt As Date,
-                                     plngSaIdFk As Long, plngBenIdFk As Long)
+                                     pSportart As String, pTra As String)
         Dim kursZeile As ListViewItem
         kursZeile = Me.lstKurseAlle.Items.Add(plngKursIdPk)
         With kursZeile.SubItems
             .Add(pdatKursZeitpunkt)
-            .Add(plngSaIdFk)
-            .Add(plngBenIdFk)
+            .Add(pSportart)
+            .Add(pTra)
         End With
     End Sub
     Public Sub hinzufuegenZeileSchueler(plngSchuelerID As Long,

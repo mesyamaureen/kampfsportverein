@@ -5,29 +5,6 @@
         mPresenter = pPresenter
     End Sub
 
-    Protected Property Presenter As SportartenPresenter
-        Get
-            Return mPresenter
-        End Get
-        Set(value As SportartenPresenter)
-            mPresenter = value
-        End Set
-    End Property
-
-
-
-    'Private Sub btnAbbrechen_Click(sender As Object, e As EventArgs) Handles btnAbbrechen.Click
-    '    'Dim mbrResult As MsgBoxResult
-
-    '    'mbrResult = MsgBox("Möchten Sie wirklich abbrechen?", MsgBoxStyle.Question + vbYesNo, "Abbrechen")
-    '    'If mbrResult = vbNo Then
-    '    'DialogResult = Nothing
-    '    'Else
-    '    'mPresenter.verarbeiteAbbrechen()
-    '    MessageBox.Show("Wollen Sie wirklich abbrechen?", "Abbrechen", MessageBoxButtons.OKCancel)
-    '    'End If
-    'End Sub
-
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Dim mSpor As Sportart = New Sportart
         mSpor.Name = Me.txtName.Text

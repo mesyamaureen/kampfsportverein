@@ -102,8 +102,8 @@ Partial Class frmHauptfensterTrainer
         '
         Me.grpboxKurs.Controls.Add(Me.btnNeueSchueler)
         Me.grpboxKurs.Controls.Add(Me.btnOeffnen)
-        Me.grpboxKurs.Controls.Add(Me.lstSchueler)
         Me.grpboxKurs.Controls.Add(Me.lstKurse)
+        Me.grpboxKurs.Controls.Add(Me.lstSchueler)
         Me.grpboxKurs.Location = New System.Drawing.Point(378, 12)
         Me.grpboxKurs.Name = "grpboxKurs"
         Me.grpboxKurs.Size = New System.Drawing.Size(864, 856)

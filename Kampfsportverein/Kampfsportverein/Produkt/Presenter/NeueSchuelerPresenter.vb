@@ -45,7 +45,6 @@
         Dim strName As String
         Dim strVorname As String
         Dim strEmail As String
-        'Dim lngVersion As Long
 
         If String.IsNullOrEmpty(mView.txtName.Text) Or String.IsNullOrEmpty(mView.txtVorname.Text) Or String.IsNullOrEmpty(mView.txtEmail.Text) Then
             MsgBox("Alle Felder müssen befüllt sein!", vbOKOnly)

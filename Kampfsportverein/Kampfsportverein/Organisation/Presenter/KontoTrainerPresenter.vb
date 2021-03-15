@@ -1,7 +1,7 @@
 ﻿Public Class KontoTrainerPresenter
     Private mTrainer As Trainer
     Public mErgebnis As EPresenterErgebnis
-    Private mSitzung As BenutzerSitzung  'benötigt? - 06.03.2021
+    Private mSitzung As BenutzerSitzung
     Private mView As KontoTrainerView
     Private mtraDAO As TrainerDAO
 

@@ -8,28 +8,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Mitarbeiter" Collapsed="true">
-    <Position X="1" Y="1" Width="1.5" />
+    <Position X="1" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgCAAABAAA=</HashCode>
       <FileName>Organisation\Model\Mitarbeiter.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Trainer" Collapsed="true">
-    <Position X="1" Y="8.25" Width="1.5" />
+    <Position X="1" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgCAAABAAA=</HashCode>
       <FileName>Organisation\Model\Trainer.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Sportart">
-    <Position X="6.75" Y="1.5" Width="1.5" />
+    <Position X="8" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAQgAIAAAAAQgAhAACAAAAQAAAAAAEAAAAAEAQABAAA=</HashCode>
       <FileName>Produkt\Model\Sportarten.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.Schueler">
-    <Position X="9" Y="4.25" Width="1.5" />
+    <Position X="10.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAACAAAAABIQAAAAAAAAAAQAAECAAgAAAAAAAQAAAgA=</HashCode>
       <FileName>Produkt\Model\Schueler.vb</FileName>
@@ -39,7 +39,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Kurs">
-    <Position X="3.75" Y="1" Width="1.5" />
+    <Position X="4.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAQAACAYEAASIAAAAAAAAAAAABAAgAAhABgAAgAAQAI=</HashCode>
       <FileName>Produkt\Model\Kurse.vb</FileName>

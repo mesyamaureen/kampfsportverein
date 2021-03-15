@@ -7,29 +7,68 @@
     Private mlstTrainerAlle As List(Of Trainer)
     Private mMitarbeiterDAO As MitarbeiterDAO = New MitarbeiterDAO
     Private mTrainerDAO As TrainerDAO = New TrainerDAO
-    Private mistMitarbeiterAlle As MitarbeiterAllePresenter
+    Private mMitarbeiter As Mitarbeiter
 
     Public Sub New()
         mView = New MitarbeiterAlleView(Me) 'Neue View erzeugen
         verarbeiteSportartUebersichtAnzeigen()
         'Anzeige der View als Oberfläche
         Application.Run(mView)
-
     End Sub
+
+    Public Property ListeSportart As List(Of Sportart)
+        Get
+            Return mlstSportartAlle
+        End Get
+        Set(value As List(Of Sportart))
+        End Set
+    End Property
+
+    Public Property ListeKurs As List(Of Kurs)
+        Get
+            Return mlstKurseAlle
+        End Get
+        Set(value As List(Of Kurs))
+        End Set
+    End Property
+
+    Public Property ListeSchueler As List(Of Schueler)
+        Get
+            Return mlstSchuelerAlle
+        End Get
+        Set(value As List(Of Schueler))
+        End Set
+    End Property
+
+    Public Property ListeTrainer As List(Of Trainer)
+        Get
+            Return mlstTrainerAlle
+        End Get
+        Set(value As List(Of Trainer))
+        End Set
+    End Property
+
+    Public Property MitararbeiterDAO As MitarbeiterDAO
+        Get
+            Return mMitarbeiterDAO
+        End Get
+        Set(value As MitarbeiterDAO)
+        End Set
+    End Property
+
+    Public Property TrainerDAO As TrainerDAO
+        Get
+            Return mTrainerDAO
+        End Get
+        Set(value As TrainerDAO)
+        End Set
+    End Property
 
     Public Property Ergebnis As EPresenterErgebnis
         Get
             Return mErgebnis
         End Get
         Set(value As EPresenterErgebnis)
-        End Set
-    End Property
-
-    Public Property MitarbeiterAlle As Mitarbeiter
-        Get
-            Return Nothing
-        End Get
-        Set(value As Mitarbeiter)
         End Set
     End Property
 
@@ -62,7 +101,7 @@
         mView.leeren()
         mView.anzeigenKursuebersicht()
         For Each kurs As Kurs In mlstKurseAlle
-            mView.hinzufuegenZeileKurse(kurs.IdPk, kurs.Zeitpunkt, kurs.SaIdFk, kurs.BenIdFk)
+            mView.hinzufuegenZeileKurse(kurs.IdPk, kurs.Zeitpunkt, mMitarbeiterDAO.findeSportart(kurs.SaIdFk).Name, mTrainerDAO.findenTrainerId(kurs.BenIdFk).Name)
         Next
     End Sub
 
@@ -245,10 +284,6 @@
     Public Sub verarbeiteLoeschenKurs(plngKursId As Long)
         Dim kurs As Kurs
         Dim bolKursErgebnis As Boolean = False
-        'plngKursId -= 1
-        'If plngKursId > 0 Then
-        '    plngKursId -= 1
-        'End If
 
         Dim i As Integer = 0  ' Für Iteration
         Dim index As Integer = -1  ' Um Index zu speichern
