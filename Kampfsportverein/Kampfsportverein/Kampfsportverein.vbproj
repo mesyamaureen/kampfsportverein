@@ -15,7 +15,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Mesya\Documents\Kampfsportverein-Publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -25,10 +26,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <SupportUrl>https://github.com/mesyamaureen/kampfsportverein</SupportUrl>
+    <ErrorReportUrl>https://github.com/mesyamaureen/kampfsportverein</ErrorReportUrl>
+    <ProductName>Kampfsportverein</ProductName>
+    <PublisherName>Hochtritt, Jeynie, Lammel, Pennig</PublisherName>
+    <SuiteName>Vereinsverwaltung</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -62,6 +68,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -116,7 +125,6 @@
     <Compile Include="Produkt\Presenter\KursPresenter.vb" />
     <Compile Include="Produkt\Presenter\NeuerKursPresenter.vb" />
     <Compile Include="Produkt\Presenter\NeueSchuelerPresenter.vb" />
-    <Compile Include="Produkt\Presenter\NeueSportartPresenter.vb" />
     <Compile Include="Produkt\View\KursView.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +137,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\View\NeueSchuelerView.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Produkt\View\NeueSportartView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Produkt\View\SportartenEinzelView.vb">
@@ -227,12 +232,6 @@
     <Compile Include="Produkt\Form\dlgNeueSchueler.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produkt\Form\dlgNeueSportart.Designer.vb">
-      <DependentUpon>dlgNeueSportart.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Produkt\Form\dlgNeueSportart.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Produkt\Form\dlgSportEinzel.Designer.vb">
       <DependentUpon>dlgSportEinzel.vb</DependentUpon>
     </Compile>
@@ -289,9 +288,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Produkt\Form\dlgNeueSchueler.resx">
       <DependentUpon>dlgNeueSchueler.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Produkt\Form\dlgNeueSportart.resx">
-      <DependentUpon>dlgNeueSportart.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produkt\Form\dlgSportEinzel.resx">
       <DependentUpon>dlgSportEinzel.vb</DependentUpon>
@@ -356,6 +352,68 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MeinKonto %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Kampfsportverein.exe.config">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Kampfsportverein.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Kampfsportverein.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Kampfsportvereinverwaltung">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Kampfsportvereinverwaltung.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Kampfsportvereinverwaltung.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

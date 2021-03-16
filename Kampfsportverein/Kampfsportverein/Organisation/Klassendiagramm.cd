@@ -1,28 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Kampfsportverein.frmHauptfensterMit" Collapsed="true">
-    <Position X="0.5" Y="2.5" Width="2" />
+  <Class Name="Kampfsportverein.frmHauptfensterMit">
+    <Position X="1.25" Y="2.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <AssociationLine Name="Presenter" Type="Kampfsportverein.MitarbeiterAllePresenter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2.5" Y="2.875" />
-        <Point X="5.875" Y="2.875" />
-        <Point X="5.875" Y="3.5" />
+        <Point X="3.25" Y="5.084" />
+        <Point X="3.625" Y="5.084" />
+        <Point X="3.625" Y="3.875" />
+        <Point X="4.25" Y="3.875" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AADIEAIAGSkAA6sAEACGBAkCICAKQQrAIBoAAAEAYBA=</HashCode>
+      <HashCode>AADIEAIAGSkAA6MAEACGBAkCICAKQwrAIBoAAAEAYBA=</HashCode>
       <FileName>Organisation\Form\frmHauptfensterMit.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Presenter" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.frmHauptfensterTrainer" Collapsed="true">
+  <Class Name="Kampfsportverein.frmHauptfensterTrainer">
     <Position X="1" Y="28.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <AssociationLine Name="Presenter" Type="Kampfsportverein.TrainerAllePresenter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3" Y="29" />
-        <Point X="5.625" Y="29" />
+        <Point X="3" Y="29.846" />
+        <Point X="5.625" Y="29.846" />
         <Point X="5.625" Y="30.25" />
       </Path>
     </AssociationLine>
@@ -35,7 +42,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.MitarbeiterAllePresenter">
-    <Position X="4.25" Y="3.5" Width="3" />
+    <Position X="4.25" Y="2.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AJhBgQwAgRAABAABAAhACHQA4QwBhAIEgAABAAABAaA=</HashCode>
       <FileName>Organisation\Presenter\MitarbeiterAllePresenter.vb</FileName>
@@ -46,7 +53,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.Mitarbeiter">
-    <Position X="8.25" Y="2.75" Width="1.75" />
+    <Position X="8.25" Y="5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgCAAABAAA=</HashCode>
       <FileName>Organisation\Model\Mitarbeiter.vb</FileName>
@@ -59,12 +66,12 @@
       <FileName>Organisation\Model\Trainer.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.MitarbeiterAlleView" Collapsed="true">
-    <Position X="0.5" Y="4.75" Width="2.25" />
+  <Class Name="Kampfsportverein.MitarbeiterAlleView">
+    <Position X="1.25" Y="8" Width="2.25" />
     <InheritanceLine Type="Kampfsportverein.frmHauptfensterMit" FixedFromPoint="true">
       <Path>
-        <Point X="1.625" Y="3.191" />
-        <Point X="1.625" Y="4.75" />
+        <Point X="2.375" Y="7.261" />
+        <Point X="2.375" Y="8" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -72,14 +79,14 @@
       <FileName>Organisation\View\MitarbeiterAlleView.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.TrainerAlleView" Collapsed="true">
-    <Position X="0.5" Y="31" Width="2.75" />
+  <Class Name="Kampfsportverein.TrainerAlleView">
+    <Position X="0.75" Y="32.5" Width="2.75" />
     <InheritanceLine Type="Kampfsportverein.frmHauptfensterTrainer" FixedFromPoint="true">
       <Path>
-        <Point X="2.375" Y="29.441" />
-        <Point X="2.375" Y="30.625" />
-        <Point X="1.875" Y="30.625" />
-        <Point X="1.875" Y="31" />
+        <Point X="2.375" Y="31.78" />
+        <Point X="2.375" Y="32.125" />
+        <Point X="2.125" Y="32.125" />
+        <Point X="2.125" Y="32.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -109,8 +116,11 @@
       <Property Name="View" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.dlgMeinKontoMit" Collapsed="true">
-    <Position X="12.5" Y="2" Width="1.5" />
+  <Class Name="Kampfsportverein.dlgMeinKontoMit">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AQUAgAAAACAAAAAAAACgAgACAAAgAABwIAoAgAAACAQ=</HashCode>
       <FileName>Organisation\Form\dlgMeinKontoMit.vb</FileName>
@@ -120,7 +130,15 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.MitarbeiterKontoPresenter">
-    <Position X="16.5" Y="1.75" Width="2.25" />
+    <Position X="14.75" Y="1.75" Width="2.25" />
+    <AssociationLine Name="EinzelMitarbeiter" Type="Kampfsportverein.Mitarbeiter" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.562" Y="1.75" />
+        <Point X="15.562" Y="0.798" />
+        <Point X="9.125" Y="0.798" />
+        <Point X="9.125" Y="5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAgAgAAAAAAAIkAAAAgAAAgCAhBIAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\Presenter\MitarbeiterKontoPresenter.vb</FileName>
@@ -130,12 +148,12 @@
       <Property Name="View" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.MitarbeiterKontoView" Collapsed="true">
-    <Position X="12.25" Y="3.5" Width="2" />
+  <Class Name="Kampfsportverein.MitarbeiterKontoView">
+    <Position X="10.5" Y="3.5" Width="2" />
     <InheritanceLine Type="Kampfsportverein.dlgMeinKontoMit" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="13.25" Y="2.691" />
-        <Point X="13.25" Y="3.5" />
+        <Point X="11.5" Y="3.261" />
+        <Point X="11.5" Y="3.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -224,8 +242,8 @@
       <FileName>Organisation\View\KontoTrainerView.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.dlgNeuerMitarbeiter" Collapsed="true">
-    <Position X="13.75" Y="6.5" Width="1.5" />
+  <Class Name="Kampfsportverein.dlgNeuerMitarbeiter">
+    <Position X="10.5" Y="6.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
@@ -238,7 +256,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.NeuerMitarbeiterPresenter">
-    <Position X="16.75" Y="7" Width="2.25" />
+    <Position X="13.5" Y="7" Width="2.25" />
+    <AssociationLine Name="Mitarbeiter" Type="Kampfsportverein.Mitarbeiter" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.938" Y="7" />
+        <Point X="14.938" Y="6.5" />
+        <Point X="10" Y="6.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AgAAgAwAAAAAAAIEAAAAAAAAACABBAAEAAIAAAAAAAA=</HashCode>
       <FileName>Organisation\Presenter\NeuerMitarbeiterPresenter.vb</FileName>
@@ -249,7 +274,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.NeuerMitarbeiterView">
-    <Position X="13.5" Y="8" Width="1.5" />
+    <Position X="10.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Organisation\View\NeuerMitarbeiterView.vb</FileName>

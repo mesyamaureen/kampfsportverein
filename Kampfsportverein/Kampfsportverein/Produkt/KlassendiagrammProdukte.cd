@@ -29,12 +29,20 @@
       <FileName>Produkt\Presenter\SportartenPresenter.vb</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="SportartenAlle" />
       <Property Name="View" />
+      <Property Name="SportartenAlle" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.KursPresenter">
-    <Position X="15.5" Y="28.5" Width="1.75" />
+    <Position X="11.25" Y="29.5" Width="1.75" />
+    <AssociationLine Name="EinzelKurs" Type="Kampfsportverein.Kurs" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.125" Y="29.5" />
+        <Point X="12.125" Y="28.625" />
+        <Point X="6.5" Y="28.625" />
+        <Point X="6.5" Y="29" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAigAgACAAAAAIAAEAAAAAAACAhBAAgAAAAAAAAAAA=</HashCode>
       <FileName>Produkt\Presenter\KursPresenter.vb</FileName>
@@ -58,15 +66,15 @@
       <FileName>Produkt\Model\Sportarten.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.AlleSchuelerView" Collapsed="true">
-    <Position X="0.75" Y="2.75" Width="2.25" />
+  <Class Name="Kampfsportverein.AlleSchuelerView">
+    <Position X="0.75" Y="3" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Produkt\View\AlleSchuelerView.vb</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kampfsportverein.KursView">
-    <Position X="12.25" Y="30.75" Width="1.5" />
+    <Position X="8" Y="31.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>Produkt\View\KursView.vb</FileName>
@@ -79,8 +87,11 @@
       <FileName>Produkt\Model\Kurse.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.dlgKursEinzeln" Collapsed="true">
-    <Position X="12.25" Y="28.5" Width="1.5" />
+  <Class Name="Kampfsportverein.dlgKursEinzeln">
+    <Position X="8" Y="29.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAEAAAAAAGQgIAAAASCAIAACAAAgggBQIAgAAAIAAAA=</HashCode>
       <FileName>Produkt\Form\dlgKursEinzeln.vb</FileName>
@@ -89,8 +100,11 @@
       <Property Name="Presenter" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.dlgSchueler" Collapsed="true">
+  <Class Name="Kampfsportverein.dlgSchueler">
     <Position X="1" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AQEAAAAgACAAAAAAAACgIAACAAAgAIBAIAoAgAAAAAQ=</HashCode>
       <FileName>Produkt\Form\dlgSchueler.vb</FileName>
@@ -99,12 +113,15 @@
       <Property Name="Presenter" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.dlgNeuerKurs" Collapsed="true">
-    <Position X="0.5" Y="30.25" Width="1.5" />
+  <Class Name="Kampfsportverein.dlgNeuerKurs">
+    <Position X="0.5" Y="29.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <AssociationLine Name="Presenter" Type="Kampfsportverein.NeuerKursPresenter" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="2" Y="30.5" />
-        <Point X="3.688" Y="30.5" />
+        <Point X="2" Y="30.068" />
+        <Point X="3.688" Y="30.068" />
         <Point X="3.688" Y="30.75" />
       </Path>
     </AssociationLine>
@@ -118,9 +135,6 @@
   </Class>
   <Class Name="Kampfsportverein.NeuerKursPresenter">
     <Position X="2.75" Y="30.75" Width="2" />
-    <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
-    </Compartments>
     <TypeIdentifier>
       <HashCode>AgAqgAgAACAAAAoEAAAAACAAACABAAAAAABAAAAAAAA=</HashCode>
       <FileName>Produkt\Presenter\NeuerKursPresenter.vb</FileName>
@@ -130,15 +144,18 @@
       <Property Name="Kurs" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.NeuerKursView" Collapsed="true">
+  <Class Name="Kampfsportverein.NeuerKursView">
     <Position X="0.5" Y="32" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAACAAAAAAAAAAAAABAgAAAAAAAAAAA=</HashCode>
       <FileName>Produkt\View\NeuerKursView.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.dlgNeueSchueler" Collapsed="true">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+  <Class Name="Kampfsportverein.dlgNeueSchueler">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AQAAAAAAACgAAgAAAACgIAACAAAgAIAAIAoAgAAAAAQ=</HashCode>
       <FileName>Produkt\Form\dlgNeueSchueler.vb</FileName>
@@ -148,7 +165,15 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Kampfsportverein.NeueSchuelerPresenter" Collapsed="true">
-    <Position X="13.25" Y="0.75" Width="2.25" />
+    <Position X="12.75" Y="0.75" Width="2.25" />
+    <AssociationLine Name="Schueler" Type="Kampfsportverein.Schueler" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.875" Y="0.75" />
+        <Point X="13.875" Y="0.125" />
+        <Point X="8.75" Y="0.125" />
+        <Point X="8.75" Y="0.5" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AgACgAgAAAAIAAAAIAQAAAAAQCABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Produkt\Presenter\NeueSchuelerPresenter.vb</FileName>
@@ -158,12 +183,14 @@
       <Property Name="Schueler" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Kampfsportverein.NeueSchuelerView" Collapsed="true">
-    <Position X="10.25" Y="4.75" Width="1.75" />
+  <Class Name="Kampfsportverein.NeueSchuelerView">
+    <Position X="9.75" Y="3" Width="1.75" />
     <InheritanceLine Type="Kampfsportverein.dlgNeueSchueler" FixedToPoint="true">
       <Path>
-        <Point X="11.25" Y="1.191" />
-        <Point X="11.25" Y="4.75" />
+        <Point X="10.5" Y="2.569" />
+        <Point X="10.5" Y="2.76" />
+        <Point X="10.75" Y="2.76" />
+        <Point X="10.75" Y="3" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -171,8 +198,11 @@
       <FileName>Produkt\View\NeueSchuelerView.vb</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kampfsportverein.dlgSportEinzel" Collapsed="true">
-    <Position X="1.25" Y="8.25" Width="1.5" />
+  <Class Name="Kampfsportverein.dlgSportEinzel">
+    <Position X="1.25" Y="7.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>ARUABIBAACAACAIAAAKCAAACIAAACgAAoIgAwAAAAAQ=</HashCode>
       <FileName>Produkt\Form\dlgSportEinzel.vb</FileName>
