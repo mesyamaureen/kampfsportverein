@@ -1,3 +1,5 @@
+#DIESES PROJEKT HAT SICH BEENDET, WEIL ALLE ANFORDERUNGEN BEREITS ERFÜLLT SIND.
+
 # kampfsportverein
 Verwaltung von Kampfsportverein DBS2
 
